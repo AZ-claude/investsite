@@ -29,6 +29,18 @@
 - docs/04-site-design.md — 要望3: ページツリー・デザイン方針
 - docs/05-work-breakdown.md — 要望4: 作業リスト(実作業員向け)
 
+## 確認済みのハマりどころ・やり方(P1スパイクで実証)
+- データ源は日米とも **yfinance を採用**(日本株は `XXXX.T`)。J-Quants無料プランは12週遅延のため不採用(公式FAQで確認)
+- **yfinance は 1.5.1 以上必須**: 0.2.51 は全リクエスト429で動作しない(curl_cffi 導入で解決済み)
+- **起動直後の429連鎖に注意**: セッション初期化失敗で全滅するパターンあり。日次バッチは30〜60秒待機の再試行を入れる(T-02実測)
+- 日経225構成銘柄リストは日経平均プロフィル公式CSV(無料・登録不要)。CP932エンコーディング+フッタ行のパースに注意
+- yfinanceのPERは実績(trailing)ベース。Yahoo!ファイナンスJPの表示は会社予想ベースで定義が異なる。時価総額はトヨタで19%乖離の未解決事例あり(T-03/T-04で要検証)
+
+## 確認済みのハマりどころ・やり方(T-03スキーマ確定で実証)
+- トヨタ時価総額19%乖離の原因は**sharesOutstanding(発行済株式数)の値そのものの差**と切り分け済み(yfinanceのmarketCapは内部でsharesOutstanding×priceと完全一致=計算式自体は正しい)。自己株式控除差が最有力仮説だが未確定。サイトには出典・定義注記を必ず添える
+- 信用倍率(信用取引残高)はyfinanceでは取得不可。**JPX公式サイトが週次・無料でPDF(銘柄別、火曜16:30頃)/Excel(市場全体、水曜15:00頃)を公表**しており、これが採用データ源。CSV配信はなくPDF/Excelパーサの実装が必要(T-04/T-05)。詳細: docs/07-data-schema.md 6節
+- スキーマ設計は2層(`data/daily/YYYY-MM-DD/{jp|us}.json` + `data/factors/{factor}.json`)+銘柄マスタ`data/universe/{jp|us}.json`の3ファイル群構成。市場体温計は`data/factors/market-thermometer.json`としてfactors層に相乗り(第3層を作らない)
+
 ## 参照すべきナレッジ
 ~/.claude/knowledge/ の kb-data-collection.md(データ収集), kb-markdown-datastore.md(蓄積),
 kb-skill-pipeline.md(日次パイプライン) を実装フェーズで参照すること。

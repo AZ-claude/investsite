@@ -1,0 +1,102 @@
+実行日時(JST): 2026-07-10T04:30:39.935225+09:00
+yfinance version: 1.5.1
+
+T-03 事前検証: marketCap と sharesOutstanding×price の突合
+
+----------------------------------------------------------------------
+7203.T (トヨタ自動車)
+  price                         = 2824.0
+  marketCap (yfinance)          = 33439132680192
+  sharesOutstanding (yfinance)  = 11841052480
+  floatShares (yfinance)        = 12019517496
+  impliedSharesOutstanding      = 11841052480
+  sharesOutstanding × price     = 33439132203520.0
+  floatShares × price           = 33943117408704.0
+  → marketCap vs (sharesOutstanding×price) の差: +0.00%
+  marketCap ÷ price (逆算株式数) = 11,841,052,649
+  sharesOutstanding              = 11,841,052,480
+  → 株式数の差: +0.00%
+  [参考] Yahoo!ファイナンスJP表示(T-01調査時点) = 41,220,000,000,000
+  → yfinance marketCap vs Yahoo!表示 の差: -18.88%
+  → (sharesOutstanding×price) vs Yahoo!表示 の差: -18.88%
+----------------------------------------------------------------------
+9984.T (ソフトバンクグループ)
+  price                         = 5757.0
+  marketCap (yfinance)          = 32808703623168
+  sharesOutstanding (yfinance)  = 5698923701
+  floatShares (yfinance)        = 3653618358
+  impliedSharesOutstanding      = 5698923701
+  sharesOutstanding × price     = 32808703746657.0
+  floatShares × price           = 21033880887006.0
+  → marketCap vs (sharesOutstanding×price) の差: -0.00%
+  marketCap ÷ price (逆算株式数) = 5,698,923,680
+  sharesOutstanding              = 5,698,923,701
+  → 株式数の差: -0.00%
+  [参考] Yahoo!ファイナンスJP表示(T-01調査時点) = 32,880,000,000,000
+  → yfinance marketCap vs Yahoo!表示 の差: -0.22%
+  → (sharesOutstanding×price) vs Yahoo!表示 の差: -0.22%
+----------------------------------------------------------------------
+6758.T (ソニーグループ)
+  price                         = 3409.0
+  marketCap (yfinance)          = 20017169039360
+  sharesOutstanding (yfinance)  = 5871859854
+  floatShares (yfinance)        = 5905304187
+  impliedSharesOutstanding      = 5871859854
+  sharesOutstanding × price     = 20017170242286.0
+  floatShares × price           = 20131181973483.0
+  → marketCap vs (sharesOutstanding×price) の差: -0.00%
+  marketCap ÷ price (逆算株式数) = 5,871,859,501
+  sharesOutstanding              = 5,871,859,854
+  → 株式数の差: -0.00%
+  [参考] Yahoo!ファイナンスJP表示(T-01調査時点) = 20,340,000,000,000
+  → yfinance marketCap vs Yahoo!表示 の差: -1.59%
+  → (sharesOutstanding×price) vs Yahoo!表示 の差: -1.59%
+----------------------------------------------------------------------
+8306.T (三菱UFJフィナンシャル・グループ)
+  price                         = 3414.0
+  marketCap (yfinance)          = 38499243786240
+  sharesOutstanding (yfinance)  = 11276872492
+  floatShares (yfinance)        = 11182292566
+  impliedSharesOutstanding      = 11276872492
+  sharesOutstanding × price     = 38499242687688.0
+  floatShares × price           = 38176346820324.0
+  → marketCap vs (sharesOutstanding×price) の差: +0.00%
+  marketCap ÷ price (逆算株式数) = 11,276,872,814
+  sharesOutstanding              = 11,276,872,492
+  → 株式数の差: +0.00%
+----------------------------------------------------------------------
+9432.T (NTT)
+  price                         = 149.0
+  marketCap (yfinance)          = 12132119740416
+  sharesOutstanding (yfinance)  = 81423624610
+  floatShares (yfinance)        = 49622604183
+  impliedSharesOutstanding      = 81423624610
+  sharesOutstanding × price     = 12132120066890.0
+  floatShares × price           = 7393768023267.0
+  → marketCap vs (sharesOutstanding×price) の差: -0.00%
+  marketCap ÷ price (逆算株式数) = 81,423,622,419
+  sharesOutstanding              = 81,423,624,610
+  → 株式数の差: -0.00%
+----------------------------------------------------------------------
+8035.T (東京エレクトロン)
+  price                         = 71060.0
+  marketCap (yfinance)          = 32321996587008
+  sharesOutstanding (yfinance)  = 454854996
+  floatShares (yfinance)        = 439489994
+  impliedSharesOutstanding      = 454854996
+  sharesOutstanding × price     = 32321996015760.0
+  floatShares × price           = 31230158973640.0
+  → marketCap vs (sharesOutstanding×price) の差: +0.00%
+  marketCap ÷ price (逆算株式数) = 454,855,004
+  sharesOutstanding              = 454,854,996
+  → 株式数の差: +0.00%
+
+======================================================================
+サマリ
+======================================================================
+  7203.T: marketCap=3.344e+13  sharesOutstanding×price=3.344e+13  差=+0.00%
+  9984.T: marketCap=3.281e+13  sharesOutstanding×price=3.281e+13  差=-0.00%
+  6758.T: marketCap=2.002e+13  sharesOutstanding×price=2.002e+13  差=-0.00%
+  8306.T: marketCap=3.850e+13  sharesOutstanding×price=3.850e+13  差=+0.00%
+  9432.T: marketCap=1.213e+13  sharesOutstanding×price=1.213e+13  差=-0.00%
+  8035.T: marketCap=3.232e+13  sharesOutstanding×price=3.232e+13  差=+0.00%

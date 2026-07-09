@@ -1,0 +1,29 @@
+{
+  "index": "SP500",
+  "as_of": "2026-07-10",
+  "source": "Wikipedia List of S&P 500 companies (pandas.read_html)",
+  "count_total": 503,
+  "tickers_sample": [
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc."
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation"
+    },
+    {
+      "ticker": "JPM",
+      "name": "JP Morgan Chase & Co."
+    },
+    {
+      "ticker": "KO",
+      "name": "Coca-Cola Company (The)"
+    },
+    {
+      "ticker": "XOM",
+      "name": "ExxonMobil Holdings Corporation"
+    }
+  ],
+  "note": "本サンプルは503銘柄中5銘柄のみ抜粋。本番は全503銘柄を保持する。"
+}

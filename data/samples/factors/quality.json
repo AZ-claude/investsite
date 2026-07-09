@@ -1,0 +1,93 @@
+{
+  "factor": "quality",
+  "label": "クオリティ(ROE、PBR×ROE)",
+  "markets": [
+    "jp",
+    "us"
+  ],
+  "definition": "ROE単体はQMJ(Quality Minus Junk)の部分近似と明示。PBR×ROE(PBROE)ビューも併載する。",
+  "evidence": [
+    {
+      "claim": "docs/02-research/factor-evidence.md 参照(SSOT)。サイト側は出典と『未確認』注記を保持して転記する",
+      "source": "docs/02-research/factor-evidence.md",
+      "confirmed": true
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-07-10",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 5,
+      "note": "factor_return_* は分位ポートフォリオの超過リターン(T-04で計算、本サンプルは未算出のためnull)"
+    }
+  ],
+  "today_screen": {
+    "jp": [
+      {
+        "ticker": "9984.T",
+        "rank": 1,
+        "quantile": "top_quintile",
+        "metric_value": 0.32724
+      },
+      {
+        "ticker": "9433.T",
+        "rank": 2,
+        "quantile": "other",
+        "metric_value": 0.14006
+      },
+      {
+        "ticker": "6758.T",
+        "rank": 3,
+        "quantile": "other",
+        "metric_value": 0.12336001
+      },
+      {
+        "ticker": "8306.T",
+        "rank": 4,
+        "quantile": "other",
+        "metric_value": 0.11911
+      },
+      {
+        "ticker": "7203.T",
+        "rank": 5,
+        "quantile": "other",
+        "metric_value": 0.10233
+      }
+    ],
+    "us": [
+      {
+        "ticker": "AAPL",
+        "rank": 1,
+        "quantile": "top_quintile",
+        "metric_value": 1.4147099
+      },
+      {
+        "ticker": "KO",
+        "rank": 2,
+        "quantile": "other",
+        "metric_value": 0.43372002
+      },
+      {
+        "ticker": "MSFT",
+        "rank": 3,
+        "quantile": "other",
+        "metric_value": 0.34013999
+      },
+      {
+        "ticker": "JPM",
+        "rank": 4,
+        "quantile": "other",
+        "metric_value": 0.16465001
+      },
+      {
+        "ticker": "XOM",
+        "rank": 5,
+        "quantile": "other",
+        "metric_value": 0.09873
+      }
+    ]
+  },
+  "sample_note": "本サンプルはJP5銘柄・US5銘柄のみのミニ抽出。本番は225/503銘柄全体で計算する(T-04スコープ)。history配列も本サンプルは1日分のみ(本番は日次追記で蓄積)。"
+}

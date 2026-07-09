@@ -1,0 +1,36 @@
+{
+  "factor": "margin-trading",
+  "label": "信用倍率・信用残(日本)",
+  "markets": [
+    "jp"
+  ],
+  "frequency": "weekly",
+  "definition": "信用買残 ÷ 信用売残(制度信用ベース)。学術的な寄与度の実証はほぼ皆無(E=1)。「需給参考」ラベルで隔離掲載し、エビデンス欄には『寄与の実証なし』と明記する。",
+  "evidence": [
+    {
+      "claim": "寄与度の学術的実証はほぼ皆無",
+      "source": "docs/03-metrics-ranking.md 参考指標枠",
+      "confirmed": true
+    }
+  ],
+  "data_source": {
+    "provider": "JPX(日本取引所グループ)",
+    "per_stock": "銘柄別信用取引週末残高(PDF, 毎週第2営業日16:30頃更新)",
+    "per_stock_url": "https://www.jpx.co.jp/markets/statistics-equities/margin/05.html",
+    "market_total": "信用取引現在高(Excel/PDF, 毎週第3営業日15:00頃更新)",
+    "market_total_url": "https://www.jpx.co.jp/markets/statistics-equities/margin/04.html",
+    "format": "PDF(銘柄別)/ Excel・PDF(市場全体)。CSV配信はない。本番実装(T-04/T-05)でPDF/Excelパーサが必要",
+    "update_lag": "「N週N月N日申込分」= 前週金曜時点のスナップショットを翌週火〜水曜に公表(実質5〜8日遅れ)"
+  },
+  "today_screen": {
+    "jp": [
+      {
+        "ticker": "7203.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.9233,
+        "note": "本タスク中にJPX公式PDFをpdfplumberで実測抽出した実データ(架空値ではない)"
+      }
+    ]
+  },
+  "sample_note": "本サンプルは実測できたトヨタ(7203.T)1銘柄のみ。全225銘柄分の抽出はPDFパーサ実装が必要でT-04/T-05スコープ。"
+}

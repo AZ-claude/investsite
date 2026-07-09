@@ -1,0 +1,42 @@
+{
+  "date": "2026-07-10",
+  "jp": {
+    "index": "NIKKEI225",
+    "index_level": 66819.046875,
+    "index_level_as_of": "2026-07-08",
+    "index_change_pct_1d": -2.107,
+    "index_per": null,
+    "index_per_percentile_5y": null,
+    "index_pbr": null,
+    "index_pbr_percentile_5y": null,
+    "index_per_note": "指数PER/PBRは225銘柄の時価総額加重集計が必要(T-04スコープ)。本サンプルではnull",
+    "margin_market_total": {
+      "as_of_week": "2026-07-03",
+      "unit": "thousand_shares_and_jpy_million",
+      "outstanding_sales_thousand_shares": 281113,
+      "outstanding_purchases_thousand_shares": 3870000,
+      "margin_ratio_national_total": 9.8029,
+      "margin_ratio_tokyo": 9.8029,
+      "margin_ratio_nagoya": 9.7965,
+      "source": "JPX 信用取引現在高(Excel, https://www.jpx.co.jp/markets/statistics-equities/margin/04.html)"
+    }
+  },
+  "us": {
+    "index": "SP500",
+    "index_level": 7540.93994140625,
+    "index_level_as_of": "2026-07-09",
+    "index_change_pct_1d": 0.778,
+    "index_per": null,
+    "index_per_percentile_5y": null,
+    "index_pbr": null,
+    "index_pbr_percentile_5y": null,
+    "index_per_note": "指数PERは503銘柄の時価総額加重集計が必要(T-04スコープ)。本サンプルではnull"
+  },
+  "history": [
+    {
+      "date": "2026-07-10",
+      "note": "本サンプルは1日分のみ。本番は日次追記で5年分蓄積し、パーセンタイル算出に用いる"
+    }
+  ],
+  "source_note": "index_level/index_change_pct_1d は yfinance(^N225, ^GSPC)の実測値。margin_market_totalはJPX公式Excel(2026/7/3申込分)をpandasで実測抽出した実データ。"
+}

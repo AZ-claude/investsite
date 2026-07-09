@@ -1,0 +1,162 @@
+{
+  "date": "2026-07-10",
+  "market": "jp",
+  "universe": "NIKKEI225",
+  "generated_at": "2026-07-10T04:34:43.238185+09:00",
+  "source": {
+    "provider": "yfinance",
+    "library_version": "1.5.1",
+    "note": "前営業日終値ベース(当日ザラ場価格は含まない)。PERは実績ベース(trailingPE)。会社予想ベースのPER(Yahoo!ファイナンス等の主要表示)とは定義が異なる点に注意。"
+  },
+  "stocks": [
+    {
+      "ticker": "7203.T",
+      "name": "TOYOTA MOTOR CORP",
+      "currency": "JPY",
+      "price": 2824.0,
+      "market_cap": 33439132680192,
+      "shares_outstanding": 11841052480,
+      "per_trailing": 9.564451,
+      "pbr": 0.92202735,
+      "dividend_yield_pct": null,
+      "roe": 0.10233,
+      "trailing_eps": 295.26,
+      "book_value_per_share": 3062.816,
+      "momentum_12_1": 0.1804780497427121,
+      "percentile_in_universe": {
+        "per_trailing": 0.25,
+        "pbr": 0.0,
+        "dividend_yield_pct": null,
+        "roe": 0.0,
+        "momentum_12_1": 0.25,
+        "market_cap": 0.75
+      },
+      "data_quality": {
+        "missing_fields": [
+          "dividend_yield_pct"
+        ]
+      },
+      "margin": {
+        "as_of_week": "2026-07-03",
+        "unit": "shares",
+        "outstanding_sales_shares": 2171500,
+        "outstanding_purchases_shares": 22198100,
+        "seido_sales_shares": 2006000,
+        "seido_purchases_shares": 13888200,
+        "ippan_sales_shares": 165500,
+        "ippan_purchases_shares": 8309900,
+        "margin_ratio_seido": 6.9233,
+        "margin_ratio_total": 10.2225,
+        "source": "JPX 銘柄別信用取引週末残高(PDF, https://www.jpx.co.jp/markets/statistics-equities/margin/05.html)"
+      }
+    },
+    {
+      "ticker": "9984.T",
+      "name": "SOFTBANK GROUP CORP",
+      "currency": "JPY",
+      "price": 5757.0,
+      "market_cap": 32808703623168,
+      "shares_outstanding": 5698923701,
+      "per_trailing": 6.5981293,
+      "pbr": 1.8618221,
+      "dividend_yield_pct": null,
+      "roe": 0.32724,
+      "trailing_eps": 872.52,
+      "book_value_per_share": 3092.132,
+      "momentum_12_1": 1.635841378942855,
+      "percentile_in_universe": {
+        "per_trailing": 0.0,
+        "pbr": 0.5,
+        "dividend_yield_pct": null,
+        "roe": 1.0,
+        "momentum_12_1": 1.0,
+        "market_cap": 0.5
+      },
+      "data_quality": {
+        "missing_fields": [
+          "dividend_yield_pct"
+        ]
+      }
+    },
+    {
+      "ticker": "6758.T",
+      "name": "SONY GROUP CORPORATION",
+      "currency": "JPY",
+      "price": 3409.0,
+      "market_cap": 20017169039360,
+      "shares_outstanding": 5871859854,
+      "per_trailing": 19.898436,
+      "pbr": 2.480503,
+      "dividend_yield_pct": null,
+      "roe": 0.12336001,
+      "trailing_eps": 171.32,
+      "book_value_per_share": 1374.318,
+      "momentum_12_1": -0.07206479998002913,
+      "percentile_in_universe": {
+        "per_trailing": 1.0,
+        "pbr": 1.0,
+        "dividend_yield_pct": null,
+        "roe": 0.5,
+        "momentum_12_1": 0.0,
+        "market_cap": 0.25
+      },
+      "data_quality": {
+        "missing_fields": [
+          "dividend_yield_pct"
+        ]
+      }
+    },
+    {
+      "ticker": "8306.T",
+      "name": "MITSUBISHI UFJ FINANCIAL GROUP ",
+      "currency": "JPY",
+      "price": 3414.0,
+      "market_cap": 38499243786240,
+      "shares_outstanding": 11276872492,
+      "per_trailing": 16.065882,
+      "pbr": 1.730081,
+      "dividend_yield_pct": 2.8,
+      "roe": 0.11911,
+      "trailing_eps": 212.5,
+      "book_value_per_share": 1973.318,
+      "momentum_12_1": 0.6655983896893514,
+      "percentile_in_universe": {
+        "per_trailing": 0.75,
+        "pbr": 0.25,
+        "dividend_yield_pct": 0.0,
+        "roe": 0.25,
+        "momentum_12_1": 0.75,
+        "market_cap": 1.0
+      },
+      "data_quality": {
+        "missing_fields": []
+      }
+    },
+    {
+      "ticker": "9433.T",
+      "name": "KDDI CORPORATION",
+      "currency": "JPY",
+      "price": 2805.0,
+      "market_cap": 10679586127872,
+      "shares_outstanding": 3807338985,
+      "per_trailing": 15.27445,
+      "pbr": 2.103487,
+      "dividend_yield_pct": 2.99,
+      "roe": 0.14006,
+      "trailing_eps": 183.64,
+      "book_value_per_share": 1333.5,
+      "momentum_12_1": 0.18609905484078437,
+      "percentile_in_universe": {
+        "per_trailing": 0.5,
+        "pbr": 0.75,
+        "dividend_yield_pct": 1.0,
+        "roe": 0.75,
+        "momentum_12_1": 0.5,
+        "market_cap": 0.0
+      },
+      "data_quality": {
+        "missing_fields": []
+      }
+    }
+  ]
+}

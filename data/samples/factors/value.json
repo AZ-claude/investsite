@@ -1,0 +1,93 @@
+{
+  "factor": "value",
+  "label": "バリュー(PBR/PER)",
+  "markets": [
+    "jp",
+    "us"
+  ],
+  "definition": "PBR(実績)・PER(実績trailing)の低い銘柄群。日本ではFF2012等で頑健性が高いとされる一方、PBR1倍割れの機械的買いは劣後するという逆説的知見も併記する(ニッセイ基礎研)。",
+  "evidence": [
+    {
+      "claim": "docs/02-research/factor-evidence.md 参照(SSOT)。サイト側は出典と『未確認』注記を保持して転記する",
+      "source": "docs/02-research/factor-evidence.md",
+      "confirmed": true
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-07-10",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 5,
+      "note": "factor_return_* は分位ポートフォリオの超過リターン(T-04で計算、本サンプルは未算出のためnull)"
+    }
+  ],
+  "today_screen": {
+    "jp": [
+      {
+        "ticker": "7203.T",
+        "rank": 1,
+        "quantile": "top_quintile",
+        "metric_value": 0.92202735
+      },
+      {
+        "ticker": "8306.T",
+        "rank": 2,
+        "quantile": "other",
+        "metric_value": 1.730081
+      },
+      {
+        "ticker": "9984.T",
+        "rank": 3,
+        "quantile": "other",
+        "metric_value": 1.8618221
+      },
+      {
+        "ticker": "9433.T",
+        "rank": 4,
+        "quantile": "other",
+        "metric_value": 2.103487
+      },
+      {
+        "ticker": "6758.T",
+        "rank": 5,
+        "quantile": "other",
+        "metric_value": 2.480503
+      }
+    ],
+    "us": [
+      {
+        "ticker": "XOM",
+        "rank": 1,
+        "quantile": "top_quintile",
+        "metric_value": 2.213021
+      },
+      {
+        "ticker": "JPM",
+        "rank": 2,
+        "quantile": "other",
+        "metric_value": 2.609461
+      },
+      {
+        "ticker": "MSFT",
+        "rank": 3,
+        "quantile": "other",
+        "metric_value": 6.8683596
+      },
+      {
+        "ticker": "KO",
+        "rank": 4,
+        "quantile": "other",
+        "metric_value": 10.548247
+      },
+      {
+        "ticker": "AAPL",
+        "rank": 5,
+        "quantile": "other",
+        "metric_value": 43.489666
+      }
+    ]
+  },
+  "sample_note": "本サンプルはJP5銘柄・US5銘柄のみのミニ抽出。本番は225/503銘柄全体で計算する(T-04スコープ)。history配列も本サンプルは1日分のみ(本番は日次追記で蓄積)。"
+}

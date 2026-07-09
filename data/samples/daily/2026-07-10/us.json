@@ -1,0 +1,145 @@
+{
+  "date": "2026-07-10",
+  "market": "us",
+  "universe": "SP500",
+  "generated_at": "2026-07-10T04:34:43.238185+09:00",
+  "source": {
+    "provider": "yfinance",
+    "library_version": "1.5.1",
+    "note": "前営業日終値ベース(当日ザラ場価格は含まない)。PERは実績ベース(trailingPE)。会社予想ベースのPER(Yahoo!ファイナンス等の主要表示)とは定義が異なる点に注意。"
+  },
+  "stocks": [
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "currency": "USD",
+      "price": 315.735,
+      "market_cap": 4637312155648,
+      "shares_outstanding": 14687356000,
+      "per_trailing": 38.178352,
+      "pbr": 43.489666,
+      "dividend_yield_pct": 0.34,
+      "roe": 1.4147099,
+      "trailing_eps": 8.27,
+      "book_value_per_share": 7.26,
+      "momentum_12_1": 0.4415327523598114,
+      "percentile_in_universe": {
+        "per_trailing": 1.0,
+        "pbr": 1.0,
+        "dividend_yield_pct": 0.0,
+        "roe": 1.0,
+        "momentum_12_1": 1.0,
+        "market_cap": 1.0
+      },
+      "data_quality": {
+        "missing_fields": []
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "currency": "USD",
+      "price": 383.0965,
+      "market_cap": 2845807476736,
+      "shares_outstanding": 7428434704,
+      "per_trailing": 22.816942,
+      "pbr": 6.8683596,
+      "dividend_yield_pct": 0.95,
+      "roe": 0.34013999,
+      "trailing_eps": 16.79,
+      "book_value_per_share": 55.777,
+      "momentum_12_1": -0.1642930100983072,
+      "percentile_in_universe": {
+        "per_trailing": 0.25,
+        "pbr": 0.5,
+        "dividend_yield_pct": 0.3333,
+        "roe": 0.5,
+        "momentum_12_1": 0.0,
+        "market_cap": 0.75
+      },
+      "data_quality": {
+        "missing_fields": []
+      }
+    },
+    {
+      "ticker": "JPM",
+      "name": "JP Morgan Chase & Co.",
+      "currency": "USD",
+      "price": 335.0,
+      "market_cap": 897636302848,
+      "shares_outstanding": 2679511418,
+      "per_trailing": 16.028708,
+      "pbr": 2.609461,
+      "dividend_yield_pct": null,
+      "roe": 0.16465001,
+      "trailing_eps": 20.9,
+      "book_value_per_share": 128.379,
+      "momentum_12_1": 0.11620274312198542,
+      "percentile_in_universe": {
+        "per_trailing": 0.0,
+        "pbr": 0.25,
+        "dividend_yield_pct": null,
+        "roe": 0.25,
+        "momentum_12_1": 0.25,
+        "market_cap": 0.5
+      },
+      "data_quality": {
+        "missing_fields": [
+          "dividend_yield_pct"
+        ]
+      }
+    },
+    {
+      "ticker": "KO",
+      "name": "Coca-Cola Company (The)",
+      "currency": "USD",
+      "price": 82.445,
+      "market_cap": 354718580736,
+      "shares_outstanding": 4302482418,
+      "per_trailing": 25.92613,
+      "pbr": 10.548247,
+      "dividend_yield_pct": 2.54,
+      "roe": 0.43372002,
+      "trailing_eps": 3.18,
+      "book_value_per_share": 7.816,
+      "momentum_12_1": 0.15700392116915318,
+      "percentile_in_universe": {
+        "per_trailing": 0.75,
+        "pbr": 0.75,
+        "dividend_yield_pct": 0.6667,
+        "roe": 0.75,
+        "momentum_12_1": 0.5,
+        "market_cap": 0.0
+      },
+      "data_quality": {
+        "missing_fields": []
+      }
+    },
+    {
+      "ticker": "XOM",
+      "name": "ExxonMobil Holdings Corporation",
+      "currency": "USD",
+      "price": 137.36,
+      "market_cap": 569349963776,
+      "shares_outstanding": 4144947162,
+      "per_trailing": 23.124578,
+      "pbr": 2.213021,
+      "dividend_yield_pct": 2.92,
+      "roe": 0.09873,
+      "trailing_eps": 5.94,
+      "book_value_per_share": 62.069,
+      "momentum_12_1": 0.37128649389207236,
+      "percentile_in_universe": {
+        "per_trailing": 0.5,
+        "pbr": 0.0,
+        "dividend_yield_pct": 1.0,
+        "roe": 0.0,
+        "momentum_12_1": 0.75,
+        "market_cap": 0.25
+      },
+      "data_quality": {
+        "missing_fields": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "index": "NIKKEI225",
+  "as_of": "2026-07-10",
+  "source": "日経平均プロフィル ウェイトCSV(https://indexes.nikkei.co.jp/nkave/archives/file/nikkei_stock_average_weight_en.csv)",
+  "count_total": 225,
+  "tickers_sample": [
+    {
+      "ticker": "7203.T",
+      "name": "TOYOTA MOTOR CORP"
+    },
+    {
+      "ticker": "9984.T",
+      "name": "SOFTBANK GROUP CORP"
+    },
+    {
+      "ticker": "6758.T",
+      "name": "SONY GROUP CORPORATION"
+    },
+    {
+      "ticker": "8306.T",
+      "name": "MITSUBISHI UFJ FINANCIAL GROUP "
+    },
+    {
+      "ticker": "9433.T",
+      "name": "KDDI CORPORATION"
+    }
+  ],
+  "note": "本サンプルは225銘柄中5銘柄のみ抜粋。本番は全225銘柄を保持する。拡張時はindexキーを追加(例: TOPIX500)し、data/universe/配下に新規ファイルを追加すれば daily/*.json 側の universe フィールドで切替可能"
+}
