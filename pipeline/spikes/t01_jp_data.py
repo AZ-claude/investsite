@@ -11,9 +11,14 @@ T-01: 日本株の無料データ取得スパイク検証スクリプト
 import time
 import urllib.request
 import sys
+import io
 from datetime import datetime, timezone, timedelta
 
 import yfinance as yf
+
+# Windows環境でのコンソール/リダイレクト時の文字化け対策(常にUTF-8で出力する)
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
 JST = timezone(timedelta(hours=9))
 
@@ -164,7 +169,11 @@ def section3_nikkei225_bulk():
     print(f"\n3-1. 日経225構成銘柄リスト取得元: {csv_url}")
     try:
         req = urllib.request.Request(csv_url, headers={"User-Agent": "Mozilla/5.0"})
-        raw = urllib.request.urlopen(req, timeout=15).read().decode("utf-8")
+        raw_bytes = urllib.request.urlopen(req, timeout=15).read()
+        try:
+            raw = raw_bytes.decode("utf-8")
+        except UnicodeDecodeError:
+            raw = raw_bytes.decode("cp932")  # 日経公式CSVはShift-JIS系エンコーディング
     except Exception as e:
         print(f"  [ERROR] CSV取得失敗: {e}")
         return
