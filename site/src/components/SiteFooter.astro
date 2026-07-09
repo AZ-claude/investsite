@@ -1,0 +1,79 @@
+---
+/**
+ * SiteFooter — 全ページ共通の免責フッター(docs/04-site-design.md 4節「全ページ共通」)。
+ * 「本サイトは情報提供であり投資助言ではありません」+ /disclaimer/ リンク + データ出典 + 最終更新時刻。
+ *
+ * @prop lastUpdated - ISO8601文字列。呼び出し側で daily/*.json の generated_at を渡す想定。
+ *   未指定時は「未取得」と表示し、数値を捏造しない
+ * @prop dataSources - 表示するデータ出典のラベル配列(既定: yfinance, JPX)
+ */
+interface Props {
+  lastUpdated?: string;
+  dataSources?: string[];
+}
+
+const { lastUpdated, dataSources = ["yfinance", "JPX(信用取引残高)"] } = Astro.props;
+
+const formattedUpdated = lastUpdated
+  ? new Date(lastUpdated).toLocaleString("ja-JP", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone: "Asia/Tokyo",
+    }) + " JST"
+  : "未取得";
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p class="site-footer__disclaimer">
+      本サイトは情報提供であり、投資助言ではありません。掲載内容は特定銘柄の売買を推奨するものではなく、
+      投資判断は自己責任で行ってください。詳しくは<a href="/disclaimer/">免責事項</a>をご覧ください。
+    </p>
+    <div class="site-footer__meta">
+      <span class="site-footer__meta-item">
+        データ出典: {dataSources.join(" / ")}
+      </span>
+      <span class="site-footer__meta-item num">
+        最終更新: {formattedUpdated}
+      </span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border-gridline);
+    background: var(--surface-page);
+    padding-block: var(--space-5);
+    margin-top: var(--space-8);
+  }
+
+  .site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .site-footer__disclaimer {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 64ch;
+  }
+
+  .site-footer__disclaimer a {
+    color: var(--color-accent);
+  }
+
+  .site-footer__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-4);
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+</style>

@@ -1,0 +1,64 @@
+@import "./tokens.css";
+
+/* --- リセット --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+/* --- 数値表示: 桁揃えが必要な箇所(表・軸ラベル)は tabular-nums --- */
+.num,
+table {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 単独の大きな数値(現在値等)はプロポーショナル書体のまま(dataviz mark spec準拠) */
+.num-hero {
+  font-variant-numeric: normal;
+  font-weight: 600;
+}
+
+/* --- ユーティリティ --- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}

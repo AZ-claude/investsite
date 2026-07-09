@@ -1,0 +1,204 @@
+---
+/**
+ * MetricCard — 指標カード。docs/04-site-design.md 4節の「共通フォーマット」を実装する:
+ * 現在値 + 歴史的位置(パーセンタイル帯) + 寄与度エビデンス要約(出典リンク付き)の3点セット。
+ *
+ * variant="reference" は信用倍率(margin-trading)用の「需給参考」ラベル。
+ * docs/03-metrics-ranking.md の方針により、エビデンス(文献による効果の裏付け)が
+ * ない/薄いことを視覚的に隠さず明示する(枠色・バッジで通常カードと区別する)。
+ *
+ * 表現規制: このコンポーネントは値・出典のみを表示する。呼び出し側で
+ * 「買い推奨/売り推奨」等の助言表現を summary/evidenceSummary に渡さないこと。
+ *
+ * @prop label - 指標名(例: "PBR")
+ * @prop value - 表示用の整形済み値(例: "1.24倍")。数値そのものはビルド時に整形して渡す
+ * @prop valueNote - 値の定義注記(例: "実績PERベース。会社予想PERとは別定義")
+ * @prop percentile - 0〜1 のユニバース内パーセンタイル。null可(欠損時)
+ * @prop percentileLabels - PercentileBar の両端ラベル({low, high})
+ * @prop evidenceSummary - 寄与度エビデンスの短文要約(効果目安)
+ * @prop evidenceSource - {label, url} 出典
+ * @prop evidenceConfirmed - factor-evidence.md の confirmed フラグ。false の場合「未確認」注記を出す
+ * @prop variant - "standard" | "reference"(需給参考=信用倍率用、エビデンスなしを明示)
+ * @prop ticker / name - カード見出しに出す銘柄識別情報(任意)
+ */
+import PercentileBar from "./PercentileBar.astro";
+
+interface Props {
+  label: string;
+  value: string;
+  valueNote?: string;
+  percentile: number | null;
+  percentileLabels?: { low: string; high: string };
+  evidenceSummary?: string;
+  evidenceSource?: { label: string; url: string };
+  evidenceConfirmed?: boolean;
+  variant?: "standard" | "reference";
+  ticker?: string;
+  name?: string;
+}
+
+const {
+  label,
+  value,
+  valueNote,
+  percentile,
+  percentileLabels = { low: "低い", high: "高い" },
+  evidenceSummary,
+  evidenceSource,
+  evidenceConfirmed = true,
+  variant = "standard",
+  ticker,
+  name,
+} = Astro.props;
+
+const isReference = variant === "reference";
+---
+
+<article class:list={["metric-card", { "metric-card--reference": isReference }]}>
+  <header class="metric-card__header">
+    <div class="metric-card__heading">
+      {(ticker || name) && (
+        <p class="metric-card__ticker num">{ticker} {name && <span class="metric-card__name">{name}</span>}</p>
+      )}
+      <h3 class="metric-card__label">{label}</h3>
+    </div>
+    {isReference && (
+      <span class="metric-card__badge" title="文献による効果の裏付けが未確認の参考指標です">
+        需給参考
+      </span>
+    )}
+  </header>
+
+  <p class="metric-card__value num-hero">
+    {value}
+  </p>
+  {valueNote && <p class="metric-card__value-note">{valueNote}</p>}
+
+  <div class="metric-card__percentile">
+    <PercentileBar percentile={percentile} lowLabel={percentileLabels.low} highLabel={percentileLabels.high} label="歴史的位置" size="sm" />
+  </div>
+
+  <footer class="metric-card__evidence">
+    {isReference ? (
+      <p class="metric-card__evidence-text metric-card__evidence-text--none">
+        文献による寄与度エビデンスはありません(需給の参考情報として掲載)。
+      </p>
+    ) : evidenceSummary ? (
+      <p class="metric-card__evidence-text">
+        {evidenceSummary}
+        {!evidenceConfirmed && <span class="metric-card__unconfirmed">(未確認)</span>}
+      </p>
+    ) : (
+      <p class="metric-card__evidence-text metric-card__evidence-text--none">エビデンス情報なし</p>
+    )}
+    {evidenceSource && (
+      <a class="metric-card__source" href={evidenceSource.url} target="_blank" rel="noopener noreferrer">
+        出典: {evidenceSource.label}
+      </a>
+    )}
+  </footer>
+</article>
+
+<style>
+  .metric-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--surface-card);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+  }
+
+  .metric-card--reference {
+    border-color: var(--color-reference-accent);
+    border-style: dashed;
+    background: linear-gradient(0deg, var(--color-reference-soft) 0%, var(--surface-card) 18%);
+  }
+
+  .metric-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .metric-card__ticker {
+    margin: 0 0 2px;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .metric-card__name {
+    font-weight: 400;
+    margin-left: var(--space-1);
+  }
+
+  .metric-card__label {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .metric-card__badge {
+    flex-shrink: 0;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-reference-accent);
+    border: 1px solid var(--color-reference-accent);
+    border-radius: 999px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .metric-card__value {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+    color: var(--text-primary);
+    line-height: 1.1;
+  }
+
+  .metric-card__value-note {
+    margin: -6px 0 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .metric-card__evidence {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-gridline);
+  }
+
+  .metric-card__evidence-text {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .metric-card__evidence-text--none {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .metric-card__unconfirmed {
+    color: var(--color-reference-accent);
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .metric-card__source {
+    font-size: var(--font-size-xs);
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .metric-card__source:hover {
+    text-decoration: underline;
+  }
+</style>

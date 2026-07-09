@@ -1,0 +1,124 @@
+---
+/**
+ * FactorWeatherCard — ファクター天気図用カード(docs/04-site-design.md トップページ3節)。
+ * 直近リターンの方向(上昇=緑/下落=赤、国際標準)と大きさを表示する。
+ *
+ * 色だけに意味を持たせない(dataviz スキル: 状態色は色単独で運用しない)ため、
+ * 矢印記号+符号付き数値を必ず併記する。
+ *
+ * @prop factorLabel - ファクター名(例: "バリュー")
+ * @prop factorSlug - /factors/{slug}/ へのリンク用
+ * @prop returnPct - 直近リターン(%)。null は「データ蓄積中」を明示
+ * @prop period - 期間ラベル(例: "直近1ヶ月")
+ * @prop screenCount - 本日の該当銘柄数(任意)
+ * @prop isReference - margin-trading(需給参考)の場合 true。エビデンスなし表記を出す
+ */
+interface Props {
+  factorLabel: string;
+  factorSlug: string;
+  returnPct: number | null;
+  period?: string;
+  screenCount?: number;
+  isReference?: boolean;
+}
+
+const {
+  factorLabel,
+  factorSlug,
+  returnPct,
+  period = "直近1ヶ月",
+  screenCount,
+  isReference = false,
+} = Astro.props;
+
+const hasValue = returnPct !== null && returnPct !== undefined && !Number.isNaN(returnPct);
+const direction = !hasValue ? "flat" : returnPct! > 0 ? "up" : returnPct! < 0 ? "down" : "flat";
+const arrow = direction === "up" ? "▲" : direction === "down" ? "▼" : "―";
+const formatted = hasValue ? `${returnPct! > 0 ? "+" : ""}${returnPct!.toFixed(1)}%` : "データ蓄積中";
+---
+
+<a class:list={["weather-card", `weather-card--${direction}`]} href={`/factors/${factorSlug}/`}>
+  <div class="weather-card__top">
+    <span class="weather-card__label">{factorLabel}</span>
+    {isReference && <span class="weather-card__ref-badge">需給参考</span>}
+  </div>
+  <p class:list={["weather-card__value", "num", `weather-card__value--${direction}`]}>
+    <span class="weather-card__arrow" aria-hidden="true">{arrow}</span>
+    {formatted}
+  </p>
+  <p class="weather-card__period">{period}</p>
+  {screenCount !== undefined && (
+    <p class="weather-card__screen num">該当 {screenCount}銘柄</p>
+  )}
+</a>
+
+<style>
+  .weather-card {
+    display: block;
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface-card);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .weather-card:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-1px);
+  }
+
+  .weather-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .weather-card__label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .weather-card__ref-badge {
+    font-size: var(--font-size-xs);
+    color: var(--color-reference-accent);
+    border: 1px solid var(--color-reference-accent);
+    border-radius: 999px;
+    padding: 1px 6px;
+  }
+
+  .weather-card__value {
+    margin: var(--space-2) 0 0;
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .weather-card__value--up {
+    color: var(--color-up);
+  }
+
+  .weather-card__value--down {
+    color: var(--color-down);
+  }
+
+  .weather-card__value--flat {
+    color: var(--text-muted);
+  }
+
+  .weather-card__arrow {
+    font-size: var(--font-size-sm);
+  }
+
+  .weather-card__period,
+  .weather-card__screen {
+    margin: var(--space-1) 0 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+</style>

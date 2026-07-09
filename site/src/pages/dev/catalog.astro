@@ -1,0 +1,160 @@
+---
+/**
+ * /dev/catalog — コンポーネントカタログ(T-07 検証用)。
+ * 本番ナビには載せない(Layout の navItems に追加しないこと)。ダミーデータのみを使用する。
+ */
+import Layout from "../../layouts/Layout.astro";
+import MetricCard from "../../components/MetricCard.astro";
+import PercentileBar from "../../components/PercentileBar.astro";
+import FactorWeatherCard from "../../components/FactorWeatherCard.astro";
+---
+
+<Layout
+  title="コンポーネントカタログ (dev)"
+  description="T-07 デザインシステム検証用ページ。本番には公開しない。"
+  lastUpdated="2026-07-10T07:30:00+09:00"
+>
+  <div class="container catalog">
+    <p class="catalog__notice">
+      このページは開発用コンポーネントカタログです。すべてダミーデータで、本番ナビゲーションには含まれません。
+    </p>
+
+    <section class="catalog__section">
+      <h2>MetricCard(標準)</h2>
+      <div class="catalog__grid">
+        <MetricCard
+          label="PBR"
+          value="0.98倍"
+          valueNote="実績PBR(priceToBook)"
+          percentile={0.18}
+          percentileLabels={{ low: "割安", high: "割高" }}
+          evidenceSummary="低PBR上位20%ポートフォリオは1990年以降、年率+3〜5pt程度の超過リターン(市場・期間により変動)。"
+          evidenceSource={{ label: "Fama & French (1992)", url: "https://example.com/fama-french-1992" }}
+          evidenceConfirmed={true}
+          ticker="7203.T"
+          name="トヨタ自動車"
+        />
+        <MetricCard
+          label="配当利回り"
+          value="2.4%"
+          percentile={0.62}
+          percentileLabels={{ low: "低い", high: "高い" }}
+          evidenceSummary="高配当ポートフォリオの超過リターンは文献により結果が割れる。"
+          evidenceSource={{ label: "factor-evidence.md", url: "/learn/dividend/" }}
+          evidenceConfirmed={false}
+          ticker="9432.T"
+          name="日本電信電話"
+        />
+        <MetricCard
+          label="12-1ヶ月モメンタム"
+          value="欠損"
+          percentile={null}
+          evidenceSummary="直近12ヶ月(直近1ヶ月除く)の騰落率が上位の銘柄群は下位群に対し統計的に有意な超過リターンを示す傾向。"
+          evidenceSource={{ label: "Jegadeesh & Titman (1993)", url: "https://example.com/jt1993" }}
+          ticker="XXXX.T"
+          name="上場直後銘柄(データ欠損例)"
+        />
+      </div>
+    </section>
+
+    <section class="catalog__section">
+      <h2>MetricCard(需給参考=信用倍率)</h2>
+      <div class="catalog__grid">
+        <MetricCard
+          label="信用倍率(制度信用)"
+          value="6.92倍"
+          valueNote="制度信用の買残÷売残。JPX週次公表データ、当週金曜申込分"
+          percentile={0.81}
+          percentileLabels={{ low: "低い", high: "高い" }}
+          variant="reference"
+          ticker="7203.T"
+          name="トヨタ自動車"
+        />
+      </div>
+    </section>
+
+    <section class="catalog__section">
+      <h2>PercentileBar 単体</h2>
+      <div class="catalog__stack">
+        <PercentileBar percentile={0.05} label="市場体温計: 日本PER(5年)" lowLabel="割安" highLabel="割高" size="md" />
+        <PercentileBar percentile={0.5} label="市場体温計: 米国PER(5年)" lowLabel="割安" highLabel="割高" size="md" />
+        <PercentileBar percentile={0.95} label="市場体温計: 参考(高位)" lowLabel="割安" highLabel="割高" size="md" />
+        <PercentileBar percentile={null} label="市場体温計: データ蓄積中(5年分未蓄積)" lowLabel="割安" highLabel="割高" size="md" />
+      </div>
+    </section>
+
+    <section class="catalog__section">
+      <h2>FactorWeatherCard(ファクター天気図)</h2>
+      <div class="catalog__weather-grid">
+        <FactorWeatherCard factorLabel="バリュー" factorSlug="value" returnPct={2.3} period="直近1ヶ月" screenCount={41} />
+        <FactorWeatherCard factorLabel="モメンタム" factorSlug="momentum" returnPct={-1.8} period="直近1ヶ月" screenCount={37} />
+        <FactorWeatherCard factorLabel="配当" factorSlug="dividend" returnPct={0.4} period="直近1ヶ月" screenCount={52} />
+        <FactorWeatherCard factorLabel="クオリティ" factorSlug="quality" returnPct={0} period="直近1ヶ月" screenCount={29} />
+        <FactorWeatherCard factorLabel="サイズ" factorSlug="size" returnPct={null} period="直近1ヶ月" />
+        <FactorWeatherCard
+          factorLabel="信用倍率"
+          factorSlug="margin-trading"
+          returnPct={-0.6}
+          period="直近1ヶ月"
+          screenCount={18}
+          isReference={true}
+        />
+      </div>
+    </section>
+
+    <section class="catalog__section">
+      <h2>SiteFooter</h2>
+      <p class="catalog__note">
+        ページ最下部に表示されているものが SiteFooter コンポーネントです(このページも Layout 経由で使用中)。
+      </p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .catalog {
+    padding-block: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .catalog__notice {
+    background: var(--color-reference-soft);
+    border: 1px solid var(--color-reference-accent);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .catalog__section h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-3);
+  }
+
+  .catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .catalog__weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--space-3);
+  }
+
+  .catalog__stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 480px;
+  }
+
+  .catalog__note {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+  }
+</style>
