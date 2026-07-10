@@ -21,6 +21,7 @@ import {
   thermometerAccumulatedDays,
   type FactorSlug,
 } from "../lib/data";
+import { FACTOR_CONTENT } from "../lib/factorContent";
 
 // --- データ読み込み(欠損時は data.ts が null/フォールバックを返すので、ここでは null チェックのみ行う) ---
 const jpDaily = loadDailySnapshot("jp");
@@ -53,6 +54,51 @@ const FACTOR_SHORT_LABEL: Record<FactorSlug, string> = {
   size: "サイズ",
   "margin-trading": "信用倍率",
 };
+
+// --- 天気図カードのエビデンス要約(docs/04-site-design.md 1節「3点セットの適用粒度」) ---
+// 一覧・導線カードは簡約形だが「寄与度エビデンス要約1行+出典リンク」を必ず含める仕様。
+// 原稿は T-09 の factorContent.ts(docs/02-research/factor-evidence.md からの転記、出典・未確認注記保持)
+// の evidence[0] を使う。data/factors/*.json の evidence[0].claim は「SSOT参照」のプレースホルダで
+// あり画面掲出に適さないため(data/ は変更禁止)、同じSSOT由来の factorContent 側を採用する。
+// 長文は50字程度に丸め、全文は個別ページ(カードのリンク先)で読める。
+const EVIDENCE_SUMMARY_MAX = 50;
+
+const truncateSummary = (text: string, max = EVIDENCE_SUMMARY_MAX) =>
+  text.length > max ? `${text.slice(0, max)}…` : text;
+
+function buildCardEvidence(slug: FactorSlug): {
+  summary: string;
+  source: { label: string; url: string };
+} {
+  // margin-trading は「需給参考」バッジに加え、寄与の実証がない旨を要約行として明示する
+  if (slug === "margin-trading") {
+    const marginEv = FACTOR_CONTENT[slug]?.evidence?.[0];
+    return {
+      summary: "寄与の実証なし(需給の参考情報)。",
+      source: {
+        label: marginEv ? truncateSummary(marginEv.sourceLabel, 30) : "個別ページ",
+        url: `/factors/${slug}/`,
+      },
+    };
+  }
+  const ev = FACTOR_CONTENT[slug]?.evidence?.[0];
+  if (!ev) {
+    return {
+      summary: "エビデンス情報なし。",
+      source: { label: "詳細", url: `/factors/${slug}/` },
+    };
+  }
+  const summary =
+    truncateSummary(ev.claim) + (ev.confirmed === false ? "(未確認)" : "");
+  return {
+    summary,
+    // 出典リンク: 原典URLがあれば外部リンク、無ければ全文を掲載する個別ページへ誘導
+    source: {
+      label: truncateSummary(ev.sourceLabel, 30),
+      url: ev.sourceUrl ?? `/factors/${slug}/`,
+    },
+  };
+}
 
 // 本日の注目シグナル: 各ファクターのscreen_countの前日差を計算し、絶対値の大きい順に並べる
 interface SignalRow {
@@ -229,6 +275,7 @@ const hasFactorReturnNote = Object.values(factors).some((f) => f?.factor_return_
         {FACTOR_SLUGS.map((slug) => {
           const factor = factors[slug];
           const latest = factor ? latestFactorHistory(factor) : null;
+          const evidence = buildCardEvidence(slug);
           return (
             <FactorWeatherCard
               factorLabel={FACTOR_SHORT_LABEL[slug]}
@@ -237,6 +284,8 @@ const hasFactorReturnNote = Object.values(factors).some((f) => f?.factor_return_
               period="直近1ヶ月"
               screenCount={latest?.screen_count}
               isReference={slug === "margin-trading"}
+              evidenceSummary={evidence.summary}
+              evidenceSource={evidence.source}
             />
           );
         })}

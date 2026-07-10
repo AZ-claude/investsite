@@ -3,8 +3,17 @@
  * FactorWeatherCard — ファクター天気図用カード(docs/04-site-design.md トップページ3節)。
  * 直近リターンの方向(上昇=緑/下落=赤、国際標準)と大きさを表示する。
  *
+ * docs/04-site-design.md 1節「3点セットの適用粒度」(T-12レビュー反映)により、
+ * 一覧・導線カードである本カードは簡約形とするが、
+ * 「寄与度エビデンス要約1行+出典リンク」を必ず含める(現在値のみのカードは禁止)。
+ * 歴史的位置(パーセンタイル)は遷移先の個別ページが担う。
+ *
  * 色だけに意味を持たせない(dataviz スキル: 状態色は色単独で運用しない)ため、
  * 矢印記号+符号付き数値を必ず併記する。
+ *
+ * マークアップ注意: カード全体リンク+内側の出典リンクの両立のため、<a>のネストを避けて
+ * article + stretched-link(擬似要素でカード全面を覆うメインリンク)方式を採用している。
+ * 出典リンクは z-index でメインリンクより手前に置く。
  *
  * @prop factorLabel - ファクター名(例: "バリュー")
  * @prop factorSlug - /factors/{slug}/ へのリンク用
@@ -12,6 +21,9 @@
  * @prop period - 期間ラベル(例: "直近1ヶ月")
  * @prop screenCount - 本日の該当銘柄数(任意)
  * @prop isReference - margin-trading(需給参考)の場合 true。エビデンスなし表記を出す
+ * @prop evidenceSummary - 寄与度エビデンスの要約1行(呼び出し側で50字程度に丸めて渡す)
+ * @prop evidenceSource - {label, url} 出典リンク。urlが外部(http/https)の場合は別タブ、
+ *   サイト内パス(/factors/…等)の場合は通常遷移
  */
 interface Props {
   factorLabel: string;
@@ -20,6 +32,8 @@ interface Props {
   period?: string;
   screenCount?: number;
   isReference?: boolean;
+  evidenceSummary?: string;
+  evidenceSource?: { label: string; url: string };
 }
 
 const {
@@ -29,17 +43,23 @@ const {
   period = "直近1ヶ月",
   screenCount,
   isReference = false,
+  evidenceSummary,
+  evidenceSource,
 } = Astro.props;
 
 const hasValue = returnPct !== null && returnPct !== undefined && !Number.isNaN(returnPct);
 const direction = !hasValue ? "flat" : returnPct! > 0 ? "up" : returnPct! < 0 ? "down" : "flat";
 const arrow = direction === "up" ? "▲" : direction === "down" ? "▼" : "―";
 const formatted = hasValue ? `${returnPct! > 0 ? "+" : ""}${returnPct!.toFixed(1)}%` : "データ蓄積中";
+
+const isExternalSource = evidenceSource ? /^https?:\/\//.test(evidenceSource.url) : false;
 ---
 
-<a class:list={["weather-card", `weather-card--${direction}`]} href={`/factors/${factorSlug}/`}>
+<article class:list={["weather-card", `weather-card--${direction}`]}>
   <div class="weather-card__top">
-    <span class="weather-card__label">{factorLabel}</span>
+    <a class="weather-card__main-link" href={`/factors/${factorSlug}/`}>
+      <span class="weather-card__label">{factorLabel}</span>
+    </a>
     {isReference && <span class="weather-card__ref-badge">需給参考</span>}
   </div>
   <p class:list={["weather-card__value", "num", `weather-card__value--${direction}`]}>
@@ -50,16 +70,37 @@ const formatted = hasValue ? `${returnPct! > 0 ? "+" : ""}${returnPct!.toFixed(1
   {screenCount !== undefined && (
     <p class="weather-card__screen num">該当 {screenCount}銘柄</p>
   )}
-</a>
+  {evidenceSummary && (
+    <p class="weather-card__evidence">
+      {evidenceSummary}
+      {evidenceSource && (
+        isExternalSource ? (
+          <a
+            class="weather-card__source"
+            href={evidenceSource.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            出典: {evidenceSource.label}
+          </a>
+        ) : (
+          <a class="weather-card__source" href={evidenceSource.url}>
+            出典: {evidenceSource.label}
+          </a>
+        )
+      )}
+    </p>
+  )}
+</article>
 
 <style>
   .weather-card {
+    position: relative;
     display: block;
     padding: var(--space-3) var(--space-4);
     background: var(--surface-card);
     border: 1px solid var(--border-hairline);
     border-radius: var(--radius-md);
-    text-decoration: none;
     color: inherit;
     transition: box-shadow 0.15s ease, transform 0.15s ease;
   }
@@ -67,6 +108,19 @@ const formatted = hasValue ? `${returnPct! > 0 ? "+" : ""}${returnPct!.toFixed(1
   .weather-card:hover {
     box-shadow: var(--shadow-card);
     transform: translateY(-1px);
+  }
+
+  /* stretched-link: カード全面をメインリンクのクリック領域にする */
+  .weather-card__main-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .weather-card__main-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 
   .weather-card__top {
@@ -120,5 +174,27 @@ const formatted = hasValue ? `${returnPct! > 0 ? "+" : ""}${returnPct!.toFixed(1
     margin: var(--space-1) 0 0;
     font-size: var(--font-size-xs);
     color: var(--text-muted);
+  }
+
+  .weather-card__evidence {
+    margin: var(--space-2) 0 0;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-gridline);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .weather-card__source {
+    position: relative;
+    z-index: 2; /* stretched-link より手前に置き、出典リンクを独立してクリック可能にする */
+    display: inline-block;
+    margin-left: var(--space-1);
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .weather-card__source:hover {
+    text-decoration: underline;
   }
 </style>
