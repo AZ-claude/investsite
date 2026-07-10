@@ -132,7 +132,12 @@ def build_factor_snapshot(existing: Optional[dict], factor: str, date: str,
         "jp": build_today_screen(jp_stocks, field, direction) if "jp" in markets else [],
         "us": build_today_screen(us_stocks, field, direction) if "us" in markets else [],
     }
-    screen_count = len(today_screen.get("jp", [])) + len(today_screen.get("us", []))
+    # screen_count = スクリーニング該当数(分位該当=top_quintileの銘柄数、jp+us合計)。
+    # docs/04-site-design.md「注目シグナル(該当件数の前日差)」の定義に対応する
+    # (データが揃った銘柄の総数ではない点に注意。T-05fixで修正)。
+    screen_count = sum(
+        1 for m in ("jp", "us") for r in today_screen.get(m, []) if r["quantile"] == "top_quintile"
+    )
     entry = build_factor_history_entry(date, screen_count)
 
     history = list((existing or {}).get("history") or [])

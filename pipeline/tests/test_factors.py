@@ -66,7 +66,19 @@ class TestBuildFactorSnapshot:
         assert result["evidence"] == fx.FACTOR_DEFS["value"]["default_evidence"]
         assert len(result["history"]) == 1
         assert result["history"][0]["date"] == "2026-07-10"
-        assert result["history"][0]["screen_count"] == 5
+        # screen_count は分位該当数(top_quintile)であり全ランキング件数ではない
+        # (5銘柄 → ceil(5×0.2)=1件が top_quintile)
+        assert result["history"][0]["screen_count"] == 1
+
+    def test_screen_count_is_quantile_hits_jp_plus_us(self):
+        """screen_count = today_screen の top_quintile 該当数(jp+us合計)であることの明示テスト(T-05fix)。"""
+        jp = [stock(f"J{i}", pbr=float(i)) for i in range(1, 11)]   # 10銘柄 → top 2
+        us = [stock(f"U{i}", pbr=float(i)) for i in range(1, 21)]   # 20銘柄 → top 4
+        result = fx.build_factor_snapshot(None, "value", "2026-07-10", jp, us)
+        top_jp = sum(1 for r in result["today_screen"]["jp"] if r["quantile"] == "top_quintile")
+        top_us = sum(1 for r in result["today_screen"]["us"] if r["quantile"] == "top_quintile")
+        assert (top_jp, top_us) == (2, 4)
+        assert result["history"][0]["screen_count"] == 6  # 2 + 4(全30件ではない)
 
     def test_rerun_same_date_is_idempotent(self):
         jp = [stock(f"T{i}", pbr=float(i)) for i in range(1, 6)]

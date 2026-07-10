@@ -83,7 +83,7 @@
 | `markets` | array | `["jp","us"]` |
 | `definition` | string | 指標定義の短文(サイト解説文の元ネタ) |
 | `evidence` | array | `{claim, source, confirmed}`。factor-evidence.mdをSSOTとし出典・未確認注記を保持 |
-| `history` | array | 日次追記される時系列。各要素: `{date, factor_return_1m, factor_return_3m, factor_return_1y, screen_count}`。`factor_return_*`は分位ポートフォリオの超過リターン(T-04算出)。**ファクター天気図・過去推移チャート・注目シグナルの日次差分は全てこの配列から算出できる** |
+| `history` | array | 日次追記される時系列。各要素: `{date, factor_return_1m, factor_return_3m, factor_return_1y, screen_count}`。`factor_return_*`は分位ポートフォリオの超過リターン(T-04算出)。`screen_count`は**`today_screen`のうち分位該当(`quantile="top_quintile"`)銘柄数のjp+us合計**(データが揃った銘柄の総数ではない。04-site-design.mdの「注目シグナル=スクリーニング該当件数の前日差」の定義に対応。T-05fixで明確化)。**ファクター天気図・過去推移チャート・注目シグナルの日次差分は全てこの配列から算出できる** |
 | `today_screen` | object | `{jp: [...], us: [...]}`。各要素`{ticker, rank, quantile, metric_value}`。個別ページの「本日の該当銘柄リスト」と`/screener/`の元データ |
 
 ### 3.2 `margin-trading.json`(参考枠、日本のみ、週次)
