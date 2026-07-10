@@ -1,10 +1,10 @@
 {
-  "date": "2026-07-10",
+  "date": "2026-07-11",
   "jp": {
     "index": "NIKKEI225",
-    "index_level": 69031.859375,
-    "index_level_as_of": "2026-07-10",
-    "index_change_pct_1d": 1.901,
+    "index_level": 67743.8515625,
+    "index_level_as_of": "2026-07-09",
+    "index_change_pct_1d": 1.384,
     "index_per": 18.11,
     "index_pbr": 1.91,
     "index_per_percentile_5y": 0.8621,
@@ -21,9 +21,9 @@
   },
   "us": {
     "index": "SP500",
-    "index_level": 7543.64013671875,
-    "index_level_as_of": "2026-07-09",
-    "index_change_pct_1d": 0.814,
+    "index_level": 7553.85009765625,
+    "index_level_as_of": "2026-07-10",
+    "index_change_pct_1d": 0.135,
     "index_per": 32.45,
     "index_pbr": 5.98,
     "index_per_percentile_5y": 0.9917,
@@ -65,9 +65,43 @@
         "index_per_as_of": "2026-07-09",
         "index_pbr_as_of": "2026-07-09"
       }
+    },
+    {
+      "date": "2026-07-11",
+      "jp": {
+        "index": "NIKKEI225",
+        "index_level": 67743.8515625,
+        "index_level_as_of": "2026-07-09",
+        "index_change_pct_1d": 1.384,
+        "index_per": 18.11,
+        "index_pbr": 1.91,
+        "index_per_percentile_5y": 0.8621,
+        "index_pbr_percentile_5y": 0.9845,
+        "margin_market_total": {
+          "outstanding_sales_thousand_shares": 394905,
+          "outstanding_purchases_thousand_shares": 3871201,
+          "margin_ratio_national_total": 9.8029,
+          "source": "https://www.jpx.co.jp/markets/statistics-equities/margin/04.html",
+          "as_of_week": "2026-07-03"
+        },
+        "index_per_as_of": "2026-07-09",
+        "index_pbr_as_of": "2026-07-09"
+      },
+      "us": {
+        "index": "SP500",
+        "index_level": 7553.85009765625,
+        "index_level_as_of": "2026-07-10",
+        "index_change_pct_1d": 0.135,
+        "index_per": 32.45,
+        "index_pbr": 5.98,
+        "index_per_percentile_5y": 0.9917,
+        "index_pbr_percentile_5y": 0.9737,
+        "index_per_as_of": "2026-07-09",
+        "index_pbr_as_of": "2026-07-09"
+      }
     }
   ],
-  "source_note": "index_level/index_change_pct_1d は yfinance(^N225, ^GSPC)の実測値。margin_market_totalはJPX公式Excel(週次)の実測値。index_per/index_pbr と 5年パーセンタイルは valuation_history 由来: 日本=日経平均プロフィル公式アーカイブ(加重平均ベース・日次)、米国=multpl.com(PER=月次trailing as-reported、PBR=四半期)。日米で定義・頻度が異なるため水準の直接比較は不可(各市場の自己時系列内の位置のみ有効)。",
+  "source_note": "index_level/index_change_pct_1d は yfinance(^N225, ^GSPC)の実測値。margin_market_totalはJPX公式Excel(週次)の実測値。index_per/index_pbr と 5年パーセンタイルは valuation_history(日経公式アーカイブ・multpl.com、T-17バックフィル)由来。valuation_historyが無い場合はnull(架空値を埋めない)。",
   "valuation_history": {
     "jp": {
       "per": [
