@@ -115,6 +115,10 @@ def run(
             return finish(2)
         snap = dict(snap)
         snap["date"] = date  # --date指定 / mock注入時も日付を統一する
+        # percentile_in_universe は常に現行ロジックで再計算する(mock=コミット済みdaily実データを
+        # 入力にした再実行でも、パーセンタイル定義の修正(T-04fix: pbr<=0除外等)が反映されるように。
+        # 新規取得データに対しては同じ値の再計算となり無害=冪等)
+        snapshot.attach_percentiles(snap.get("stocks", []))
         snapshots[m] = snap
         log(f"[{m}] 取得完了 銘柄数={len(snap.get('stocks', []))}")
 

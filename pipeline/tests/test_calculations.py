@@ -168,6 +168,45 @@ class TestComputeAllPercentiles:
         assert result["B"]["roe"] is None
 
 
+class TestMetricValueForRanking:
+    """T-04fix: pbr<=0・per_trailing<=0 は定義不能としてランキング/パーセンタイルから除外する。"""
+
+    def test_negative_pbr_is_invalid(self):
+        assert calc.metric_value_for_ranking("pbr", -621.3) is None
+
+    def test_zero_pbr_is_invalid(self):
+        assert calc.metric_value_for_ranking("pbr", 0.0) is None
+
+    def test_positive_pbr_is_valid(self):
+        assert calc.metric_value_for_ranking("pbr", 1.5) == 1.5
+
+    def test_negative_per_is_invalid(self):
+        assert calc.metric_value_for_ranking("per_trailing", -5.0) is None
+
+    def test_negative_momentum_is_valid(self):
+        """momentum/roe等の負値は正当な値としてそのまま通す。"""
+        assert calc.metric_value_for_ranking("momentum_12_1", -0.3) == -0.3
+        assert calc.metric_value_for_ranking("roe", -0.1) == -0.1
+
+    def test_none_stays_none(self):
+        assert calc.metric_value_for_ranking("pbr", None) is None
+
+
+class TestComputeAllPercentilesExcludesInvalid:
+    def test_negative_pbr_gets_null_percentile_and_excluded_from_calc(self):
+        """T-04fix回帰: 負PBR銘柄はパーセンタイルがnullになり、他銘柄の百分位計算からも除外される。"""
+        stocks = [
+            {"ticker": "NEG", "pbr": -100.0},
+            {"ticker": "A", "pbr": 1.0},
+            {"ticker": "B", "pbr": 2.0},
+        ]
+        result = calc.compute_all_percentiles(stocks, ["pbr"])
+        assert result["NEG"]["pbr"] is None
+        # NEGが除外された2銘柄内での百分位(0.0 / 1.0)になる
+        assert result["A"]["pbr"] == 0.0
+        assert result["B"]["pbr"] == 1.0
+
+
 class TestComputeMarginRatio:
     def test_normal(self):
         assert calc.compute_margin_ratio(13888200, 2006000) == 13888200 / 2006000

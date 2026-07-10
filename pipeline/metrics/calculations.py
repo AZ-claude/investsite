@@ -100,6 +100,28 @@ def compute_momentum_12_1(close_prices: Sequence[float]) -> float | None:
     return float(p_end / p_start - 1)
 
 
+# --- ランキング/パーセンタイルにおける値の有効性(T-04fix) ---
+
+# バリュー系指標は分母(簿価・利益)が非正だと定義不能になる。ファクター投資の定石に従い、
+# pbr<=0(自己資本マイナス=債務超過等)・per_trailing<=0 はランキング/分位/パーセンタイルの
+# 対象外(欠損扱い)とする。daily/*.json の生値としてのpbr自体はそのまま保持する(表示用の事実)。
+POSITIVE_ONLY_FIELDS = frozenset({"pbr", "per_trailing"})
+
+
+def metric_value_for_ranking(field: str, value):
+    """ランキング/分位/パーセンタイル算出に使う値を返す。定義不能な値は None(欠損扱い)を返す。
+
+    - None はそのまま None(欠損)
+    - POSITIVE_ONLY_FIELDS(pbr, per_trailing)は 0以下を定義不能として None 扱い
+    - その他のフィールドは値をそのまま返す(momentum/roe等の負値は正当な値)
+    """
+    if value is None:
+        return None
+    if field in POSITIVE_ONLY_FIELDS and value <= 0:
+        return None
+    return value
+
+
 # --- パーセンタイル ---
 
 
@@ -142,13 +164,14 @@ def compute_all_percentiles(stocks: Iterable[dict], fields: Sequence[str]) -> di
     stocks: 各要素が {"ticker": ..., field1: value1, ...} の辞書のシーケンス
     戻り値: {ticker: {field: percentile}}
     空のユニバース(stocksが空)の場合は空辞書を返す。
+    定義不能な値(pbr<=0等、metric_value_for_ranking参照)は欠損(None)扱いで算出から除外する。
     """
     stocks = list(stocks)
     result = {s["ticker"]: {} for s in stocks}
     if not stocks:
         return {}
     for field in fields:
-        values_by_key = {s["ticker"]: s.get(field) for s in stocks}
+        values_by_key = {s["ticker"]: metric_value_for_ranking(field, s.get(field)) for s in stocks}
         percentiles = percentile_rank(values_by_key)
         for ticker, pct in percentiles.items():
             result[ticker][field] = pct

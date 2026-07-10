@@ -57,6 +57,39 @@ class TestBuildTodayScreen:
         out = fx.build_today_screen([stock("A", pbr=1.0)], "pbr", "low")
         assert out[0]["quantile"] == "top_quintile"
 
+    def test_negative_pbr_excluded_from_value_ranking(self):
+        """T-04fix回帰: 自己資本マイナス(PBR負値)の銘柄はバリューランキングに一切入らないこと。
+
+        修正前は direction="low" のソートで負PBRが最上位=top_quintileに混入していた
+        (実データでMTD=-621.3, LYV=-302.3, DELL=-208.1等の32銘柄を確認)。
+        """
+        rows = [stock("MTD", pbr=-621.3), stock("DELL", pbr=-208.1)] + \
+               [stock(f"T{i}", pbr=float(i)) for i in range(1, 11)]
+        out = fx.build_today_screen(rows, "pbr", "low")
+        tickers = {r["ticker"] for r in out}
+        assert "MTD" not in tickers and "DELL" not in tickers  # ランキング自体から除外
+        top = [r for r in out if r["quantile"] == "top_quintile"]
+        assert all(r["metric_value"] > 0 for r in top)
+        assert {r["ticker"] for r in top} == {"T1", "T2"}  # 正値のみで五分位が決まる
+
+    def test_zero_pbr_excluded_from_value_ranking(self):
+        """境界値: PBR=ちょうど0も定義不能として除外する。"""
+        rows = [stock("Z", pbr=0.0), stock("A", pbr=1.0)]
+        out = fx.build_today_screen(rows, "pbr", "low")
+        assert {r["ticker"] for r in out} == {"A"}
+
+    def test_negative_per_excluded_from_ranking(self):
+        """per_trailing<=0(赤字)もバリュー観点で定義不能として除外する。"""
+        rows = [stock("NEG", per_trailing=-5.0), stock("A", per_trailing=10.0)]
+        out = fx.build_today_screen(rows, "per_trailing", "low")
+        assert {r["ticker"] for r in out} == {"A"}
+
+    def test_negative_momentum_still_included(self):
+        """momentum等の負値は正当な値なので除外されない(除外はpbr/per_trailingのみ)。"""
+        rows = [stock("DOWN", momentum_12_1=-0.3), stock("UP", momentum_12_1=0.5)]
+        out = fx.build_today_screen(rows, "momentum_12_1", "high")
+        assert {r["ticker"] for r in out} == {"DOWN", "UP"}
+
 
 class TestBuildFactorSnapshot:
     def test_first_run_creates_default_evidence(self):

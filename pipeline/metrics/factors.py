@@ -14,6 +14,8 @@ from __future__ import annotations
 import math
 from typing import Optional, Sequence
 
+from pipeline.metrics.calculations import metric_value_for_ranking
+
 FACTOR_DEFS: dict[str, dict] = {
     "value": {
         "label": "バリュー(PBR/PER)",
@@ -92,20 +94,25 @@ def build_today_screen(rows: Sequence[dict], field: str, direction: str,
 
     direction: "low"(値が低いほど上位、例: PBR) | "high"(値が高いほど上位、例: モメンタム)
     値がNoneの銘柄はランキング対象から除外する(欠損はスクリーニング対象外)。
+    定義不能な値(pbr<=0・per_trailing<=0: 簿価・利益が非正でB/M等が定義できない銘柄)も
+    欠損と同様にランキング対象外とする(T-04fix。calculations.metric_value_for_ranking参照)。
     空リストの場合は空リストを返す(境界値: 銘柄0件)。
     """
-    ranked = [r for r in rows if r.get(field) is not None]
+    ranked = [
+        (r, v) for r in rows
+        if (v := metric_value_for_ranking(field, r.get(field))) is not None
+    ]
     reverse = direction == "high"
-    ranked.sort(key=lambda r: r[field], reverse=reverse)
+    ranked.sort(key=lambda rv: rv[1], reverse=reverse)
     n = len(ranked)
     top_n = max(1, math.ceil(n * quantile_frac)) if n else 0
     out = []
-    for i, r in enumerate(ranked):
+    for i, (r, v) in enumerate(ranked):
         out.append({
             "ticker": r["ticker"],
             "rank": i + 1,
             "quantile": "top_quintile" if i < top_n else "other",
-            "metric_value": r[field],
+            "metric_value": v,
         })
     return out
 
