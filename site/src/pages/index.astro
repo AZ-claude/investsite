@@ -1,18 +1,423 @@
 ---
+/**
+ * / — トップページ(本日のダッシュボード)。T-08。
+ * docs/04-site-design.md 2節「トップページ(本日のダッシュボード)の構成」の1〜5を実装する。
+ *
+ * データは site/src/lib/data.ts 経由で data/daily/ , data/factors/ から読む。
+ * 当日分のdailyデータが無い場合は data.ts 側で自動的に最新日付へフォールバックし、
+ * ビルドが落ちないようにしている(完了条件)。
+ */
+import Layout from "../layouts/Layout.astro";
+import PercentileBar from "../components/PercentileBar.astro";
+import FactorWeatherCard from "../components/FactorWeatherCard.astro";
+import {
+  FACTOR_SLUGS,
+  loadAllFactors,
+  loadDailySnapshot,
+  loadMarketThermometer,
+  latestFactorHistory,
+  previousFactorHistory,
+  accumulatedDays,
+  thermometerAccumulatedDays,
+  type FactorSlug,
+} from "../lib/data";
 
+// --- データ読み込み(欠損時は data.ts が null/フォールバックを返すので、ここでは null チェックのみ行う) ---
+const jpDaily = loadDailySnapshot("jp");
+const usDaily = loadDailySnapshot("us");
+const thermometer = loadMarketThermometer();
+const factors = loadAllFactors();
+
+// ページ表示用の基準日: 日本のdaily→米国daily→体温計、の順で最初に見つかったものを使う
+const displayDate =
+  jpDaily?.resolvedDate ?? usDaily?.resolvedDate ?? thermometer?.date ?? "不明";
+
+// フッターの最終更新時刻: dailyのgenerated_atを優先(実際にデータが生成された時刻)
+const lastUpdated = jpDaily?.data.generated_at ?? usDaily?.data.generated_at;
+
+// --- 表示用フォーマットヘルパー(このページ専用。日本語文言の整形はlib側に置かない方針) ---
+const formatSignedPct = (v: number | null | undefined, digits = 2) =>
+  v === null || v === undefined || Number.isNaN(v)
+    ? null
+    : `${v > 0 ? "+" : ""}${v.toFixed(digits)}%`;
+
+const formatIndexLevel = (v: number) =>
+  v.toLocaleString("ja-JP", { maximumFractionDigits: 2 });
+
+// ファクター天気図・注目シグナル用の短いラベル(FactorWeatherCardの表示幅に合わせる)
+const FACTOR_SHORT_LABEL: Record<FactorSlug, string> = {
+  value: "バリュー",
+  momentum: "モメンタム",
+  dividend: "配当利回り",
+  quality: "クオリティ",
+  size: "サイズ",
+  "margin-trading": "信用倍率",
+};
+
+// 本日の注目シグナル: 各ファクターのscreen_countの前日差を計算し、絶対値の大きい順に並べる
+interface SignalRow {
+  slug: FactorSlug;
+  label: string;
+  current: number | null;
+  diff: number | null;
+}
+
+const signalRows: SignalRow[] = FACTOR_SLUGS.map((slug) => {
+  const factor = factors[slug];
+  if (!factor) return { slug, label: FACTOR_SHORT_LABEL[slug], current: null, diff: null };
+  const latest = latestFactorHistory(factor);
+  const previous = previousFactorHistory(factor);
+  const current = latest?.screen_count ?? null;
+  const diff =
+    current !== null && previous?.screen_count !== undefined
+      ? current - previous.screen_count
+      : null;
+  return { slug, label: FACTOR_SHORT_LABEL[slug], current, diff };
+});
+
+const hasAnyDiff = signalRows.some((row) => row.diff !== null);
+const rankedSignals = [...signalRows]
+  .filter((row) => row.diff !== null)
+  .sort((a, b) => Math.abs(b.diff!) - Math.abs(a.diff!));
+
+// 蓄積日数(市場体温計のhistory件数を代表値として使う。無ければ0扱い)
+const accumulationDays = thermometer ? thermometerAccumulatedDays(thermometer) : 0;
 ---
 
-<html lang="ja">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>investsite（準備中）</title>
-	</head>
-	<body>
-		<h1>investsite</h1>
-		<p>指標の寄与度で「基準を持った売買」へ。準備中です。</p>
-	</body>
-</html>
+<Layout
+  title="本日のダッシュボード"
+  lastUpdated={lastUpdated}
+  dataSources={["yfinance", "JPX(信用取引残高)"]}
+>
+  <div class="container dashboard">
+    <!-- 1. ヘッダー -->
+    <section class="dashboard__header">
+      <h1>本日のダッシュボード</h1>
+      <p class="dashboard__date num">{displayDate} 時点</p>
+
+      <div class="dashboard__headline-grid">
+        {thermometer ? (
+          <>
+            <p class="dashboard__headline">
+              <span class="dashboard__headline-market">日本市場</span>
+              <span class="num">
+                {thermometer.jp.index}{" "}
+                {formatIndexLevel(thermometer.jp.index_level)}
+                {" "}
+                (前日比{" "}
+                <span
+                  class:list={[
+                    thermometer.jp.index_change_pct_1d > 0
+                      ? "dashboard__pct--up"
+                      : thermometer.jp.index_change_pct_1d < 0
+                        ? "dashboard__pct--down"
+                        : "",
+                  ]}
+                >
+                  {formatSignedPct(thermometer.jp.index_change_pct_1d)}
+                </span>
+                、{thermometer.jp.index_level_as_of}時点)
+              </span>
+            </p>
+            <p class="dashboard__headline">
+              <span class="dashboard__headline-market">米国市場</span>
+              <span class="num">
+                {thermometer.us.index}{" "}
+                {formatIndexLevel(thermometer.us.index_level)}
+                {" "}
+                (前日比{" "}
+                <span
+                  class:list={[
+                    thermometer.us.index_change_pct_1d > 0
+                      ? "dashboard__pct--up"
+                      : thermometer.us.index_change_pct_1d < 0
+                        ? "dashboard__pct--down"
+                        : "",
+                  ]}
+                >
+                  {formatSignedPct(thermometer.us.index_change_pct_1d)}
+                </span>
+                、{thermometer.us.index_level_as_of}時点)
+              </span>
+            </p>
+          </>
+        ) : (
+          <p class="dashboard__headline dashboard__headline--empty">
+            市場体温計データを取得できませんでした。
+          </p>
+        )}
+      </div>
+    </section>
+
+    <!-- 2. 市場体温計 -->
+    <section class="dashboard__section">
+      <h2>市場体温計</h2>
+      <p class="dashboard__section-note">
+        日米それぞれの市場全体バリュエーション(PER/PBR)の、過去5年に対する歴史的位置。
+      </p>
+      {thermometer ? (
+        <div class="dashboard__thermometer-grid">
+          <div class="dashboard__thermometer-col">
+            <h3>日本(NIKKEI225)</h3>
+            <PercentileBar
+              percentile={thermometer.jp.index_per_percentile_5y}
+              label="指数PER 歴史的位置(5年)"
+              lowLabel="割安"
+              highLabel="割高"
+              size="md"
+            />
+            {thermometer.jp.index_per_percentile_5y === null && (
+              <p class="dashboard__accumulating">データ蓄積中({accumulationDays}日目)。5年分のデータが蓄積され次第、算出されます。</p>
+            )}
+            <PercentileBar
+              percentile={thermometer.jp.index_pbr_percentile_5y}
+              label="指数PBR 歴史的位置(5年)"
+              lowLabel="割安"
+              highLabel="割高"
+              size="md"
+            />
+            {thermometer.jp.index_pbr_percentile_5y === null && (
+              <p class="dashboard__accumulating">データ蓄積中({accumulationDays}日目)。5年分のデータが蓄積され次第、算出されます。</p>
+            )}
+            {thermometer.jp.margin_market_total && (
+              <p class="dashboard__margin-note num">
+                信用倍率(全国計): {thermometer.jp.margin_market_total.margin_ratio_national_total.toFixed(2)}倍
+                (申込日基準 {thermometer.jp.margin_market_total.as_of_week})
+              </p>
+            )}
+          </div>
+          <div class="dashboard__thermometer-col">
+            <h3>米国(S&P500)</h3>
+            <PercentileBar
+              percentile={thermometer.us.index_per_percentile_5y}
+              label="指数PER 歴史的位置(5年)"
+              lowLabel="割安"
+              highLabel="割高"
+              size="md"
+            />
+            {thermometer.us.index_per_percentile_5y === null && (
+              <p class="dashboard__accumulating">データ蓄積中({accumulationDays}日目)。5年分のデータが蓄積され次第、算出されます。</p>
+            )}
+            <PercentileBar
+              percentile={thermometer.us.index_pbr_percentile_5y}
+              label="指数PBR 歴史的位置(5年)"
+              lowLabel="割安"
+              highLabel="割高"
+              size="md"
+            />
+            {thermometer.us.index_pbr_percentile_5y === null && (
+              <p class="dashboard__accumulating">データ蓄積中({accumulationDays}日目)。5年分のデータが蓄積され次第、算出されます。</p>
+            )}
+          </div>
+        </div>
+      ) : (
+        <p class="dashboard__empty">市場体温計データがありません。</p>
+      )}
+    </section>
+
+    <!-- 3. ファクター天気図 -->
+    <section class="dashboard__section">
+      <h2>ファクター天気図</h2>
+      <p class="dashboard__section-note">
+        各ファクターの直近1ヶ月リターン(分位ポートフォリオの超過リターン)。カードから個別ページへ移動できます。
+      </p>
+      <div class="dashboard__weather-grid">
+        {FACTOR_SLUGS.map((slug) => {
+          const factor = factors[slug];
+          const latest = factor ? latestFactorHistory(factor) : null;
+          return (
+            <FactorWeatherCard
+              factorLabel={FACTOR_SHORT_LABEL[slug]}
+              factorSlug={slug}
+              returnPct={latest?.factor_return_1m ?? null}
+              period="直近1ヶ月"
+              screenCount={latest?.screen_count}
+              isReference={slug === "margin-trading"}
+            />
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- 4. 本日の注目シグナル -->
+    <section class="dashboard__section">
+      <h2>本日の注目シグナル</h2>
+      <p class="dashboard__section-note">
+        各ファクターのスクリーニング該当銘柄数の前日差(絶対値が大きい順)。
+      </p>
+      {hasAnyDiff ? (
+        <ul class="dashboard__signal-list">
+          {rankedSignals.map((row) => (
+            <li class="dashboard__signal-row">
+              <span class="dashboard__signal-label">{row.label}</span>
+              <span class="num dashboard__signal-count">該当 {row.current}銘柄</span>
+              <span
+                class:list={[
+                  "num",
+                  "dashboard__signal-diff",
+                  row.diff! > 0
+                    ? "dashboard__pct--up"
+                    : row.diff! < 0
+                      ? "dashboard__pct--down"
+                      : "",
+                ]}
+              >
+                前日比 {row.diff! > 0 ? "+" : ""}{row.diff}件
+              </span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="dashboard__accumulating">
+          前日比は明日から算出されます(現在{accumulationDays}日目のデータのみ蓄積)。
+        </p>
+      )}
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .dashboard {
+    padding-block: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .dashboard__header h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .dashboard__date {
+    margin: var(--space-1) 0 var(--space-4);
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+  }
+
+  .dashboard__headline-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .dashboard__headline {
+    margin: 0;
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+  }
+
+  .dashboard__headline--empty {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .dashboard__headline-market {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-right: var(--space-2);
+  }
+
+  .dashboard__pct--up {
+    color: var(--color-up);
+    font-weight: 600;
+  }
+
+  .dashboard__pct--down {
+    color: var(--color-down);
+    font-weight: 600;
+  }
+
+  .dashboard__section h2 {
+    margin: 0 0 var(--space-1);
+    font-size: var(--font-size-xl);
+  }
+
+  .dashboard__section-note {
+    margin: 0 0 var(--space-4);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+  }
+
+  .dashboard__thermometer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .dashboard__thermometer-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--surface-card);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-md);
+  }
+
+  .dashboard__thermometer-col h3 {
+    margin: 0;
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+  }
+
+  .dashboard__accumulating {
+    margin: calc(var(--space-2) * -1) 0 0;
+    font-size: var(--font-size-xs);
+    color: var(--color-reference-accent);
+  }
+
+  .dashboard__margin-note {
+    margin: var(--space-2) 0 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border-gridline);
+  }
+
+  .dashboard__weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--space-3);
+  }
+
+  .dashboard__empty {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .dashboard__signal-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .dashboard__signal-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--surface-card);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-md);
+    flex-wrap: wrap;
+  }
+
+  .dashboard__signal-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 8em;
+  }
+
+  .dashboard__signal-count {
+    color: var(--text-secondary);
+  }
+
+  .dashboard__signal-diff {
+    margin-left: auto;
+    font-weight: 600;
+  }
+</style>
