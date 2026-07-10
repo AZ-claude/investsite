@@ -1,0 +1,11 @@
+# T-13: dependencies shared by GitHub Actions and local runs.
+# Per CLAUDE.md notes: yfinance must be >=1.5.1
+# (0.2.51 fails with 429 on every request; fixed by the bundled curl_cffi backend)
+yfinance>=1.5.1
+curl_cffi>=0.7.0
+pandas>=2.2.0
+requests>=2.32.0
+pdfplumber>=0.11.0
+openpyxl>=3.1.0
+xlrd>=2.0.0
+pytest>=8.0.0

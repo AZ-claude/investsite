@@ -1,0 +1,164 @@
+name: 日次パイプライン & サイト公開
+
+# T-13: GitHub Actions 日次パイプライン
+#
+# スケジュール根拠(マネージャ決定): 統合1回/日、JST 07:30頃 = UTC 22:30。
+#   米国市場クローズ(JST朝5:00〜6:00頃)後に日米両方の最新終値が揃うタイミングで
+#   1回にまとめて取得する(日米2回に分けない)。
+#
+# ジョブ構成:
+#   1. data-update  … schedule / workflow_dispatch のみ実行。pipeline.daily でデータ取得・
+#      計算・品質ゲート判定を行い、成功時のみ data/ の変更を commit & push する。
+#   2. build-deploy … Astro サイトをビルドし GitHub Pages にデプロイする。
+#      data-update が「取得失敗(exit=2)」でジョブ失敗した場合は実行されず、
+#      Pages上の前回公開サイトがそのまま維持される(=安全側のフォールバック)。
+#      push(master, site/**) 起点の場合は data-update を経由せずビルドのみ行う
+#      (サイトソース変更の再デプロイ用)。
+
+on:
+  schedule:
+    # UTC 22:30 = JST 07:30 (米国クローズ後、日米両方の最新終値が揃うタイミング)
+    - cron: '30 22 * * *'
+  workflow_dispatch: {}
+  push:
+    branches: [master]
+    paths:
+      - 'site/**'
+      - '.github/workflows/daily.yml'
+
+# 同時実行防止: 日次データ更新とサイトデプロイが競合しないよう、ワークフロー単位で直列化する。
+# schedule/workflow_dispatch と push が同時に走った場合は後発を待たせる(キャンセルはしない=
+# データ更新中の取りこぼしを避けるため cancel-in-progress は false)。
+concurrency:
+  group: daily-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  PYTHON_VERSION: '3.12'
+  NODE_VERSION: '22.12.0'
+
+jobs:
+  data-update:
+    name: データ更新(取得→計算→品質ゲート→蓄積)
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      status: ${{ steps.run_pipeline.outputs.status }}
+    steps:
+      - name: リポジトリ取得
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Python セットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: 依存関係インストール
+        run: pip install -r pipeline/requirements.txt
+
+      - name: pipeline.daily 実行(品質ゲート込み)
+        id: run_pipeline
+        # CLAUDE.md「確認済みのハマりどころ」: yfinanceは起動直後に429連鎖することがある。
+        # pipeline/metrics/fetch_yfinance.py 内で「30〜60秒待機して失敗銘柄のみ1回だけ再試行」する
+        # リトライは既に実装済み(T-02実測の対策)。ここではその内部リトライでも取得失敗(exit=2)に
+        # なった場合の外側のセーフティネットとして、60秒待って pipeline.daily 自体をもう1回だけ
+        # 再実行する(合計2回まで)。
+        #
+        # 終了コードの扱い:
+        #   0 = 正常終了。data/ が更新されているので commit & push する
+        #   1 = 品質ゲート異常。前日データ維持で安全側に倒された状態(pipeline.daily内で書き込みゼロ)。
+        #       ジョブは失敗させず、ビルドのみ続行させる(既存data/でのビルド=前回相当のサイト)
+        #   2 = 取得失敗。ジョブを失敗させ、build-deployをスキップして前回公開サイトを維持する
+        run: |
+          set +e
+          python -m pipeline.daily
+          code=$?
+          if [ $code -eq 2 ]; then
+            echo "::warning::pipeline.daily が取得失敗(exit=2)。60秒待機して1回だけ再試行します"
+            sleep 60
+            python -m pipeline.daily
+            code=$?
+          fi
+
+          if [ $code -eq 0 ]; then
+            echo "status=updated" >> "$GITHUB_OUTPUT"
+            exit 0
+          elif [ $code -eq 1 ]; then
+            echo "::warning::品質ゲート異常のため前日データを維持します(exit=1)。ビルドは既存data/で続行します"
+            echo "status=gate_failed" >> "$GITHUB_OUTPUT"
+            exit 0
+          else
+            echo "::error::pipeline.daily が取得失敗のまま終了しました(exit=2)。前回公開サイトを維持します"
+            echo "status=fetch_failed" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+
+      - name: data/ の変更を commit & push
+        if: steps.run_pipeline.outputs.status == 'updated'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "data/ に変更なし(冪等)。commitをスキップします"
+          else
+            git commit -m "chore: 日次データ更新 $(date -u +%Y-%m-%d)"
+            git push origin HEAD:master
+          fi
+
+  build-deploy:
+    name: サイトビルド & Pages デプロイ
+    needs: data-update
+    # data-update が「取得失敗(exit=2)」でジョブ失敗(result=failure)した場合はスキップし、
+    # Pages上の前回公開サイトを維持する。push起点(data-updateがそもそも実行されずskipped)や、
+    # data-updateが成功(exit=0/1)した場合はビルド・デプロイを行う。
+    if: |
+      always() &&
+      (needs.data-update.result == 'success' || needs.data-update.result == 'skipped')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: リポジトリ取得(最新masterを取得。data-updateのpushを含む)
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Node.js セットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: site/package-lock.json
+
+      - name: 依存関係インストール
+        working-directory: site
+        run: npm ci
+
+      - name: ビルド
+        working-directory: site
+        run: npm run build
+
+      - name: Pages 設定
+        uses: actions/configure-pages@v5
+
+      - name: ビルド成果物をアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+      - name: Pages にデプロイ
+        id: deployment
+        uses: actions/deploy-pages@v4
