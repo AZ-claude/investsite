@@ -31,3 +31,9 @@ npm-debug.log*
 
 # Local Claude session state (not project config)
 .claude/scheduled_tasks.lock
+
+# 検証時の一時成果物(コードから未参照)
+.playwright-mcp/
+pipeline/spikes/out/*_sample.*
+pipeline/spikes/out/t05_broken_*.json
+pipeline/spikes/out/*.html
