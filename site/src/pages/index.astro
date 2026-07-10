@@ -82,6 +82,10 @@ const rankedSignals = [...signalRows]
 
 // 蓄積日数(市場体温計のhistory件数を代表値として使う。無ければ0扱い)
 const accumulationDays = thermometer ? thermometerAccumulatedDays(thermometer) : 0;
+
+// ファクターリターンの算出方法注記(T-17でdata側に追加された factor_return_note)。
+// 全ファクター共通の文言のため、天気図セクション単位で1回だけ短縮版を出す(全文は各ファクターページの過去推移に表示)。
+const hasFactorReturnNote = Object.values(factors).some((f) => f?.factor_return_note);
 ---
 
 <Layout
@@ -237,6 +241,11 @@ const accumulationDays = thermometer ? thermometerAccumulatedDays(thermometer) :
           );
         })}
       </div>
+      {hasFactorReturnNote && (
+        <p class="dashboard__method-note">
+          ※ リターンは現在の分位該当銘柄によるトレーリング近似(%ポイント)です。生存バイアス・構成入れ替えの先読みバイアスを含みます(詳細は各ファクターページの注記)。
+        </p>
+      )}
     </section>
 
     <!-- 4. 本日の注目シグナル -->
@@ -373,6 +382,14 @@ const accumulationDays = thermometer ? thermometerAccumulatedDays(thermometer) :
     color: var(--text-muted);
     padding-top: var(--space-2);
     border-top: 1px solid var(--border-gridline);
+  }
+
+  .dashboard__method-note {
+    margin: var(--space-3) 0 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 68ch;
   }
 
   .dashboard__weather-grid {

@@ -199,6 +199,11 @@ export interface FactorFile {
   definition: string;
   evidence: FactorEvidence[];
   history: FactorHistoryEntry[];
+  /**
+   * T-17で追加: factor_return_1m/3m/1y の算出方法の注記(トレーリング近似・生存/先読みバイアスの明示)。
+   * 表示側はこの注記を必ず値と併記すること(誠実なエビデンス表示の方針)。
+   */
+  factor_return_note?: string;
   today_screen?: Partial<Record<Market, FactorScreenItem[]>>;
   /** margin-trading のみ: "weekly" */
   frequency?: string;

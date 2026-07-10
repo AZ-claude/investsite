@@ -249,17 +249,17 @@ const isReference = content.isReference === true;
         <p class="factor-page__section-note">
           直近: 1ヶ月{" "}
           {latest.factor_return_1m !== null && latest.factor_return_1m !== undefined
-            ? `${latest.factor_return_1m > 0 ? "+" : ""}${latest.factor_return_1m.toFixed(2)}%`
+            ? `${latest.factor_return_1m > 0 ? "+" : ""}${latest.factor_return_1m.toFixed(2)}%pt`
             : "データ蓄積中"}
           {" / "}
           3ヶ月{" "}
           {latest.factor_return_3m !== null && latest.factor_return_3m !== undefined
-            ? `${latest.factor_return_3m > 0 ? "+" : ""}${latest.factor_return_3m.toFixed(2)}%`
+            ? `${latest.factor_return_3m > 0 ? "+" : ""}${latest.factor_return_3m.toFixed(2)}%pt`
             : "データ蓄積中"}
           {" / "}
           1年{" "}
           {latest.factor_return_1y !== null && latest.factor_return_1y !== undefined
-            ? `${latest.factor_return_1y > 0 ? "+" : ""}${latest.factor_return_1y.toFixed(2)}%`
+            ? `${latest.factor_return_1y > 0 ? "+" : ""}${latest.factor_return_1y.toFixed(2)}%pt`
             : "データ蓄積中"}
         </p>
       )}
@@ -269,6 +269,9 @@ const isReference = content.isReference === true;
         <p class="factor-page__accumulating">
           データ蓄積中({days}日目)。日次更新が積み上がり次第、時系列チャートが表示されます。
         </p>
+      )}
+      {factor?.factor_return_note && (
+        <p class="factor-page__return-note">※ {factor.factor_return_note}</p>
       )}
     </section>
 
@@ -483,6 +486,14 @@ const isReference = content.isReference === true;
     margin: 0;
     font-size: var(--font-size-sm);
     color: var(--color-reference-accent);
+  }
+
+  .factor-page__return-note {
+    margin: var(--space-3) 0 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 68ch;
   }
 
   .factor-page__market-block {
