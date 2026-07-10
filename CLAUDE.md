@@ -41,6 +41,14 @@
 - 信用倍率(信用取引残高)はyfinanceでは取得不可。**JPX公式サイトが週次・無料でPDF(銘柄別、火曜16:30頃)/Excel(市場全体、水曜15:00頃)を公表**しており、これが採用データ源。CSV配信はなくPDF/Excelパーサの実装が必要(T-04/T-05)。詳細: docs/07-data-schema.md 6節
 - スキーマ設計は2層(`data/daily/YYYY-MM-DD/{jp|us}.json` + `data/factors/{factor}.json`)+銘柄マスタ`data/universe/{jp|us}.json`の3ファイル群構成。市場体温計は`data/factors/market-thermometer.json`としてfactors層に相乗り(第3層を作らない)
 
+## 確認済みのハマりどころ・やり方(T-04指標計算で実証)
+- **日経225の証券コードは英字入りがある**(285A=キオクシア、543A等)。「4桁数字」で弾くと225→223銘柄に減る。正規パターンは `\d[\dA-Z]{3}`
+- **JPXページのPDFリンクを`links[-1]`で取ると事故る**: 週次データ以外のお知らせPDF(t13vrt….pdf)が混在。`syumatsuYYYYMMDD`/`mtseisanYYYYMMDD`の命名規則でフィルタし日付最大を選ぶこと(pipeline/metrics/margin_jpx.py で対策済み)
+- **yfinance 1.5.1 の dividendYield は既にパーセント単位**(AAPL=0.34は0.34%の意味)。100倍しないこと。returnOnEquity はフラクション(0.102=10.2%)で単位が異なる点に注意
+- JPX銘柄別信用残PDFの行フォーマット: 数値12個(6項目×[水準,前週比])、負の前週比は「▲」が独立トークン。順序は[合計売残,Δ,合計買残,Δ,一般売残,Δ,制度売残,Δ,一般買残,Δ,制度買残,Δ](トヨタ実測値で検算済み)
+- 日経225のうち約5銘柄はJPX信用残PDFに存在しない(貸借銘柄でない等)。margin欠損は正常系として扱う
+- ROE欠損率の実測(T-03で未実測だった項目): JP 4/225=1.78%、US 34/503=6.76%
+
 ## 参照すべきナレッジ
 ~/.claude/knowledge/ の kb-data-collection.md(データ収集), kb-markdown-datastore.md(蓄積),
 kb-skill-pipeline.md(日次パイプライン) を実装フェーズで参照すること。

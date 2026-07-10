@@ -1,0 +1,11 @@
+=== JP(日経225)スナップショット生成開始 ===
+JP完了: 158.9秒, 銘柄数=225
+JP ROE欠損率: {'total': 225, 'missing': 4, 'missing_rate_pct': 1.78}
+JP margin付与銘柄数: 220/225
+
+=== US(S&P500)スナップショット生成開始 ===
+US完了: 185.8秒, 銘柄数=503
+US ROE欠損率: {'total': 503, 'missing': 34, 'missing_rate_pct': 6.76}
+
+総所要時間: 344.8秒
+書き出し完了: pipeline/spikes/out/t04_{jp,us}_snapshot.json
