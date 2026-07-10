@@ -1,0 +1,161 @@
+---
+/**
+ * /factors/ — ファクター一覧ページ(T-09)。docs/04-site-design.md 2節のページツリー。
+ * 各ファクターの短い説明+直近リターン+該当銘柄数を一覧し、個別ページへ導線を張る。
+ */
+import Layout from "../../layouts/Layout.astro";
+import {
+  FACTOR_SLUGS,
+  loadAllFactors,
+  latestFactorHistory,
+  type FactorSlug,
+} from "../../lib/data";
+import { FACTOR_CONTENT } from "../../lib/factorContent";
+
+const factors = loadAllFactors();
+
+const FACTOR_LABEL: Record<FactorSlug, string> = {
+  value: "バリュー",
+  momentum: "モメンタム",
+  dividend: "配当利回り",
+  quality: "クオリティ",
+  size: "サイズ",
+  "margin-trading": "信用倍率",
+};
+
+---
+
+<Layout title="ファクター一覧" dataSources={["yfinance", "JPX(信用取引残高)"]}>
+  <div class="container factors-index">
+    <header class="factors-index__header">
+      <h1>ファクター一覧</h1>
+      <p class="factors-index__lead">
+        「どの指標がどれだけ株価に効くのか」を、文献のエビデンスとあわせてテーマ(ファクター)ごとに集積しています。
+        各カードから個別ページで、解説・寄与度エビデンス・過去推移・本日の該当銘柄リストを確認できます。
+      </p>
+    </header>
+
+    <div class="factors-index__grid">
+      {FACTOR_SLUGS.map((slug) => {
+        const factor = factors[slug];
+        const content = FACTOR_CONTENT[slug];
+        const latest = factor ? latestFactorHistory(factor) : null;
+        const isReference = content.isReference === true;
+        return (
+          <a class:list={["factors-index__card", { "factors-index__card--reference": isReference }]} href={`/factors/${slug}/`}>
+            <div class="factors-index__card-top">
+              <h2>{FACTOR_LABEL[slug]}</h2>
+              {isReference && <span class="factors-index__ref-badge">需給参考</span>}
+            </div>
+            <p class="factors-index__desc">{content.whatIsIt}</p>
+            <div class="factors-index__stats num">
+              {latest?.screen_count !== undefined ? (
+                <span>本日の該当 {latest.screen_count}銘柄</span>
+              ) : (
+                <span class="factors-index__stats-empty">データなし</span>
+              )}
+            </div>
+            <p class="factors-index__link-label">個別ページを見る →</p>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .factors-index {
+    padding-block: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .factors-index__header h1 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-2xl);
+  }
+
+  .factors-index__lead {
+    margin: 0;
+    color: var(--text-secondary);
+    max-width: 68ch;
+    line-height: 1.8;
+  }
+
+  .factors-index__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .factors-index__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--surface-card);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .factors-index__card:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-1px);
+  }
+
+  .factors-index__card--reference {
+    border-color: var(--color-reference-accent);
+    border-style: dashed;
+    background: linear-gradient(0deg, var(--color-reference-soft) 0%, var(--surface-card) 22%);
+  }
+
+  .factors-index__card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .factors-index__card-top h2 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+  }
+
+  .factors-index__ref-badge {
+    flex-shrink: 0;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-reference-accent);
+    border: 1px solid var(--color-reference-accent);
+    border-radius: 999px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .factors-index__desc {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .factors-index__stats {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .factors-index__stats-empty {
+    font-style: italic;
+  }
+
+  .factors-index__link-label {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: var(--color-accent);
+  }
+</style>

@@ -1,0 +1,536 @@
+---
+/**
+ * /factors/{slug}/ — ファクター個別ページ(T-09)。
+ * docs/04-site-design.md 2節の個別ページ構成(解説/寄与度エビデンス/過去推移/本日の該当銘柄リスト)を実装する。
+ *
+ * データ: site/src/lib/data.ts (T-08の共有データ層) + site/src/lib/factorContent.ts (このタスクの解説原稿、SSOTはfactor-evidence.md)。
+ * margin-trading は「需給参考」枠として他5ファクターと視覚的に隔離する(MetricCard reference variant と同様の方針)。
+ *
+ * 表現規制: 助言表現(推奨/買うべき/売るべき等)は一切出さない。数値・事実・出典のみ。
+ */
+import Layout from "../../layouts/Layout.astro";
+import {
+  FACTOR_SLUGS,
+  loadFactor,
+  loadDailySnapshot,
+  latestFactorHistory,
+  accumulatedDays,
+  type FactorSlug,
+  type Market,
+} from "../../lib/data";
+import { FACTOR_CONTENT } from "../../lib/factorContent";
+
+export function getStaticPaths() {
+  return FACTOR_SLUGS.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params as { slug: FactorSlug };
+
+const factor = loadFactor(slug);
+const content = FACTOR_CONTENT[slug];
+
+const FACTOR_LABEL: Record<FactorSlug, string> = {
+  value: "バリュー",
+  momentum: "モメンタム",
+  dividend: "配当利回り",
+  quality: "クオリティ",
+  size: "サイズ",
+  "margin-trading": "信用倍率",
+};
+
+// --- 銘柄名解決用: daily/{jp,us}.json から ticker→name のマップを作る ---
+const jpDaily = loadDailySnapshot("jp");
+const usDaily = loadDailySnapshot("us");
+const nameMap: Record<string, string> = {};
+for (const s of jpDaily?.data.stocks ?? []) nameMap[s.ticker] = s.name;
+for (const s of usDaily?.data.stocks ?? []) nameMap[s.ticker] = s.name;
+
+// --- 表示用フォーマット ---
+const formatMetricValue = (market: Market, value: number | null | undefined): string => {
+  if (value === null || value === undefined || Number.isNaN(value)) return "―";
+  switch (slug) {
+    case "value":
+      return `${value.toFixed(2)}倍`;
+    case "momentum":
+      return `${value >= 0 ? "+" : ""}${(value * 100).toFixed(1)}%`;
+    case "quality":
+      return `${(value * 100).toFixed(1)}%`;
+    case "dividend":
+      return `${value.toFixed(2)}%`;
+    case "size": {
+      if (market === "jp") {
+        const oku = value / 1e8;
+        return oku >= 10000 ? `${(oku / 10000).toFixed(2)}兆円` : `${oku.toFixed(0)}億円`;
+      }
+      const billion = value / 1e9;
+      return billion >= 1000 ? `${(billion / 1000).toFixed(2)}兆ドル` : `${billion.toFixed(1)}億ドル`;
+    }
+    default:
+      return value.toLocaleString("ja-JP", { maximumFractionDigits: 2 });
+  }
+};
+
+const METRIC_VALUE_LABEL: Record<FactorSlug, string> = {
+  value: "PBR",
+  momentum: "12-1ヶ月リターン",
+  dividend: "配当利回り",
+  quality: "ROE",
+  size: "時価総額",
+  "margin-trading": "信用倍率(制度信用)",
+};
+
+const MARKET_LABEL: Record<Market, string> = { jp: "日本", us: "米国" };
+
+// margin-trading は今日の該当銘柄の型が他ファクターと異なる({ticker, as_of_week, margin_ratio_seido})。
+// data.ts の FactorScreenItem 型は変更しない方針のため、ここでローカルに型を定義してキャストする。
+interface MarginScreenItem {
+  ticker: string;
+  as_of_week: string;
+  margin_ratio_seido: number | null;
+}
+
+const DISPLAY_LIMIT = 15;
+
+interface DisplayRow {
+  ticker: string;
+  name: string;
+  valueLabel: string;
+  rankLabel: string;
+}
+
+function buildDisplayRows(market: Market): { rows: DisplayRow[]; totalScreened: number } {
+  if (!factor?.today_screen?.[market]) return { rows: [], totalScreened: 0 };
+
+  if (slug === "margin-trading") {
+    const items = factor.today_screen[market] as unknown as MarginScreenItem[];
+    const sorted = [...items].sort(
+      (a, b) => (b.margin_ratio_seido ?? -Infinity) - (a.margin_ratio_seido ?? -Infinity),
+    );
+    const rows = sorted.slice(0, DISPLAY_LIMIT).map((item, i) => ({
+      ticker: item.ticker,
+      name: nameMap[item.ticker] ?? "",
+      valueLabel: item.margin_ratio_seido === null ? "データなし" : `${item.margin_ratio_seido.toFixed(2)}倍`,
+      rankLabel: `${i + 1}位`,
+    }));
+    return { rows, totalScreened: items.length };
+  }
+
+  const items = factor.today_screen[market]!;
+  const topQuintile = items.filter((item) => item.quantile === "top_quintile");
+  const rows = topQuintile.slice(0, DISPLAY_LIMIT).map((item) => ({
+    ticker: item.ticker,
+    name: nameMap[item.ticker] ?? "",
+    valueLabel: formatMetricValue(market, item.metric_value),
+    rankLabel: `${item.rank}位`,
+  }));
+  return { rows, totalScreened: topQuintile.length };
+}
+
+const marketsToShow: Market[] = factor?.markets ?? [];
+const screenByMarket = Object.fromEntries(
+  marketsToShow.map((m) => [m, buildDisplayRows(m)]),
+) as Record<Market, { rows: DisplayRow[]; totalScreened: number }>;
+
+const latest = factor ? latestFactorHistory(factor) : null;
+const days = factor ? accumulatedDays(factor) : 0;
+const hasHistorySeries = factor && factor.history.length >= 2;
+
+// 過去推移の簡易SVG折れ線(factor_return_1m)。2点未満はチャートを出さず「データ蓄積中」表示のみ。
+function buildSparkline(): string | null {
+  if (!factor || !hasHistorySeries) return null;
+  const sorted = [...factor.history].sort((a, b) => (a.date < b.date ? -1 : 1));
+  const points = sorted
+    .map((h) => h.factor_return_1m)
+    .filter((v): v is number => v !== null && v !== undefined);
+  if (points.length < 2) return null;
+  const w = 560;
+  const h = 120;
+  const pad = 8;
+  const min = Math.min(...points);
+  const max = Math.max(...points);
+  const range = max - min || 1;
+  const step = (w - pad * 2) / (points.length - 1);
+  const coords = points.map((v, i) => {
+    const x = pad + i * step;
+    const y = pad + (h - pad * 2) * (1 - (v - min) / range);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  });
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="直近1ヶ月リターンの推移"><polyline points="${coords.join(
+    " ",
+  )}" fill="none" stroke="var(--color-accent)" stroke-width="2" /></svg>`;
+}
+const sparkline = buildSparkline();
+
+const pageTitle = factor ? `${factor.label}` : FACTOR_LABEL[slug];
+const isReference = content.isReference === true;
+---
+
+<Layout
+  title={`ファクター: ${pageTitle}`}
+  lastUpdated={jpDaily?.data.generated_at ?? usDaily?.data.generated_at}
+  dataSources={["yfinance", slug === "margin-trading" ? "JPX(信用取引残高)" : "yfinance"]}
+>
+  <div class="container factor-page">
+    <nav class="factor-page__breadcrumb">
+      <a href="/factors/">ファクター一覧</a> / <span>{pageTitle}</span>
+    </nav>
+
+    <header class="factor-page__header">
+      <div class="factor-page__heading-row">
+        <h1>{pageTitle}</h1>
+        {isReference && <span class="factor-page__ref-badge">需給参考</span>}
+      </div>
+      {factor && <p class="factor-page__definition">{factor.definition}</p>}
+      {!factor && (
+        <p class="factor-page__empty">このファクターのデータを取得できませんでした。</p>
+      )}
+    </header>
+
+    {isReference && (
+      <div class="factor-page__reference-box">
+        <p>{content.referenceNote}</p>
+      </div>
+    )}
+
+    <!-- 解説 -->
+    <section class="factor-page__section">
+      <h2>解説</h2>
+      <div class="factor-page__prose">
+        <h3>そもそも何か</h3>
+        <p>{content.whatIsIt}</p>
+        <h3>なぜ効くとされるか</h3>
+        <p>{content.whyItWorks}</p>
+        {content.japanUsGap && (
+          <>
+            <h3>日米差</h3>
+            <p>{content.japanUsGap}</p>
+          </>
+        )}
+        {content.decayNote && (
+          <>
+            <h3>減衰の議論</h3>
+            <p>{content.decayNote}</p>
+          </>
+        )}
+        <p class="factor-page__reproducibility num">再現容易性: {content.reproducibility}</p>
+      </div>
+    </section>
+
+    <!-- 寄与度エビデンス -->
+    <section class="factor-page__section">
+      <h2>寄与度エビデンス</h2>
+      {isReference ? (
+        <p class="factor-page__no-evidence">文献による寄与度エビデンスはありません(需給の参考情報として掲載)。</p>
+      ) : null}
+      <ul class="factor-page__evidence-list">
+        {content.evidence.map((item) => (
+          <li class="factor-page__evidence-item">
+            <p class="factor-page__evidence-claim">
+              {item.claim}
+              {!item.confirmed && <span class="factor-page__unconfirmed">(未確認)</span>}
+            </p>
+            {item.sourceUrl ? (
+              <a class="factor-page__evidence-source" href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
+                出典: {item.sourceLabel}
+              </a>
+            ) : (
+              <p class="factor-page__evidence-source factor-page__evidence-source--nolink">出典: {item.sourceLabel}</p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- 過去推移 -->
+    <section class="factor-page__section">
+      <h2>過去推移</h2>
+      {latest && (
+        <p class="factor-page__section-note">
+          直近: 1ヶ月{" "}
+          {latest.factor_return_1m !== null && latest.factor_return_1m !== undefined
+            ? `${latest.factor_return_1m > 0 ? "+" : ""}${latest.factor_return_1m.toFixed(2)}%`
+            : "データ蓄積中"}
+          {" / "}
+          3ヶ月{" "}
+          {latest.factor_return_3m !== null && latest.factor_return_3m !== undefined
+            ? `${latest.factor_return_3m > 0 ? "+" : ""}${latest.factor_return_3m.toFixed(2)}%`
+            : "データ蓄積中"}
+          {" / "}
+          1年{" "}
+          {latest.factor_return_1y !== null && latest.factor_return_1y !== undefined
+            ? `${latest.factor_return_1y > 0 ? "+" : ""}${latest.factor_return_1y.toFixed(2)}%`
+            : "データ蓄積中"}
+        </p>
+      )}
+      {sparkline ? (
+        <div class="factor-page__sparkline" set:html={sparkline} />
+      ) : (
+        <p class="factor-page__accumulating">
+          データ蓄積中({days}日目)。日次更新が積み上がり次第、時系列チャートが表示されます。
+        </p>
+      )}
+    </section>
+
+    <!-- 本日の該当銘柄リスト -->
+    <section class="factor-page__section">
+      <h2>本日の該当銘柄リスト</h2>
+      <p class="factor-page__section-note">
+        {isReference
+          ? `信用倍率(制度信用)の高い順、上位${DISPLAY_LIMIT}銘柄。`
+          : `分位スクリーニングで上位分位(top_quintile)に該当した銘柄のうち、上位${DISPLAY_LIMIT}銘柄。`}
+      </p>
+
+      {marketsToShow.length === 0 && <p class="factor-page__empty">該当銘柄データがありません。</p>}
+
+      {marketsToShow.map((market, i) => {
+        const { rows, totalScreened } = screenByMarket[market];
+        return (
+          <div class="factor-page__market-block">
+            <h3>{MARKET_LABEL[market]}市場{marketsToShow.length > 1 ? "" : ""}</h3>
+            {totalScreened > 0 && (
+              <p class="factor-page__screen-count num">該当 {totalScreened}銘柄中、上位{Math.min(DISPLAY_LIMIT, totalScreened)}件を表示</p>
+            )}
+            {rows.length === 0 ? (
+              <p class="factor-page__empty">該当銘柄データがありません。</p>
+            ) : (
+              <div class="factor-page__table-wrap">
+                <table class="factor-page__table">
+                  <thead>
+                    <tr>
+                      <th>順位</th>
+                      <th>銘柄</th>
+                      <th>{METRIC_VALUE_LABEL[slug]}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rows.map((row) => (
+                      <tr>
+                        <td class="num">{row.rankLabel}</td>
+                        <td>
+                          <span class="num factor-page__ticker">{row.ticker}</span>
+                          {row.name && <span class="factor-page__name">{row.name}</span>}
+                        </td>
+                        <td class="num">{row.valueLabel}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .factor-page {
+    padding-block: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .factor-page__breadcrumb {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .factor-page__breadcrumb a {
+    color: var(--text-muted);
+  }
+
+  .factor-page__heading-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+
+  .factor-page__header h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .factor-page__ref-badge {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--color-reference-accent);
+    border: 1px solid var(--color-reference-accent);
+    border-radius: 999px;
+    padding: 2px 10px;
+  }
+
+  .factor-page__definition {
+    margin: var(--space-2) 0 0;
+    color: var(--text-secondary);
+    max-width: 68ch;
+  }
+
+  .factor-page__empty {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .factor-page__reference-box {
+    padding: var(--space-4);
+    border: 1px dashed var(--color-reference-accent);
+    border-radius: var(--radius-md);
+    background: var(--color-reference-soft);
+  }
+
+  .factor-page__reference-box p {
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .factor-page__section h2 {
+    margin: 0 0 var(--space-3);
+    font-size: var(--font-size-xl);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border-gridline);
+  }
+
+  .factor-page__section-note {
+    margin: 0 0 var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+  }
+
+  .factor-page__prose h3 {
+    margin: var(--space-3) 0 var(--space-1);
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+  }
+
+  .factor-page__prose h3:first-child {
+    margin-top: 0;
+  }
+
+  .factor-page__prose p {
+    margin: 0 0 var(--space-2);
+    line-height: 1.8;
+    max-width: 68ch;
+  }
+
+  .factor-page__reproducibility {
+    margin-top: var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+  }
+
+  .factor-page__no-evidence {
+    margin: 0 0 var(--space-3);
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .factor-page__evidence-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .factor-page__evidence-item {
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface-card);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-md);
+  }
+
+  .factor-page__evidence-claim {
+    margin: 0 0 var(--space-1);
+    line-height: 1.7;
+  }
+
+  .factor-page__unconfirmed {
+    margin-left: var(--space-2);
+    color: var(--color-reference-accent);
+    font-weight: 600;
+    font-size: var(--font-size-xs);
+  }
+
+  .factor-page__evidence-source {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .factor-page__evidence-source:hover {
+    text-decoration: underline;
+  }
+
+  .factor-page__evidence-source--nolink {
+    color: var(--text-muted);
+  }
+
+  .factor-page__sparkline {
+    max-width: 560px;
+    background: var(--surface-card);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+  }
+
+  .factor-page__accumulating {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-reference-accent);
+  }
+
+  .factor-page__market-block {
+    margin-bottom: var(--space-5);
+  }
+
+  .factor-page__market-block h3 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+  }
+
+  .factor-page__screen-count {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .factor-page__table-wrap {
+    overflow-x: auto;
+  }
+
+  .factor-page__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+  }
+
+  .factor-page__table th,
+  .factor-page__table td {
+    padding: var(--space-2) var(--space-3);
+    text-align: left;
+    border-bottom: 1px solid var(--border-gridline);
+    white-space: nowrap;
+  }
+
+  .factor-page__table th {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: var(--font-size-xs);
+  }
+
+  .factor-page__ticker {
+    font-weight: 600;
+    margin-right: var(--space-2);
+  }
+
+  .factor-page__name {
+    color: var(--text-secondary);
+    font-size: var(--font-size-xs);
+  }
+</style>
