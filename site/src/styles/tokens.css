@@ -21,7 +21,10 @@
   /* --- テキスト --- */
   --text-primary: #0b0b0b;
   --text-secondary: #52514e;
-  --text-muted: #898781;
+  /* WCAG AA: 元は#898781(コントラスト比3.4:1で不合格)。#6b6a64は
+     --surface-page/--surface-card 双方で4.5:1以上を確保(実測5.1〜5.4:1、T-11実測)。
+     「データ蓄積中」等の淡色テキストが読みにくい問題への対処 */
+  --text-muted: #6b6a64;
   --text-on-accent: #ffffff;
 
   /* --- 罫線 --- */
@@ -40,8 +43,11 @@
   --color-down-soft: #fbe8e6;
   --color-flat: var(--text-muted);
 
-  /* --- 「需給参考」等、エビデンス未確認データの識別色(扇動色を避けたグレー系警告) --- */
-  --color-reference-accent: #b9852a;
+  /* --- 「需給参考」等、エビデンス未確認データの識別色(扇動色を避けたグレー系警告) ---
+     WCAG AA: 元は#b9852a(バッジ文字色としてのコントラスト比3.1:1で不合格)。
+     #8a5f16は --surface-page/--surface-card/--color-reference-soft の
+     いずれの背景でも4.5:1以上を確保(実測4.8〜5.5:1、T-11実測) */
+  --color-reference-accent: #8a5f16;
   --color-reference-soft: #f6ecd9;
 
   /* --- パーセンタイル帯(歴史的位置)。dataviz sequential hue(blue)の薄い段を使用 --- */
@@ -119,7 +125,7 @@
   --surface-chart: #fcfcfb;
   --text-primary: #0b0b0b;
   --text-secondary: #52514e;
-  --text-muted: #898781;
+  --text-muted: #6b6a64;
   --border-hairline: rgba(11, 11, 11, 0.1);
   --border-gridline: #e1e0d9;
   --border-baseline: #c3c2b7;
@@ -129,7 +135,7 @@
   --color-up-soft: #e3f3e3;
   --color-down: #d03b3b;
   --color-down-soft: #fbe8e6;
-  --color-reference-accent: #b9852a;
+  --color-reference-accent: #8a5f16;
   --color-reference-soft: #f6ecd9;
   --percentile-track: #e1e0d9;
   --percentile-fill: #2a78d6;

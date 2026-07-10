@@ -26,6 +26,13 @@ const {
   dataSources,
 } = Astro.props;
 
+const currentPath = Astro.url.pathname;
+/** 現在ページ判定: トップは完全一致、それ以外は前方一致(配下ページでもナビに現在地を示す) */
+function isCurrent(href: string): boolean {
+  if (href === "/") return currentPath === "/";
+  return currentPath === href || currentPath.startsWith(href);
+}
+
 const navItems = [
   { href: "/", label: "ダッシュボード" },
   { href: "/markets/jp/", label: "日本市場" },
@@ -66,7 +73,11 @@ const navItems = [
         <nav class="site-header__nav" aria-label="サイトナビゲーション">
           <ul>
             {navItems.map((item) => (
-              <li><a href={item.href}>{item.label}</a></li>
+              <li>
+                <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+                  {item.label}
+                </a>
+              </li>
             ))}
           </ul>
         </nav>
@@ -168,6 +179,19 @@ const navItems = [
 
   .site-header__nav a:hover {
     color: var(--color-accent);
+  }
+
+  .site-header__nav a[aria-current="page"] {
+    color: var(--text-primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-accent);
+  }
+
+  /* モバイル: ナビはハンバーガーを使わず横スクロールで全項目に到達可能とする(T-11方針)。
+     タップ領域を確保するためリンクをブロック化し縦パディングを付与 */
+  .site-header__nav a {
+    display: inline-block;
+    padding-block: var(--space-2);
   }
 
   .theme-toggle {

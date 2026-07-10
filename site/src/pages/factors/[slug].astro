@@ -155,7 +155,8 @@ function buildSparkline(): string | null {
     const y = pad + (h - pad * 2) * (1 - (v - min) / range);
     return `${x.toFixed(1)},${y.toFixed(1)}`;
   });
-  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="直近1ヶ月リターンの推移"><polyline points="${coords.join(
+  const ariaLabel = `${factor.label}ファクターの直近1ヶ月リターンの推移(${points.length}日分、最小${min.toFixed(1)}%〜最大${max.toFixed(1)}%)`;
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${ariaLabel}"><polyline points="${coords.join(
     " ",
   )}" fill="none" stroke="var(--color-accent)" stroke-width="2" /></svg>`;
 }
