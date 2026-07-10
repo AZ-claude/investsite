@@ -77,6 +77,8 @@ function buildCardEvidence(slug: FactorSlug): {
       summary: "寄与の実証なし(需給の参考情報)。",
       source: {
         label: marginEv ? truncateSummary(marginEv.sourceLabel, 30) : "個別ページ",
+        // サイト内パスは raw のまま渡す(base前置は FactorWeatherCard 側の withBase() が担う。
+        // ここで前置すると二重になる)
         url: `/factors/${slug}/`,
       },
     };
@@ -92,7 +94,7 @@ function buildCardEvidence(slug: FactorSlug): {
     truncateSummary(ev.claim) + (ev.confirmed === false ? "(未確認)" : "");
   return {
     summary,
-    // 出典リンク: 原典URLがあれば外部リンク、無ければ全文を掲載する個別ページへ誘導
+    // 出典リンク: 原典URLがあれば外部リンク、無ければ全文を掲載する個別ページへ誘導(base前置は呼び出し先で実施)
     source: {
       label: truncateSummary(ev.sourceLabel, 30),
       url: ev.sourceUrl ?? `/factors/${slug}/`,

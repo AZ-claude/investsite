@@ -4,6 +4,7 @@
  * 出典: docs/02-research/retail-indicators.md 1-4節。
  */
 import Layout from "../../../layouts/Layout.astro";
+import { withBase } from "../../../lib/url";
 ---
 
 <Layout
@@ -11,7 +12,7 @@ import Layout from "../../../layouts/Layout.astro";
   description="移動平均線・ボリンジャーバンド等の人気テクニカル指標が、なぜ本サイトの「寄与度あり」枠に掲載されないかを出典付きで解説します。"
 >
   <article class="container article">
-    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / テクニカル指標人気とエビデンスのギャップ</p>
+    <p class="article__breadcrumb"><a href={withBase("/learn/")}>学ぶ</a> / テクニカル指標人気とエビデンスのギャップ</p>
     <h1>テクニカル指標人気とエビデンスのギャップ</h1>
 
     <section class="article__section">

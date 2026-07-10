@@ -7,6 +7,8 @@
  *   未指定時は「未取得」と表示し、数値を捏造しない
  * @prop dataSources - 表示するデータ出典のラベル配列(既定: yfinance, JPX)
  */
+import { withBase } from "../lib/url";
+
 interface Props {
   lastUpdated?: string;
   dataSources?: string[];
@@ -30,7 +32,7 @@ const formattedUpdated = lastUpdated
   <div class="container site-footer__inner">
     <p class="site-footer__disclaimer">
       本サイトは情報提供であり、投資助言ではありません。掲載内容は特定銘柄の売買を推奨するものではなく、
-      投資判断は自己責任で行ってください。詳しくは<a href="/disclaimer/">免責事項</a>をご覧ください。
+      投資判断は自己責任で行ってください。詳しくは<a href={withBase("/disclaimer/")}>免責事項</a>をご覧ください。
     </p>
     <div class="site-footer__meta">
       <span class="site-footer__meta-item">

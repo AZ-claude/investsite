@@ -25,6 +25,8 @@
  * @prop evidenceSource - {label, url} 出典リンク。urlが外部(http/https)の場合は別タブ、
  *   サイト内パス(/factors/…等)の場合は通常遷移
  */
+import { withBase } from "../lib/url";
+
 interface Props {
   factorLabel: string;
   factorSlug: string;
@@ -57,7 +59,7 @@ const isExternalSource = evidenceSource ? /^https?:\/\//.test(evidenceSource.url
 
 <article class:list={["weather-card", `weather-card--${direction}`]}>
   <div class="weather-card__top">
-    <a class="weather-card__main-link" href={`/factors/${factorSlug}/`}>
+    <a class="weather-card__main-link" href={withBase(`/factors/${factorSlug}/`)}>
       <span class="weather-card__label">{factorLabel}</span>
     </a>
     {isReference && <span class="weather-card__ref-badge">需給参考</span>}
@@ -84,7 +86,7 @@ const isExternalSource = evidenceSource ? /^https?:\/\//.test(evidenceSource.url
             出典: {evidenceSource.label}
           </a>
         ) : (
-          <a class="weather-card__source" href={evidenceSource.url}>
+          <a class="weather-card__source" href={withBase(evidenceSource.url)}>
             出典: {evidenceSource.label}
           </a>
         )

@@ -4,6 +4,7 @@
  * 既知の限界はCLAUDE.md記載の留保事項(時価総額19%乖離、実績PERと会社予想PERの定義差等)を透明に開示する。
  */
 import Layout from "../../layouts/Layout.astro";
+import { withBase } from "../../lib/url";
 ---
 
 <Layout
@@ -92,7 +93,7 @@ import Layout from "../../layouts/Layout.astro";
       <h2>非スコープ</h2>
       <p>
         投資助言(金融商品取引法に抵触するため「情報提供」に徹しています)、リアルタイム更新(日次バッチのみ)、
-        有料データの利用は現時点では対象外です。詳細は<a href="/disclaimer/">免責事項</a>を参照してください。
+        有料データの利用は現時点では対象外です。詳細は<a href={withBase("/disclaimer/")}>免責事項</a>を参照してください。
       </p>
     </section>
   </div>

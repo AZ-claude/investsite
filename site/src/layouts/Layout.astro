@@ -10,6 +10,7 @@
  * @prop dataSources - SiteFooter へ渡すデータ出典配列
  */
 import SiteFooter from "../components/SiteFooter.astro";
+import { withBase } from "../lib/url";
 import "../styles/global.css";
 
 interface Props {
@@ -27,10 +28,15 @@ const {
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
-/** 現在ページ判定: トップは完全一致、それ以外は前方一致(配下ページでもナビに現在地を示す) */
+/**
+ * 現在ページ判定: トップは完全一致、それ以外は前方一致(配下ページでもナビに現在地を示す)。
+ * Astro.url.pathname は base("/investsite/"等)込みの値を返すため、比較前に href 側にも
+ * withBase() で base を前置してから比較する。
+ */
 function isCurrent(href: string): boolean {
-  if (href === "/") return currentPath === "/";
-  return currentPath === href || currentPath.startsWith(href);
+  const prefixed = withBase(href);
+  if (href === "/") return currentPath === prefixed;
+  return currentPath === prefixed || currentPath.startsWith(prefixed);
 }
 
 const navItems = [
@@ -47,8 +53,8 @@ const navItems = [
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
+    <link rel="icon" href={withBase("/favicon.ico")} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
@@ -69,12 +75,12 @@ const navItems = [
     <a class="skip-link" href="#main">本文へスキップ</a>
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="site-header__brand" href="/">investsite</a>
+        <a class="site-header__brand" href={withBase("/")}>investsite</a>
         <nav class="site-header__nav" aria-label="サイトナビゲーション">
           <ul>
             {navItems.map((item) => (
               <li>
-                <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+                <a href={withBase(item.href)} aria-current={isCurrent(item.href) ? "page" : undefined}>
                   {item.label}
                 </a>
               </li>

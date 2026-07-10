@@ -18,6 +18,7 @@ import {
   type FactorSlug,
   type Market,
 } from "../../lib/data";
+import { withBase } from "../../lib/url";
 import { FACTOR_CONTENT } from "../../lib/factorContent";
 
 export function getStaticPaths() {
@@ -173,7 +174,7 @@ const isReference = content.isReference === true;
 >
   <div class="container factor-page">
     <nav class="factor-page__breadcrumb">
-      <a href="/factors/">ファクター一覧</a> / <span>{pageTitle}</span>
+      <a href={withBase("/factors/")}>ファクター一覧</a> / <span>{pageTitle}</span>
     </nav>
 
     <header class="factor-page__header">

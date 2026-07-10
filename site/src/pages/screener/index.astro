@@ -16,6 +16,7 @@ import {
   type Market,
   type DailyStock,
 } from "../../lib/data";
+import { withBase } from "../../lib/url";
 
 const factors = loadAllFactors();
 const jpDaily = loadDailySnapshot("jp");
@@ -113,7 +114,7 @@ const lastUpdated = jpDaily?.data.generated_at ?? usDaily?.data.generated_at;
       本日、5ファクター(バリュー・モメンタム・配当利回り・クオリティ・サイズ)のいずれかで上位20%
       (top_quintile)に該当した銘柄の一覧です。複数ファクターに同時該当する銘柄ほど上位に表示します。
       掲載は事実(算出値)の一覧であり、売買の推奨ではありません。各ファクターの寄与度エビデンスは
-      <a href="/factors/">ファクター個別ページ</a>を参照してください。
+      <a href={withBase("/factors/")}>ファクター個別ページ</a>を参照してください。
     </p>
 
     <section class="screener-page__section">
@@ -140,7 +141,7 @@ const lastUpdated = jpDaily?.data.generated_at ?? usDaily?.data.generated_at;
                   <td>{row.name}</td>
                   <td class="screener-page__badges">
                     {row.matchedFactors.map((slug) => (
-                      <a class="screener-page__badge" href={`/factors/${slug}/`}>
+                      <a class="screener-page__badge" href={withBase(`/factors/${slug}/`)}>
                         {FACTOR_SHORT_LABEL[slug]}
                       </a>
                     ))}
@@ -184,7 +185,7 @@ const lastUpdated = jpDaily?.data.generated_at ?? usDaily?.data.generated_at;
                   <td>{row.name}</td>
                   <td class="screener-page__badges">
                     {row.matchedFactors.map((slug) => (
-                      <a class="screener-page__badge" href={`/factors/${slug}/`}>
+                      <a class="screener-page__badge" href={withBase(`/factors/${slug}/`)}>
                         {FACTOR_SHORT_LABEL[slug]}
                       </a>
                     ))}
@@ -212,7 +213,7 @@ const lastUpdated = jpDaily?.data.generated_at ?? usDaily?.data.generated_at;
       <p class="screener-page__note">
         信用倍率(信用買残÷信用売残、制度信用ベース)が高い上位30銘柄。学術的な寄与度の実証はほぼ皆無のため、
         上記の寄与度エビデンスありのファクターとは明確に区別して掲載しています(詳細:
-        <a href="/learn/margin-ratio/">信用倍率の読み方</a>)。
+        <a href={withBase("/learn/margin-ratio/")}>信用倍率の読み方</a>)。
       </p>
       {marginRows.length > 0 ? (
         <div class="screener-page__table-wrap">

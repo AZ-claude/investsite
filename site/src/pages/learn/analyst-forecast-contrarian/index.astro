@@ -4,6 +4,7 @@
  * 出典: docs/02-research/retail-indicators.md 2-2節、McLean et al. (2021)。
  */
 import Layout from "../../../layouts/Layout.astro";
+import { withBase } from "../../../lib/url";
 ---
 
 <Layout
@@ -11,7 +12,7 @@ import Layout from "../../../layouts/Layout.astro";
   description="個人投資家がアナリストのEPS下方修正の後にむしろ買い増す傾向があるという学術研究(McLean et al. 2021)を出典付きで解説します。"
 >
   <article class="container article">
-    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / アナリスト予想と個人投資家の逆張り行動</p>
+    <p class="article__breadcrumb"><a href={withBase("/learn/")}>学ぶ</a> / アナリスト予想と個人投資家の逆張り行動</p>
     <h1>アナリスト予想と個人投資家の逆張り行動</h1>
 
     <section class="article__section">

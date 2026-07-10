@@ -4,6 +4,7 @@
  * 出典: docs/02-research/factor-evidence.md 8節、docs/02-research/retail-indicators.md 1-3節。
  */
 import Layout from "../../../layouts/Layout.astro";
+import { withBase } from "../../../lib/url";
 ---
 
 <Layout
@@ -11,7 +12,7 @@ import Layout from "../../../layouts/Layout.astro";
   description="信用倍率(信用買残÷信用売残)の定義と、人気の高さに反して学術的な寄与度エビデンスが薄いという非対称性を出典付きで解説します。"
 >
   <article class="container article">
-    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / 信用倍率</p>
+    <p class="article__breadcrumb"><a href={withBase("/learn/")}>学ぶ</a> / 信用倍率</p>
     <h1>信用倍率の読み方</h1>
 
     <section class="article__section">

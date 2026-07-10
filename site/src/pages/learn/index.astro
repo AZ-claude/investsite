@@ -4,6 +4,7 @@
  * 初期6記事へのカードリンク。ペルソナ(投資歴7-8年、PER/PBRは知っているが寄与度は知らない層)向け。
  */
 import Layout from "../../layouts/Layout.astro";
+import { withBase } from "../../lib/url";
 
 const articles = [
   {
@@ -51,7 +52,7 @@ const articles = [
     </p>
     <div class="learn-index__grid">
       {articles.map((a) => (
-        <a class="learn-index__card" href={`/learn/${a.slug}/`}>
+        <a class="learn-index__card" href={withBase(`/learn/${a.slug}/`)}>
           <h2>{a.title}</h2>
           <p>{a.summary}</p>
         </a>

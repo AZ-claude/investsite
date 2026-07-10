@@ -8,6 +8,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import PercentileBar from "../../../components/PercentileBar.astro";
 import { loadMarketThermometer, thermometerAccumulatedDays } from "../../../lib/data";
+import { withBase } from "../../../lib/url";
 
 const thermometer = loadMarketThermometer();
 const accumulationDays = thermometer ? thermometerAccumulatedDays(thermometer) : 0;
@@ -98,7 +99,7 @@ const historyDesc = thermometer
                 信用買残 ÷ 信用売残(制度信用ベース、市場全体)。申込日基準
                 {" "}{thermometer.jp.margin_market_total.as_of_week}。
                 週次更新(JPX公式Excel)。学術的な寄与度の実証はほぼ皆無のため、需給の参考情報として掲載する
-                (詳細は<a href="/learn/margin-ratio/">信用倍率の読み方</a>を参照)。
+                (詳細は<a href={withBase("/learn/margin-ratio/")}>信用倍率の読み方</a>を参照)。
               </p>
               <a
                 class="market-page__source"

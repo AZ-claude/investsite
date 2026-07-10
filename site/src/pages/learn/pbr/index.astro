@@ -4,6 +4,7 @@
  * 出典: docs/02-research/factor-evidence.md 1節(バリュー)。
  */
 import Layout from "../../../layouts/Layout.astro";
+import { withBase } from "../../../lib/url";
 ---
 
 <Layout
@@ -11,7 +12,7 @@ import Layout from "../../../layouts/Layout.astro";
   description="PBRの定義、1倍割れの意味、機械的スクリーニングの落とし穴を出典付きで解説します。"
 >
   <article class="container article">
-    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / PBR</p>
+    <p class="article__breadcrumb"><a href={withBase("/learn/")}>学ぶ</a> / PBR</p>
     <h1>PBR(株価純資産倍率)の読み方</h1>
 
     <section class="article__section">

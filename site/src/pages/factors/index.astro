@@ -11,6 +11,7 @@ import {
   type FactorSlug,
 } from "../../lib/data";
 import { FACTOR_CONTENT } from "../../lib/factorContent";
+import { withBase } from "../../lib/url";
 
 const factors = loadAllFactors();
 
@@ -42,7 +43,7 @@ const FACTOR_LABEL: Record<FactorSlug, string> = {
         const latest = factor ? latestFactorHistory(factor) : null;
         const isReference = content.isReference === true;
         return (
-          <a class:list={["factors-index__card", { "factors-index__card--reference": isReference }]} href={`/factors/${slug}/`}>
+          <a class:list={["factors-index__card", { "factors-index__card--reference": isReference }]} href={withBase(`/factors/${slug}/`)}>
             <div class="factors-index__card-top">
               <h2>{FACTOR_LABEL[slug]}</h2>
               {isReference && <span class="factors-index__ref-badge">需給参考</span>}

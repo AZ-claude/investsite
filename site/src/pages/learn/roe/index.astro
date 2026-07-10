@@ -4,6 +4,7 @@
  * 出典: docs/02-research/factor-evidence.md 3節(クオリティ)。
  */
 import Layout from "../../../layouts/Layout.astro";
+import { withBase } from "../../../lib/url";
 ---
 
 <Layout
@@ -11,7 +12,7 @@ import Layout from "../../../layouts/Layout.astro";
   description="ROEの定義、PBR=PER×ROEの関係、クオリティ指標としての寄与度エビデンスを出典付きで解説します。"
 >
   <article class="container article">
-    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / ROE</p>
+    <p class="article__breadcrumb"><a href={withBase("/learn/")}>学ぶ</a> / ROE</p>
     <h1>ROE(自己資本利益率)の読み方</h1>
 
     <section class="article__section">

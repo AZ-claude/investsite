@@ -7,6 +7,7 @@ import Layout from "../../layouts/Layout.astro";
 import MetricCard from "../../components/MetricCard.astro";
 import PercentileBar from "../../components/PercentileBar.astro";
 import FactorWeatherCard from "../../components/FactorWeatherCard.astro";
+import { withBase } from "../../lib/url";
 ---
 
 <Layout
@@ -40,7 +41,7 @@ import FactorWeatherCard from "../../components/FactorWeatherCard.astro";
           percentile={0.62}
           percentileLabels={{ low: "低い", high: "高い" }}
           evidenceSummary="高配当ポートフォリオの超過リターンは文献により結果が割れる。"
-          evidenceSource={{ label: "factor-evidence.md", url: "/factors/dividend/" }}
+          evidenceSource={{ label: "factor-evidence.md", url: withBase("/factors/dividend/") }}
           evidenceConfirmed={false}
           ticker="9432.T"
           name="日本電信電話"

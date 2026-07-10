@@ -4,6 +4,7 @@
  * 出典: docs/02-research/factor-evidence.md 1節(バリュー)、data.ts の daily.source.note(実績PER注記)。
  */
 import Layout from "../../../layouts/Layout.astro";
+import { withBase } from "../../../lib/url";
 ---
 
 <Layout
@@ -11,7 +12,7 @@ import Layout from "../../../layouts/Layout.astro";
   description="PERの定義、実績PERと会社予想PERの違い、バリュー効果としての寄与度エビデンスを出典付きで解説します。"
 >
   <article class="container article">
-    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / PER</p>
+    <p class="article__breadcrumb"><a href={withBase("/learn/")}>学ぶ</a> / PER</p>
     <h1>PER(株価収益率)の読み方</h1>
 
     <section class="article__section">
