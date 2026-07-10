@@ -26,6 +26,8 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+# 日次パイプラインの実行ログは監査証跡としてコミットする(T-05)
+!data/logs/*.log
 
 # Local Claude session state (not project config)
 .claude/scheduled_tasks.lock

@@ -1,0 +1,1133 @@
+{
+  "factor": "margin-trading",
+  "label": "信用倍率・信用残(日本)",
+  "markets": [
+    "jp"
+  ],
+  "frequency": "weekly",
+  "definition": "信用買残 ÷ 信用売残(制度信用ベース)。学術的な寄与度の実証はほぼ皆無。「需給参考」ラベルで隔離掲載し、エビデンス欄には『寄与の実証なし』と明記する。",
+  "evidence": [
+    {
+      "claim": "寄与度の学術的実証はほぼ皆無",
+      "source": "docs/03-metrics-ranking.md 参考指標枠",
+      "confirmed": true
+    }
+  ],
+  "data_source": {
+    "provider": "JPX(日本取引所グループ)",
+    "per_stock": "銘柄別信用取引週末残高(PDF, 毎週第2営業日16:30頃更新)",
+    "per_stock_url": "https://www.jpx.co.jp/markets/statistics-equities/margin/05.html",
+    "format": "PDF。CSV配信はない。",
+    "update_lag": "「N週N月N日申込分」= 前週金曜時点のスナップショットを翌週火〜水曜に公表(実質5〜8日遅れ)"
+  },
+  "history": [
+    {
+      "date": "2026-07-10",
+      "screen_count": 220
+    }
+  ],
+  "today_screen": {
+    "jp": [
+      {
+        "ticker": "7013.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 53.4497
+      },
+      {
+        "ticker": "9501.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 50.1278
+      },
+      {
+        "ticker": "9005.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 44.8946
+      },
+      {
+        "ticker": "6702.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 43.8997
+      },
+      {
+        "ticker": "7011.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 43.4906
+      },
+      {
+        "ticker": "4519.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 40.2597
+      },
+      {
+        "ticker": "6501.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 39.5465
+      },
+      {
+        "ticker": "6701.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 38.5337
+      },
+      {
+        "ticker": "2768.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 35.6871
+      },
+      {
+        "ticker": "6758.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 34.4316
+      },
+      {
+        "ticker": "9008.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 33.9336
+      },
+      {
+        "ticker": "8031.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 31.4762
+      },
+      {
+        "ticker": "1803.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 30.0737
+      },
+      {
+        "ticker": "5714.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 30.0625
+      },
+      {
+        "ticker": "5411.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 29.9011
+      },
+      {
+        "ticker": "2502.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 28.8755
+      },
+      {
+        "ticker": "6503.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 28.6631
+      },
+      {
+        "ticker": "7270.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 27.7181
+      },
+      {
+        "ticker": "4704.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 26.4409
+      },
+      {
+        "ticker": "5803.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 25.9692
+      },
+      {
+        "ticker": "1812.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 22.5375
+      },
+      {
+        "ticker": "5713.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 22.5341
+      },
+      {
+        "ticker": "4507.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 22.1966
+      },
+      {
+        "ticker": "1605.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 22.0824
+      },
+      {
+        "ticker": "5406.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 21.3281
+      },
+      {
+        "ticker": "1963.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 20.7231
+      },
+      {
+        "ticker": "4568.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 20.2411
+      },
+      {
+        "ticker": "4506.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 20.2369
+      },
+      {
+        "ticker": "3861.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 20.1348
+      },
+      {
+        "ticker": "4043.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 20.1067
+      },
+      {
+        "ticker": "9022.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 19.8896
+      },
+      {
+        "ticker": "8252.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 19.2121
+      },
+      {
+        "ticker": "5201.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 19.1215
+      },
+      {
+        "ticker": "1802.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 18.8112
+      },
+      {
+        "ticker": "9021.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 17.4312
+      },
+      {
+        "ticker": "6361.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 17.2133
+      },
+      {
+        "ticker": "5019.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 17.0466
+      },
+      {
+        "ticker": "1925.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 16.507
+      },
+      {
+        "ticker": "3402.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 15.917
+      },
+      {
+        "ticker": "6326.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 15.7979
+      },
+      {
+        "ticker": "4503.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 15.7949
+      },
+      {
+        "ticker": "9001.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 15.6
+      },
+      {
+        "ticker": "9503.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 15.5798
+      },
+      {
+        "ticker": "3659.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 15.5
+      },
+      {
+        "ticker": "6988.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 15.1327
+      },
+      {
+        "ticker": "7201.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 14.8001
+      },
+      {
+        "ticker": "4523.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 14.2857
+      },
+      {
+        "ticker": "7741.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 14.2024
+      },
+      {
+        "ticker": "8750.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 14.0242
+      },
+      {
+        "ticker": "6479.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 13.8399
+      },
+      {
+        "ticker": "4901.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 13.7929
+      },
+      {
+        "ticker": "9602.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 13.7344
+      },
+      {
+        "ticker": "9984.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 13.7265
+      },
+      {
+        "ticker": "5020.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 13.6979
+      },
+      {
+        "ticker": "8830.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 13.6818
+      },
+      {
+        "ticker": "5631.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 13.6075
+      },
+      {
+        "ticker": "7751.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 13.5724
+      },
+      {
+        "ticker": "4755.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 13.2975
+      },
+      {
+        "ticker": "4902.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 13.1137
+      },
+      {
+        "ticker": "6471.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 12.9102
+      },
+      {
+        "ticker": "7974.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 12.8155
+      },
+      {
+        "ticker": "3405.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 12.5412
+      },
+      {
+        "ticker": "6954.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 12.1672
+      },
+      {
+        "ticker": "5801.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 11.9135
+      },
+      {
+        "ticker": "6762.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 11.8965
+      },
+      {
+        "ticker": "6305.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 11.7905
+      },
+      {
+        "ticker": "5401.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 11.6076
+      },
+      {
+        "ticker": "2914.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 11.0365
+      },
+      {
+        "ticker": "5802.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 11.0018
+      },
+      {
+        "ticker": "1801.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 10.8783
+      },
+      {
+        "ticker": "7211.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 10.7636
+      },
+      {
+        "ticker": "5711.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 10.6576
+      },
+      {
+        "ticker": "9020.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 10.5805
+      },
+      {
+        "ticker": "8604.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 10.1534
+      },
+      {
+        "ticker": "9104.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 10.1154
+      },
+      {
+        "ticker": "4183.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 10.1065
+      },
+      {
+        "ticker": "8001.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.8099
+      },
+      {
+        "ticker": "5333.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.7381
+      },
+      {
+        "ticker": "7012.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.7348
+      },
+      {
+        "ticker": "6753.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.6539
+      },
+      {
+        "ticker": "8801.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.6468
+      },
+      {
+        "ticker": "8002.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.6322
+      },
+      {
+        "ticker": "4005.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.6163
+      },
+      {
+        "ticker": "2282.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.4789
+      },
+      {
+        "ticker": "7272.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.4238
+      },
+      {
+        "ticker": "8591.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.2367
+      },
+      {
+        "ticker": "9101.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 9.2349
+      },
+      {
+        "ticker": "7912.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.9409
+      },
+      {
+        "ticker": "1808.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.7857
+      },
+      {
+        "ticker": "5214.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.782
+      },
+      {
+        "ticker": "6857.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.7569
+      },
+      {
+        "ticker": "4689.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.7504
+      },
+      {
+        "ticker": "8015.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.5436
+      },
+      {
+        "ticker": "4208.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.4653
+      },
+      {
+        "ticker": "8309.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.3993
+      },
+      {
+        "ticker": "2413.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.288
+      },
+      {
+        "ticker": "9531.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.2584
+      },
+      {
+        "ticker": "6504.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.2484
+      },
+      {
+        "ticker": "6902.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.2362
+      },
+      {
+        "ticker": "6472.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 8.2182
+      },
+      {
+        "ticker": "7951.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 7.8029
+      },
+      {
+        "ticker": "2802.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 7.7982
+      },
+      {
+        "ticker": "6473.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 7.5195
+      },
+      {
+        "ticker": "6302.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 7.2576
+      },
+      {
+        "ticker": "2432.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 7.2307
+      },
+      {
+        "ticker": "8306.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 7.2071
+      },
+      {
+        "ticker": "4751.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 7.0476
+      },
+      {
+        "ticker": "7203.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.9233
+      },
+      {
+        "ticker": "8411.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.8309
+      },
+      {
+        "ticker": "7261.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.7586
+      },
+      {
+        "ticker": "4061.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.6154
+      },
+      {
+        "ticker": "5101.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.5556
+      },
+      {
+        "ticker": "6971.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.5512
+      },
+      {
+        "ticker": "4063.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.4922
+      },
+      {
+        "ticker": "3092.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.4195
+      },
+      {
+        "ticker": "6752.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.0628
+      },
+      {
+        "ticker": "7735.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 6.0178
+      },
+      {
+        "ticker": "6273.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.9818
+      },
+      {
+        "ticker": "7186.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.8333
+      },
+      {
+        "ticker": "7004.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.7683
+      },
+      {
+        "ticker": "6645.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.719
+      },
+      {
+        "ticker": "5108.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.7022
+      },
+      {
+        "ticker": "8354.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.6981
+      },
+      {
+        "ticker": "8766.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.5758
+      },
+      {
+        "ticker": "9532.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.5683
+      },
+      {
+        "ticker": "8316.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.5161
+      },
+      {
+        "ticker": "7269.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.398
+      },
+      {
+        "ticker": "5233.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.33
+      },
+      {
+        "ticker": "9007.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.2534
+      },
+      {
+        "ticker": "6506.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.0736
+      },
+      {
+        "ticker": "6526.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.0545
+      },
+      {
+        "ticker": "9009.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 5.0128
+      },
+      {
+        "ticker": "7752.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.9401
+      },
+      {
+        "ticker": "8058.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.9218
+      },
+      {
+        "ticker": "6920.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.7228
+      },
+      {
+        "ticker": "6981.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.7043
+      },
+      {
+        "ticker": "5332.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.6815
+      },
+      {
+        "ticker": "4307.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.6723
+      },
+      {
+        "ticker": "7832.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.6303
+      },
+      {
+        "ticker": "8035.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.5161
+      },
+      {
+        "ticker": "8308.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.4846
+      },
+      {
+        "ticker": "4911.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.4262
+      },
+      {
+        "ticker": "7733.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.3545
+      },
+      {
+        "ticker": "1332.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.3483
+      },
+      {
+        "ticker": "6723.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.291
+      },
+      {
+        "ticker": "6146.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.1595
+      },
+      {
+        "ticker": "5831.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.1452
+      },
+      {
+        "ticker": "9107.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.1057
+      },
+      {
+        "ticker": "3289.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.0535
+      },
+      {
+        "ticker": "6841.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.019
+      },
+      {
+        "ticker": "4151.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.0088
+      },
+      {
+        "ticker": "7911.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 4.0033
+      },
+      {
+        "ticker": "4004.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.9058
+      },
+      {
+        "ticker": "6963.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.8582
+      },
+      {
+        "ticker": "4188.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.7799
+      },
+      {
+        "ticker": "6113.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.7202
+      },
+      {
+        "ticker": "4042.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.6285
+      },
+      {
+        "ticker": "8233.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.3272
+      },
+      {
+        "ticker": "8630.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.3009
+      },
+      {
+        "ticker": "4021.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.288
+      },
+      {
+        "ticker": "6301.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.2691
+      },
+      {
+        "ticker": "6103.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.1892
+      },
+      {
+        "ticker": "8253.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.1854
+      },
+      {
+        "ticker": "7202.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 3.1598
+      },
+      {
+        "ticker": "4543.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.9964
+      },
+      {
+        "ticker": "8804.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.943
+      },
+      {
+        "ticker": "2269.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.7844
+      },
+      {
+        "ticker": "9843.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.7559
+      },
+      {
+        "ticker": "8304.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.7557
+      },
+      {
+        "ticker": "8601.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.56
+      },
+      {
+        "ticker": "1721.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.4267
+      },
+      {
+        "ticker": "8053.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.3571
+      },
+      {
+        "ticker": "6770.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.3077
+      },
+      {
+        "ticker": "5706.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.2985
+      },
+      {
+        "ticker": "9502.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.2854
+      },
+      {
+        "ticker": "8267.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.2619
+      },
+      {
+        "ticker": "3407.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.2614
+      },
+      {
+        "ticker": "4062.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.2542
+      },
+      {
+        "ticker": "8802.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.2475
+      },
+      {
+        "ticker": "6532.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.2041
+      },
+      {
+        "ticker": "3401.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.1977
+      },
+      {
+        "ticker": "7731.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.1427
+      },
+      {
+        "ticker": "3697.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.1317
+      },
+      {
+        "ticker": "4578.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.1056
+      },
+      {
+        "ticker": "6367.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.0918
+      },
+      {
+        "ticker": "6178.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.0413
+      },
+      {
+        "ticker": "9147.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 2.0257
+      },
+      {
+        "ticker": "7267.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.816
+      },
+      {
+        "ticker": "9064.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.8156
+      },
+      {
+        "ticker": "8331.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.7892
+      },
+      {
+        "ticker": "2503.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.5217
+      },
+      {
+        "ticker": "2002.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.4667
+      },
+      {
+        "ticker": "2801.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.3302
+      },
+      {
+        "ticker": "7453.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.3135
+      },
+      {
+        "ticker": "4661.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.2813
+      },
+      {
+        "ticker": "5301.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.2278
+      },
+      {
+        "ticker": "8795.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.2264
+      },
+      {
+        "ticker": "1928.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.1907
+      },
+      {
+        "ticker": "6724.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.1387
+      },
+      {
+        "ticker": "6861.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.0888
+      },
+      {
+        "ticker": "9766.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 1.0518
+      },
+      {
+        "ticker": "6098.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.9196
+      },
+      {
+        "ticker": "4502.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.8856
+      },
+      {
+        "ticker": "9735.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.8198
+      },
+      {
+        "ticker": "6976.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.7379
+      },
+      {
+        "ticker": "3436.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.7297
+      },
+      {
+        "ticker": "4385.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.6092
+      },
+      {
+        "ticker": "3382.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.5924
+      },
+      {
+        "ticker": "4452.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.4939
+      },
+      {
+        "ticker": "3086.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.4933
+      },
+      {
+        "ticker": "9433.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.4898
+      },
+      {
+        "ticker": "3099.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.4858
+      },
+      {
+        "ticker": "2501.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.3942
+      },
+      {
+        "ticker": "8697.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.3645
+      },
+      {
+        "ticker": "2871.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.3462
+      },
+      {
+        "ticker": "4324.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.2537
+      },
+      {
+        "ticker": "9983.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": 0.2112
+      },
+      {
+        "ticker": "9201.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": null
+      },
+      {
+        "ticker": "9202.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": null
+      },
+      {
+        "ticker": "9434.T",
+        "as_of_week": "2026-07-03",
+        "margin_ratio_seido": null
+      }
+    ]
+  }
+}

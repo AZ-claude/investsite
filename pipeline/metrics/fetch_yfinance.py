@@ -135,6 +135,24 @@ def fetch_fundamentals_bulk(
     return result
 
 
+def fetch_index_quote(ticker: str) -> dict:
+    """指数(^N225 / ^GSPC等)の直近終値・前日比を取得する(市場体温計 index_level 用、T-05)。
+
+    戻り値: {"level": float|None, "level_as_of": "YYYY-MM-DD"|None, "change_pct_1d": float|None}
+    直近5日分の終値のうち末尾2件で前日比を計算する(休場日を考慮して5日分取得)。
+    データが2件未満しか取れない場合は全フィールドNoneを返す(境界値: 取得失敗)。
+    """
+    hist = yf.Ticker(ticker).history(period="5d")
+    closes = hist["Close"].dropna() if hist is not None and not hist.empty else None
+    if closes is None or len(closes) < 2:
+        return {"level": None, "level_as_of": None, "change_pct_1d": None}
+    last = float(closes.iloc[-1])
+    prev = float(closes.iloc[-2])
+    as_of = closes.index[-1].strftime("%Y-%m-%d")
+    change_pct_1d = round((last - prev) / prev * 100, 3) if prev else None
+    return {"level": last, "level_as_of": as_of, "change_pct_1d": change_pct_1d}
+
+
 def fetch_price_history_bulk(tickers: list[str], period: str = "14mo") -> dict[str, list[float]]:
     """モメンタム計算用の日次終値履歴をyf.downloadで一括取得する。
 

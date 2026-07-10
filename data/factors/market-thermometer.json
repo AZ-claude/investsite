@@ -1,0 +1,63 @@
+{
+  "date": "2026-07-10",
+  "jp": {
+    "index": "NIKKEI225",
+    "index_level": 69031.859375,
+    "index_level_as_of": "2026-07-10",
+    "index_change_pct_1d": 1.901,
+    "index_per": null,
+    "index_pbr": null,
+    "index_per_percentile_5y": null,
+    "index_pbr_percentile_5y": null,
+    "margin_market_total": {
+      "outstanding_sales_thousand_shares": 394905,
+      "outstanding_purchases_thousand_shares": 3871201,
+      "margin_ratio_national_total": 9.8029,
+      "source": "https://www.jpx.co.jp/markets/statistics-equities/margin/04.html",
+      "as_of_week": "2026-07-03"
+    }
+  },
+  "us": {
+    "index": "SP500",
+    "index_level": 7543.64013671875,
+    "index_level_as_of": "2026-07-09",
+    "index_change_pct_1d": 0.814,
+    "index_per": null,
+    "index_pbr": null,
+    "index_per_percentile_5y": null,
+    "index_pbr_percentile_5y": null
+  },
+  "history": [
+    {
+      "date": "2026-07-10",
+      "jp": {
+        "index": "NIKKEI225",
+        "index_level": 69031.859375,
+        "index_level_as_of": "2026-07-10",
+        "index_change_pct_1d": 1.901,
+        "index_per": null,
+        "index_pbr": null,
+        "index_per_percentile_5y": null,
+        "index_pbr_percentile_5y": null,
+        "margin_market_total": {
+          "outstanding_sales_thousand_shares": 394905,
+          "outstanding_purchases_thousand_shares": 3871201,
+          "margin_ratio_national_total": 9.8029,
+          "source": "https://www.jpx.co.jp/markets/statistics-equities/margin/04.html",
+          "as_of_week": "2026-07-03"
+        }
+      },
+      "us": {
+        "index": "SP500",
+        "index_level": 7543.64013671875,
+        "index_level_as_of": "2026-07-09",
+        "index_change_pct_1d": 0.814,
+        "index_per": null,
+        "index_pbr": null,
+        "index_per_percentile_5y": null,
+        "index_pbr_percentile_5y": null
+      }
+    }
+  ],
+  "source_note": "index_level/index_change_pct_1d は yfinance(^N225, ^GSPC)の実測値。margin_market_totalはJPX公式Excel(週次)の実測値。index_per/index_pbrは全銘柄時価総額加重集計が必要なためT-05時点ではnull固定(将来の指標拡充スコープ)。"
+}
