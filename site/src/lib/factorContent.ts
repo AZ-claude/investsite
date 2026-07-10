@@ -75,7 +75,7 @@ export const FACTOR_CONTENT: Record<FactorSlug, FactorContent> = {
       {
         claim:
           "米国HMLの長期平均は年率3〜5%程度が通説とされるが、これは二次解説記事由来であり学術原典での正確な年率値は未確認。日本は一貫した年率数値の学術コンセンサスが手薄(方向性のみ確認)。",
-        sourceLabel: "docs/02-research/factor-evidence.md 1節(調査上の注記)",
+        sourceLabel: "当サイトの文献整理ノート(バリュー・調査上の注記)",
         confirmed: false,
       },
     ],
@@ -164,7 +164,7 @@ export const FACTOR_CONTENT: Record<FactorSlug, FactorContent> = {
       },
       {
         claim: "日本単独の年率効果量は本調査では特定できず(方向性のみ確認)。",
-        sourceLabel: "docs/02-research/factor-evidence.md 3節",
+        sourceLabel: "当サイトの文献整理ノート(クオリティ)",
         confirmed: false,
       },
     ],
@@ -215,7 +215,7 @@ export const FACTOR_CONTENT: Record<FactorSlug, FactorContent> = {
     evidence: [
       {
         claim: "信用倍率が将来リターンに寄与するという学術的な定量エビデンスは本調査では確認できず(方向性のみ、数値は未確認)。",
-        sourceLabel: "docs/02-research/factor-evidence.md 8節",
+        sourceLabel: "当サイトの文献整理ノート(信用倍率)",
         confirmed: false,
       },
     ],
