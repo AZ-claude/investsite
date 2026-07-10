@@ -1,0 +1,119 @@
+---
+/**
+ * /learn/per/ — PER(株価収益率)の読み方。T-10 初期6記事の1本。
+ * 出典: docs/02-research/factor-evidence.md 1節(バリュー)、data.ts の daily.source.note(実績PER注記)。
+ */
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout
+  title="PER(株価収益率)の読み方 | 学ぶ"
+  description="PERの定義、実績PERと会社予想PERの違い、バリュー効果としての寄与度エビデンスを出典付きで解説します。"
+>
+  <article class="container article">
+    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / PER</p>
+    <h1>PER(株価収益率)の読み方</h1>
+
+    <section class="article__section">
+      <h2>PERとは何か</h2>
+      <p>
+        PER(Price Earnings Ratio、株価収益率)は、株価を1株当たり利益(EPS)で割った値です。
+        「今の株価が、その企業の1年分の利益の何倍か」を表し、値が小さいほど利益に対して株価が割安、
+        大きいほど割高と解釈されます。PER/PBR/配当利回り/ROEは証券会社の初心者向け教育コンテンツで
+        「代表的な指標セット」として一貫して扱われています。
+      </p>
+    </section>
+
+    <section class="article__section">
+      <h2>「実績PER」と「会社予想PER」は別物</h2>
+      <p>
+        本サイトが掲載するPERは yfinance の trailingPE(実績PER、直近12ヶ月の実績利益ベース)です。
+        一方、Yahoo!ファイナンス等の日本の主要サイトで表示されるPERの多くは会社予想EPSベースであり、
+        <strong>定義が異なります</strong>。同じ銘柄でも参照元によって数値が変わることがあるため、
+        本サイトで掲載する値を他サイトと比較する際は「実績ベースか予想ベースか」を必ず確認してください。
+      </p>
+    </section>
+
+    <section class="article__section">
+      <h2>寄与度のエビデンス(バリュー効果の一部として)</h2>
+      <p>
+        PERはPBRと並んで「バリュー」ファクターの代表的な構成要素です。米国ではFama &amp; French (1992) が
+        簿価時価比(B/M、PBRの逆数に相当)の説明力を実証し、Fama &amp; French (2012) は日本を含む4地域で
+        バリュープレミアムを確認しています。特に<strong>日本は大型株でもバリュー効果が縮小しにくい</strong>という
+        特異性が報告されています。ただし、割安の度合いを機械的なスクリーニングだけで判断すると、
+        後述するPBRの記事で触れる逆説的な結果も報告されているため、単独の数値判断には注意が必要です。
+      </p>
+      <p class="article__unconfirmed-note">
+        (注記)米国バリューの「年率3〜5%」という数値は二次情報由来で、学術原典での正確な年率値は未確認です。
+        方向性(バリューが機能する傾向)は確認済みですが、数値は目安として扱ってください。
+      </p>
+    </section>
+
+    <section class="article__section article__section--sources">
+      <h2>出典</h2>
+      <ul>
+        <li>Fama &amp; French (1992) "The Cross-Section of Expected Stock Returns", JF</li>
+        <li>
+          Fama &amp; French (2012) "Size, Value, and Momentum in International Stock Returns", JFE 105 —
+          <a href="https://www.johnhcochrane.com/s/Fama_French_size_value_momentum_JFE.pdf" target="_blank" rel="noopener noreferrer">
+            PDF
+          </a>
+        </li>
+        <li>docs/02-research/factor-evidence.md 1節(社内SSOT、本記事の一次整理元)</li>
+      </ul>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .article {
+    padding-block: var(--space-6);
+    max-width: 72ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .article__breadcrumb {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .article__breadcrumb a {
+    color: var(--color-accent);
+  }
+
+  .article h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .article__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-lg);
+  }
+
+  .article__section p {
+    margin: 0 0 var(--space-3);
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .article__unconfirmed-note {
+    font-size: var(--font-size-sm);
+    color: var(--color-reference-accent);
+  }
+
+  .article__section--sources ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .article__section--sources a {
+    color: var(--color-accent);
+  }
+</style>

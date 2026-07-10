@@ -1,0 +1,351 @@
+---
+/**
+ * /screener/ — 本日の全スクリーニング結果一覧(ファクター横断)。T-10。
+ * docs/04-site-design.md 2節「/screener/」。
+ *
+ * 5ファクター(バリュー/モメンタム/配当利回り/クオリティ/サイズ)の today_screen.top_quintile を
+ * ティッカー軸で横断結合し、daily/*.json の指標値と結合した一覧表を日米タブ(セクション分割)で表示する。
+ * 信用倍率(margin-trading)は「需給参考」のため別セクションで隔離する(docs/03-metrics-ranking.md 方針)。
+ */
+import Layout from "../../layouts/Layout.astro";
+import {
+  FACTOR_SLUGS,
+  loadAllFactors,
+  loadDailySnapshot,
+  type FactorSlug,
+  type Market,
+  type DailyStock,
+} from "../../lib/data";
+
+const factors = loadAllFactors();
+const jpDaily = loadDailySnapshot("jp");
+const usDaily = loadDailySnapshot("us");
+
+const SCREEN_FACTOR_SLUGS = FACTOR_SLUGS.filter((s) => s !== "margin-trading") as Exclude<
+  FactorSlug,
+  "margin-trading"
+>[];
+
+const FACTOR_SHORT_LABEL: Record<FactorSlug, string> = {
+  value: "バリュー",
+  momentum: "モメンタム",
+  dividend: "配当利回り",
+  quality: "クオリティ",
+  size: "サイズ",
+  "margin-trading": "信用倍率",
+};
+
+interface ScreenerRow {
+  ticker: string;
+  name: string;
+  matchedFactors: FactorSlug[];
+  per: number | null;
+  pbr: number | null;
+  dividendYield: number | null;
+  roe: number | null;
+  momentum: number | null;
+}
+
+function buildScreenerRows(market: Market): ScreenerRow[] {
+  const daily = market === "jp" ? jpDaily : usDaily;
+  const stockMap = new Map<string, DailyStock>();
+  if (daily) {
+    for (const s of daily.data.stocks) stockMap.set(s.ticker, s);
+  }
+
+  const matched = new Map<string, Set<FactorSlug>>();
+  for (const slug of SCREEN_FACTOR_SLUGS) {
+    const factor = factors[slug];
+    const items = factor?.today_screen?.[market];
+    if (!items) continue;
+    for (const item of items) {
+      if (item.quantile !== "top_quintile") continue;
+      if (!matched.has(item.ticker)) matched.set(item.ticker, new Set());
+      matched.get(item.ticker)!.add(slug);
+    }
+  }
+
+  const rows: ScreenerRow[] = [];
+  for (const [ticker, slugSet] of matched.entries()) {
+    const stock = stockMap.get(ticker);
+    rows.push({
+      ticker,
+      name: stock?.name ?? "—",
+      matchedFactors: SCREEN_FACTOR_SLUGS.filter((s) => slugSet.has(s)),
+      per: stock?.per_trailing ?? null,
+      pbr: stock?.pbr ?? null,
+      dividendYield: stock?.dividend_yield_pct ?? null,
+      roe: stock?.roe ?? null,
+      momentum: stock?.momentum_12_1 ?? null,
+    });
+  }
+
+  // 該当ファクター数が多い順 → ティッカー昇順
+  rows.sort((a, b) => b.matchedFactors.length - a.matchedFactors.length || a.ticker.localeCompare(b.ticker));
+  return rows;
+}
+
+const jpRows = buildScreenerRows("jp");
+const usRows = buildScreenerRows("us");
+
+const marginFactor = factors["margin-trading"];
+const marginRows = (marginFactor?.today_screen?.jp ?? [])
+  .filter((item: any) => item.margin_ratio_seido !== null && item.margin_ratio_seido !== undefined)
+  .slice(0, 30);
+
+const fmtNum = (v: number | null, digits = 2, suffix = "") =>
+  v === null || v === undefined || Number.isNaN(v) ? "—" : `${v.toFixed(digits)}${suffix}`;
+const fmtPct = (v: number | null, digits = 1) =>
+  v === null || v === undefined || Number.isNaN(v) ? "—" : `${(v * 100).toFixed(digits)}%`;
+
+const lastUpdated = jpDaily?.data.generated_at ?? usDaily?.data.generated_at;
+---
+
+<Layout
+  title="スクリーナー"
+  description="バリュー・モメンタム・配当利回り・クオリティ・サイズの各ファクターで上位20%(top_quintile)に該当した銘柄を横断一覧表示する。"
+  lastUpdated={lastUpdated}
+  dataSources={["yfinance", "JPX(信用取引残高)"]}
+>
+  <div class="container screener-page">
+    <h1>スクリーナー</h1>
+    <p class="screener-page__intro">
+      本日、5ファクター(バリュー・モメンタム・配当利回り・クオリティ・サイズ)のいずれかで上位20%
+      (top_quintile)に該当した銘柄の一覧です。複数ファクターに同時該当する銘柄ほど上位に表示します。
+      掲載は事実(算出値)の一覧であり、売買の推奨ではありません。各ファクターの寄与度エビデンスは
+      <a href="/factors/">ファクター個別ページ</a>を参照してください。
+    </p>
+
+    <section class="screener-page__section">
+      <h2>日本市場(NIKKEI225)</h2>
+      {jpRows.length > 0 ? (
+        <div class="screener-page__table-wrap">
+          <table class="screener-page__table">
+            <thead>
+              <tr>
+                <th>ティッカー</th>
+                <th>銘柄名</th>
+                <th>該当ファクター</th>
+                <th>PER(実績)</th>
+                <th>PBR</th>
+                <th>配当利回り</th>
+                <th>ROE</th>
+                <th>モメンタム(12-1)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {jpRows.map((row) => (
+                <tr>
+                  <td class="num">{row.ticker}</td>
+                  <td>{row.name}</td>
+                  <td class="screener-page__badges">
+                    {row.matchedFactors.map((slug) => (
+                      <a class="screener-page__badge" href={`/factors/${slug}/`}>
+                        {FACTOR_SHORT_LABEL[slug]}
+                      </a>
+                    ))}
+                  </td>
+                  <td class="num">{fmtNum(row.per)}</td>
+                  <td class="num">{fmtNum(row.pbr)}</td>
+                  <td class="num">{fmtNum(row.dividendYield, 2, "%")}</td>
+                  <td class="num">{fmtPct(row.roe)}</td>
+                  <td class="num">{fmtPct(row.momentum)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <p class="screener-page__empty">日本市場のスクリーニング結果データがありません。</p>
+      )}
+    </section>
+
+    <section class="screener-page__section">
+      <h2>米国市場(S&amp;P500)</h2>
+      {usRows.length > 0 ? (
+        <div class="screener-page__table-wrap">
+          <table class="screener-page__table">
+            <thead>
+              <tr>
+                <th>ティッカー</th>
+                <th>銘柄名</th>
+                <th>該当ファクター</th>
+                <th>PER(実績)</th>
+                <th>PBR</th>
+                <th>配当利回り</th>
+                <th>ROE</th>
+                <th>モメンタム(12-1)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {usRows.map((row) => (
+                <tr>
+                  <td class="num">{row.ticker}</td>
+                  <td>{row.name}</td>
+                  <td class="screener-page__badges">
+                    {row.matchedFactors.map((slug) => (
+                      <a class="screener-page__badge" href={`/factors/${slug}/`}>
+                        {FACTOR_SHORT_LABEL[slug]}
+                      </a>
+                    ))}
+                  </td>
+                  <td class="num">{fmtNum(row.per)}</td>
+                  <td class="num">{fmtNum(row.pbr)}</td>
+                  <td class="num">{fmtNum(row.dividendYield, 2, "%")}</td>
+                  <td class="num">{fmtPct(row.roe)}</td>
+                  <td class="num">{fmtPct(row.momentum)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <p class="screener-page__empty">米国市場のスクリーニング結果データがありません。</p>
+      )}
+    </section>
+
+    <section class="screener-page__section screener-page__section--reference">
+      <h2>
+        参考: 信用倍率上位(日本、需給参考)
+        <span class="screener-page__badge screener-page__badge--reference">需給参考</span>
+      </h2>
+      <p class="screener-page__note">
+        信用倍率(信用買残÷信用売残、制度信用ベース)が高い上位30銘柄。学術的な寄与度の実証はほぼ皆無のため、
+        上記の寄与度エビデンスありのファクターとは明確に区別して掲載しています(詳細:
+        <a href="/learn/margin-ratio/">信用倍率の読み方</a>)。
+      </p>
+      {marginRows.length > 0 ? (
+        <div class="screener-page__table-wrap">
+          <table class="screener-page__table">
+            <thead>
+              <tr>
+                <th>ティッカー</th>
+                <th>信用倍率(制度信用)</th>
+                <th>申込日基準</th>
+              </tr>
+            </thead>
+            <tbody>
+              {marginRows.map((row: any) => (
+                <tr>
+                  <td class="num">{row.ticker}</td>
+                  <td class="num">{fmtNum(row.margin_ratio_seido)}倍</td>
+                  <td class="num">{row.as_of_week}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <p class="screener-page__empty">信用倍率データがありません。</p>
+      )}
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .screener-page {
+    padding-block: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .screener-page h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .screener-page__intro {
+    margin: 0;
+    max-width: 72ch;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .screener-page__intro a {
+    color: var(--color-accent);
+  }
+
+  .screener-page__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .screener-page__section--reference {
+    padding: var(--space-4);
+    border: 1px dashed var(--color-reference-accent);
+    border-radius: var(--radius-md);
+    background: var(--color-reference-soft);
+  }
+
+  .screener-page__note {
+    margin: 0 0 var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    max-width: 72ch;
+    line-height: 1.6;
+  }
+
+  .screener-page__note a {
+    color: var(--color-accent);
+  }
+
+  .screener-page__table-wrap {
+    overflow-x: auto;
+  }
+
+  .screener-page__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+    min-width: 640px;
+  }
+
+  .screener-page__table th,
+  .screener-page__table td {
+    padding: var(--space-2) var(--space-3);
+    text-align: right;
+    border-bottom: 1px solid var(--border-gridline);
+    white-space: nowrap;
+  }
+
+  .screener-page__table th:nth-child(2),
+  .screener-page__table td:nth-child(2),
+  .screener-page__table th:nth-child(3),
+  .screener-page__table td:nth-child(3) {
+    text-align: left;
+    white-space: normal;
+  }
+
+  .screener-page__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .screener-page__badge {
+    display: inline-block;
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: var(--font-size-xs);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    padding: 1px 8px;
+    text-decoration: none;
+  }
+
+  .screener-page__badge--reference {
+    color: var(--color-reference-accent);
+    border-color: var(--color-reference-accent);
+    font-weight: 600;
+  }
+
+  .screener-page__empty {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>

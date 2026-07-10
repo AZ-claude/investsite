@@ -1,0 +1,106 @@
+---
+/**
+ * /learn/roe/ — ROE(自己資本利益率)の読み方。T-10 初期6記事の1本。
+ * 出典: docs/02-research/factor-evidence.md 3節(クオリティ)。
+ */
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout
+  title="ROE(自己資本利益率)の読み方 | 学ぶ"
+  description="ROEの定義、PBR=PER×ROEの関係、クオリティ指標としての寄与度エビデンスを出典付きで解説します。"
+>
+  <article class="container article">
+    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / ROE</p>
+    <h1>ROE(自己資本利益率)の読み方</h1>
+
+    <section class="article__section">
+      <h2>ROEとは何か</h2>
+      <p>
+        ROE(Return On Equity、自己資本利益率)は、当期純利益を自己資本(純資産)で割った値です。
+        「株主が出資したお金を使って、企業がどれだけ効率よく利益を生み出しているか」を表す収益性指標で、
+        PER・PBRとセットで解説されることが多い指標です。数式上、PBR = PER × ROE という恒等式が成り立ち、
+        「PBRが同じでも、PERが低くROEが高い銘柄」と「PERが高くROEが低い銘柄」では中身が異なります。
+      </p>
+    </section>
+
+    <section class="article__section">
+      <h2>寄与度のエビデンス(クオリティファクターの一部として)</h2>
+      <p>
+        ROEは学術的な「クオリティ」ファクター(QMJ: Quality Minus Junk)の代表的な構成要素の一つです。
+        Asness, Frazzini &amp; Pedersen (2019) は米国および検証対象の24カ国すべて(日本を含む)で、
+        クオリティが正のリスク調整後リターンを示すことを報告しています。米国では1958〜2018年で年率約4.7%
+        (Alpha Architectの整理による)とされています。日本単独の年率効果量については本サイトの調査では
+        確認できていません(方向性のみ確認)。
+      </p>
+      <p>
+        実務では「高ROE銘柄は割高化しやすい」という傾向があるため、ROE単体ではなくPBRと組み合わせた
+        「PBROE」ビュー(低PBR×高ROEの銘柄を探す)が国内でも提案されています。本サイトが計算するROEは
+        単体指標であり、QMJが本来使う粗利益率・アクルーアル・レバレッジ等を含む複合スコアの一部分的な近似
+        である点にご留意ください。
+      </p>
+    </section>
+
+    <section class="article__section article__section--sources">
+      <h2>出典</h2>
+      <ul>
+        <li>
+          Asness, Frazzini &amp; Pedersen (2019) "Quality Minus Junk", Review of Accounting Studies —
+          <a href="http://www.econ.yale.edu/~shiller/behfin/2013_04-10/asness-frazzini-pedersen.pdf" target="_blank" rel="noopener noreferrer">
+            PDF
+          </a>
+        </li>
+        <li>マネックス証券コラム(吉野貴晶氏、PBROEの実務解説)</li>
+        <li>docs/02-research/factor-evidence.md 3節(社内SSOT)</li>
+      </ul>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .article {
+    padding-block: var(--space-6);
+    max-width: 72ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .article__breadcrumb {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .article__breadcrumb a {
+    color: var(--color-accent);
+  }
+
+  .article h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .article__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-lg);
+  }
+
+  .article__section p {
+    margin: 0 0 var(--space-3);
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .article__section--sources ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .article__section--sources a {
+    color: var(--color-accent);
+  }
+</style>

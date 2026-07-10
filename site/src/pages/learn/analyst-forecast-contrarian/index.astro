@@ -1,0 +1,125 @@
+---
+/**
+ * /learn/analyst-forecast-contrarian/ — アナリスト予想と個人投資家の逆張り行動。T-10 初期6記事の1本。
+ * 出典: docs/02-research/retail-indicators.md 2-2節、McLean et al. (2021)。
+ */
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout
+  title="アナリスト予想と個人投資家の逆張り行動 | 学ぶ"
+  description="個人投資家がアナリストのEPS下方修正の後にむしろ買い増す傾向があるという学術研究(McLean et al. 2021)を出典付きで解説します。"
+>
+  <article class="container article">
+    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / アナリスト予想と個人投資家の逆張り行動</p>
+    <h1>アナリスト予想と個人投資家の逆張り行動</h1>
+
+    <section class="article__section">
+      <h2>アナリスト予想を個人投資家はどう使っているか</h2>
+      <p>
+        アナリストのレーティング(買い/中立/売り)・目標株価・EPS(1株当たり利益)予想は、証券会社のレポートや
+        投資情報サイトで日常的に目にする情報です。米国の証券会社Charles Schwabは個人投資家向け教育コンテンツで
+        P/E・PEG・ROE・P/B・Debt-to-Equityを「5大指標」として提示していますが、アナリスト予想そのものの
+        「利用率」を直接示す大規模な一次調査は、本サイトの調査では見つかりませんでした。
+      </p>
+    </section>
+
+    <section class="article__section">
+      <h2>実際の売買データが示す「逆張り」傾向</h2>
+      <p>
+        McLean et al. (2021) は、アナリストのレーティング・目標株価・EPS予想の改定に対する個人投資家の
+        実際の売買反応を取引データで分析しました。その結果、<strong>個人投資家はネガティブなEPS予想修正
+        (下方修正)の後に、むしろより強く買い増す</strong>という逆張り的な行動パターンを報告しています。
+        別のSSRN論文でも、EPS予想改定の正負どちらの場合でも個人投資家の純買いが増え、特に下方修正後に
+        その傾向が強いことが報告されています。
+      </p>
+      <p>
+        これらはアンケートによる「意識調査」ではなく、<strong>実際の取引データに基づく行動の証拠</strong>で
+        ある点が特徴です。「アナリストが弱気に転じた銘柄を、個人投資家はむしろ拾いに行く」という構図は、
+        アナリスト予想を鵜呑みにするのではなく、その情報にどう向き合うか自体を考えるきっかけになります。
+      </p>
+    </section>
+
+    <section class="article__section">
+      <h2>なぜ本サイトはアナリスト予想を指標として掲載しないか</h2>
+      <p>
+        docs/03-metrics-ranking.mdの選定基準では、アナリスト予想・目標株価は「無料での継続取得が困難」
+        という理由(データ再現性が低い)で不採用としています。この行動科学的なギャップの解説を、指標そのものの
+        代わりに学習コンテンツとして提供しています。
+      </p>
+    </section>
+
+    <section class="article__section article__section--sources">
+      <h2>出典</h2>
+      <ul>
+        <li>
+          McLean et al. (2021) "Retail Investors and Analysts" —
+          <a href="https://haslam.utk.edu/wp-content/uploads/2022/09/Retail-Investors-and-Analysts-McLean-1.pdf" target="_blank" rel="noopener noreferrer">
+            PDF
+          </a>
+        </li>
+        <li>
+          "Do Retail Investors Pay Attention to Sell-Side Analysts?" (SSRN) —
+          <a href="https://papers.ssrn.com/sol3/Delivery.cfm/4737062.pdf?abstractid=4737062&mirid=1" target="_blank" rel="noopener noreferrer">
+            PDF
+          </a>
+        </li>
+        <li>
+          Charles Schwab: Five Key Financial Ratios for Stock Analysis —
+          <a href="https://www.schwab.com/learn/story/five-key-financial-ratios-stock-analysis" target="_blank" rel="noopener noreferrer">
+            記事
+          </a>
+        </li>
+        <li>docs/02-research/retail-indicators.md 2-2節(社内SSOT、本記事の一次整理元)</li>
+      </ul>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .article {
+    padding-block: var(--space-6);
+    max-width: 72ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .article__breadcrumb {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .article__breadcrumb a {
+    color: var(--color-accent);
+  }
+
+  .article h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .article__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-lg);
+  }
+
+  .article__section p {
+    margin: 0 0 var(--space-3);
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .article__section--sources ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .article__section--sources a {
+    color: var(--color-accent);
+  }
+</style>

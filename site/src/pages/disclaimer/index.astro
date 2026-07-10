@@ -1,0 +1,90 @@
+---
+/**
+ * /disclaimer/ — 免責事項(T-10)。docs/04-site-design.md 2節「/disclaimer/」。
+ * 全ページフッター(SiteFooter.astro)からリンクされる。投資助言ではない旨・自己責任・出典を明記する。
+ */
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="免責事項"
+  description="本サイトの情報提供の位置づけ、正確性についての留保、自己責任の原則、出典についての免責事項。"
+>
+  <div class="container disclaimer-page">
+    <h1>免責事項</h1>
+
+    <section class="disclaimer-page__section">
+      <h2>投資助言ではありません</h2>
+      <p>
+        本サイトが提供する情報(指標の数値、歴史的位置、寄与度エビデンス、スクリーニング結果等を含む)は、
+        特定の金融商品の売買を推奨するものではなく、金融商品取引法に定める投資助言に該当しません。
+        本サイトの掲載内容は情報提供を目的としたものであり、個別の投資判断への具体的な提案は行いません。
+      </p>
+    </section>
+
+    <section class="disclaimer-page__section">
+      <h2>情報の正確性について</h2>
+      <p>
+        本サイトが掲載する数値は、yfinance・JPX(日本取引所グループ)等の無料データ源から取得・計算した
+        ものであり、その正確性・完全性・最新性を保証するものではありません。データ取得元の障害・遅延・
+        仕様変更等により、掲載内容が実際の市場と乖離する場合があります。既知の限界(実績PERと会社予想PERの
+        定義差、時価総額算出方法による乖離等)については<a href="/about/">サイトについて</a>のページで
+        個別に開示しています。
+      </p>
+    </section>
+
+    <section class="disclaimer-page__section">
+      <h2>自己責任の原則</h2>
+      <p>
+        本サイトの情報を利用した結果生じたいかなる損害についても、当サイトの運営者は一切の責任を負いません。
+        投資に関する最終的な決定は、必ずご自身の判断と責任において行ってください。
+      </p>
+    </section>
+
+    <section class="disclaimer-page__section">
+      <h2>出典について</h2>
+      <p>
+        各ページの寄与度エビデンスには、可能な限り出典(学術論文・実務レポート等)を明記しています。
+        文献の数値をそのまま自前で再検証していない項目には「未確認」「目安」等の注記を添えています。
+        出典として引用した第三者のウェブサイト・論文の内容について、当サイトはその正確性を保証しません。
+      </p>
+    </section>
+
+    <section class="disclaimer-page__section">
+      <h2>サイトの変更・停止</h2>
+      <p>
+        本サイトは予告なく内容を変更、または提供を停止する場合があります。
+      </p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .disclaimer-page {
+    padding-block: var(--space-6);
+    max-width: 72ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .disclaimer-page h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .disclaimer-page__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-lg);
+  }
+
+  .disclaimer-page__section p {
+    margin: 0;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .disclaimer-page__section a {
+    color: var(--color-accent);
+  }
+</style>

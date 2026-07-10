@@ -1,0 +1,117 @@
+---
+/**
+ * /learn/ — 指標の読み方・用語集トップ(T-10)。docs/04-site-design.md 2節「/learn/」。
+ * 初期6記事へのカードリンク。ペルソナ(投資歴7-8年、PER/PBRは知っているが寄与度は知らない層)向け。
+ */
+import Layout from "../../layouts/Layout.astro";
+
+const articles = [
+  {
+    slug: "per",
+    title: "PER(株価収益率)の読み方",
+    summary: "「株価が利益の何年分か」を表す指標。実績PERと会社予想PERの違い、バリュー効果とのつながりを解説します。",
+  },
+  {
+    slug: "pbr",
+    title: "PBR(株価純資産倍率)の読み方",
+    summary: "「株価が純資産の何倍か」を表す指標。1倍割れの意味と、機械的な売買判断の落とし穴を解説します。",
+  },
+  {
+    slug: "roe",
+    title: "ROE(自己資本利益率)の読み方",
+    summary: "自己資本に対する利益効率を示す指標。PBRとの関係(PBR=PER×ROE)、クオリティ指標としての位置づけを解説します。",
+  },
+  {
+    slug: "margin-ratio",
+    title: "信用倍率の読み方",
+    summary: "信用買残と信用売残の比率で見る需給指標。人気の高さと学術的なエビデンスの薄さのギャップを解説します。",
+  },
+  {
+    slug: "technical-indicators-gap",
+    title: "テクニカル指標人気とエビデンスのギャップ",
+    summary: "移動平均線・ボリンジャーバンド等は個人投資家に人気な一方、長期の超過リターンの学術的裏付けは限定的です。",
+  },
+  {
+    slug: "analyst-forecast-contrarian",
+    title: "アナリスト予想と個人投資家の逆張り行動",
+    summary: "個人投資家はアナリストの下方修正の後にむしろ買い増す傾向があるという学術研究(McLean et al. 2021)を紹介します。",
+  },
+];
+---
+
+<Layout
+  title="学ぶ"
+  description="PER/PBR/ROE/信用倍率などの指標の読み方と、指標にまつわる行動科学・エビデンスの解説記事。"
+>
+  <div class="container learn-index">
+    <h1>学ぶ</h1>
+    <p class="learn-index__intro">
+      指標の意味と、その指標が実際どれだけ株価に効くとされているか(寄与度)を、出典付きで平易に解説します。
+      ここに書かれている内容は情報提供であり、特定の売買を勧めるものではありません。
+    </p>
+    <div class="learn-index__grid">
+      {articles.map((a) => (
+        <a class="learn-index__card" href={`/learn/${a.slug}/`}>
+          <h2>{a.title}</h2>
+          <p>{a.summary}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .learn-index {
+    padding-block: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .learn-index h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .learn-index__intro {
+    margin: 0;
+    max-width: 72ch;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .learn-index__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .learn-index__card {
+    display: block;
+    padding: var(--space-4);
+    background: var(--surface-card);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.15s ease;
+  }
+
+  .learn-index__card:hover {
+    transform: translateY(-1px);
+  }
+
+  .learn-index__card h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+  }
+
+  .learn-index__card p {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+</style>

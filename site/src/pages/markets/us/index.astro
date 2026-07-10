@@ -1,0 +1,202 @@
+---
+/**
+ * /markets/us/ — 米国市場サマリ(T-10)。
+ * docs/04-site-design.md 2節「/markets/us/」: S&P500 PER等バリュエーションの現在地と推移。
+ */
+import Layout from "../../../layouts/Layout.astro";
+import PercentileBar from "../../../components/PercentileBar.astro";
+import { loadMarketThermometer, thermometerAccumulatedDays } from "../../../lib/data";
+
+const thermometer = loadMarketThermometer();
+const accumulationDays = thermometer ? thermometerAccumulatedDays(thermometer) : 0;
+
+const formatSignedPct = (v: number | null | undefined, digits = 2) =>
+  v === null || v === undefined || Number.isNaN(v)
+    ? null
+    : `${v > 0 ? "+" : ""}${v.toFixed(digits)}%`;
+
+const formatIndexLevel = (v: number) => v.toLocaleString("en-US", { maximumFractionDigits: 2 });
+
+const historyDesc = thermometer
+  ? [...thermometer.history].sort((a, b) => (a.date < b.date ? 1 : -1))
+  : [];
+---
+
+<Layout
+  title="米国市場サマリ"
+  description="米国市場(S&P500)の指数水準・バリュエーションの歴史的位置の現在地と推移。"
+  lastUpdated={thermometer?.date}
+  dataSources={["yfinance(^GSPC)"]}
+>
+  <div class="container market-page">
+    <h1>米国市場サマリ</h1>
+
+    {thermometer ? (
+      <>
+        <section class="market-page__section">
+          <h2>指数の現在地</h2>
+          <p class="market-page__index num">
+            {thermometer.us.index} {formatIndexLevel(thermometer.us.index_level)}
+            {" "}
+            (前日比{" "}
+            <span
+              class:list={[
+                thermometer.us.index_change_pct_1d > 0
+                  ? "market-page__pct--up"
+                  : thermometer.us.index_change_pct_1d < 0
+                    ? "market-page__pct--down"
+                    : "",
+              ]}
+            >
+              {formatSignedPct(thermometer.us.index_change_pct_1d)}
+            </span>
+            、{thermometer.us.index_level_as_of}時点)
+          </p>
+        </section>
+
+        <section class="market-page__section">
+          <h2>バリュエーションの歴史的位置(5年)</h2>
+          <p class="market-page__note">
+            指数PER・指数PBRの過去5年に対するパーセンタイル位置(いわゆるFear&amp;Greed的な位置づけの代用指標)。
+            個別銘柄時価総額加重集計の実装が未了のため、現時点(T-05時点)ではデータなし固定。
+          </p>
+          <div class="market-page__bars">
+            <PercentileBar
+              percentile={thermometer.us.index_per_percentile_5y}
+              label="指数PER 歴史的位置(5年)"
+              lowLabel="割安"
+              highLabel="割高"
+              size="md"
+            />
+            <PercentileBar
+              percentile={thermometer.us.index_pbr_percentile_5y}
+              label="指数PBR 歴史的位置(5年)"
+              lowLabel="割安"
+              highLabel="割高"
+              size="md"
+            />
+          </div>
+          {(thermometer.us.index_per_percentile_5y === null ||
+            thermometer.us.index_pbr_percentile_5y === null) && (
+            <p class="market-page__accumulating">
+              データ蓄積中({accumulationDays}日目)。5年分のデータが蓄積され次第、算出されます。
+            </p>
+          )}
+        </section>
+
+        <section class="market-page__section">
+          <h2>推移</h2>
+          {historyDesc.length > 1 ? (
+            <div class="market-page__table-wrap">
+              <table class="market-page__table">
+                <thead>
+                  <tr>
+                    <th>日付</th>
+                    <th>指数水準</th>
+                    <th>前日比</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {historyDesc.map((entry) => (
+                    <tr>
+                      <td class="num">{entry.date}</td>
+                      <td class="num">{formatIndexLevel(entry.us.index_level)}</td>
+                      <td class="num">{formatSignedPct(entry.us.index_change_pct_1d) ?? "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <p class="market-page__accumulating">
+              データ蓄積中(現在{accumulationDays}日目)。日次スナップショットが2日分以上蓄積されると、
+              ここに推移表が表示されます。
+            </p>
+          )}
+        </section>
+      </>
+    ) : (
+      <p class="market-page__empty">米国市場の体温計データを取得できませんでした。</p>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .market-page {
+    padding-block: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .market-page h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .market-page__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-xl);
+  }
+
+  .market-page__note {
+    margin: 0 0 var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+  }
+
+  .market-page__index {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+  }
+
+  .market-page__pct--up {
+    color: var(--color-up);
+    font-weight: 600;
+  }
+
+  .market-page__pct--down {
+    color: var(--color-down);
+    font-weight: 600;
+  }
+
+  .market-page__bars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 480px;
+  }
+
+  .market-page__accumulating {
+    margin-top: var(--space-3);
+    font-size: var(--font-size-xs);
+    color: var(--color-reference-accent);
+  }
+
+  .market-page__table-wrap {
+    overflow-x: auto;
+  }
+
+  .market-page__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+  }
+
+  .market-page__table th,
+  .market-page__table td {
+    padding: var(--space-2) var(--space-3);
+    text-align: right;
+    border-bottom: 1px solid var(--border-gridline);
+  }
+
+  .market-page__table th:first-child,
+  .market-page__table td:first-child {
+    text-align: left;
+  }
+
+  .market-page__empty {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>

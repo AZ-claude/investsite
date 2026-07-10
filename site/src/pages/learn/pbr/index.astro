@@ -1,0 +1,116 @@
+---
+/**
+ * /learn/pbr/ — PBR(株価純資産倍率)の読み方。T-10 初期6記事の1本。
+ * 出典: docs/02-research/factor-evidence.md 1節(バリュー)。
+ */
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout
+  title="PBR(株価純資産倍率)の読み方 | 学ぶ"
+  description="PBRの定義、1倍割れの意味、機械的スクリーニングの落とし穴を出典付きで解説します。"
+>
+  <article class="container article">
+    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / PBR</p>
+    <h1>PBR(株価純資産倍率)の読み方</h1>
+
+    <section class="article__section">
+      <h2>PBRとは何か</h2>
+      <p>
+        PBR(Price Book-value Ratio、株価純資産倍率)は、株価を1株当たり純資産(BPS)で割った値です。
+        「今の株価が、その企業の解散価値(純資産)の何倍か」を表します。PBRが1倍を下回るということは、
+        理論上は株価が解散価値を下回っていることを意味し、東証が2023年3月にプライム・スタンダード上場企業へ
+        「資本コストや株価を意識した経営」の開示を要請して以降、日本ではとりわけ注目度が高まっています。
+      </p>
+    </section>
+
+    <section class="article__section">
+      <h2>寄与度のエビデンスと、機械的スクリーニングの逆説</h2>
+      <p>
+        PBRはバリューファクターの代表的な構成要素で、Fama &amp; French (2012) は日本を含む地域でバリュー
+        プレミアムを確認しています。しかし、<strong>ニッセイ基礎研究所の分析では、PBR1倍割れ銘柄群を機械的に
+        買うだけの戦略は、その後5年間でTOPIXを年率約2〜3%下回った</strong>という逆説的な結果が報告されています。
+        「割安に見える数値」がそのまま超過リターンにつながるわけではなく、なぜ割安なのか(業績不振・成長期待の
+        低さ等)を合わせて見る必要があることを示す事例です。この逆説を正直に載せることは、単純な数値の
+        羅列にとどまらない「寄与度」軸の本サイトの中核的な価値観の一つです。
+      </p>
+    </section>
+
+    <section class="article__section">
+      <h2>制度的な文脈: 東証のPBR改革</h2>
+      <p>
+        東証の要請以降、開示率はプライム市場で約9割まで上昇し、PBR1倍割れ銘柄の比率は低下傾向にあると
+        報じられています。ただし、<strong>開示・対応した企業と非対応の企業の間で、厳密な超過リターンの実証は
+        本サイトの調査時点では確認できていません</strong>(方向性のみ確認、未確認)。制度の存在は事実ですが、
+        その株価への寄与度を語るには追加検証が必要な段階です。
+      </p>
+    </section>
+
+    <section class="article__section article__section--sources">
+      <h2>出典</h2>
+      <ul>
+        <li>
+          Fama &amp; French (2012) "Size, Value, and Momentum in International Stock Returns", JFE 105 —
+          <a href="https://www.johnhcochrane.com/s/Fama_French_size_value_momentum_JFE.pdf" target="_blank" rel="noopener noreferrer">
+            PDF
+          </a>
+        </li>
+        <li>
+          ニッセイ基礎研究所「日本のバリュー株に『本当の値打ちがある』のか」 —
+          <a href="https://www.nli-research.co.jp/report/detail/id=71292?site=nli" target="_blank" rel="noopener noreferrer">
+            記事
+          </a>
+        </li>
+        <li>docs/02-research/factor-evidence.md 1節・9節(社内SSOT)</li>
+      </ul>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .article {
+    padding-block: var(--space-6);
+    max-width: 72ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .article__breadcrumb {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .article__breadcrumb a {
+    color: var(--color-accent);
+  }
+
+  .article h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .article__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-lg);
+  }
+
+  .article__section p {
+    margin: 0 0 var(--space-3);
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .article__section--sources ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .article__section--sources a {
+    color: var(--color-accent);
+  }
+</style>

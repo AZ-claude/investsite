@@ -1,0 +1,111 @@
+---
+/**
+ * /learn/margin-ratio/ — 信用倍率の読み方。T-10 初期6記事の1本。
+ * 出典: docs/02-research/factor-evidence.md 8節、docs/02-research/retail-indicators.md 1-3節。
+ */
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout
+  title="信用倍率の読み方 | 学ぶ"
+  description="信用倍率(信用買残÷信用売残)の定義と、人気の高さに反して学術的な寄与度エビデンスが薄いという非対称性を出典付きで解説します。"
+>
+  <article class="container article">
+    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / 信用倍率</p>
+    <h1>信用倍率の読み方</h1>
+
+    <section class="article__section">
+      <h2>信用倍率とは何か</h2>
+      <p>
+        信用倍率(取組倍率)は、信用買残(信用取引で買い建てられている株数)を信用売残(信用取引で売り建てられている
+        株数)で割った値です。一般に「1倍を超える(買い長)=将来の売り圧力への警戒」「1倍未満(売り長)=踏み上げ
+        (信用売りの買い戻し)期待」と解説されます。日本特有の需給指標で、野村證券・SMBC日興証券・マネックス証券
+        など主要ネット証券各社が専用の解説ページを持つほど、実務的な知名度が高い指標です。
+      </p>
+    </section>
+
+    <section class="article__section">
+      <h2>人気とエビデンスの非対称性</h2>
+      <p>
+        信用倍率はJPX(日本取引所グループ)が週次・無料で公表しており、データの取得しやすさは最高水準です。
+        一方で、<strong>信用倍率が将来の株価リターンに寄与するという学術的な定量エビデンスは、本サイトの調査
+        では確認できませんでした</strong>。証券会社の解説でも「単独では判断材料として不十分」という留保が
+        付いています。学術的に近い研究として米国のショートインタレスト研究(空売り比率が高いほど将来リターンが
+        低い傾向)がありますが、日本の信用倍率への直接の適用は限定的です。
+      </p>
+      <p>
+        このため本サイトでは、信用倍率を「寄与度エビデンスあり」の5ファクター(バリュー・モメンタム・配当利回り・
+        クオリティ・サイズ)とは明確に区別し、「需給参考指標」というラベルの別デザイン(点線の枠・アンバー色の
+        バッジ)で隔離して掲載しています。データの取りやすさとエビデンスの強さは別物である、という点を
+        誠実に開示することが本サイトの方針です。
+      </p>
+    </section>
+
+    <section class="article__section article__section--sources">
+      <h2>出典</h2>
+      <ul>
+        <li>
+          野村證券 証券用語解説集「信用倍率」 —
+          <a href="https://www.nomura.co.jp/terms/japan/si/sinyobairitu.html" target="_blank" rel="noopener noreferrer">
+            解説記事
+          </a>
+        </li>
+        <li>
+          SMBC日興証券 信用売り残高解説 —
+          <a href="https://www.smbcnikko.co.jp/products/stock/margin/knowledge/017.html" target="_blank" rel="noopener noreferrer">
+            解説記事
+          </a>
+        </li>
+        <li>docs/02-research/factor-evidence.md 8節、docs/02-research/retail-indicators.md 1-3節(社内SSOT)</li>
+      </ul>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .article {
+    padding-block: var(--space-6);
+    max-width: 72ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .article__breadcrumb {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .article__breadcrumb a {
+    color: var(--color-accent);
+  }
+
+  .article h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .article__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-lg);
+  }
+
+  .article__section p {
+    margin: 0 0 var(--space-3);
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .article__section--sources ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .article__section--sources a {
+    color: var(--color-accent);
+  }
+</style>

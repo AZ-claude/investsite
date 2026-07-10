@@ -1,0 +1,127 @@
+---
+/**
+ * /learn/technical-indicators-gap/ — テクニカル指標人気とエビデンスのギャップ。T-10 初期6記事の1本。
+ * 出典: docs/02-research/retail-indicators.md 1-4節。
+ */
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout
+  title="テクニカル指標人気とエビデンスのギャップ | 学ぶ"
+  description="移動平均線・ボリンジャーバンド等の人気テクニカル指標が、なぜ本サイトの「寄与度あり」枠に掲載されないかを出典付きで解説します。"
+>
+  <article class="container article">
+    <p class="article__breadcrumb"><a href="/learn/">学ぶ</a> / テクニカル指標人気とエビデンスのギャップ</p>
+    <h1>テクニカル指標人気とエビデンスのギャップ</h1>
+
+    <section class="article__section">
+      <h2>個人投資家に最も人気なのはテクニカル指標</h2>
+      <p>
+        マネックス証券の投資家アンケート(調査時期・母数は非公開)によると、個人投資家に人気のテクニカル指標
+        トップ8は次の通りです(1位ほど人気)。
+      </p>
+      <ol class="article__ranked-list">
+        <li>移動平均線(トレンド系)</li>
+        <li>ボリンジャーバンド(トレンド系)</li>
+        <li>一目均衡表(トレンド系、日本発)</li>
+        <li>MACD(トレンド系)</li>
+        <li>RSI(オシレーター系)</li>
+        <li>ストキャスティクス(オシレーター系)</li>
+        <li>酒田五法(ローソク足分析)</li>
+        <li>RCI(オシレーター系)</li>
+      </ol>
+      <p>
+        本サイトの実態調査(docs/02-research/retail-indicators.md)で確認できた、指標別の利用率に関する
+        唯一の定量データがこのランキングです。米国でもTradingView・Finvizといった主要サービスが多数の
+        テクニカル指標を無料〜低コストで提供しており、テクニカル指標は日米ともに個人投資家にとって身近な
+        存在です。
+      </p>
+    </section>
+
+    <section class="article__section">
+      <h2>それでも「寄与度あり」枠に掲載しない理由</h2>
+      <p>
+        本サイトの中核コンセプトは「株価リターンへの寄与が文献で裏付けられているか」を選定基準の柱に
+        据えることです。移動平均線・ボリンジャーバンド・RSI等のテクニカル指標は実態調査で人気1位群である
+        一方、<strong>単独の長期超過リターンについての学術的な裏付けは、バリュー・モメンタム・クオリティ等の
+        ファクターに比べて薄い</strong>というのが本サイトの調査結果です。このため、掲載指標ランキング
+        (docs/03-metrics-ranking.md)では「不採用」に分類し、寄与度エビデンスを掲げるファクターページ
+        (バリュー・モメンタム・配当利回り・クオリティ・サイズ)には含めていません。
+      </p>
+      <p>
+        「人気があること」と「学術的な寄与度が実証されていること」は別の軸です。本サイトは後者を掲載基準の
+        生命線としているため、人気は高くても寄与度の実証が薄い指標については、こうした学習コンテンツの形で
+        「人気だがエビデンスは限定的」という事実を紹介するにとどめています。
+      </p>
+    </section>
+
+    <section class="article__section article__section--sources">
+      <h2>出典</h2>
+      <ul>
+        <li>
+          マネックス証券「人気のテクニカル指標はコレだ！」 —
+          <a href="https://info.monex.co.jp/technical-analysis/column/005.html" target="_blank" rel="noopener noreferrer">
+            記事
+          </a>
+        </li>
+        <li>docs/02-research/retail-indicators.md 1-4節(社内SSOT、本記事の一次整理元)</li>
+        <li>docs/03-metrics-ranking.md 「不採用(理由付き)」節</li>
+      </ul>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .article {
+    padding-block: var(--space-6);
+    max-width: 72ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .article__breadcrumb {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+  }
+
+  .article__breadcrumb a {
+    color: var(--color-accent);
+  }
+
+  .article h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .article__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-lg);
+  }
+
+  .article__section p {
+    margin: 0 0 var(--space-3);
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .article__ranked-list {
+    margin: 0 0 var(--space-3);
+    padding-left: 1.4em;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .article__section--sources ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .article__section--sources a {
+    color: var(--color-accent);
+  }
+</style>

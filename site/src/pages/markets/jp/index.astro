@@ -1,0 +1,275 @@
+---
+/**
+ * /markets/jp/ — 日本市場サマリ(T-10)。
+ * docs/04-site-design.md 2節「/markets/jp/」: 指数・バリュエーション・信用残の現在地と推移。
+ * データは site/src/lib/data.ts の loadMarketThermometer() から取得する。
+ * 蓄積初日(history 1件)は「蓄積中」表示にする(data.ts の thermometerAccumulatedDays を利用)。
+ */
+import Layout from "../../../layouts/Layout.astro";
+import PercentileBar from "../../../components/PercentileBar.astro";
+import { loadMarketThermometer, thermometerAccumulatedDays } from "../../../lib/data";
+
+const thermometer = loadMarketThermometer();
+const accumulationDays = thermometer ? thermometerAccumulatedDays(thermometer) : 0;
+
+const formatSignedPct = (v: number | null | undefined, digits = 2) =>
+  v === null || v === undefined || Number.isNaN(v)
+    ? null
+    : `${v > 0 ? "+" : ""}${v.toFixed(digits)}%`;
+
+const formatIndexLevel = (v: number) => v.toLocaleString("ja-JP", { maximumFractionDigits: 2 });
+
+// history を新しい順に整列(1件のみの場合は「蓄積中」の1行のみ表示)
+const historyDesc = thermometer
+  ? [...thermometer.history].sort((a, b) => (a.date < b.date ? 1 : -1))
+  : [];
+---
+
+<Layout
+  title="日本市場サマリ"
+  description="日本市場(NIKKEI225)の指数水準・バリュエーションの歴史的位置・信用倍率(全国計)の現在地と推移。"
+  lastUpdated={thermometer?.date}
+  dataSources={["yfinance(^N225)", "JPX(信用取引残高)"]}
+>
+  <div class="container market-page">
+    <h1>日本市場サマリ</h1>
+
+    {thermometer ? (
+      <>
+        <section class="market-page__section">
+          <h2>指数の現在地</h2>
+          <p class="market-page__index num">
+            {thermometer.jp.index} {formatIndexLevel(thermometer.jp.index_level)}
+            {" "}
+            (前日比{" "}
+            <span
+              class:list={[
+                thermometer.jp.index_change_pct_1d > 0
+                  ? "market-page__pct--up"
+                  : thermometer.jp.index_change_pct_1d < 0
+                    ? "market-page__pct--down"
+                    : "",
+              ]}
+            >
+              {formatSignedPct(thermometer.jp.index_change_pct_1d)}
+            </span>
+            、{thermometer.jp.index_level_as_of}時点)
+          </p>
+        </section>
+
+        <section class="market-page__section">
+          <h2>バリュエーションの歴史的位置(5年)</h2>
+          <p class="market-page__note">
+            指数PER・指数PBRの過去5年に対するパーセンタイル位置。個別銘柄時価総額加重集計の実装が未了のため、
+            現時点(T-05時点)ではデータなし固定。
+          </p>
+          <div class="market-page__bars">
+            <PercentileBar
+              percentile={thermometer.jp.index_per_percentile_5y}
+              label="指数PER 歴史的位置(5年)"
+              lowLabel="割安"
+              highLabel="割高"
+              size="md"
+            />
+            <PercentileBar
+              percentile={thermometer.jp.index_pbr_percentile_5y}
+              label="指数PBR 歴史的位置(5年)"
+              lowLabel="割安"
+              highLabel="割高"
+              size="md"
+            />
+          </div>
+          {(thermometer.jp.index_per_percentile_5y === null ||
+            thermometer.jp.index_pbr_percentile_5y === null) && (
+            <p class="market-page__accumulating">
+              データ蓄積中({accumulationDays}日目)。5年分のデータが蓄積され次第、算出されます。
+            </p>
+          )}
+        </section>
+
+        <section class="market-page__section">
+          <h2>信用倍率(全国計)</h2>
+          {thermometer.jp.margin_market_total ? (
+            <div class="market-page__margin-card">
+              <p class="market-page__margin-value num-hero">
+                {thermometer.jp.margin_market_total.margin_ratio_national_total.toFixed(2)}倍
+              </p>
+              <p class="market-page__margin-note">
+                信用買残 ÷ 信用売残(制度信用ベース、市場全体)。申込日基準
+                {" "}{thermometer.jp.margin_market_total.as_of_week}。
+                週次更新(JPX公式Excel)。学術的な寄与度の実証はほぼ皆無のため、需給の参考情報として掲載する
+                (詳細は<a href="/learn/margin-ratio/">信用倍率の読み方</a>を参照)。
+              </p>
+              <a
+                class="market-page__source"
+                href={thermometer.jp.margin_market_total.source}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                出典: JPX(日本取引所グループ)
+              </a>
+            </div>
+          ) : (
+            <p class="market-page__accumulating">信用倍率データがありません。</p>
+          )}
+        </section>
+
+        <section class="market-page__section">
+          <h2>推移</h2>
+          {historyDesc.length > 1 ? (
+            <div class="market-page__table-wrap">
+              <table class="market-page__table">
+                <thead>
+                  <tr>
+                    <th>日付</th>
+                    <th>指数水準</th>
+                    <th>前日比</th>
+                    <th>信用倍率(全国計)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {historyDesc.map((entry) => (
+                    <tr>
+                      <td class="num">{entry.date}</td>
+                      <td class="num">{formatIndexLevel(entry.jp.index_level)}</td>
+                      <td class="num">{formatSignedPct(entry.jp.index_change_pct_1d) ?? "—"}</td>
+                      <td class="num">
+                        {entry.jp.margin_market_total
+                          ? `${entry.jp.margin_market_total.margin_ratio_national_total.toFixed(2)}倍`
+                          : "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <p class="market-page__accumulating">
+              データ蓄積中(現在{accumulationDays}日目)。日次スナップショットが2日分以上蓄積されると、
+              ここに推移表が表示されます。
+            </p>
+          )}
+        </section>
+      </>
+    ) : (
+      <p class="market-page__empty">日本市場の体温計データを取得できませんでした。</p>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .market-page {
+    padding-block: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .market-page h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .market-page__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-xl);
+  }
+
+  .market-page__note {
+    margin: 0 0 var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+  }
+
+  .market-page__index {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+  }
+
+  .market-page__pct--up {
+    color: var(--color-up);
+    font-weight: 600;
+  }
+
+  .market-page__pct--down {
+    color: var(--color-down);
+    font-weight: 600;
+  }
+
+  .market-page__bars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 480px;
+  }
+
+  .market-page__accumulating {
+    margin-top: var(--space-3);
+    font-size: var(--font-size-xs);
+    color: var(--color-reference-accent);
+  }
+
+  .market-page__margin-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--surface-card);
+    border: 1px dashed var(--color-reference-accent);
+    border-radius: var(--radius-md);
+    max-width: 480px;
+  }
+
+  .market-page__margin-value {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .market-page__margin-note {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .market-page__margin-note a {
+    color: var(--color-accent);
+  }
+
+  .market-page__source {
+    font-size: var(--font-size-xs);
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .market-page__source:hover {
+    text-decoration: underline;
+  }
+
+  .market-page__table-wrap {
+    overflow-x: auto;
+  }
+
+  .market-page__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+  }
+
+  .market-page__table th,
+  .market-page__table td {
+    padding: var(--space-2) var(--space-3);
+    text-align: right;
+    border-bottom: 1px solid var(--border-gridline);
+  }
+
+  .market-page__table th:first-child,
+  .market-page__table td:first-child {
+    text-align: left;
+  }
+
+  .market-page__empty {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>

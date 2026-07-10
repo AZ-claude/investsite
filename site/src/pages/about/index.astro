@@ -1,0 +1,143 @@
+---
+/**
+ * /about/ — サイトの目的・検証方法の透明性ページ(T-10)。docs/04-site-design.md 2節「/about/」。
+ * 既知の限界はCLAUDE.md記載の留保事項(時価総額19%乖離、実績PERと会社予想PERの定義差等)を透明に開示する。
+ */
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="サイトについて"
+  description="investsiteの目的、データ源、検証方法、既知の限界を開示する透明性ページ。"
+>
+  <div class="container about-page">
+    <h1>サイトについて</h1>
+
+    <section class="about-page__section">
+      <h2>目的</h2>
+      <p>
+        「株価はどこでも見れる」時代に、本サイトは<strong>どの指標がどれだけ株価に効くのか(寄与度)</strong>を
+        軸に据えた情報提供サイトです。PER/PBRのような代表的な指標そのものは既に多くのサイトで無料公開されて
+        いますが、「その指標が過去どれだけ実際のリターンに寄与したか」を出典付きで示すサービスは限られています。
+        投資歴があり基礎的な指標は知っているものの、「なんとなく」の売買から「基準を持った」売買へ移行したい方を
+        主な対象としています。本サイトは情報提供に徹し、投資助言は行いません。
+      </p>
+    </section>
+
+    <section class="about-page__section">
+      <h2>データ源</h2>
+      <ul>
+        <li>
+          <strong>yfinance</strong>(<a href="https://github.com/ranaroussi/yfinance" target="_blank" rel="noopener noreferrer">GitHub</a>)
+          — 日米の株価・PER(実績)・PBR・配当利回り・ROE・時価総額等を取得。無料。
+        </li>
+        <li>
+          <strong>JPX(日本取引所グループ)</strong> — 日本株の信用取引週末残高(信用倍率)を取得。
+          銘柄別はPDF(毎週第2営業日16:30頃更新)、市場全体はExcel(週次)で公表されており、無料だがCSV配信は
+          ない点に留意。
+        </li>
+        <li>
+          日経225構成銘柄リストは日経平均プロフィル公式CSV(無料・登録不要)を使用。
+        </li>
+      </ul>
+    </section>
+
+    <section class="about-page__section">
+      <h2>検証方法</h2>
+      <p>
+        各ファクターの寄与度エビデンスは、既存の学術文献・実務レポートの整理(docs/02-research/factor-evidence.md)を
+        単一の情報源(SSOT)とし、出典と「未確認」注記を保持したまま各ページに転記しています。数値そのものを
+        自前で再検証していない項目には「未確認」「目安」等の注記を必ず添えます。将来的には無料データの取得可能
+        期間内で簡易バックテスト(P4フェーズ)を実施し、文献の記載と自前検証の結果が食い違った場合も、
+        改竄せずそのまま掲載する方針です。
+      </p>
+    </section>
+
+    <section class="about-page__section about-page__section--limits">
+      <h2>既知の限界</h2>
+      <ul>
+        <li>
+          <strong>実績PERと会社予想PERの定義差</strong>: 本サイトが掲載するPERは yfinance の trailingPE
+          (実績ベース)です。Yahoo!ファイナンス等の日本の主要サイトで表示されるPERの多くは会社予想EPSベースで
+          あり、定義が異なります。同一銘柄でもサイトによって数値が異なることがあります。
+        </li>
+        <li>
+          <strong>時価総額の算出方法による乖離(未解決)</strong>: yfinanceのmarketCapはsharesOutstanding(発行済
+          株式数)×株価で算出しています。トヨタ自動車で他サイトの表示と最大19%の乖離を確認していますが、
+          原因は発行済株式数そのものの値の差であり(内部の計算式自体は正しいことを確認済み)、
+          自己株式控除の扱いの差が最有力仮説ながら未確定です。
+        </li>
+        <li>
+          <strong>ROE単体はクオリティファクターの部分近似</strong>: 学術的なクオリティファクター(QMJ)は
+          粗利益率・アクルーアル・レバレッジ・利益変動等を組み合わせた複合スコアですが、無料データの制約から
+          本サイトはROE単体を掲載しています。
+        </li>
+        <li>
+          <strong>市場体温計の指数PER/PBRパーセンタイルは現時点で未実装</strong>: 個別銘柄の時価総額加重集計が
+          必要なため、T-05時点ではnull固定です(データなしを「0%」等と偽って表示することはしません)。
+        </li>
+        <li>
+          <strong>信用倍率データの更新遅延</strong>: JPX公表の信用取引残高は「前週金曜時点」のスナップショットを
+          翌週火〜水曜に公表するため、実質5〜8日遅れの週次データです。日次更新される株価・PER等とは更新頻度が
+          異なります。
+        </li>
+        <li>
+          <strong>日次スナップショットの蓄積期間</strong>: サイト運用開始からの日数分しか歴史的パーセンタイルの
+          算出に使えるデータがありません。5年分のデータが蓄積されるまでは「データ蓄積中」と正直に表示します。
+        </li>
+      </ul>
+    </section>
+
+    <section class="about-page__section">
+      <h2>非スコープ</h2>
+      <p>
+        投資助言(金融商品取引法に抵触するため「情報提供」に徹しています)、リアルタイム更新(日次バッチのみ)、
+        有料データの利用は現時点では対象外です。詳細は<a href="/disclaimer/">免責事項</a>を参照してください。
+      </p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .about-page {
+    padding-block: var(--space-6);
+    max-width: 72ch;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .about-page h1 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+  }
+
+  .about-page__section h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-lg);
+  }
+
+  .about-page__section p {
+    margin: 0;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .about-page__section ul {
+    margin: 0;
+    padding-left: 1.2em;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .about-page__section a {
+    color: var(--color-accent);
+  }
+
+  .about-page__section--limits {
+    padding: var(--space-4);
+    border: 1px dashed var(--color-reference-accent);
+    border-radius: var(--radius-md);
+    background: var(--color-reference-soft);
+  }
+</style>
