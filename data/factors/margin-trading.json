@@ -23,7 +23,10 @@
   "history": [
     {
       "date": "2026-07-10",
-      "screen_count": 220
+      "screen_count": 220,
+      "factor_return_1m": -2.76,
+      "factor_return_3m": -17.7,
+      "factor_return_1y": -35.56
     }
   ],
   "today_screen": {
@@ -1129,5 +1132,6 @@
         "margin_ratio_seido": null
       }
     ]
-  }
+  },
+  "factor_return_note": "factor_return_1m/3m/1y は『現在の分位該当銘柄(等ウェイト)のトレーリングリターン − ユニバース全体の等ウェイト平均』(%ポイント)。現在の構成銘柄で固定して過去リターンを遡って測る近似のため、生存バイアス・構成入れ替えの先読みバイアスを含む。厳密なヒストリカル分位バックテスト(T-15)による値ではない。"
 }

@@ -52,9 +52,16 @@
 ## 確認済みのハマりどころ・やり方(T-05日次蓄積で実証)
 - 日次CLIは `python -m pipeline.daily [--date YYYY-MM-DD] [--markets jp,us] [--mock-jp FILE]`。品質ゲート(price/market_cap欠損>5%、中央値PER前日比±30%超)に引っかかると**書き込みゼロで exit=1**(前日データ維持)。取得失敗は exit=2
 - factors/*.json の history は日付キーで upsert(同日再実行は冪等上書き)。`--date`で過去日をbackfillしてもmarket-thermometerのtop-levelは常に最新日付を指す設計
-- factor_return_1m/3m/1y は分位ポートフォリオのバックテストが必要なため T-15(P4)まで null のまま(架空値を埋めない)
+- factor_return_1m/3m/1y は T-17バックフィルで「現在の分位該当銘柄のトレーリングリターン−ユニバース平均」の近似値を当日分のみ記入済み(注記は factor_return_note)。厳密なヒストリカル分位バックテストは T-15(P4)
 - **長時間のPythonをバックグラウンド実行するときは `python -u` + `2>&1` でログファイルに書くこと**: stdoutがパイプだとブロックバッファリングされ、途中経過も失敗のtracebackも見えないまま静かに終わる事故を実測(T-05)
 - data/logs/*.log は .gitignore の `*.log` の例外としてコミット対象(監査証跡)
+
+## 確認済みのハマりどころ・やり方(T-17バックフィルで実証)
+- **日経平均プロフィルの指数PER/PBRは2004年〜の日次データが無料**。実体は `https://indexes.nikkei.co.jp/nkave/statistics/dataload?list={per|pbr}&year=YYYY&month=M` が月単位HTML断片を返す。ただし**サイト全体がCloudflare保護でcurl/requestsは403**。実ブラウザ(Playwright)経由fetchなら取れる。日次バッチ組み込み不可のため、一回限りバックフィル+成果物ファイル(pipeline/spikes/out/t17_nikkei_per_pbr_5y.json)方式を採用
+- 日経PER/PBRは「加重平均(倍)」「指数ベース(倍)」の2系列。市場体温計は**加重平均**を採用(時価総額加重の意図に合致)
+- **multpl.com はHTTP直叩き可**(UA指定のみ)。S&P500 PER=月次1871年〜(trailing "as reported")、PBR=四半期1999年〜。**PBRのby-monthは存在しない**(301でby-yearへ)。値セルは最新行`<abbr>†</abbr>`・過去行`&#x2002;`が値の前に付く
+- 指数PERの外部突合は定義差前提: 自前合算PER(Σmcap/Σearnings) vs 日経公式=+6.0%(前期基準利益差)、vs multpl=-14.3%(as reported GAAP差)。**異ソースの値を混ぜてパーセンタイル計算しない**
+- market-thermometer.json の `valuation_history` と factors/*.json の backfill済み factor_return_* は、日次実行(factors.py)が保持・再計算する(バックフィルが翌日実行で消えない)。バックフィルCLIは `python -m pipeline.backfill`(冪等)
 
 ## 参照すべきナレッジ
 ~/.claude/knowledge/ の kb-data-collection.md(データ収集), kb-markdown-datastore.md(蓄積),

@@ -16,9 +16,9 @@
   "history": [
     {
       "date": "2026-07-10",
-      "factor_return_1m": null,
-      "factor_return_3m": null,
-      "factor_return_1y": null,
+      "factor_return_1m": -1.12,
+      "factor_return_3m": -5.57,
+      "factor_return_1y": -34.86,
       "screen_count": 146
     }
   ],
@@ -4395,5 +4395,6 @@
         "metric_value": 4911534178304
       }
     ]
-  }
+  },
+  "factor_return_note": "factor_return_1m/3m/1y は『現在の分位該当銘柄(等ウェイト)のトレーリングリターン − ユニバース全体の等ウェイト平均』(%ポイント)。現在の構成銘柄で固定して過去リターンを遡って測る近似のため、生存バイアス・構成入れ替えの先読みバイアスを含む。厳密なヒストリカル分位バックテスト(T-15)による値ではない。"
 }

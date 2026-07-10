@@ -178,6 +178,42 @@ def compute_all_percentiles(stocks: Iterable[dict], fields: Sequence[str]) -> di
     return result
 
 
+# --- 自己時系列パーセンタイル・トレーリングリターン(T-17バックフィル用) ---
+
+
+def historical_percentile(window_values: Sequence[float], x) -> float | None:
+    """x が window_values(過去ウィンドウ)の中で占めるパーセンタイル(0..1)を返す。
+
+    定義: (xより小さい値の数 + xと等しい値の数/2) / n(平均順位ベース。percentile_rankと整合)。
+    window_values が空(None除去後)、または x が None の場合は None(境界値: 蓄積ゼロ)。
+    """
+    if x is None:
+        return None
+    vals = [v for v in window_values if v is not None]
+    if not vals:
+        return None
+    less = sum(1 for v in vals if v < x)
+    equal = sum(1 for v in vals if v == x)
+    return (less + equal / 2) / len(vals)
+
+
+def trailing_return(close_prices: Sequence[float], days: int) -> float | None:
+    """直近終値と days 営業日前の終値からトレーリングリターン(フラクション)を返す。
+
+    履歴不足(len < days+1)・ゼロ割・None混入は None(境界値: 上場直後銘柄)。
+    """
+    if close_prices is None or days <= 0:
+        return None
+    n = len(close_prices)
+    if n < days + 1:
+        return None
+    p_end = close_prices[-1]
+    p_start = close_prices[-1 - days]
+    if p_start is None or p_end is None or p_start == 0:
+        return None
+    return float(p_end / p_start - 1)
+
+
 # --- 信用倍率(週次、日本株のみ) ---
 
 

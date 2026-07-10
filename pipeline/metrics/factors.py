@@ -14,7 +14,7 @@ from __future__ import annotations
 import math
 from typing import Optional, Sequence
 
-from pipeline.metrics.calculations import metric_value_for_ranking
+from pipeline.metrics.calculations import historical_percentile, metric_value_for_ranking
 
 FACTOR_DEFS: dict[str, dict] = {
     "value": {
@@ -78,6 +78,12 @@ FACTOR_DEFS: dict[str, dict] = {
 
 QUANTILE_FRACTION = 0.2  # 上位/下位20%(五分位)を today_screen の対象とする
 
+# factor_return_1m/3m/1y のフィールド名(T-17バックフィルで初回記入、以後の日次実行で保持)
+RETURN_FIELDS = ("factor_return_1m", "factor_return_3m", "factor_return_1y")
+
+# 市場体温計の歴史的パーセンタイルの参照ウィンドウ(年)
+VALUATION_WINDOW_YEARS = 5
+
 
 def upsert_history(history: Sequence[dict], entry: dict) -> list[dict]:
     """historyをdateキーでupsertし、日付昇順にソートして返す(同一日付の再実行=冪等な置換)。"""
@@ -117,6 +123,20 @@ def build_today_screen(rows: Sequence[dict], field: str, direction: str,
     return out
 
 
+def _preserve_backfilled_returns(entry: dict, history: Sequence[dict]) -> dict:
+    """同一日付の既存エントリに backfill 済みの factor_return_* があれば新エントリに引き継ぐ。
+
+    T-17バックフィル後の日次再実行(冪等な同日上書き)で、backfill済みリターンが
+    null に退行しないようにするための保全処理。新エントリ側に非nullの値があればそちらを優先する。
+    """
+    prev = next((h for h in history if h.get("date") == entry.get("date")), None)
+    if prev:
+        for k in RETURN_FIELDS:
+            if entry.get(k) is None and prev.get(k) is not None:
+                entry[k] = prev[k]
+    return entry
+
+
 def build_factor_history_entry(date: str, screen_count: int) -> dict:
     return {
         "date": date,
@@ -148,9 +168,10 @@ def build_factor_snapshot(existing: Optional[dict], factor: str, date: str,
     entry = build_factor_history_entry(date, screen_count)
 
     history = list((existing or {}).get("history") or [])
+    entry = _preserve_backfilled_returns(entry, history)
     history = upsert_history(history, entry)
 
-    return {
+    out = {
         "factor": factor,
         "label": meta["label"],
         "markets": markets,
@@ -159,6 +180,10 @@ def build_factor_snapshot(existing: Optional[dict], factor: str, date: str,
         "history": history,
         "today_screen": today_screen,
     }
+    note = (existing or {}).get("factor_return_note")
+    if note:
+        out["factor_return_note"] = note
+    return out
 
 
 MARGIN_TRADING_DEFAULT_EVIDENCE = [
@@ -180,9 +205,10 @@ def build_margin_trading_snapshot(existing: Optional[dict], date: str, jp_stocks
     ]
     entry = {"date": date, "screen_count": len(today_screen_jp)}
     history = list((existing or {}).get("history") or [])
+    entry = _preserve_backfilled_returns(entry, history)
     history = upsert_history(history, entry)
 
-    return {
+    out = {
         "factor": "margin-trading",
         "label": "信用倍率・信用残(日本)",
         "markets": ["jp"],
@@ -200,6 +226,44 @@ def build_margin_trading_snapshot(existing: Optional[dict], date: str, jp_stocks
         "history": history,
         "today_screen": {"jp": today_screen_jp},
     }
+    note = (existing or {}).get("factor_return_note")
+    if note:
+        out["factor_return_note"] = note
+    return out
+
+
+def _years_before(date_str: str, years: int) -> str:
+    """YYYY-MM-DD 文字列の years 年前を返す(うるう日 02-29 は 02-28 に丸める)。"""
+    y = int(date_str[:4]) - years
+    rest = date_str[4:]
+    if rest == "-02-29":
+        rest = "-02-28"
+    return f"{y}{rest}"
+
+
+def apply_valuation_history(block: Optional[dict], valuation: Optional[dict]) -> None:
+    """market-thermometer の jp/us ブロックに、valuation_history 由来の
+    index_per/index_pbr(最新値)と index_{per,pbr}_percentile_5y を書き込む(in-place)。
+
+    valuation: {"per": [{"date": "YYYY-MM-DD", "value": float}, ...], "pbr": [...], ...}
+    パーセンタイルは「系列の最新日から遡って VALUATION_WINDOW_YEARS 年分」のウィンドウに対する
+    最新値の自己時系列パーセンタイル(calculations.historical_percentile)。
+    系列が無い指標はnullのまま(架空値を埋めない)。
+    """
+    if not block or not valuation:
+        return
+    for metric in ("per", "pbr"):
+        series = [p for p in (valuation.get(metric) or []) if p.get("value") is not None]
+        if not series:
+            continue
+        series.sort(key=lambda p: p["date"])
+        latest = series[-1]
+        window_start = _years_before(latest["date"], VALUATION_WINDOW_YEARS)
+        window = [p["value"] for p in series if p["date"] >= window_start]
+        pct = historical_percentile(window, latest["value"])
+        block[f"index_{metric}"] = latest["value"]
+        block[f"index_{metric}_as_of"] = latest["date"]
+        block[f"index_{metric}_percentile_5y"] = round(pct, 4) if pct is not None else None
 
 
 def build_market_thermometer_snapshot(
@@ -239,6 +303,13 @@ def build_market_thermometer_snapshot(
     jp_block = block("NIKKEI225", jp_index, {"margin_market_total": margin_market_total} if margin_market_total else None)
     us_block = block("SP500", us_index)
 
+    # T-17: バックフィル済みの指数バリュエーション履歴(valuation_history)があれば、
+    # 最新値と5年パーセンタイルを新エントリに反映する(日次実行でバックフィルが消えないように保持)。
+    valuation_history = (existing or {}).get("valuation_history")
+    if valuation_history:
+        apply_valuation_history(jp_block, valuation_history.get("jp"))
+        apply_valuation_history(us_block, valuation_history.get("us"))
+
     entry = {"date": date, "jp": jp_block, "us": us_block}
     history = upsert_history(history, entry)
 
@@ -248,13 +319,17 @@ def build_market_thermometer_snapshot(
     result_jp = latest.get("jp") or (existing or {}).get("jp")
     result_us = latest.get("us") or (existing or {}).get("us")
 
-    return {
+    out = {
         "date": latest["date"],
         "jp": result_jp,
         "us": result_us,
         "history": history,
         "source_note": "index_level/index_change_pct_1d は yfinance(^N225, ^GSPC)の実測値。"
                         "margin_market_totalはJPX公式Excel(週次)の実測値。"
-                        "index_per/index_pbrは全銘柄時価総額加重集計が必要なためT-05時点ではnull固定"
-                        "(将来の指標拡充スコープ)。",
+                        "index_per/index_pbr と 5年パーセンタイルは valuation_history"
+                        "(日経公式アーカイブ・multpl.com、T-17バックフィル)由来。"
+                        "valuation_historyが無い場合はnull(架空値を埋めない)。",
     }
+    if valuation_history:
+        out["valuation_history"] = valuation_history
+    return out

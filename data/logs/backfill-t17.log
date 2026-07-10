@@ -1,0 +1,19 @@
+=== pipeline.backfill 開始 (T-17) data_dir=C:\Users\Eita Ideguchi\.claude\investsite\data ===
+[品質ゲート] PASS jp.per=1349点 jp.pbr=1349点 us.per=1867点 us.pbr=106点
+[thermometer] jp: index_per=18.11 (pctile=0.8621) index_pbr=1.91 (pctile=0.9845)
+[thermometer] us: index_per=32.45 (pctile=0.9917) index_pbr=5.98 (pctile=0.9737)
+[factors] 対象ユニバース: jp=225 us=503 (daily 2026-07-10)
+[factors] 株価履歴カバレッジ: 728/728 = 100.0%
+[factors/value] quintile=139銘柄 returns={'factor_return_1m': -1.96, 'factor_return_3m': -7.72, 'factor_return_1y': -28.95}
+[factors/momentum] quintile=145銘柄 returns={'factor_return_1m': -0.88, 'factor_return_3m': 22.22, 'factor_return_1y': 140.62}
+[factors/dividend] quintile=125銘柄 returns={'factor_return_1m': -1.41, 'factor_return_3m': -6.38, 'factor_return_1y': -35.4}
+[factors/quality] quintile=139銘柄 returns={'factor_return_1m': 0.76, 'factor_return_3m': 4.69, 'factor_return_1y': 58.22}
+[factors/size] quintile=146銘柄 returns={'factor_return_1m': -1.12, 'factor_return_3m': -5.57, 'factor_return_1y': -34.86}
+[factors/margin-trading] quintile=44銘柄 returns={'factor_return_1m': -2.76, 'factor_return_3m': -17.7, 'factor_return_1y': -35.56}
+=== pipeline.backfill 正常終了 ===
+=== pipeline.backfill 開始 (T-17) data_dir=C:\Users\Eita Ideguchi\.claude\investsite\data ===
+[品質ゲート] PASS jp.per=1349点 jp.pbr=1349点 us.per=1867点 us.pbr=106点
+[thermometer] jp: index_per=18.11 (pctile=0.8621) index_pbr=1.91 (pctile=0.9845)
+[thermometer] us: index_per=32.45 (pctile=0.9917) index_pbr=5.98 (pctile=0.9737)
+[factors] --skip-factor-returns指定によりスキップ
+=== pipeline.backfill 正常終了 ===
