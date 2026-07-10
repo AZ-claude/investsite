@@ -49,6 +49,13 @@
 - 日経225のうち約5銘柄はJPX信用残PDFに存在しない(貸借銘柄でない等)。margin欠損は正常系として扱う
 - ROE欠損率の実測(T-03で未実測だった項目): JP 4/225=1.78%、US 34/503=6.76%
 
+## 確認済みのハマりどころ・やり方(T-05日次蓄積で実証)
+- 日次CLIは `python -m pipeline.daily [--date YYYY-MM-DD] [--markets jp,us] [--mock-jp FILE]`。品質ゲート(price/market_cap欠損>5%、中央値PER前日比±30%超)に引っかかると**書き込みゼロで exit=1**(前日データ維持)。取得失敗は exit=2
+- factors/*.json の history は日付キーで upsert(同日再実行は冪等上書き)。`--date`で過去日をbackfillしてもmarket-thermometerのtop-levelは常に最新日付を指す設計
+- factor_return_1m/3m/1y は分位ポートフォリオのバックテストが必要なため T-15(P4)まで null のまま(架空値を埋めない)
+- **長時間のPythonをバックグラウンド実行するときは `python -u` + `2>&1` でログファイルに書くこと**: stdoutがパイプだとブロックバッファリングされ、途中経過も失敗のtracebackも見えないまま静かに終わる事故を実測(T-05)
+- data/logs/*.log は .gitignore の `*.log` の例外としてコミット対象(監査証跡)
+
 ## 参照すべきナレッジ
 ~/.claude/knowledge/ の kb-data-collection.md(データ収集), kb-markdown-datastore.md(蓄積),
 kb-skill-pipeline.md(日次パイプライン) を実装フェーズで参照すること。
