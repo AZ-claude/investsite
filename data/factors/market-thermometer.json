@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-11",
+  "date": "2026-07-12",
   "jp": {
     "index": "NIKKEI225",
     "index_level": 68557.7265625,
@@ -68,6 +68,40 @@
     },
     {
       "date": "2026-07-11",
+      "jp": {
+        "index": "NIKKEI225",
+        "index_level": 68557.7265625,
+        "index_level_as_of": "2026-07-10",
+        "index_change_pct_1d": 1.201,
+        "index_per": 18.11,
+        "index_pbr": 1.91,
+        "index_per_percentile_5y": 0.8621,
+        "index_pbr_percentile_5y": 0.9845,
+        "margin_market_total": {
+          "outstanding_sales_thousand_shares": 394905,
+          "outstanding_purchases_thousand_shares": 3871201,
+          "margin_ratio_national_total": 9.8029,
+          "source": "https://www.jpx.co.jp/markets/statistics-equities/margin/04.html",
+          "as_of_week": "2026-07-03"
+        },
+        "index_per_as_of": "2026-07-09",
+        "index_pbr_as_of": "2026-07-09"
+      },
+      "us": {
+        "index": "SP500",
+        "index_level": 7575.39013671875,
+        "index_level_as_of": "2026-07-10",
+        "index_change_pct_1d": 0.421,
+        "index_per": 32.45,
+        "index_pbr": 5.98,
+        "index_per_percentile_5y": 0.9917,
+        "index_pbr_percentile_5y": 0.9737,
+        "index_per_as_of": "2026-07-09",
+        "index_pbr_as_of": "2026-07-09"
+      }
+    },
+    {
+      "date": "2026-07-12",
       "jp": {
         "index": "NIKKEI225",
         "index_level": 68557.7265625,

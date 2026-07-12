@@ -27,6 +27,13 @@
       "factor_return_3m": null,
       "factor_return_1y": null,
       "screen_count": 139
+    },
+    {
+      "date": "2026-07-12",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 139
     }
   ],
   "today_screen": {
@@ -509,7 +516,7 @@
         "ticker": "9531.T",
         "rank": 80,
         "quantile": "other",
-        "metric_value": 1.1571598
+        "metric_value": 1.1582041
       },
       {
         "ticker": "7269.T",
@@ -2146,22 +2153,22 @@
         "metric_value": 2.1926415
       },
       {
-        "ticker": "XOM",
-        "rank": 128,
-        "quantile": "other",
-        "metric_value": 2.23751
-      },
-      {
         "ticker": "SMCI",
-        "rank": 129,
+        "rank": 128,
         "quantile": "other",
         "metric_value": 2.2473605
       },
       {
         "ticker": "TRV",
-        "rank": 130,
+        "rank": 129,
         "quantile": "other",
         "metric_value": 2.2526786
+      },
+      {
+        "ticker": "XOM",
+        "rank": 130,
+        "quantile": "other",
+        "metric_value": 2.2629583
       },
       {
         "ticker": "EXR",
@@ -2374,106 +2381,106 @@
         "metric_value": 2.609987
       },
       {
-        "ticker": "JPM",
+        "ticker": "DAL",
         "rank": 166,
+        "quantile": "other",
+        "metric_value": 2.6199186
+      },
+      {
+        "ticker": "JPM",
+        "rank": 167,
         "quantile": "other",
         "metric_value": 2.6209116
       },
       {
         "ticker": "BNY",
-        "rank": 167,
+        "rank": 168,
         "quantile": "other",
         "metric_value": 2.643098
       },
       {
         "ticker": "PSX",
-        "rank": 168,
+        "rank": 169,
         "quantile": "other",
         "metric_value": 2.6472158
       },
       {
         "ticker": "LNT",
-        "rank": 169,
+        "rank": 170,
         "quantile": "other",
         "metric_value": 2.6585937
       },
       {
         "ticker": "DHR",
-        "rank": 170,
+        "rank": 171,
         "quantile": "other",
         "metric_value": 2.660456
       },
       {
         "ticker": "HAL",
-        "rank": 171,
+        "rank": 172,
         "quantile": "other",
         "metric_value": 2.6638265
       },
       {
         "ticker": "SOLV",
-        "rank": 172,
+        "rank": 173,
         "quantile": "other",
         "metric_value": 2.6785402
       },
       {
         "ticker": "LDOS",
-        "rank": 173,
+        "rank": 174,
         "quantile": "other",
         "metric_value": 2.6853013
       },
       {
         "ticker": "CEG",
-        "rank": 174,
+        "rank": 175,
         "quantile": "other",
         "metric_value": 2.7204745
       },
       {
         "ticker": "SLB",
-        "rank": 175,
+        "rank": 176,
         "quantile": "other",
         "metric_value": 2.7277398
       },
       {
         "ticker": "AJG",
-        "rank": 176,
+        "rank": 177,
         "quantile": "other",
         "metric_value": 2.7347481
       },
       {
         "ticker": "TDY",
-        "rank": 177,
+        "rank": 178,
         "quantile": "other",
         "metric_value": 2.746544
       },
       {
         "ticker": "WEC",
-        "rank": 178,
+        "rank": 179,
         "quantile": "other",
         "metric_value": 2.7483325
       },
       {
         "ticker": "GEHC",
-        "rank": 179,
+        "rank": 180,
         "quantile": "other",
         "metric_value": 2.7588265
       },
       {
         "ticker": "DLR",
-        "rank": 180,
+        "rank": 181,
         "quantile": "other",
         "metric_value": 2.7808006
       },
       {
         "ticker": "SNPS",
-        "rank": 181,
-        "quantile": "other",
-        "metric_value": 2.7983491
-      },
-      {
-        "ticker": "DAL",
         "rank": 182,
         "quantile": "other",
-        "metric_value": 2.8024886
+        "metric_value": 2.7983491
       },
       {
         "ticker": "NTRS",
@@ -3028,94 +3035,94 @@
         "metric_value": 4.554838
       },
       {
-        "ticker": "WDAY",
-        "rank": 275,
-        "quantile": "other",
-        "metric_value": 4.6132135
-      },
-      {
         "ticker": "NSC",
-        "rank": 276,
+        "rank": 275,
         "quantile": "other",
         "metric_value": 4.653744
       },
       {
         "ticker": "CBRE",
-        "rank": 277,
+        "rank": 276,
         "quantile": "other",
         "metric_value": 4.795834
       },
       {
         "ticker": "AME",
-        "rank": 278,
+        "rank": 277,
         "quantile": "other",
         "metric_value": 4.911419
       },
       {
         "ticker": "MGM",
-        "rank": 279,
+        "rank": 278,
         "quantile": "other",
         "metric_value": 4.92903
       },
       {
         "ticker": "ECHO",
-        "rank": 280,
+        "rank": 279,
         "quantile": "other",
         "metric_value": 4.931676
       },
       {
         "ticker": "INTC",
-        "rank": 281,
+        "rank": 280,
         "quantile": "other",
         "metric_value": 4.952879
       },
       {
         "ticker": "MPC",
-        "rank": 282,
+        "rank": 281,
         "quantile": "other",
         "metric_value": 4.962485
       },
       {
         "ticker": "NDSN",
-        "rank": 283,
+        "rank": 282,
         "quantile": "other",
         "metric_value": 4.9867764
       },
       {
         "ticker": "JKHY",
-        "rank": 284,
+        "rank": 283,
         "quantile": "other",
         "metric_value": 5.014177
       },
       {
         "ticker": "GRMN",
-        "rank": 285,
+        "rank": 284,
         "quantile": "other",
         "metric_value": 5.0583634
       },
       {
         "ticker": "NVR",
-        "rank": 286,
+        "rank": 285,
         "quantile": "other",
         "metric_value": 5.065942
       },
       {
         "ticker": "GNRC",
-        "rank": 287,
+        "rank": 286,
         "quantile": "other",
         "metric_value": 5.138941
       },
       {
         "ticker": "ON",
-        "rank": 288,
+        "rank": 287,
         "quantile": "other",
         "metric_value": 5.150003
       },
       {
         "ticker": "EW",
-        "rank": 289,
+        "rank": 288,
         "quantile": "other",
         "metric_value": 5.1516843
+      },
+      {
+        "ticker": "WDAY",
+        "rank": 289,
+        "quantile": "other",
+        "metric_value": 5.1771674
       },
       {
         "ticker": "CBOE",
