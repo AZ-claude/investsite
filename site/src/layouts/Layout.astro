@@ -10,6 +10,7 @@
  * @prop dataSources - SiteFooter へ渡すデータ出典配列
  */
 import SiteFooter from "../components/SiteFooter.astro";
+import Logo from "../components/Logo.astro";
 import { withBase } from "../lib/url";
 import "../styles/global.css";
 
@@ -75,7 +76,9 @@ const navItems = [
     <a class="skip-link" href="#main">本文へスキップ</a>
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="site-header__brand" href={withBase("/")}>investsite</a>
+        <a class="site-header__brand" href={withBase("/")} aria-label="investsite トップページ">
+          <Logo />
+        </a>
         <nav class="site-header__nav" aria-label="サイトナビゲーション">
           <ul>
             {navItems.map((item) => (
