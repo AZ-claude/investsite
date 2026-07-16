@@ -31,20 +31,30 @@
   `/investsite/...` ではなく `/...` のルート相対パスになっていることを確認済み。
 - **未コミット・未push**(本番公開に関わる変更のため、ユーザー承認後にcommit/pushする)。
 
-## 残タスク(次回セッション・要ユーザー作業)
+## 実施結果(2026-07-17完了)
 
-1. **DNS変更(ユーザー作業、要ログイン)**: お名前.com Navi(またはGMO系の該当パネル)で
-   `invest` サブドメインに CNAME レコードを追加:
-   - ホスト名: `invest`
-   - 種別: `CNAME`
-   - 値: `az-claude.github.io`
-   - 既存の `invest` 用Aレコード(ワイルドカード由来の可能性)があれば、それと競合するので削除が必要な場合あり
-2. **リポジトリのcommit & push**(要ユーザー承認 — 実行前に確認を取ること。T-14の申し送り事項と同様の理由)
-3. **GitHub Pages設定でカスタムドメインを設定**: リポジトリ `AZ-claude/investsite` の
-   Settings → Pages → Custom domain に `invest.rakusetsu.com` を入力し、DNS反映後に
-   「Enforce HTTPS」を有効化(要ユーザー承認、gh CLIでの操作も可)
-4. DNS反映確認(最大24〜48時間程度かかる場合あり)、HTTPS証明書発行確認
-5. WordPressの扱いを最終決定(放置/削除)— ユーザーの意向を別途確認
+- **DNS**: `invest.rakusetsu.com` には既に MX/TXT(SPF)/TXT(DKIM)レコードが設定済みで
+  メールに使われていたため、CNAMEではなく**Aレコード4本**(GitHub Pages公式IP:
+  `185.199.108.153` / `.109.153` / `.110.153` / `.111.153`)に変更する方式を採用。
+  お名前.com Navi の「ドメイン→DNS」から実施。メール関連レコードは無変更。
+- **リポジトリ**: commit & push 済み(コミット `8de6172` ※リベース後ハッシュ変わる場合あり)。
+  途中、リモートに日次データ更新の自動コミットがあったため rebase して解消。
+  作業中にあった無関係な未コミット変更(CLAUDE.md, docs/05-work-breakdown.md,
+  pipeline/spikes/out/run_log.txt, docs/gotchas.md)は stash → pop で退避・復元し、
+  このタスクのコミットには含めていない。
+- **GitHub Pages カスタムドメイン**: `gh api repos/AZ-claude/investsite/pages -X PUT -f cname=...`
+  で設定済み。
+- **動作確認**: `http://invest.rakusetsu.com/` で200応答・`Server: GitHub.com` を確認済み
+  (Google Public DNS 8.8.8.8でも新IPへの反映を確認)。
+- **HTTPS**: 証明書はGitHub側で自動発行待ち(`https_enforced: false`)。数分〜1時間程度で
+  自動的に有効化される見込み。次回セッションで
+  `gh api repos/AZ-claude/investsite/pages` の `https_enforced` を確認すること。
+
+## 残タスク
+
+1. HTTPS自動発行の確認(`https_enforced: true` になったか)
+2. WordPressの扱いを最終決定(放置/削除)— ユーザーの意向を別途確認
+3. サイトタイトル・ロゴなどブランディング(下記「デザイン・ロゴ」参照)
 
 ## デザイン・ロゴ(別フェーズ、未着手)
 
