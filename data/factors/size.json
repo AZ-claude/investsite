@@ -76,6 +76,13 @@
       "factor_return_3m": null,
       "factor_return_1y": null,
       "screen_count": 146
+    },
+    {
+      "date": "2026-07-19",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 146
     }
   ],
   "today_screen": {
@@ -264,7 +271,7 @@
         "ticker": "2002.T",
         "rank": 31,
         "quantile": "top_quintile",
-        "metric_value": 574470029312
+        "metric_value": 574188027904
       },
       {
         "ticker": "2282.T",
@@ -462,7 +469,7 @@
         "ticker": "9005.T",
         "rank": 64,
         "quantile": "other",
-        "metric_value": 1009949409280
+        "metric_value": 1005298057216
       },
       {
         "ticker": "4021.T",
@@ -582,7 +589,7 @@
         "ticker": "9202.T",
         "rank": 84,
         "quantile": "other",
-        "metric_value": 1317778620416
+        "metric_value": 1318432407552
       },
       {
         "ticker": "6506.T",
@@ -1074,7 +1081,7 @@
         "ticker": "8604.T",
         "rank": 166,
         "quantile": "other",
-        "metric_value": 4442915078144
+        "metric_value": 4442915602432
       },
       {
         "ticker": "4661.T",
@@ -1104,7 +1111,7 @@
         "ticker": "6902.T",
         "rank": 171,
         "quantile": "other",
-        "metric_value": 4924027961344
+        "metric_value": 4923821916160
       },
       {
         "ticker": "8802.T",
@@ -1194,7 +1201,7 @@
         "ticker": "8750.T",
         "rank": 186,
         "quantile": "other",
-        "metric_value": 6478110916608
+        "metric_value": 6479446802432
       },
       {
         "ticker": "6178.T",
@@ -1736,7 +1743,7 @@
         "ticker": "HRL",
         "rank": 51,
         "quantile": "top_quintile",
-        "metric_value": 13971716096
+        "metric_value": 13972496384
       },
       {
         "ticker": "COO",
@@ -2327,40 +2334,40 @@
         "metric_value": 25419132928
       },
       {
-        "ticker": "HUBB",
+        "ticker": "CPRT",
         "rank": 150,
+        "quantile": "other",
+        "metric_value": 25561655296
+      },
+      {
+        "ticker": "HUBB",
+        "rank": 151,
         "quantile": "other",
         "metric_value": 25822191616
       },
       {
         "ticker": "PPG",
-        "rank": 151,
+        "rank": 152,
         "quantile": "other",
         "metric_value": 26159544320
       },
       {
         "ticker": "VRSK",
-        "rank": 152,
+        "rank": 153,
         "quantile": "other",
         "metric_value": 26293460992
       },
       {
         "ticker": "AWK",
-        "rank": 153,
+        "rank": 154,
         "quantile": "other",
         "metric_value": 26384353280
       },
       {
         "ticker": "MTD",
-        "rank": 154,
-        "quantile": "other",
-        "metric_value": 26472359936
-      },
-      {
-        "ticker": "CPRT",
         "rank": 155,
         "quantile": "other",
-        "metric_value": 26596945920
+        "metric_value": 26472359936
       },
       {
         "ticker": "WRB",
@@ -3824,7 +3831,7 @@
         "ticker": "LOW",
         "rank": 399,
         "quantile": "other",
-        "metric_value": 117097529344
+        "metric_value": 117036384256
       },
       {
         "ticker": "LMT",
@@ -3992,7 +3999,7 @@
         "ticker": "DE",
         "rank": 427,
         "quantile": "other",
-        "metric_value": 161318879232
+        "metric_value": 161217429504
       },
       {
         "ticker": "WDC",
@@ -4049,16 +4056,16 @@
         "metric_value": 175365750784
       },
       {
-        "ticker": "STX",
+        "ticker": "SCHW",
         "rank": 437,
         "quantile": "other",
-        "metric_value": 176616194048
+        "metric_value": 176626597888
       },
       {
-        "ticker": "SCHW",
+        "ticker": "STX",
         "rank": 438,
         "quantile": "other",
-        "metric_value": 176626597888
+        "metric_value": 178209734656
       },
       {
         "ticker": "UNP",
@@ -4190,7 +4197,7 @@
         "ticker": "WFC",
         "rank": 460,
         "quantile": "other",
-        "metric_value": 265025388544
+        "metric_value": 267797184512
       },
       {
         "ticker": "KLAC",
@@ -4316,7 +4323,7 @@
         "ticker": "BAC",
         "rank": 481,
         "quantile": "other",
-        "metric_value": 429990871040
+        "metric_value": 434808127488
       },
       {
         "ticker": "CSCO",
