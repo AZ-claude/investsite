@@ -83,6 +83,13 @@
       "factor_return_3m": null,
       "factor_return_1y": null,
       "screen_count": 139
+    },
+    {
+      "date": "2026-07-20",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 139
     }
   ],
   "today_screen": {
@@ -2742,16 +2749,16 @@
         "metric_value": 3.3533478
       },
       {
-        "ticker": "ABT",
+        "ticker": "PCAR",
         "rank": 218,
         "quantile": "other",
-        "metric_value": 3.3539877
+        "metric_value": 3.3615682
       },
       {
-        "ticker": "PCAR",
+        "ticker": "ABT",
         "rank": 219,
         "quantile": "other",
-        "metric_value": 3.3615682
+        "metric_value": 3.3684633
       },
       {
         "ticker": "LUV",
@@ -2940,22 +2947,22 @@
         "metric_value": 3.9751031
       },
       {
-        "ticker": "WAB",
+        "ticker": "UDR",
         "rank": 251,
+        "quantile": "other",
+        "metric_value": 3.9959798
+      },
+      {
+        "ticker": "WAB",
+        "rank": 252,
         "quantile": "other",
         "metric_value": 4.0104055
       },
       {
         "ticker": "PGR",
-        "rank": 252,
-        "quantile": "other",
-        "metric_value": 4.019367
-      },
-      {
-        "ticker": "UDR",
         "rank": 253,
         "quantile": "other",
-        "metric_value": 4.021849
+        "metric_value": 4.019367
       },
       {
         "ticker": "CRM",

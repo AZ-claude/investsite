@@ -83,6 +83,13 @@
       "factor_return_3m": null,
       "factor_return_1y": null,
       "screen_count": 125
+    },
+    {
+      "date": "2026-07-20",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 125
     }
   ],
   "today_screen": {
@@ -1848,49 +1855,49 @@
         "metric_value": 3.46
       },
       {
-        "ticker": "HAS",
+        "ticker": "RF",
         "rank": 77,
         "quantile": "top_quintile",
-        "metric_value": 3.43
+        "metric_value": 3.46
       },
       {
-        "ticker": "WY",
+        "ticker": "HAS",
         "rank": 78,
         "quantile": "top_quintile",
         "metric_value": 3.43
       },
       {
-        "ticker": "PEG",
+        "ticker": "WY",
         "rank": 79,
+        "quantile": "top_quintile",
+        "metric_value": 3.43
+      },
+      {
+        "ticker": "PEG",
+        "rank": 80,
         "quantile": "top_quintile",
         "metric_value": 3.41
       },
       {
         "ticker": "GPC",
-        "rank": 80,
-        "quantile": "top_quintile",
-        "metric_value": 3.4
-      },
-      {
-        "ticker": "HBAN",
         "rank": 81,
         "quantile": "top_quintile",
         "metric_value": 3.4
       },
       {
-        "ticker": "HSY",
+        "ticker": "HBAN",
         "rank": 82,
+        "quantile": "other",
+        "metric_value": 3.4
+      },
+      {
+        "ticker": "HSY",
+        "rank": 83,
         "quantile": "other",
         "metric_value": 3.39
       },
       {
         "ticker": "PNW",
-        "rank": 83,
-        "quantile": "other",
-        "metric_value": 3.38
-      },
-      {
-        "ticker": "RF",
         "rank": 84,
         "quantile": "other",
         "metric_value": 3.38
@@ -2124,37 +2131,37 @@
         "metric_value": 2.77
       },
       {
-        "ticker": "AMGN",
+        "ticker": "FITB",
         "rank": 123,
         "quantile": "other",
-        "metric_value": 2.75
+        "metric_value": 2.76
       },
       {
-        "ticker": "HD",
+        "ticker": "AMGN",
         "rank": 124,
         "quantile": "other",
         "metric_value": 2.75
       },
       {
-        "ticker": "ABBV",
+        "ticker": "HD",
         "rank": 125,
+        "quantile": "other",
+        "metric_value": 2.75
+      },
+      {
+        "ticker": "ABBV",
+        "rank": 126,
         "quantile": "other",
         "metric_value": 2.72
       },
       {
         "ticker": "LMT",
-        "rank": 126,
+        "rank": 127,
         "quantile": "other",
         "metric_value": 2.71
       },
       {
         "ticker": "AEE",
-        "rank": 127,
-        "quantile": "other",
-        "metric_value": 2.69
-      },
-      {
-        "ticker": "FITB",
         "rank": 128,
         "quantile": "other",
         "metric_value": 2.69
