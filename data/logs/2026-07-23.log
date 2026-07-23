@@ -1,0 +1,21 @@
+=== pipeline.daily 開始 date=2026-07-23 markets=('jp', 'us') ===
+[jp] 取得開始
+[jp] 取得完了 銘柄数=225
+[us] 取得開始
+[us] 取得完了 銘柄数=503
+[jp] price 欠損率 = 0.00%
+[jp] market_cap 欠損率 = 0.00%
+[jp] 品質ゲート: PASS
+[us] price 欠損率 = 0.00%
+[us] market_cap 欠損率 = 0.00%
+[us] 品質ゲート: PASS
+[jp] 書き出し完了: /home/runner/work/investsite/investsite/data/daily/2026-07-23/jp.json
+[us] 書き出し完了: /home/runner/work/investsite/investsite/data/daily/2026-07-23/us.json
+[factors/value.json] 更新完了 history件数=14
+[factors/momentum.json] 更新完了 history件数=14
+[factors/dividend.json] 更新完了 history件数=14
+[factors/quality.json] 更新完了 history件数=14
+[factors/size.json] 更新完了 history件数=14
+[factors/margin-trading.json] 更新完了 history件数=14
+[factors/market-thermometer.json] 更新完了 history件数=14
+=== pipeline.daily 正常終了 date=2026-07-23 ===
