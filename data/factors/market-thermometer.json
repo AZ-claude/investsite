@@ -1,10 +1,10 @@
 {
-  "date": "2026-07-23",
+  "date": "2026-07-24",
   "jp": {
     "index": "NIKKEI225",
-    "index_level": 66422.6015625,
-    "index_level_as_of": "2026-07-23",
-    "index_change_pct_1d": 0.464,
+    "index_level": 64611.1484375,
+    "index_level_as_of": "2026-07-24",
+    "index_change_pct_1d": -2.727,
     "index_per": 18.11,
     "index_pbr": 1.91,
     "index_per_percentile_5y": 0.8621,
@@ -21,9 +21,9 @@
   },
   "us": {
     "index": "SP500",
-    "index_level": 7498.9599609375,
-    "index_level_as_of": "2026-07-22",
-    "index_change_pct_1d": -0.136,
+    "index_level": 7408.2998046875,
+    "index_level_as_of": "2026-07-23",
+    "index_change_pct_1d": -1.209,
     "index_per": 32.45,
     "index_pbr": 5.98,
     "index_per_percentile_5y": 0.9917,
@@ -500,6 +500,40 @@
         "index_level": 7498.9599609375,
         "index_level_as_of": "2026-07-22",
         "index_change_pct_1d": -0.136,
+        "index_per": 32.45,
+        "index_pbr": 5.98,
+        "index_per_percentile_5y": 0.9917,
+        "index_pbr_percentile_5y": 0.9737,
+        "index_per_as_of": "2026-07-09",
+        "index_pbr_as_of": "2026-07-09"
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "jp": {
+        "index": "NIKKEI225",
+        "index_level": 64611.1484375,
+        "index_level_as_of": "2026-07-24",
+        "index_change_pct_1d": -2.727,
+        "index_per": 18.11,
+        "index_pbr": 1.91,
+        "index_per_percentile_5y": 0.8621,
+        "index_pbr_percentile_5y": 0.9845,
+        "margin_market_total": {
+          "outstanding_sales_thousand_shares": 402095,
+          "outstanding_purchases_thousand_shares": 3704116,
+          "margin_ratio_national_total": 9.212,
+          "source": "https://www.jpx.co.jp/markets/statistics-equities/margin/04.html",
+          "as_of_week": "2026-07-17"
+        },
+        "index_per_as_of": "2026-07-09",
+        "index_pbr_as_of": "2026-07-09"
+      },
+      "us": {
+        "index": "SP500",
+        "index_level": 7408.2998046875,
+        "index_level_as_of": "2026-07-23",
+        "index_change_pct_1d": -1.209,
         "index_per": 32.45,
         "index_pbr": 5.98,
         "index_per_percentile_5y": 0.9917,
