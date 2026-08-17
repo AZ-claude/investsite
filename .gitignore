@@ -32,8 +32,9 @@ npm-debug.log*
 # Local Claude session state (not project config)
 .claude/scheduled_tasks.lock
 
-# ŒŸØ‚Ìˆê¬‰Ê•¨(ƒR[ƒh‚©‚ç–¢QÆ)
+# ï¿½ï¿½ï¿½Øï¿½ï¿½Ìˆêï¿½ï¿½ï¿½Ê•ï¿½(ï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½ç–¢ï¿½Qï¿½ï¿½)
 .playwright-mcp/
 pipeline/spikes/out/*_sample.*
 pipeline/spikes/out/t05_broken_*.json
 pipeline/spikes/out/*.html
+/.codex-runner/

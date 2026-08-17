@@ -66,3 +66,8 @@
 ## 参照すべきナレッジ
 ~/.claude/knowledge/ の kb-data-collection.md(データ収集), kb-markdown-datastore.md(蓄積),
 kb-skill-pipeline.md(日次パイプライン) を実装フェーズで参照すること。
+
+codex-runnerを使用する場合、実装・テスト・レビューはLuna/Terraが担当し、
+あなた(Claude)は要件対話・Task Spec作成(仕様・境界・Acceptance Criteria)・
+エスカレーション判断・merge承認の取り次ぎに専念すること。実行開始前および
+終端状態(BLOCKED_SPEC等)の処理前に ~/.codex-runner/CLAUDE_ESCALATION.md を読むこと。
