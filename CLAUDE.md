@@ -1,73 +1,40 @@
 # investsite — 個人投資家向け指標インサイトサイト
 
+> 2026-07-12 全体整理: フォルダ構成の正本は `~/projects/STRUCTURE.md`、事業計画の正本は `~/projects/masterplan/plan.md`。本ファイルはスリム化済みで、ハマりどころ詳細は [docs/gotchas.md](docs/gotchas.md) へ移動した(内容は削除していない)。
+
 ## プロジェクトゴール
 「株価はどこでも見れる」時代に、**どの指標がどれだけ株価に効くのか(寄与度)** を軸に据えた
-個人投資家向けの日次更新サイトを作る。閲覧者が「なんとなく売買」から「基準を持った売買」へ移行できることが提供価値。
-
-## ターゲットペルソナ
-- 投資歴7-8年、マネーリテラシー中程度
-- ETFをなんとなく積立、個別株は理由のない売買をしてしまう
-- PER/PBRは知っているが「それが実際どれだけ効くか」を知らない
+個人投資家向けの日次更新サイト(invest.rakusetsu.com)を作る。閲覧者が「なんとなく売買」から「基準を持った売買」へ移行できることが提供価値。
 
 ## 確定済みの意思決定(2026-07-10 ユーザー確認済み)
 | 項目 | 決定 |
 |---|---|
-| 対象市場 | 日米両方(積立ETF=米国、個別株=日本の実態に合わせる) |
-| データコスト | 無料の範囲のみ(yfinance, J-Quants無料枠, EDINET等)。価値確認後に有料化検討 |
+| 対象市場 | 日米両方 |
+| データコスト | 無料の範囲のみ(yfinance等)。価値確認後に有料化検討 |
 | 公開形態 | 静的サイト+日次バッチ自動更新(GitHub Pages/Vercel無料枠) |
-| 分析の深さ | 文献ベース(ファクター投資研究)+代表指標のみ実データで簡易バックテスト |
-| 非スコープ | 投資助言(金商法に抵触するため「情報提供」に徹する)、リアルタイム更新、有料データ |
+| 分析の深さ | 文献ベース+代表指標のみ簡易バックテスト |
+| 非スコープ | 投資助言(金商法。「情報提供」に徹する)、リアルタイム更新、有料データ |
 
 ## 体制
-- 戦略立案・レビュー: マネージャ(Fable/Opus)
-- 実作業: Sonnetサブエージェント。docs/05-work-breakdown.md のタスク単位で依頼する
+- 戦略立案・レビュー: マネージャ(Fable/Opus)。実作業: Sonnetサブエージェント(docs/05-work-breakdown.md のタスク単位)
+
+## 必ず守るルール(要点)
+- データ源は日米とも yfinance(**1.5.1以上必須**、日本株は `XXXX.T`)。J-Quants無料は12週遅延で不採用
+- 異なるソースの指標値を混ぜてパーセンタイル計算しない(定義差があるため)
+- サイトに出す数値には出典・定義注記を必ず添える
+- 長時間Pythonのバックグラウンド実行は `python -u` +ログファイル書き出し
+- **上記を含む全ハマりどころの詳細(429対策、JPX PDFパース、日経コード英字、単位系の罠など)は [docs/gotchas.md](docs/gotchas.md) を実装前に必ず参照**
 
 ## ドキュメント構成
-- docs/01-strategy.md — 戦略・提供価値・完了条件
-- docs/02-research/ — 要望1: 市場調査(指標の実態調査+文献調査)
-- docs/03-metrics-ranking.md — 要望2: 掲載指標ランキング
-- docs/04-site-design.md — 要望3: ページツリー・デザイン方針
-- docs/05-work-breakdown.md — 要望4: 作業リスト(実作業員向け)
-
-## 確認済みのハマりどころ・やり方(P1スパイクで実証)
-- データ源は日米とも **yfinance を採用**(日本株は `XXXX.T`)。J-Quants無料プランは12週遅延のため不採用(公式FAQで確認)
-- **yfinance は 1.5.1 以上必須**: 0.2.51 は全リクエスト429で動作しない(curl_cffi 導入で解決済み)
-- **起動直後の429連鎖に注意**: セッション初期化失敗で全滅するパターンあり。日次バッチは30〜60秒待機の再試行を入れる(T-02実測)
-- 日経225構成銘柄リストは日経平均プロフィル公式CSV(無料・登録不要)。CP932エンコーディング+フッタ行のパースに注意
-- yfinanceのPERは実績(trailing)ベース。Yahoo!ファイナンスJPの表示は会社予想ベースで定義が異なる。時価総額はトヨタで19%乖離の未解決事例あり(T-03/T-04で要検証)
-
-## 確認済みのハマりどころ・やり方(T-03スキーマ確定で実証)
-- トヨタ時価総額19%乖離の原因は**sharesOutstanding(発行済株式数)の値そのものの差**と切り分け済み(yfinanceのmarketCapは内部でsharesOutstanding×priceと完全一致=計算式自体は正しい)。自己株式控除差が最有力仮説だが未確定。サイトには出典・定義注記を必ず添える
-- 信用倍率(信用取引残高)はyfinanceでは取得不可。**JPX公式サイトが週次・無料でPDF(銘柄別、火曜16:30頃)/Excel(市場全体、水曜15:00頃)を公表**しており、これが採用データ源。CSV配信はなくPDF/Excelパーサの実装が必要(T-04/T-05)。詳細: docs/07-data-schema.md 6節
-- スキーマ設計は2層(`data/daily/YYYY-MM-DD/{jp|us}.json` + `data/factors/{factor}.json`)+銘柄マスタ`data/universe/{jp|us}.json`の3ファイル群構成。市場体温計は`data/factors/market-thermometer.json`としてfactors層に相乗り(第3層を作らない)
-
-## 確認済みのハマりどころ・やり方(T-04指標計算で実証)
-- **日経225の証券コードは英字入りがある**(285A=キオクシア、543A等)。「4桁数字」で弾くと225→223銘柄に減る。正規パターンは `\d[\dA-Z]{3}`
-- **JPXページのPDFリンクを`links[-1]`で取ると事故る**: 週次データ以外のお知らせPDF(t13vrt….pdf)が混在。`syumatsuYYYYMMDD`/`mtseisanYYYYMMDD`の命名規則でフィルタし日付最大を選ぶこと(pipeline/metrics/margin_jpx.py で対策済み)
-- **yfinance 1.5.1 の dividendYield は既にパーセント単位**(AAPL=0.34は0.34%の意味)。100倍しないこと。returnOnEquity はフラクション(0.102=10.2%)で単位が異なる点に注意
-- JPX銘柄別信用残PDFの行フォーマット: 数値12個(6項目×[水準,前週比])、負の前週比は「▲」が独立トークン。順序は[合計売残,Δ,合計買残,Δ,一般売残,Δ,制度売残,Δ,一般買残,Δ,制度買残,Δ](トヨタ実測値で検算済み)
-- 日経225のうち約5銘柄はJPX信用残PDFに存在しない(貸借銘柄でない等)。margin欠損は正常系として扱う
-- ROE欠損率の実測(T-03で未実測だった項目): JP 4/225=1.78%、US 34/503=6.76%
-
-## 確認済みのハマりどころ・やり方(T-05日次蓄積で実証)
-- 日次CLIは `python -m pipeline.daily [--date YYYY-MM-DD] [--markets jp,us] [--mock-jp FILE]`。品質ゲート(price/market_cap欠損>5%、中央値PER前日比±30%超)に引っかかると**書き込みゼロで exit=1**(前日データ維持)。取得失敗は exit=2
-- factors/*.json の history は日付キーで upsert(同日再実行は冪等上書き)。`--date`で過去日をbackfillしてもmarket-thermometerのtop-levelは常に最新日付を指す設計
-- factor_return_1m/3m/1y は T-17バックフィルで「現在の分位該当銘柄のトレーリングリターン−ユニバース平均」の近似値を当日分のみ記入済み(注記は factor_return_note)。厳密なヒストリカル分位バックテストは T-15(P4)
-- **長時間のPythonをバックグラウンド実行するときは `python -u` + `2>&1` でログファイルに書くこと**: stdoutがパイプだとブロックバッファリングされ、途中経過も失敗のtracebackも見えないまま静かに終わる事故を実測(T-05)
-- data/logs/*.log は .gitignore の `*.log` の例外としてコミット対象(監査証跡)
-
-## 確認済みのハマりどころ・やり方(T-17バックフィルで実証)
-- **日経平均プロフィルの指数PER/PBRは2004年〜の日次データが無料**。実体は `https://indexes.nikkei.co.jp/nkave/statistics/dataload?list={per|pbr}&year=YYYY&month=M` が月単位HTML断片を返す。ただし**サイト全体がCloudflare保護でcurl/requestsは403**。実ブラウザ(Playwright)経由fetchなら取れる。日次バッチ組み込み不可のため、一回限りバックフィル+成果物ファイル(pipeline/spikes/out/t17_nikkei_per_pbr_5y.json)方式を採用
-- 日経PER/PBRは「加重平均(倍)」「指数ベース(倍)」の2系列。市場体温計は**加重平均**を採用(時価総額加重の意図に合致)
-- **multpl.com はHTTP直叩き可**(UA指定のみ)。S&P500 PER=月次1871年〜(trailing "as reported")、PBR=四半期1999年〜。**PBRのby-monthは存在しない**(301でby-yearへ)。値セルは最新行`<abbr>†</abbr>`・過去行`&#x2002;`が値の前に付く
-- 指数PERの外部突合は定義差前提: 自前合算PER(Σmcap/Σearnings) vs 日経公式=+6.0%(前期基準利益差)、vs multpl=-14.3%(as reported GAAP差)。**異ソースの値を混ぜてパーセンタイル計算しない**
-- market-thermometer.json の `valuation_history` と factors/*.json の backfill済み factor_return_* は、日次実行(factors.py)が保持・再計算する(バックフィルが翌日実行で消えない)。バックフィルCLIは `python -m pipeline.backfill`(冪等)
+- docs/01-strategy.md(戦略) / 02-research/(調査) / 03-metrics-ranking.md(指標ランキング) / 04-site-design.md(設計) / 05-work-breakdown.md(作業リスト) / 07-data-schema.md(スキーマ) / gotchas.md(ハマりどころ実証記録)
 
 ## 参照すべきナレッジ
-~/.claude/knowledge/ の kb-data-collection.md(データ収集), kb-markdown-datastore.md(蓄積),
-kb-skill-pipeline.md(日次パイプライン) を実装フェーズで参照すること。
+~/projects/knowledge/ の kb-data-collection.md、kb-markdown-datastore.md、kb-skill-pipeline.md を実装フェーズで参照。
 
 codex-runnerを使用する場合、実装・テスト・レビューはLuna/Terraが担当し、
 あなた(Claude)は要件対話・Task Spec作成(仕様・境界・Acceptance Criteria)・
 エスカレーション判断・merge承認の取り次ぎに専念すること。実行開始前および
 終端状態(BLOCKED_SPEC等)の処理前に ~/.codex-runner/CLAUDE_ESCALATION.md を読むこと。
+
+実装に影響する要件・設計判断は `~/projects/knowledge/kb-ai-development-workflow.md` に従い、
+Phase-gate approval(要件確定・設計確定・実装開始)を得てからGitへ確定反映すること。
