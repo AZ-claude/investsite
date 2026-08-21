@@ -258,6 +258,13 @@
       "factor_return_3m": null,
       "factor_return_1y": null,
       "screen_count": 125
+    },
+    {
+      "date": "2026-08-22",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 125
     }
   ],
   "today_screen": {
@@ -266,37 +273,37 @@
         "ticker": "7261.T",
         "rank": 1,
         "quantile": "top_quintile",
-        "metric_value": 4.85
-      },
-      {
-        "ticker": "8252.T",
-        "rank": 2,
-        "quantile": "top_quintile",
         "metric_value": 4.55
       },
       {
         "ticker": "4208.T",
-        "rank": 3,
+        "rank": 2,
         "quantile": "top_quintile",
-        "metric_value": 4.52
+        "metric_value": 4.53
       },
       {
-        "ticker": "5411.T",
-        "rank": 4,
+        "ticker": "8252.T",
+        "rank": 3,
         "quantile": "top_quintile",
-        "metric_value": 4.46
+        "metric_value": 4.5
       },
       {
         "ticker": "7270.T",
-        "rank": 5,
+        "rank": 4,
         "quantile": "top_quintile",
         "metric_value": 4.4
+      },
+      {
+        "ticker": "5411.T",
+        "rank": 5,
+        "quantile": "top_quintile",
+        "metric_value": 4.33
       },
       {
         "ticker": "1928.T",
         "rank": 6,
         "quantile": "top_quintile",
-        "metric_value": 4.33
+        "metric_value": 4.25
       },
       {
         "ticker": "7202.T",
@@ -305,34 +312,34 @@
         "metric_value": 4.22
       },
       {
-        "ticker": "7267.T",
-        "rank": 8,
-        "quantile": "top_quintile",
-        "metric_value": 4.21
-      },
-      {
         "ticker": "3861.T",
-        "rank": 9,
+        "rank": 8,
         "quantile": "top_quintile",
         "metric_value": 4.18
       },
       {
         "ticker": "8750.T",
-        "rank": 10,
+        "rank": 9,
         "quantile": "top_quintile",
-        "metric_value": 4.05
+        "metric_value": 4.07
       },
       {
-        "ticker": "8601.T",
-        "rank": 11,
+        "ticker": "7267.T",
+        "rank": 10,
         "quantile": "top_quintile",
-        "metric_value": 4.03
+        "metric_value": 4.02
       },
       {
         "ticker": "5406.T",
+        "rank": 11,
+        "quantile": "top_quintile",
+        "metric_value": 3.98
+      },
+      {
+        "ticker": "8601.T",
         "rank": 12,
         "quantile": "top_quintile",
-        "metric_value": 4.02
+        "metric_value": 3.98
       },
       {
         "ticker": "2914.T",
@@ -347,574 +354,574 @@
         "metric_value": 3.84
       },
       {
-        "ticker": "3289.T",
+        "ticker": "6902.T",
         "rank": 15,
         "quantile": "top_quintile",
-        "metric_value": 3.82
+        "metric_value": 3.8
       },
       {
-        "ticker": "6902.T",
+        "ticker": "9107.T",
         "rank": 16,
         "quantile": "top_quintile",
-        "metric_value": 3.8
+        "metric_value": 3.78
       },
       {
         "ticker": "9434.T",
         "rank": 17,
         "quantile": "top_quintile",
-        "metric_value": 3.79
-      },
-      {
-        "ticker": "9107.T",
-        "rank": 18,
-        "quantile": "top_quintile",
         "metric_value": 3.78
       },
       {
         "ticker": "4042.T",
-        "rank": 19,
+        "rank": 18,
         "quantile": "top_quintile",
         "metric_value": 3.76
+      },
+      {
+        "ticker": "3289.T",
+        "rank": 19,
+        "quantile": "top_quintile",
+        "metric_value": 3.72
       },
       {
         "ticker": "2502.T",
         "rank": 20,
         "quantile": "top_quintile",
-        "metric_value": 3.75
+        "metric_value": 3.71
       },
       {
         "ticker": "5201.T",
         "rank": 21,
         "quantile": "top_quintile",
-        "metric_value": 3.73
-      },
-      {
-        "ticker": "4568.T",
-        "rank": 22,
-        "quantile": "top_quintile",
-        "metric_value": 3.66
-      },
-      {
-        "ticker": "5714.T",
-        "rank": 23,
-        "quantile": "top_quintile",
-        "metric_value": 3.65
+        "metric_value": 3.64
       },
       {
         "ticker": "5401.T",
-        "rank": 24,
+        "rank": 22,
         "quantile": "top_quintile",
         "metric_value": 3.62
       },
       {
-        "ticker": "4043.T",
-        "rank": 25,
+        "ticker": "1808.T",
+        "rank": 23,
         "quantile": "top_quintile",
-        "metric_value": 3.61
+        "metric_value": 3.57
       },
       {
         "ticker": "3092.T",
+        "rank": 24,
+        "quantile": "top_quintile",
+        "metric_value": 3.55
+      },
+      {
+        "ticker": "4183.T",
+        "rank": 25,
+        "quantile": "top_quintile",
+        "metric_value": 3.55
+      },
+      {
+        "ticker": "4043.T",
         "rank": 26,
         "quantile": "top_quintile",
-        "metric_value": 3.59
+        "metric_value": 3.54
       },
       {
         "ticker": "7751.T",
         "rank": 27,
         "quantile": "top_quintile",
-        "metric_value": 3.58
-      },
-      {
-        "ticker": "1808.T",
-        "rank": 28,
-        "quantile": "top_quintile",
-        "metric_value": 3.57
-      },
-      {
-        "ticker": "8697.T",
-        "rank": 29,
-        "quantile": "top_quintile",
-        "metric_value": 3.56
-      },
-      {
-        "ticker": "4183.T",
-        "rank": 30,
-        "quantile": "top_quintile",
-        "metric_value": 3.55
-      },
-      {
-        "ticker": "4502.T",
-        "rank": 31,
-        "quantile": "top_quintile",
         "metric_value": 3.54
       },
       {
         "ticker": "9101.T",
-        "rank": 32,
+        "rank": 28,
         "quantile": "top_quintile",
         "metric_value": 3.53
       },
       {
-        "ticker": "6305.T",
-        "rank": 33,
-        "quantile": "top_quintile",
-        "metric_value": 3.51
-      },
-      {
-        "ticker": "6472.T",
-        "rank": 34,
+        "ticker": "4502.T",
+        "rank": 29,
         "quantile": "top_quintile",
         "metric_value": 3.5
       },
       {
+        "ticker": "6472.T",
+        "rank": 30,
+        "quantile": "top_quintile",
+        "metric_value": 3.5
+      },
+      {
+        "ticker": "4568.T",
+        "rank": 31,
+        "quantile": "top_quintile",
+        "metric_value": 3.49
+      },
+      {
+        "ticker": "8697.T",
+        "rank": 32,
+        "quantile": "top_quintile",
+        "metric_value": 3.49
+      },
+      {
         "ticker": "9007.T",
-        "rank": 35,
+        "rank": 33,
         "quantile": "top_quintile",
         "metric_value": 3.48
+      },
+      {
+        "ticker": "5714.T",
+        "rank": 34,
+        "quantile": "top_quintile",
+        "metric_value": 3.45
+      },
+      {
+        "ticker": "8253.T",
+        "rank": 35,
+        "quantile": "top_quintile",
+        "metric_value": 3.43
       },
       {
         "ticker": "8795.T",
         "rank": 36,
         "quantile": "top_quintile",
-        "metric_value": 3.46
-      },
-      {
-        "ticker": "8253.T",
-        "rank": 37,
-        "quantile": "top_quintile",
-        "metric_value": 3.43
-      },
-      {
-        "ticker": "4503.T",
-        "rank": 38,
-        "quantile": "top_quintile",
         "metric_value": 3.42
-      },
-      {
-        "ticker": "6473.T",
-        "rank": 39,
-        "quantile": "top_quintile",
-        "metric_value": 3.42
-      },
-      {
-        "ticker": "7203.T",
-        "rank": 40,
-        "quantile": "top_quintile",
-        "metric_value": 3.4
-      },
-      {
-        "ticker": "9021.T",
-        "rank": 41,
-        "quantile": "top_quintile",
-        "metric_value": 3.39
-      },
-      {
-        "ticker": "9503.T",
-        "rank": 42,
-        "quantile": "top_quintile",
-        "metric_value": 3.39
-      },
-      {
-        "ticker": "8604.T",
-        "rank": 43,
-        "quantile": "top_quintile",
-        "metric_value": 3.38
       },
       {
         "ticker": "8766.T",
-        "rank": 44,
+        "rank": 37,
+        "quantile": "top_quintile",
+        "metric_value": 3.39
+      },
+      {
+        "ticker": "9021.T",
+        "rank": 38,
         "quantile": "top_quintile",
         "metric_value": 3.38
       },
       {
+        "ticker": "6305.T",
+        "rank": 39,
+        "quantile": "top_quintile",
+        "metric_value": 3.37
+      },
+      {
+        "ticker": "6473.T",
+        "rank": 40,
+        "quantile": "top_quintile",
+        "metric_value": 3.35
+      },
+      {
+        "ticker": "8604.T",
+        "rank": 41,
+        "quantile": "top_quintile",
+        "metric_value": 3.35
+      },
+      {
         "ticker": "9432.T",
+        "rank": 42,
+        "quantile": "top_quintile",
+        "metric_value": 3.35
+      },
+      {
+        "ticker": "4503.T",
+        "rank": 43,
+        "quantile": "top_quintile",
+        "metric_value": 3.31
+      },
+      {
+        "ticker": "5214.T",
+        "rank": 44,
+        "quantile": "top_quintile",
+        "metric_value": 3.3
+      },
+      {
+        "ticker": "1803.T",
         "rank": 45,
         "quantile": "other",
-        "metric_value": 3.35
+        "metric_value": 3.29
       },
       {
         "ticker": "2768.T",
         "rank": 46,
         "quantile": "other",
-        "metric_value": 3.32
+        "metric_value": 3.26
+      },
+      {
+        "ticker": "7203.T",
+        "rank": 47,
+        "quantile": "other",
+        "metric_value": 3.26
+      },
+      {
+        "ticker": "4704.T",
+        "rank": 48,
+        "quantile": "other",
+        "metric_value": 3.24
       },
       {
         "ticker": "4523.T",
-        "rank": 47,
-        "quantile": "other",
-        "metric_value": 3.31
-      },
-      {
-        "ticker": "5214.T",
-        "rank": 48,
-        "quantile": "other",
-        "metric_value": 3.3
-      },
-      {
-        "ticker": "1803.T",
         "rank": 49,
         "quantile": "other",
-        "metric_value": 3.29
+        "metric_value": 3.22
       },
       {
         "ticker": "7004.T",
         "rank": 50,
         "quantile": "other",
-        "metric_value": 3.27
-      },
-      {
-        "ticker": "4704.T",
-        "rank": 51,
-        "quantile": "other",
-        "metric_value": 3.24
-      },
-      {
-        "ticker": "5108.T",
-        "rank": 52,
-        "quantile": "other",
-        "metric_value": 3.24
+        "metric_value": 3.21
       },
       {
         "ticker": "9201.T",
-        "rank": 53,
-        "quantile": "other",
-        "metric_value": 3.22
-      },
-      {
-        "ticker": "2002.T",
-        "rank": 54,
+        "rank": 51,
         "quantile": "other",
         "metric_value": 3.2
       },
       {
         "ticker": "5831.T",
-        "rank": 55,
+        "rank": 52,
+        "quantile": "other",
+        "metric_value": 3.19
+      },
+      {
+        "ticker": "2002.T",
+        "rank": 53,
+        "quantile": "other",
+        "metric_value": 3.18
+      },
+      {
+        "ticker": "5108.T",
+        "rank": 54,
         "quantile": "other",
         "metric_value": 3.18
       },
       {
         "ticker": "1802.T",
-        "rank": 56,
+        "rank": 55,
         "quantile": "other",
         "metric_value": 3.16
       },
       {
-        "ticker": "1801.T",
-        "rank": 57,
+        "ticker": "9503.T",
+        "rank": 56,
         "quantile": "other",
-        "metric_value": 3.12
-      },
-      {
-        "ticker": "4005.T",
-        "rank": 58,
-        "quantile": "other",
-        "metric_value": 3.12
-      },
-      {
-        "ticker": "5101.T",
-        "rank": 59,
-        "quantile": "other",
-        "metric_value": 3.06
+        "metric_value": 3.13
       },
       {
         "ticker": "6471.T",
-        "rank": 60,
+        "rank": 57,
         "quantile": "other",
         "metric_value": 3.05
       },
       {
-        "ticker": "8630.T",
-        "rank": 61,
+        "ticker": "1801.T",
+        "rank": 58,
         "quantile": "other",
-        "metric_value": 3.04
+        "metric_value": 3.03
       },
       {
         "ticker": "1812.T",
-        "rank": 62,
+        "rank": 59,
         "quantile": "other",
         "metric_value": 3.02
       },
       {
-        "ticker": "6770.T",
-        "rank": 63,
+        "ticker": "8630.T",
+        "rank": 60,
         "quantile": "other",
-        "metric_value": 3.02
-      },
-      {
-        "ticker": "3405.T",
-        "rank": 64,
-        "quantile": "other",
-        "metric_value": 2.98
+        "metric_value": 3.01
       },
       {
         "ticker": "4061.T",
-        "rank": 65,
-        "quantile": "other",
-        "metric_value": 2.96
-      },
-      {
-        "ticker": "9433.T",
-        "rank": 66,
+        "rank": 61,
         "quantile": "other",
         "metric_value": 2.96
       },
       {
         "ticker": "3382.T",
-        "rank": 67,
+        "rank": 62,
         "quantile": "other",
         "metric_value": 2.95
       },
       {
-        "ticker": "7211.T",
-        "rank": 68,
+        "ticker": "3405.T",
+        "rank": 63,
+        "quantile": "other",
+        "metric_value": 2.95
+      },
+      {
+        "ticker": "5101.T",
+        "rank": 64,
         "quantile": "other",
         "metric_value": 2.95
       },
       {
         "ticker": "9104.T",
-        "rank": 69,
+        "rank": 65,
         "quantile": "other",
         "metric_value": 2.95
       },
       {
+        "ticker": "9433.T",
+        "rank": 66,
+        "quantile": "other",
+        "metric_value": 2.94
+      },
+      {
+        "ticker": "6770.T",
+        "rank": 67,
+        "quantile": "other",
+        "metric_value": 2.93
+      },
+      {
         "ticker": "8031.T",
-        "rank": 70,
+        "rank": 68,
         "quantile": "other",
         "metric_value": 2.93
       },
       {
         "ticker": "8725.T",
-        "rank": 71,
+        "rank": 69,
         "quantile": "other",
         "metric_value": 2.93
       },
       {
-        "ticker": "543A.T",
-        "rank": 72,
-        "quantile": "other",
-        "metric_value": 2.91
-      },
-      {
-        "ticker": "3401.T",
-        "rank": 73,
-        "quantile": "other",
-        "metric_value": 2.9
-      },
-      {
         "ticker": "5233.T",
-        "rank": 74,
+        "rank": 70,
         "quantile": "other",
         "metric_value": 2.9
       },
       {
         "ticker": "8304.T",
-        "rank": 75,
+        "rank": 71,
         "quantile": "other",
         "metric_value": 2.9
       },
       {
         "ticker": "1605.T",
-        "rank": 76,
+        "rank": 72,
         "quantile": "other",
         "metric_value": 2.89
       },
       {
-        "ticker": "9008.T",
-        "rank": 77,
+        "ticker": "3401.T",
+        "rank": 73,
         "quantile": "other",
         "metric_value": 2.88
       },
       {
-        "ticker": "8354.T",
+        "ticker": "4005.T",
+        "rank": 74,
+        "quantile": "other",
+        "metric_value": 2.86
+      },
+      {
+        "ticker": "543A.T",
+        "rank": 75,
+        "quantile": "other",
+        "metric_value": 2.86
+      },
+      {
+        "ticker": "9008.T",
+        "rank": 76,
+        "quantile": "other",
+        "metric_value": 2.84
+      },
+      {
+        "ticker": "7211.T",
+        "rank": 77,
+        "quantile": "other",
+        "metric_value": 2.83
+      },
+      {
+        "ticker": "8591.T",
         "rank": 78,
         "quantile": "other",
         "metric_value": 2.82
       },
       {
-        "ticker": "8591.T",
-        "rank": 79,
-        "quantile": "other",
-        "metric_value": 2.82
-      },
-      {
         "ticker": "2282.T",
-        "rank": 80,
+        "rank": 79,
         "quantile": "other",
         "metric_value": 2.81
       },
       {
         "ticker": "8309.T",
-        "rank": 81,
+        "rank": 80,
         "quantile": "other",
         "metric_value": 2.81
       },
       {
         "ticker": "4188.T",
-        "rank": 82,
+        "rank": 81,
         "quantile": "other",
         "metric_value": 2.8
       },
       {
         "ticker": "4902.T",
+        "rank": 82,
+        "quantile": "other",
+        "metric_value": 2.8
+      },
+      {
+        "ticker": "8354.T",
         "rank": 83,
         "quantile": "other",
         "metric_value": 2.8
       },
       {
-        "ticker": "6301.T",
+        "ticker": "8306.T",
         "rank": 84,
         "quantile": "other",
-        "metric_value": 2.79
+        "metric_value": 2.77
       },
       {
         "ticker": "7752.T",
         "rank": 85,
         "quantile": "other",
-        "metric_value": 2.77
-      },
-      {
-        "ticker": "8306.T",
-        "rank": 86,
-        "quantile": "other",
         "metric_value": 2.75
       },
       {
-        "ticker": "4021.T",
-        "rank": 87,
-        "quantile": "other",
-        "metric_value": 2.73
-      },
-      {
-        "ticker": "2432.T",
-        "rank": 88,
-        "quantile": "other",
-        "metric_value": 2.71
-      },
-      {
-        "ticker": "4151.T",
-        "rank": 89,
+        "ticker": "6301.T",
+        "rank": 86,
         "quantile": "other",
         "metric_value": 2.7
       },
       {
         "ticker": "3407.T",
-        "rank": 90,
+        "rank": 87,
         "quantile": "other",
         "metric_value": 2.69
+      },
+      {
+        "ticker": "4151.T",
+        "rank": 88,
+        "quantile": "other",
+        "metric_value": 2.67
       },
       {
         "ticker": "5019.T",
-        "rank": 91,
+        "rank": 89,
         "quantile": "other",
-        "metric_value": 2.69
+        "metric_value": 2.67
       },
       {
-        "ticker": "8058.T",
-        "rank": 92,
+        "ticker": "4021.T",
+        "rank": 90,
         "quantile": "other",
-        "metric_value": 2.69
+        "metric_value": 2.66
+      },
+      {
+        "ticker": "2432.T",
+        "rank": 91,
+        "quantile": "other",
+        "metric_value": 2.64
       },
       {
         "ticker": "6724.T",
-        "rank": 93,
+        "rank": 92,
         "quantile": "other",
-        "metric_value": 2.68
+        "metric_value": 2.62
       },
       {
         "ticker": "5020.T",
+        "rank": 93,
+        "quantile": "other",
+        "metric_value": 2.61
+      },
+      {
+        "ticker": "8058.T",
         "rank": 94,
         "quantile": "other",
-        "metric_value": 2.66
-      },
-      {
-        "ticker": "6302.T",
-        "rank": 95,
-        "quantile": "other",
-        "metric_value": 2.66
-      },
-      {
-        "ticker": "1721.T",
-        "rank": 96,
-        "quantile": "other",
-        "metric_value": 2.6
-      },
-      {
-        "ticker": "6178.T",
-        "rank": 97,
-        "quantile": "other",
-        "metric_value": 2.6
+        "metric_value": 2.61
       },
       {
         "ticker": "4507.T",
-        "rank": 98,
+        "rank": 95,
+        "quantile": "other",
+        "metric_value": 2.59
+      },
+      {
+        "ticker": "6178.T",
+        "rank": 96,
         "quantile": "other",
         "metric_value": 2.59
       },
       {
         "ticker": "6526.T",
-        "rank": 99,
+        "rank": 97,
         "quantile": "other",
         "metric_value": 2.59
       },
       {
         "ticker": "7186.T",
-        "rank": 100,
+        "rank": 98,
         "quantile": "other",
         "metric_value": 2.59
       },
       {
         "ticker": "7272.T",
-        "rank": 101,
+        "rank": 99,
         "quantile": "other",
         "metric_value": 2.59
+      },
+      {
+        "ticker": "1721.T",
+        "rank": 100,
+        "quantile": "other",
+        "metric_value": 2.57
+      },
+      {
+        "ticker": "6302.T",
+        "rank": 101,
+        "quantile": "other",
+        "metric_value": 2.55
       },
       {
         "ticker": "2269.T",
         "rank": 102,
         "quantile": "other",
-        "metric_value": 2.58
+        "metric_value": 2.53
       },
       {
-        "ticker": "7269.T",
+        "ticker": "9001.T",
         "rank": 103,
         "quantile": "other",
-        "metric_value": 2.57
+        "metric_value": 2.51
       },
       {
         "ticker": "2503.T",
         "rank": 104,
         "quantile": "other",
-        "metric_value": 2.53
+        "metric_value": 2.5
       },
       {
-        "ticker": "6113.T",
+        "ticker": "7269.T",
         "rank": 105,
-        "quantile": "other",
-        "metric_value": 2.51
-      },
-      {
-        "ticker": "9001.T",
-        "rank": 106,
-        "quantile": "other",
-        "metric_value": 2.51
-      },
-      {
-        "ticker": "1332.T",
-        "rank": 107,
         "quantile": "other",
         "metric_value": 2.49
       },
       {
         "ticker": "7974.T",
-        "rank": 108,
+        "rank": 106,
         "quantile": "other",
         "metric_value": 2.49
       },
       {
         "ticker": "8801.T",
-        "rank": 109,
+        "rank": 107,
         "quantile": "other",
         "metric_value": 2.48
+      },
+      {
+        "ticker": "1332.T",
+        "rank": 108,
+        "quantile": "other",
+        "metric_value": 2.46
+      },
+      {
+        "ticker": "6113.T",
+        "rank": 109,
+        "quantile": "other",
+        "metric_value": 2.44
       },
       {
         "ticker": "9502.T",
@@ -929,202 +936,202 @@
         "metric_value": 2.41
       },
       {
-        "ticker": "8002.T",
+        "ticker": "9020.T",
         "rank": 112,
         "quantile": "other",
         "metric_value": 2.4
       },
       {
-        "ticker": "9020.T",
+        "ticker": "9064.T",
         "rank": 113,
         "quantile": "other",
         "metric_value": 2.4
       },
       {
-        "ticker": "9064.T",
+        "ticker": "8002.T",
         "rank": 114,
         "quantile": "other",
-        "metric_value": 2.4
+        "metric_value": 2.37
       },
       {
-        "ticker": "4901.T",
+        "ticker": "8331.T",
         "rank": 115,
-        "quantile": "other",
-        "metric_value": 2.39
-      },
-      {
-        "ticker": "8053.T",
-        "rank": 116,
-        "quantile": "other",
-        "metric_value": 2.38
-      },
-      {
-        "ticker": "9532.T",
-        "rank": 117,
         "quantile": "other",
         "metric_value": 2.36
       },
       {
-        "ticker": "8331.T",
-        "rank": 118,
+        "ticker": "9532.T",
+        "rank": 116,
+        "quantile": "other",
+        "metric_value": 2.36
+      },
+      {
+        "ticker": "8053.T",
+        "rank": 117,
         "quantile": "other",
         "metric_value": 2.35
       },
       {
         "ticker": "5301.T",
-        "rank": 119,
+        "rank": 118,
         "quantile": "other",
         "metric_value": 2.34
       },
       {
-        "ticker": "2871.T",
-        "rank": 120,
+        "ticker": "4901.T",
+        "rank": 119,
         "quantile": "other",
-        "metric_value": 2.32
-      },
-      {
-        "ticker": "5711.T",
-        "rank": 121,
-        "quantile": "other",
-        "metric_value": 2.3
+        "metric_value": 2.33
       },
       {
         "ticker": "1963.T",
-        "rank": 122,
+        "rank": 120,
+        "quantile": "other",
+        "metric_value": 2.29
+      },
+      {
+        "ticker": "2871.T",
+        "rank": 121,
         "quantile": "other",
         "metric_value": 2.29
       },
       {
         "ticker": "4452.T",
-        "rank": 123,
-        "quantile": "other",
-        "metric_value": 2.24
-      },
-      {
-        "ticker": "4689.T",
-        "rank": 124,
-        "quantile": "other",
-        "metric_value": 2.23
-      },
-      {
-        "ticker": "8001.T",
-        "rank": 125,
+        "rank": 122,
         "quantile": "other",
         "metric_value": 2.2
       },
       {
-        "ticker": "5713.T",
-        "rank": 126,
+        "ticker": "8001.T",
+        "rank": 123,
+        "quantile": "other",
+        "metric_value": 2.2
+      },
+      {
+        "ticker": "5711.T",
+        "rank": 124,
         "quantile": "other",
         "metric_value": 2.17
       },
       {
-        "ticker": "2501.T",
-        "rank": 127,
+        "ticker": "4689.T",
+        "rank": 125,
         "quantile": "other",
-        "metric_value": 2.08
+        "metric_value": 2.13
       },
       {
-        "ticker": "6326.T",
-        "rank": 128,
+        "ticker": "2501.T",
+        "rank": 126,
         "quantile": "other",
-        "metric_value": 2.08
+        "metric_value": 2.09
       },
       {
         "ticker": "8316.T",
-        "rank": 129,
+        "rank": 127,
         "quantile": "other",
         "metric_value": 2.06
       },
       {
-        "ticker": "1925.T",
-        "rank": 130,
-        "quantile": "other",
-        "metric_value": 2.01
-      },
-      {
-        "ticker": "3659.T",
-        "rank": 131,
-        "quantile": "other",
-        "metric_value": 2.01
-      },
-      {
         "ticker": "7951.T",
-        "rank": 132,
+        "rank": 128,
         "quantile": "other",
         "metric_value": 2.01
       },
       {
         "ticker": "9531.T",
-        "rank": 133,
+        "rank": 129,
         "quantile": "other",
         "metric_value": 2.0
       },
       {
-        "ticker": "9202.T",
-        "rank": 134,
+        "ticker": "1925.T",
+        "rank": 130,
+        "quantile": "other",
+        "metric_value": 1.98
+      },
+      {
+        "ticker": "3659.T",
+        "rank": 131,
         "quantile": "other",
         "metric_value": 1.97
       },
       {
-        "ticker": "3086.T",
-        "rank": 135,
+        "ticker": "9202.T",
+        "rank": 132,
         "quantile": "other",
-        "metric_value": 1.94
+        "metric_value": 1.97
       },
       {
-        "ticker": "5332.T",
-        "rank": 136,
+        "ticker": "5713.T",
+        "rank": 133,
         "quantile": "other",
-        "metric_value": 1.94
+        "metric_value": 1.96
       },
       {
         "ticker": "9005.T",
-        "rank": 137,
+        "rank": 134,
         "quantile": "other",
         "metric_value": 1.93
       },
       {
-        "ticker": "4519.T",
-        "rank": 138,
+        "ticker": "6326.T",
+        "rank": 135,
         "quantile": "other",
         "metric_value": 1.92
       },
       {
-        "ticker": "6988.T",
-        "rank": 139,
-        "quantile": "other",
-        "metric_value": 1.91
-      },
-      {
         "ticker": "5333.T",
-        "rank": 140,
+        "rank": 136,
         "quantile": "other",
         "metric_value": 1.9
       },
       {
+        "ticker": "5332.T",
+        "rank": 137,
+        "quantile": "other",
+        "metric_value": 1.89
+      },
+      {
         "ticker": "9735.T",
-        "rank": 141,
+        "rank": 138,
         "quantile": "other",
         "metric_value": 1.89
       },
       {
         "ticker": "4063.T",
-        "rank": 142,
+        "rank": 139,
         "quantile": "other",
         "metric_value": 1.88
       },
       {
         "ticker": "7735.T",
-        "rank": 143,
+        "rank": 140,
         "quantile": "other",
         "metric_value": 1.88
       },
       {
-        "ticker": "8411.T",
-        "rank": 144,
+        "ticker": "4519.T",
+        "rank": 141,
         "quantile": "other",
         "metric_value": 1.86
+      },
+      {
+        "ticker": "6988.T",
+        "rank": 142,
+        "quantile": "other",
+        "metric_value": 1.86
+      },
+      {
+        "ticker": "8411.T",
+        "rank": 143,
+        "quantile": "other",
+        "metric_value": 1.86
+      },
+      {
+        "ticker": "3086.T",
+        "rank": 144,
+        "quantile": "other",
+        "metric_value": 1.85
       },
       {
         "ticker": "9147.T",
@@ -1133,88 +1140,88 @@
         "metric_value": 1.84
       },
       {
-        "ticker": "3402.T",
+        "ticker": "6841.T",
         "rank": 146,
         "quantile": "other",
         "metric_value": 1.8
       },
       {
-        "ticker": "6841.T",
+        "ticker": "3402.T",
         "rank": 147,
         "quantile": "other",
-        "metric_value": 1.8
-      },
-      {
-        "ticker": "8015.T",
-        "rank": 148,
-        "quantile": "other",
-        "metric_value": 1.79
+        "metric_value": 1.77
       },
       {
         "ticker": "5802.T",
-        "rank": 149,
+        "rank": 148,
         "quantile": "other",
         "metric_value": 1.76
       },
       {
         "ticker": "6479.T",
-        "rank": 150,
+        "rank": 149,
         "quantile": "other",
         "metric_value": 1.76
       },
       {
-        "ticker": "6532.T",
-        "rank": 151,
+        "ticker": "6954.T",
+        "rank": 150,
         "quantile": "other",
         "metric_value": 1.75
       },
       {
-        "ticker": "6954.T",
+        "ticker": "8015.T",
+        "rank": 151,
+        "quantile": "other",
+        "metric_value": 1.74
+      },
+      {
+        "ticker": "6367.T",
         "rank": 152,
         "quantile": "other",
-        "metric_value": 1.75
+        "metric_value": 1.73
       },
       {
         "ticker": "3099.T",
         "rank": 153,
         "quantile": "other",
-        "metric_value": 1.74
-      },
-      {
-        "ticker": "4307.T",
-        "rank": 154,
-        "quantile": "other",
-        "metric_value": 1.73
-      },
-      {
-        "ticker": "6367.T",
-        "rank": 155,
-        "quantile": "other",
-        "metric_value": 1.73
-      },
-      {
-        "ticker": "4911.T",
-        "rank": 156,
-        "quantile": "other",
-        "metric_value": 1.71
+        "metric_value": 1.7
       },
       {
         "ticker": "8233.T",
-        "rank": 157,
+        "rank": 154,
         "quantile": "other",
         "metric_value": 1.7
       },
       {
-        "ticker": "9009.T",
-        "rank": 158,
+        "ticker": "6532.T",
+        "rank": 155,
         "quantile": "other",
         "metric_value": 1.69
       },
       {
-        "ticker": "4578.T",
-        "rank": 159,
+        "ticker": "4307.T",
+        "rank": 156,
         "quantile": "other",
         "metric_value": 1.66
+      },
+      {
+        "ticker": "9009.T",
+        "rank": 157,
+        "quantile": "other",
+        "metric_value": 1.66
+      },
+      {
+        "ticker": "4578.T",
+        "rank": 158,
+        "quantile": "other",
+        "metric_value": 1.64
+      },
+      {
+        "ticker": "4911.T",
+        "rank": 159,
+        "quantile": "other",
+        "metric_value": 1.62
       },
       {
         "ticker": "6645.T",
@@ -1223,46 +1230,46 @@
         "metric_value": 1.62
       },
       {
-        "ticker": "8830.T",
-        "rank": 161,
-        "quantile": "other",
-        "metric_value": 1.59
-      },
-      {
         "ticker": "8308.T",
-        "rank": 162,
+        "rank": 161,
         "quantile": "other",
         "metric_value": 1.58
       },
       {
         "ticker": "6504.T",
-        "rank": 163,
+        "rank": 162,
         "quantile": "other",
         "metric_value": 1.57
       },
       {
         "ticker": "6971.T",
+        "rank": 163,
+        "quantile": "other",
+        "metric_value": 1.55
+      },
+      {
+        "ticker": "7012.T",
         "rank": 164,
         "quantile": "other",
         "metric_value": 1.54
       },
       {
-        "ticker": "6702.T",
+        "ticker": "8830.T",
         "rank": 165,
         "quantile": "other",
-        "metric_value": 1.52
-      },
-      {
-        "ticker": "7012.T",
-        "rank": 166,
-        "quantile": "other",
-        "metric_value": 1.5
+        "metric_value": 1.54
       },
       {
         "ticker": "4751.T",
-        "rank": 167,
+        "rank": 166,
         "quantile": "other",
         "metric_value": 1.49
+      },
+      {
+        "ticker": "6702.T",
+        "rank": 167,
+        "quantile": "other",
+        "metric_value": 1.47
       },
       {
         "ticker": "6506.T",
@@ -1274,7 +1281,7 @@
         "ticker": "9602.T",
         "rank": 169,
         "quantile": "other",
-        "metric_value": 1.43
+        "metric_value": 1.42
       },
       {
         "ticker": "6273.T",
@@ -1283,34 +1290,34 @@
         "metric_value": 1.41
       },
       {
-        "ticker": "7733.T",
-        "rank": 171,
-        "quantile": "other",
-        "metric_value": 1.41
-      },
-      {
         "ticker": "4543.T",
-        "rank": 172,
+        "rank": 171,
         "quantile": "other",
         "metric_value": 1.4
       },
       {
-        "ticker": "2801.T",
-        "rank": 173,
-        "quantile": "other",
-        "metric_value": 1.39
-      },
-      {
-        "ticker": "8802.T",
-        "rank": 174,
+        "ticker": "7733.T",
+        "rank": 172,
         "quantile": "other",
         "metric_value": 1.38
       },
       {
         "ticker": "8035.T",
+        "rank": 173,
+        "quantile": "other",
+        "metric_value": 1.38
+      },
+      {
+        "ticker": "2801.T",
+        "rank": 174,
+        "quantile": "other",
+        "metric_value": 1.36
+      },
+      {
+        "ticker": "8802.T",
         "rank": 175,
         "quantile": "other",
-        "metric_value": 1.37
+        "metric_value": 1.36
       },
       {
         "ticker": "6762.T",
@@ -1325,64 +1332,64 @@
         "metric_value": 1.31
       },
       {
-        "ticker": "2413.T",
+        "ticker": "7912.T",
         "rank": 178,
         "quantile": "other",
         "metric_value": 1.27
       },
       {
-        "ticker": "7912.T",
+        "ticker": "2413.T",
         "rank": 179,
         "quantile": "other",
-        "metric_value": 1.27
+        "metric_value": 1.26
       },
       {
         "ticker": "6752.T",
         "rank": 180,
         "quantile": "other",
-        "metric_value": 1.24
+        "metric_value": 1.25
+      },
+      {
+        "ticker": "7532.T",
+        "rank": 181,
+        "quantile": "other",
+        "metric_value": 1.23
       },
       {
         "ticker": "6920.T",
-        "rank": 181,
+        "rank": 182,
         "quantile": "other",
-        "metric_value": 1.2
+        "metric_value": 1.21
       },
       {
         "ticker": "5631.T",
-        "rank": 182,
+        "rank": 183,
         "quantile": "other",
         "metric_value": 1.18
       },
       {
         "ticker": "7741.T",
-        "rank": 183,
+        "rank": 184,
         "quantile": "other",
         "metric_value": 1.17
       },
       {
         "ticker": "7911.T",
-        "rank": 184,
-        "quantile": "other",
-        "metric_value": 1.14
-      },
-      {
-        "ticker": "7532.T",
         "rank": 185,
         "quantile": "other",
-        "metric_value": 1.09
+        "metric_value": 1.13
       },
       {
-        "ticker": "6503.T",
+        "ticker": "6501.T",
         "rank": 186,
         "quantile": "other",
         "metric_value": 1.06
       },
       {
-        "ticker": "6501.T",
+        "ticker": "6503.T",
         "rank": 187,
         "quantile": "other",
-        "metric_value": 1.05
+        "metric_value": 1.06
       },
       {
         "ticker": "6963.T",
@@ -1397,22 +1404,22 @@
         "metric_value": 1.05
       },
       {
-        "ticker": "8267.T",
+        "ticker": "7731.T",
         "rank": 190,
         "quantile": "other",
-        "metric_value": 1.03
+        "metric_value": 1.02
       },
       {
         "ticker": "9766.T",
         "rank": 191,
         "quantile": "other",
-        "metric_value": 1.03
+        "metric_value": 1.02
       },
       {
-        "ticker": "7731.T",
+        "ticker": "8267.T",
         "rank": 192,
         "quantile": "other",
-        "metric_value": 1.02
+        "metric_value": 1.01
       },
       {
         "ticker": "6981.T",
@@ -1421,43 +1428,43 @@
         "metric_value": 0.97
       },
       {
-        "ticker": "2802.T",
+        "ticker": "6976.T",
         "rank": 194,
         "quantile": "other",
-        "metric_value": 0.95
+        "metric_value": 0.94
+      },
+      {
+        "ticker": "2802.T",
+        "rank": 195,
+        "quantile": "other",
+        "metric_value": 0.93
       },
       {
         "ticker": "6758.T",
-        "rank": 195,
-        "quantile": "other",
-        "metric_value": 0.95
-      },
-      {
-        "ticker": "6976.T",
         "rank": 196,
         "quantile": "other",
-        "metric_value": 0.94
+        "metric_value": 0.93
       },
       {
         "ticker": "6146.T",
         "rank": 197,
         "quantile": "other",
-        "metric_value": 0.92
-      },
-      {
-        "ticker": "7832.T",
-        "rank": 198,
-        "quantile": "other",
-        "metric_value": 0.9
+        "metric_value": 0.91
       },
       {
         "ticker": "3697.T",
-        "rank": 199,
+        "rank": 198,
         "quantile": "other",
         "metric_value": 0.86
       },
       {
         "ticker": "6701.T",
+        "rank": 199,
+        "quantile": "other",
+        "metric_value": 0.86
+      },
+      {
+        "ticker": "7832.T",
         "rank": 200,
         "quantile": "other",
         "metric_value": 0.86
@@ -1487,13 +1494,13 @@
         "metric_value": 0.81
       },
       {
-        "ticker": "7453.T",
+        "ticker": "7011.T",
         "rank": 205,
         "quantile": "other",
-        "metric_value": 0.75
+        "metric_value": 0.76
       },
       {
-        "ticker": "7011.T",
+        "ticker": "7453.T",
         "rank": 206,
         "quantile": "other",
         "metric_value": 0.73
@@ -1502,22 +1509,22 @@
         "ticker": "5803.T",
         "rank": 207,
         "quantile": "other",
-        "metric_value": 0.71
+        "metric_value": 0.72
       },
       {
         "ticker": "6861.T",
         "rank": 208,
         "quantile": "other",
-        "metric_value": 0.69
+        "metric_value": 0.68
       },
       {
-        "ticker": "5801.T",
+        "ticker": "3436.T",
         "rank": 209,
         "quantile": "other",
         "metric_value": 0.58
       },
       {
-        "ticker": "3436.T",
+        "ticker": "5801.T",
         "rank": 210,
         "quantile": "other",
         "metric_value": 0.57
@@ -1526,7 +1533,7 @@
         "ticker": "4661.T",
         "rank": 211,
         "quantile": "other",
-        "metric_value": 0.55
+        "metric_value": 0.54
       },
       {
         "ticker": "4004.T",
@@ -1538,19 +1545,19 @@
         "ticker": "9984.T",
         "rank": 213,
         "quantile": "other",
-        "metric_value": 0.21
+        "metric_value": 0.2
       },
       {
-        "ticker": "6098.T",
+        "ticker": "6857.T",
         "rank": 214,
         "quantile": "other",
         "metric_value": 0.17
       },
       {
-        "ticker": "6857.T",
+        "ticker": "6098.T",
         "rank": 215,
         "quantile": "other",
-        "metric_value": 0.17
+        "metric_value": 0.16
       },
       {
         "ticker": "4062.T",
@@ -1570,223 +1577,223 @@
         "ticker": "VICI",
         "rank": 1,
         "quantile": "top_quintile",
-        "metric_value": 6.83
-      },
-      {
-        "ticker": "MO",
-        "rank": 2,
-        "quantile": "top_quintile",
-        "metric_value": 6.42
+        "metric_value": 6.77
       },
       {
         "ticker": "UPS",
+        "rank": 2,
+        "quantile": "top_quintile",
+        "metric_value": 6.4
+      },
+      {
+        "ticker": "MO",
         "rank": 3,
         "quantile": "top_quintile",
-        "metric_value": 6.38
+        "metric_value": 6.33
       },
       {
         "ticker": "KHC",
         "rank": 4,
         "quantile": "top_quintile",
-        "metric_value": 6.23
-      },
-      {
-        "ticker": "GIS",
-        "rank": 5,
-        "quantile": "top_quintile",
-        "metric_value": 6.1
+        "metric_value": 6.26
       },
       {
         "ticker": "PFE",
+        "rank": 5,
+        "quantile": "top_quintile",
+        "metric_value": 6.19
+      },
+      {
+        "ticker": "GIS",
         "rank": 6,
         "quantile": "top_quintile",
-        "metric_value": 6.09
+        "metric_value": 6.16
       },
       {
         "ticker": "DOC",
         "rank": 7,
         "quantile": "top_quintile",
-        "metric_value": 5.88
+        "metric_value": 5.75
       },
       {
         "ticker": "VZ",
         "rank": 8,
         "quantile": "top_quintile",
-        "metric_value": 5.73
-      },
-      {
-        "ticker": "ARE",
-        "rank": 9,
-        "quantile": "top_quintile",
-        "metric_value": 5.7
+        "metric_value": 5.75
       },
       {
         "ticker": "CCI",
+        "rank": 9,
+        "quantile": "top_quintile",
+        "metric_value": 5.64
+      },
+      {
+        "ticker": "ARE",
         "rank": 10,
         "quantile": "top_quintile",
-        "metric_value": 5.69
+        "metric_value": 5.44
       },
       {
         "ticker": "AMCR",
         "rank": 11,
         "quantile": "top_quintile",
-        "metric_value": 5.48
+        "metric_value": 5.44
       },
       {
         "ticker": "O",
         "rank": 12,
         "quantile": "top_quintile",
-        "metric_value": 5.17
+        "metric_value": 5.15
       },
       {
         "ticker": "CMCSA",
         "rank": 13,
         "quantile": "top_quintile",
-        "metric_value": 4.96
-      },
-      {
-        "ticker": "AES",
-        "rank": 14,
-        "quantile": "top_quintile",
-        "metric_value": 4.79
+        "metric_value": 5.0
       },
       {
         "ticker": "HRL",
-        "rank": 15,
+        "rank": 14,
         "quantile": "top_quintile",
-        "metric_value": 4.79
+        "metric_value": 4.86
       },
       {
-        "ticker": "EIX",
+        "ticker": "AES",
+        "rank": 15,
+        "quantile": "top_quintile",
+        "metric_value": 4.77
+      },
+      {
+        "ticker": "CLX",
         "rank": 16,
         "quantile": "top_quintile",
-        "metric_value": 4.78
+        "metric_value": 4.72
       },
       {
         "ticker": "KMB",
         "rank": 17,
         "quantile": "top_quintile",
-        "metric_value": 4.66
+        "metric_value": 4.71
+      },
+      {
+        "ticker": "EIX",
+        "rank": 18,
+        "quantile": "top_quintile",
+        "metric_value": 4.7
+      },
+      {
+        "ticker": "KIM",
+        "rank": 19,
+        "quantile": "top_quintile",
+        "metric_value": 4.64
+      },
+      {
+        "ticker": "PRU",
+        "rank": 20,
+        "quantile": "top_quintile",
+        "metric_value": 4.64
       },
       {
         "ticker": "MAA",
-        "rank": 18,
-        "quantile": "top_quintile",
-        "metric_value": 4.66
-      },
-      {
-        "ticker": "CLX",
-        "rank": 19,
+        "rank": 21,
         "quantile": "top_quintile",
         "metric_value": 4.63
       },
       {
         "ticker": "TROW",
-        "rank": 20,
+        "rank": 22,
         "quantile": "top_quintile",
         "metric_value": 4.63
       },
       {
-        "ticker": "KIM",
-        "rank": 21,
-        "quantile": "top_quintile",
-        "metric_value": 4.61
-      },
-      {
         "ticker": "UDR",
-        "rank": 22,
+        "rank": 23,
         "quantile": "top_quintile",
-        "metric_value": 4.61
+        "metric_value": 4.59
       },
       {
-        "ticker": "PRU",
-        "rank": 23,
+        "ticker": "IP",
+        "rank": 24,
         "quantile": "top_quintile",
         "metric_value": 4.58
       },
       {
-        "ticker": "TAP",
-        "rank": 24,
+        "ticker": "OKE",
+        "rank": 25,
         "quantile": "top_quintile",
         "metric_value": 4.52
       },
       {
-        "ticker": "IP",
-        "rank": 25,
+        "ticker": "TAP",
+        "rank": 26,
         "quantile": "top_quintile",
         "metric_value": 4.51
       },
       {
-        "ticker": "OKE",
-        "rank": 26,
+        "ticker": "BBY",
+        "rank": 27,
         "quantile": "top_quintile",
-        "metric_value": 4.46
+        "metric_value": 4.48
+      },
+      {
+        "ticker": "KVUE",
+        "rank": 28,
+        "quantile": "top_quintile",
+        "metric_value": 4.44
       },
       {
         "ticker": "T",
-        "rank": 27,
-        "quantile": "top_quintile",
-        "metric_value": 4.42
-      },
-      {
-        "ticker": "DOW",
-        "rank": 28,
+        "rank": 29,
         "quantile": "top_quintile",
         "metric_value": 4.41
       },
       {
-        "ticker": "KVUE",
-        "rank": 29,
+        "ticker": "EXR",
+        "rank": 30,
         "quantile": "top_quintile",
-        "metric_value": 4.39
+        "metric_value": 4.4
       },
       {
         "ticker": "ES",
-        "rank": 30,
-        "quantile": "top_quintile",
-        "metric_value": 4.38
-      },
-      {
-        "ticker": "EXR",
         "rank": 31,
         "quantile": "top_quintile",
-        "metric_value": 4.38
+        "metric_value": 4.37
       },
       {
         "ticker": "FIS",
         "rank": 32,
         "quantile": "top_quintile",
-        "metric_value": 4.33
+        "metric_value": 4.34
       },
       {
-        "ticker": "BBY",
+        "ticker": "F",
         "rank": 33,
         "quantile": "top_quintile",
-        "metric_value": 4.3
+        "metric_value": 4.29
       },
       {
-        "ticker": "LYB",
+        "ticker": "DOW",
         "rank": 34,
         "quantile": "top_quintile",
-        "metric_value": 4.18
+        "metric_value": 4.26
       },
       {
-        "ticker": "BXP",
+        "ticker": "PEP",
         "rank": 35,
         "quantile": "top_quintile",
         "metric_value": 4.17
       },
       {
-        "ticker": "PEP",
+        "ticker": "TFC",
         "rank": 36,
         "quantile": "top_quintile",
-        "metric_value": 4.15
+        "metric_value": 4.14
       },
       {
-        "ticker": "F",
+        "ticker": "BXP",
         "rank": 37,
         "quantile": "top_quintile",
-        "metric_value": 4.14
+        "metric_value": 4.13
       },
       {
         "ticker": "SWKS",
@@ -1795,7 +1802,7 @@
         "metric_value": 4.13
       },
       {
-        "ticker": "TFC",
+        "ticker": "NKE",
         "rank": 39,
         "quantile": "top_quintile",
         "metric_value": 4.08
@@ -1804,43 +1811,43 @@
         "ticker": "HPQ",
         "rank": 40,
         "quantile": "top_quintile",
-        "metric_value": 4.01
+        "metric_value": 4.07
       },
       {
-        "ticker": "AMT",
+        "ticker": "LYB",
         "rank": 41,
         "quantile": "top_quintile",
-        "metric_value": 4.0
-      },
-      {
-        "ticker": "NKE",
-        "rank": 42,
-        "quantile": "top_quintile",
-        "metric_value": 4.0
+        "metric_value": 4.05
       },
       {
         "ticker": "SPG",
-        "rank": 43,
+        "rank": 42,
         "quantile": "top_quintile",
-        "metric_value": 3.99
+        "metric_value": 4.05
       },
       {
-        "ticker": "INVH",
-        "rank": 44,
+        "ticker": "AMT",
+        "rank": 43,
         "quantile": "top_quintile",
         "metric_value": 3.97
       },
       {
-        "ticker": "MOS",
-        "rank": 45,
+        "ticker": "D",
+        "rank": 44,
         "quantile": "top_quintile",
         "metric_value": 3.96
       },
       {
         "ticker": "FRT",
+        "rank": 45,
+        "quantile": "top_quintile",
+        "metric_value": 3.96
+      },
+      {
+        "ticker": "INVH",
         "rank": 46,
         "quantile": "top_quintile",
-        "metric_value": 3.95
+        "metric_value": 3.96
       },
       {
         "ticker": "REG",
@@ -1858,247 +1865,247 @@
         "ticker": "CPT",
         "rank": 49,
         "quantile": "top_quintile",
-        "metric_value": 3.91
+        "metric_value": 3.93
       },
       {
-        "ticker": "D",
+        "ticker": "BEN",
         "rank": 50,
         "quantile": "top_quintile",
-        "metric_value": 3.91
+        "metric_value": 3.89
       },
       {
         "ticker": "PAYX",
         "rank": 51,
         "quantile": "top_quintile",
-        "metric_value": 3.89
-      },
-      {
-        "ticker": "BEN",
-        "rank": 52,
-        "quantile": "top_quintile",
-        "metric_value": 3.88
+        "metric_value": 3.87
       },
       {
         "ticker": "ARES",
+        "rank": 52,
+        "quantile": "top_quintile",
+        "metric_value": 3.85
+      },
+      {
+        "ticker": "BMY",
         "rank": 53,
+        "quantile": "top_quintile",
+        "metric_value": 3.85
+      },
+      {
+        "ticker": "MOS",
+        "rank": 54,
         "quantile": "top_quintile",
         "metric_value": 3.77
       },
       {
-        "ticker": "BMY",
-        "rank": 54,
+        "ticker": "KEY",
+        "rank": 55,
+        "quantile": "top_quintile",
+        "metric_value": 3.75
+      },
+      {
+        "ticker": "SW",
+        "rank": 56,
+        "quantile": "top_quintile",
+        "metric_value": 3.75
+      },
+      {
+        "ticker": "EXC",
+        "rank": 57,
         "quantile": "top_quintile",
         "metric_value": 3.73
       },
       {
-        "ticker": "EXC",
-        "rank": 55,
+        "ticker": "KMI",
+        "rank": 58,
         "quantile": "top_quintile",
-        "metric_value": 3.71
-      },
-      {
-        "ticker": "KEY",
-        "rank": 56,
-        "quantile": "top_quintile",
-        "metric_value": 3.71
-      },
-      {
-        "ticker": "SW",
-        "rank": 57,
-        "quantile": "top_quintile",
-        "metric_value": 3.71
+        "metric_value": 3.73
       },
       {
         "ticker": "PSA",
-        "rank": 58,
+        "rank": 59,
         "quantile": "top_quintile",
-        "metric_value": 3.69
+        "metric_value": 3.72
       },
       {
-        "ticker": "KMI",
-        "rank": 59,
+        "ticker": "BX",
+        "rank": 60,
+        "quantile": "top_quintile",
+        "metric_value": 3.7
+      },
+      {
+        "ticker": "OMC",
+        "rank": 61,
         "quantile": "top_quintile",
         "metric_value": 3.68
       },
       {
-        "ticker": "OMC",
-        "rank": 60,
-        "quantile": "top_quintile",
-        "metric_value": 3.66
-      },
-      {
         "ticker": "PNW",
-        "rank": 61,
-        "quantile": "top_quintile",
-        "metric_value": 3.66
-      },
-      {
-        "ticker": "SJM",
         "rank": 62,
         "quantile": "top_quintile",
-        "metric_value": 3.65
-      },
-      {
-        "ticker": "ESS",
-        "rank": 63,
-        "quantile": "top_quintile",
-        "metric_value": 3.61
+        "metric_value": 3.66
       },
       {
         "ticker": "HBAN",
-        "rank": 64,
+        "rank": 63,
         "quantile": "top_quintile",
-        "metric_value": 3.61
+        "metric_value": 3.64
       },
       {
-        "ticker": "BX",
+        "ticker": "SJM",
+        "rank": 64,
+        "quantile": "top_quintile",
+        "metric_value": 3.64
+      },
+      {
+        "ticker": "RF",
         "rank": 65,
+        "quantile": "top_quintile",
+        "metric_value": 3.62
+      },
+      {
+        "ticker": "ACN",
+        "rank": 66,
         "quantile": "top_quintile",
         "metric_value": 3.6
       },
       {
-        "ticker": "RF",
-        "rank": 66,
-        "quantile": "top_quintile",
-        "metric_value": 3.58
-      },
-      {
-        "ticker": "ACN",
+        "ticker": "ESS",
         "rank": 67,
         "quantile": "top_quintile",
-        "metric_value": 3.56
+        "metric_value": 3.6
       },
       {
         "ticker": "PEG",
         "rank": 68,
         "quantile": "top_quintile",
-        "metric_value": 3.56
+        "metric_value": 3.59
       },
       {
         "ticker": "DUK",
         "rank": 69,
         "quantile": "top_quintile",
+        "metric_value": 3.54
+      },
+      {
+        "ticker": "WEC",
+        "rank": 70,
+        "quantile": "top_quintile",
         "metric_value": 3.51
       },
       {
         "ticker": "TSN",
-        "rank": 70,
-        "quantile": "top_quintile",
-        "metric_value": 3.48
-      },
-      {
-        "ticker": "WEC",
         "rank": 71,
         "quantile": "top_quintile",
-        "metric_value": 3.48
+        "metric_value": 3.49
       },
       {
-        "ticker": "CVX",
+        "ticker": "MKC",
         "rank": 72,
         "quantile": "top_quintile",
-        "metric_value": 3.46
+        "metric_value": 3.48
       },
       {
         "ticker": "HST",
         "rank": 73,
         "quantile": "top_quintile",
+        "metric_value": 3.47
+      },
+      {
+        "ticker": "CVX",
+        "rank": 74,
+        "quantile": "top_quintile",
         "metric_value": 3.46
       },
       {
         "ticker": "WY",
-        "rank": 74,
-        "quantile": "top_quintile",
-        "metric_value": 3.41
-      },
-      {
-        "ticker": "MKC",
         "rank": 75,
         "quantile": "top_quintile",
-        "metric_value": 3.4
+        "metric_value": 3.41
       },
       {
         "ticker": "SWK",
         "rank": 76,
         "quantile": "top_quintile",
-        "metric_value": 3.37
+        "metric_value": 3.4
       },
       {
         "ticker": "DTE",
         "rank": 77,
         "quantile": "top_quintile",
-        "metric_value": 3.35
-      },
-      {
-        "ticker": "EVRG",
-        "rank": 78,
-        "quantile": "top_quintile",
-        "metric_value": 3.33
+        "metric_value": 3.37
       },
       {
         "ticker": "USB",
+        "rank": 78,
+        "quantile": "top_quintile",
+        "metric_value": 3.37
+      },
+      {
+        "ticker": "EVRG",
         "rank": 79,
         "quantile": "top_quintile",
-        "metric_value": 3.31
+        "metric_value": 3.34
       },
       {
         "ticker": "SO",
         "rank": 80,
         "quantile": "top_quintile",
-        "metric_value": 3.3
-      },
-      {
-        "ticker": "BF-B",
-        "rank": 81,
-        "quantile": "top_quintile",
-        "metric_value": 3.25
-      },
-      {
-        "ticker": "ED",
-        "rank": 82,
-        "quantile": "other",
-        "metric_value": 3.25
+        "metric_value": 3.32
       },
       {
         "ticker": "PNC",
+        "rank": 81,
+        "quantile": "top_quintile",
+        "metric_value": 3.31
+      },
+      {
+        "ticker": "CMS",
+        "rank": 82,
+        "quantile": "other",
+        "metric_value": 3.27
+      },
+      {
+        "ticker": "BF-B",
         "rank": 83,
         "quantile": "other",
         "metric_value": 3.25
       },
       {
-        "ticker": "MDLZ",
+        "ticker": "ED",
         "rank": 84,
         "quantile": "other",
         "metric_value": 3.24
       },
       {
-        "ticker": "CMS",
+        "ticker": "MDLZ",
         "rank": 85,
         "quantile": "other",
-        "metric_value": 3.23
+        "metric_value": 3.24
       },
       {
         "ticker": "PPL",
         "rank": 86,
         "quantile": "other",
-        "metric_value": 3.21
+        "metric_value": 3.24
       },
       {
         "ticker": "GPC",
         "rank": 87,
         "quantile": "other",
-        "metric_value": 3.16
+        "metric_value": 3.2
       },
       {
-        "ticker": "PM",
+        "ticker": "MDT",
         "rank": 88,
         "quantile": "other",
-        "metric_value": 3.1
+        "metric_value": 3.12
       },
       {
-        "ticker": "STZ",
+        "ticker": "LNT",
         "rank": 89,
         "quantile": "other",
-        "metric_value": 3.09
+        "metric_value": 3.08
       },
       {
         "ticker": "HSY",
@@ -2107,112 +2114,112 @@
         "metric_value": 3.08
       },
       {
-        "ticker": "SRE",
+        "ticker": "STZ",
         "rank": 91,
         "quantile": "other",
         "metric_value": 3.07
       },
       {
-        "ticker": "MDT",
+        "ticker": "PM",
         "rank": 92,
         "quantile": "other",
-        "metric_value": 3.06
+        "metric_value": 3.07
       },
       {
-        "ticker": "LNT",
+        "ticker": "PG",
         "rank": 93,
         "quantile": "other",
         "metric_value": 3.05
       },
       {
-        "ticker": "PLD",
+        "ticker": "PFG",
         "rank": 94,
         "quantile": "other",
-        "metric_value": 3.03
+        "metric_value": 3.04
       },
       {
-        "ticker": "PG",
+        "ticker": "PLD",
         "rank": 95,
         "quantile": "other",
-        "metric_value": 3.02
+        "metric_value": 3.04
       },
       {
         "ticker": "AEP",
         "rank": 96,
         "quantile": "other",
-        "metric_value": 3.01
+        "metric_value": 3.02
       },
       {
-        "ticker": "PFG",
+        "ticker": "SRE",
         "rank": 97,
         "quantile": "other",
         "metric_value": 3.01
       },
       {
-        "ticker": "HAS",
+        "ticker": "XEL",
         "rank": 98,
         "quantile": "other",
-        "metric_value": 3.0
+        "metric_value": 3.01
       },
       {
-        "ticker": "XEL",
+        "ticker": "HAS",
         "rank": 99,
+        "quantile": "other",
+        "metric_value": 2.99
+      },
+      {
+        "ticker": "VTRS",
+        "rank": 100,
         "quantile": "other",
         "metric_value": 2.98
       },
       {
-        "ticker": "KDP",
-        "rank": 100,
-        "quantile": "other",
-        "metric_value": 2.96
-      },
-      {
-        "ticker": "VTRS",
+        "ticker": "DRI",
         "rank": 101,
         "quantile": "other",
-        "metric_value": 2.96
-      },
-      {
-        "ticker": "DRI",
-        "rank": 102,
-        "quantile": "other",
-        "metric_value": 2.92
-      },
-      {
-        "ticker": "TGT",
-        "rank": 103,
-        "quantile": "other",
-        "metric_value": 2.92
+        "metric_value": 2.97
       },
       {
         "ticker": "FITB",
+        "rank": 102,
+        "quantile": "other",
+        "metric_value": 2.94
+      },
+      {
+        "ticker": "NEE",
+        "rank": 103,
+        "quantile": "other",
+        "metric_value": 2.93
+      },
+      {
+        "ticker": "TGT",
         "rank": 104,
+        "quantile": "other",
+        "metric_value": 2.93
+      },
+      {
+        "ticker": "WMB",
+        "rank": 105,
+        "quantile": "other",
+        "metric_value": 2.93
+      },
+      {
+        "ticker": "KDP",
+        "rank": 106,
         "quantile": "other",
         "metric_value": 2.91
       },
       {
-        "ticker": "NEE",
-        "rank": 105,
+        "ticker": "IBM",
+        "rank": 107,
         "quantile": "other",
-        "metric_value": 2.9
+        "metric_value": 2.89
       },
       {
         "ticker": "NI",
-        "rank": 106,
-        "quantile": "other",
-        "metric_value": 2.88
-      },
-      {
-        "ticker": "WMB",
-        "rank": 107,
-        "quantile": "other",
-        "metric_value": 2.87
-      },
-      {
-        "ticker": "IBM",
         "rank": 108,
         "quantile": "other",
-        "metric_value": 2.85
+        "metric_value": 2.88
       },
       {
         "ticker": "CVS",
@@ -2221,70 +2228,70 @@
         "metric_value": 2.84
       },
       {
-        "ticker": "IRM",
+        "ticker": "ZTS",
         "rank": 110,
         "quantile": "other",
         "metric_value": 2.83
       },
       {
-        "ticker": "MCD",
+        "ticker": "IRM",
         "rank": 111,
         "quantile": "other",
-        "metric_value": 2.78
+        "metric_value": 2.81
       },
       {
-        "ticker": "ZTS",
+        "ticker": "HD",
         "rank": 112,
+        "quantile": "other",
+        "metric_value": 2.79
+      },
+      {
+        "ticker": "SBAC",
+        "rank": 113,
+        "quantile": "other",
+        "metric_value": 2.77
+      },
+      {
+        "ticker": "AEE",
+        "rank": 114,
         "quantile": "other",
         "metric_value": 2.76
       },
       {
-        "ticker": "AEE",
-        "rank": 113,
-        "quantile": "other",
-        "metric_value": 2.75
-      },
-      {
-        "ticker": "SBAC",
-        "rank": 114,
-        "quantile": "other",
-        "metric_value": 2.74
-      },
-      {
-        "ticker": "EOG",
+        "ticker": "MCD",
         "rank": 115,
         "quantile": "other",
-        "metric_value": 2.73
+        "metric_value": 2.76
       },
       {
-        "ticker": "HD",
+        "ticker": "IVZ",
         "rank": 116,
         "quantile": "other",
-        "metric_value": 2.71
+        "metric_value": 2.74
       },
       {
         "ticker": "TSCO",
         "rank": 117,
         "quantile": "other",
-        "metric_value": 2.71
+        "metric_value": 2.74
       },
       {
-        "ticker": "IVZ",
+        "ticker": "EOG",
         "rank": 118,
         "quantile": "other",
-        "metric_value": 2.67
+        "metric_value": 2.68
       },
       {
         "ticker": "SYY",
         "rank": 119,
         "quantile": "other",
-        "metric_value": 2.67
+        "metric_value": 2.65
       },
       {
-        "ticker": "DVN",
+        "ticker": "ABBV",
         "rank": 120,
         "quantile": "other",
-        "metric_value": 2.66
+        "metric_value": 2.64
       },
       {
         "ticker": "AIG",
@@ -2293,337 +2300,337 @@
         "metric_value": 2.64
       },
       {
-        "ticker": "ABBV",
+        "ticker": "CFG",
         "rank": 122,
         "quantile": "other",
-        "metric_value": 2.6
-      },
-      {
-        "ticker": "CFG",
-        "rank": 123,
-        "quantile": "other",
-        "metric_value": 2.6
+        "metric_value": 2.64
       },
       {
         "ticker": "PPG",
+        "rank": 123,
+        "quantile": "other",
+        "metric_value": 2.63
+      },
+      {
+        "ticker": "AWK",
         "rank": 124,
+        "quantile": "other",
+        "metric_value": 2.61
+      },
+      {
+        "ticker": "LVS",
+        "rank": 125,
+        "quantile": "other",
+        "metric_value": 2.61
+      },
+      {
+        "ticker": "DVN",
+        "rank": 126,
         "quantile": "other",
         "metric_value": 2.6
       },
       {
-        "ticker": "AWK",
-        "rank": 125,
-        "quantile": "other",
-        "metric_value": 2.58
-      },
-      {
-        "ticker": "ADM",
-        "rank": 126,
-        "quantile": "other",
-        "metric_value": 2.58
-      },
-      {
-        "ticker": "LVS",
-        "rank": 127,
-        "quantile": "other",
-        "metric_value": 2.58
-      },
-      {
-        "ticker": "COP",
-        "rank": 128,
-        "quantile": "other",
-        "metric_value": 2.57
-      },
-      {
         "ticker": "KR",
-        "rank": 129,
+        "rank": 127,
         "quantile": "other",
         "metric_value": 2.56
       },
       {
-        "ticker": "DLR",
-        "rank": 130,
+        "ticker": "ADM",
+        "rank": 128,
+        "quantile": "other",
+        "metric_value": 2.55
+      },
+      {
+        "ticker": "MET",
+        "rank": 129,
         "quantile": "other",
         "metric_value": 2.54
       },
       {
-        "ticker": "BG",
+        "ticker": "MTB",
+        "rank": 130,
+        "quantile": "other",
+        "metric_value": 2.52
+      },
+      {
+        "ticker": "DLR",
         "rank": 131,
         "quantile": "other",
-        "metric_value": 2.53
+        "metric_value": 2.51
       },
       {
-        "ticker": "XOM",
+        "ticker": "COP",
         "rank": 132,
         "quantile": "other",
-        "metric_value": 2.5
+        "metric_value": 2.49
       },
       {
-        "ticker": "MET",
+        "ticker": "SNA",
         "rank": 133,
         "quantile": "other",
         "metric_value": 2.49
       },
       {
-        "ticker": "BR",
+        "ticker": "XOM",
         "rank": 134,
         "quantile": "other",
         "metric_value": 2.48
       },
       {
-        "ticker": "SNA",
+        "ticker": "BG",
         "rank": 135,
         "quantile": "other",
-        "metric_value": 2.48
+        "metric_value": 2.47
       },
       {
-        "ticker": "ADP",
+        "ticker": "OTIS",
         "rank": 136,
         "quantile": "other",
         "metric_value": 2.45
       },
       {
-        "ticker": "MTB",
+        "ticker": "ADP",
         "rank": 137,
         "quantile": "other",
-        "metric_value": 2.45
+        "metric_value": 2.44
       },
       {
-        "ticker": "OTIS",
+        "ticker": "BR",
         "rank": 138,
         "quantile": "other",
-        "metric_value": 2.45
+        "metric_value": 2.44
       },
       {
         "ticker": "ITW",
         "rank": 139,
         "quantile": "other",
-        "metric_value": 2.42
-      },
-      {
-        "ticker": "EXE",
-        "rank": 140,
-        "quantile": "other",
-        "metric_value": 2.4
+        "metric_value": 2.43
       },
       {
         "ticker": "APD",
+        "rank": 140,
+        "quantile": "other",
+        "metric_value": 2.41
+      },
+      {
+        "ticker": "LMT",
         "rank": 141,
         "quantile": "other",
-        "metric_value": 2.39
+        "metric_value": 2.41
       },
       {
         "ticker": "UNH",
         "rank": 142,
         "quantile": "other",
-        "metric_value": 2.39
+        "metric_value": 2.41
+      },
+      {
+        "ticker": "MCHP",
+        "rank": 143,
+        "quantile": "other",
+        "metric_value": 2.4
+      },
+      {
+        "ticker": "PKG",
+        "rank": 144,
+        "quantile": "other",
+        "metric_value": 2.4
       },
       {
         "ticker": "CNP",
-        "rank": 143,
+        "rank": 145,
+        "quantile": "other",
+        "metric_value": 2.39
+      },
+      {
+        "ticker": "EXE",
+        "rank": 146,
+        "quantile": "other",
+        "metric_value": 2.39
+      },
+      {
+        "ticker": "WFC",
+        "rank": 147,
+        "quantile": "other",
+        "metric_value": 2.39
+      },
+      {
+        "ticker": "DPZ",
+        "rank": 148,
         "quantile": "other",
         "metric_value": 2.38
       },
       {
-        "ticker": "DPZ",
-        "rank": 144,
-        "quantile": "other",
-        "metric_value": 2.37
-      },
-      {
         "ticker": "ETR",
-        "rank": 145,
+        "rank": 149,
         "quantile": "other",
-        "metric_value": 2.37
-      },
-      {
-        "ticker": "PKG",
-        "rank": 146,
-        "quantile": "other",
-        "metric_value": 2.37
-      },
-      {
-        "ticker": "MCHP",
-        "rank": 147,
-        "quantile": "other",
-        "metric_value": 2.36
+        "metric_value": 2.38
       },
       {
         "ticker": "SBUX",
-        "rank": 148,
+        "rank": 150,
+        "quantile": "other",
+        "metric_value": 2.38
+      },
+      {
+        "ticker": "CL",
+        "rank": 151,
         "quantile": "other",
         "metric_value": 2.36
       },
       {
-        "ticker": "KO",
-        "rank": 149,
+        "ticker": "ATO",
+        "rank": 152,
         "quantile": "other",
         "metric_value": 2.35
       },
       {
-        "ticker": "LMT",
-        "rank": 150,
+        "ticker": "KO",
+        "rank": 153,
         "quantile": "other",
         "metric_value": 2.34
       },
       {
-        "ticker": "ATO",
-        "rank": 151,
-        "quantile": "other",
-        "metric_value": 2.33
-      },
-      {
-        "ticker": "CL",
-        "rank": 152,
-        "quantile": "other",
-        "metric_value": 2.33
-      },
-      {
-        "ticker": "WFC",
-        "rank": 153,
-        "quantile": "other",
-        "metric_value": 2.33
-      },
-      {
-        "ticker": "APA",
+        "ticker": "LEN",
         "rank": 154,
         "quantile": "other",
-        "metric_value": 2.3
-      },
-      {
-        "ticker": "LEN",
-        "rank": 155,
-        "quantile": "other",
-        "metric_value": 2.29
+        "metric_value": 2.34
       },
       {
         "ticker": "AMGN",
+        "rank": 155,
+        "quantile": "other",
+        "metric_value": 2.32
+      },
+      {
+        "ticker": "AOS",
         "rank": 156,
         "quantile": "other",
-        "metric_value": 2.28
+        "metric_value": 2.31
       },
       {
         "ticker": "LOW",
         "rank": 157,
         "quantile": "other",
-        "metric_value": 2.27
+        "metric_value": 2.3
+      },
+      {
+        "ticker": "GILD",
+        "rank": 158,
+        "quantile": "other",
+        "metric_value": 2.29
       },
       {
         "ticker": "QCOM",
-        "rank": 158,
+        "rank": 159,
+        "quantile": "other",
+        "metric_value": 2.29
+      },
+      {
+        "ticker": "MRK",
+        "rank": 160,
+        "quantile": "other",
+        "metric_value": 2.28
+      },
+      {
+        "ticker": "CI",
+        "rank": 161,
         "quantile": "other",
         "metric_value": 2.27
       },
       {
-        "ticker": "AOS",
-        "rank": 159,
+        "ticker": "APA",
+        "rank": 162,
         "quantile": "other",
-        "metric_value": 2.26
+        "metric_value": 2.25
       },
       {
-        "ticker": "CI",
-        "rank": 160,
+        "ticker": "TMUS",
+        "rank": 163,
         "quantile": "other",
         "metric_value": 2.25
       },
       {
         "ticker": "BDX",
-        "rank": 161,
-        "quantile": "other",
-        "metric_value": 2.24
-      },
-      {
-        "ticker": "TMUS",
-        "rank": 162,
+        "rank": 164,
         "quantile": "other",
         "metric_value": 2.24
       },
       {
         "ticker": "CINF",
-        "rank": 163,
-        "quantile": "other",
-        "metric_value": 2.23
-      },
-      {
-        "ticker": "MRK",
-        "rank": 164,
-        "quantile": "other",
-        "metric_value": 2.23
-      },
-      {
-        "ticker": "GILD",
         "rank": 165,
+        "quantile": "other",
+        "metric_value": 2.24
+      },
+      {
+        "ticker": "ERIE",
+        "rank": 166,
+        "quantile": "other",
+        "metric_value": 2.23
+      },
+      {
+        "ticker": "MS",
+        "rank": 167,
         "quantile": "other",
         "metric_value": 2.22
       },
       {
         "ticker": "ABT",
-        "rank": 166,
+        "rank": 168,
         "quantile": "other",
-        "metric_value": 2.2
-      },
-      {
-        "ticker": "EG",
-        "rank": 167,
-        "quantile": "other",
-        "metric_value": 2.2
+        "metric_value": 2.21
       },
       {
         "ticker": "SLB",
-        "rank": 168,
-        "quantile": "other",
-        "metric_value": 2.2
-      },
-      {
-        "ticker": "ERIE",
         "rank": 169,
         "quantile": "other",
-        "metric_value": 2.19
+        "metric_value": 2.2
       },
       {
         "ticker": "AVY",
         "rank": 170,
         "quantile": "other",
-        "metric_value": 2.18
-      },
-      {
-        "ticker": "VTR",
-        "rank": 171,
-        "quantile": "other",
-        "metric_value": 2.18
+        "metric_value": 2.19
       },
       {
         "ticker": "CTSH",
+        "rank": 171,
+        "quantile": "other",
+        "metric_value": 2.17
+      },
+      {
+        "ticker": "EG",
         "rank": 172,
         "quantile": "other",
         "metric_value": 2.17
       },
       {
-        "ticker": "MS",
+        "ticker": "VTR",
         "rank": 173,
         "quantile": "other",
-        "metric_value": 2.15
+        "metric_value": 2.16
       },
       {
         "ticker": "TXN",
         "rank": 174,
         "quantile": "other",
-        "metric_value": 2.12
-      },
-      {
-        "ticker": "FANG",
-        "rank": 175,
-        "quantile": "other",
-        "metric_value": 2.11
+        "metric_value": 2.14
       },
       {
         "ticker": "PSX",
+        "rank": 175,
+        "quantile": "other",
+        "metric_value": 2.12
+      },
+      {
+        "ticker": "AFL",
         "rank": 176,
         "quantile": "other",
         "metric_value": 2.1
       },
       {
-        "ticker": "AFL",
+        "ticker": "FANG",
         "rank": 177,
         "quantile": "other",
         "metric_value": 2.09
@@ -2632,283 +2639,283 @@
         "ticker": "MRSH",
         "rank": 178,
         "quantile": "other",
-        "metric_value": 2.09
-      },
-      {
-        "ticker": "YUM",
-        "rank": 179,
-        "quantile": "other",
-        "metric_value": 2.06
+        "metric_value": 2.08
       },
       {
         "ticker": "BAC",
-        "rank": 180,
+        "rank": 179,
         "quantile": "other",
-        "metric_value": 2.03
-      },
-      {
-        "ticker": "CF",
-        "rank": 181,
-        "quantile": "other",
-        "metric_value": 2.02
+        "metric_value": 2.07
       },
       {
         "ticker": "C",
-        "rank": 182,
+        "rank": 180,
         "quantile": "other",
-        "metric_value": 2.02
+        "metric_value": 2.07
+      },
+      {
+        "ticker": "BLK",
+        "rank": 181,
+        "quantile": "other",
+        "metric_value": 2.01
       },
       {
         "ticker": "ROL",
+        "rank": 182,
+        "quantile": "other",
+        "metric_value": 2.01
+      },
+      {
+        "ticker": "STT",
         "rank": 183,
         "quantile": "other",
         "metric_value": 2.01
       },
       {
-        "ticker": "BLK",
+        "ticker": "GS",
         "rank": 184,
         "quantile": "other",
-        "metric_value": 1.98
-      },
-      {
-        "ticker": "STT",
-        "rank": 185,
-        "quantile": "other",
-        "metric_value": 1.98
-      },
-      {
-        "ticker": "GS",
-        "rank": 186,
-        "quantile": "other",
-        "metric_value": 1.96
+        "metric_value": 2.0
       },
       {
         "ticker": "JNJ",
+        "rank": 185,
+        "quantile": "other",
+        "metric_value": 2.0
+      },
+      {
+        "ticker": "YUM",
+        "rank": 186,
+        "quantile": "other",
+        "metric_value": 1.97
+      },
+      {
+        "ticker": "DG",
         "rank": 187,
         "quantile": "other",
         "metric_value": 1.96
       },
       {
-        "ticker": "CME",
+        "ticker": "PSKY",
         "rank": 188,
-        "quantile": "other",
-        "metric_value": 1.95
-      },
-      {
-        "ticker": "HAL",
-        "rank": 189,
         "quantile": "other",
         "metric_value": 1.94
       },
       {
-        "ticker": "DG",
-        "rank": 190,
-        "quantile": "other",
-        "metric_value": 1.93
-      },
-      {
-        "ticker": "EQIX",
-        "rank": 191,
+        "ticker": "CME",
+        "rank": 189,
         "quantile": "other",
         "metric_value": 1.92
       },
       {
         "ticker": "IFF",
-        "rank": 192,
+        "rank": 190,
         "quantile": "other",
         "metric_value": 1.92
       },
       {
-        "ticker": "PSKY",
-        "rank": 193,
+        "ticker": "CF",
+        "rank": 191,
         "quantile": "other",
-        "metric_value": 1.89
+        "metric_value": 1.91
       },
       {
-        "ticker": "UNP",
+        "ticker": "EQIX",
+        "rank": 192,
+        "quantile": "other",
+        "metric_value": 1.91
+      },
+      {
+        "ticker": "HAL",
+        "rank": 193,
+        "quantile": "other",
+        "metric_value": 1.91
+      },
+      {
+        "ticker": "CDW",
         "rank": 194,
         "quantile": "other",
-        "metric_value": 1.88
+        "metric_value": 1.89
       },
       {
         "ticker": "FAST",
         "rank": 195,
         "quantile": "other",
+        "metric_value": 1.89
+      },
+      {
+        "ticker": "UNP",
+        "rank": 196,
+        "quantile": "other",
         "metric_value": 1.87
       },
       {
-        "ticker": "OXY",
-        "rank": 196,
-        "quantile": "other",
-        "metric_value": 1.86
-      },
-      {
-        "ticker": "CDW",
+        "ticker": "LHX",
         "rank": 197,
         "quantile": "other",
-        "metric_value": 1.84
+        "metric_value": 1.85
       },
       {
-        "ticker": "GEN",
+        "ticker": "HII",
         "rank": 198,
+        "quantile": "other",
+        "metric_value": 1.83
+      },
+      {
+        "ticker": "NXPI",
+        "rank": 199,
         "quantile": "other",
         "metric_value": 1.82
       },
       {
-        "ticker": "LHX",
-        "rank": 199,
+        "ticker": "OXY",
+        "rank": 200,
+        "quantile": "other",
+        "metric_value": 1.82
+      },
+      {
+        "ticker": "NTRS",
+        "rank": 201,
         "quantile": "other",
         "metric_value": 1.8
       },
       {
-        "ticker": "NXPI",
-        "rank": 200,
-        "quantile": "other",
-        "metric_value": 1.79
-      },
-      {
-        "ticker": "HII",
-        "rank": 201,
-        "quantile": "other",
-        "metric_value": 1.77
-      },
-      {
-        "ticker": "NTRS",
+        "ticker": "LUV",
         "rank": 202,
         "quantile": "other",
+        "metric_value": 1.8
+      },
+      {
+        "ticker": "CCL",
+        "rank": 203,
+        "quantile": "other",
         "metric_value": 1.77
       },
       {
-        "ticker": "HIG",
-        "rank": 203,
-        "quantile": "other",
-        "metric_value": 1.75
-      },
-      {
-        "ticker": "CHRW",
+        "ticker": "GEN",
         "rank": 204,
         "quantile": "other",
-        "metric_value": 1.74
+        "metric_value": 1.77
       },
       {
-        "ticker": "LUV",
+        "ticker": "SYF",
         "rank": 205,
         "quantile": "other",
-        "metric_value": 1.74
+        "metric_value": 1.77
       },
       {
         "ticker": "MMM",
         "rank": 206,
         "quantile": "other",
-        "metric_value": 1.73
+        "metric_value": 1.75
+      },
+      {
+        "ticker": "CHRW",
+        "rank": 207,
+        "quantile": "other",
+        "metric_value": 1.75
+      },
+      {
+        "ticker": "HIG",
+        "rank": 208,
+        "quantile": "other",
+        "metric_value": 1.75
+      },
+      {
+        "ticker": "MAS",
+        "rank": 209,
+        "quantile": "other",
+        "metric_value": 1.75
+      },
+      {
+        "ticker": "NOC",
+        "rank": 210,
+        "quantile": "other",
+        "metric_value": 1.75
       },
       {
         "ticker": "ELV",
-        "rank": 207,
+        "rank": 211,
+        "quantile": "other",
+        "metric_value": 1.74
+      },
+      {
+        "ticker": "RCL",
+        "rank": 212,
+        "quantile": "other",
+        "metric_value": 1.74
+      },
+      {
+        "ticker": "APO",
+        "rank": 213,
         "quantile": "other",
         "metric_value": 1.73
       },
       {
         "ticker": "DD",
-        "rank": 208,
+        "rank": 214,
         "quantile": "other",
-        "metric_value": 1.72
+        "metric_value": 1.73
       },
       {
-        "ticker": "SYF",
-        "rank": 209,
+        "ticker": "JPM",
+        "rank": 215,
         "quantile": "other",
         "metric_value": 1.71
       },
       {
-        "ticker": "MAS",
-        "rank": 210,
-        "quantile": "other",
-        "metric_value": 1.7
-      },
-      {
-        "ticker": "CCL",
-        "rank": 211,
-        "quantile": "other",
-        "metric_value": 1.69
-      },
-      {
-        "ticker": "APO",
-        "rank": 212,
-        "quantile": "other",
-        "metric_value": 1.68
-      },
-      {
-        "ticker": "JPM",
-        "rank": 213,
-        "quantile": "other",
-        "metric_value": 1.68
-      },
-      {
-        "ticker": "TRGP",
-        "rank": 214,
-        "quantile": "other",
-        "metric_value": 1.68
-      },
-      {
         "ticker": "ALL",
-        "rank": 215,
-        "quantile": "other",
-        "metric_value": 1.66
-      },
-      {
-        "ticker": "RCL",
         "rank": 216,
         "quantile": "other",
-        "metric_value": 1.66
+        "metric_value": 1.7
       },
       {
         "ticker": "CRH",
         "rank": 217,
         "quantile": "other",
-        "metric_value": 1.65
-      },
-      {
-        "ticker": "GD",
-        "rank": 218,
-        "quantile": "other",
-        "metric_value": 1.62
+        "metric_value": 1.68
       },
       {
         "ticker": "PNR",
-        "rank": 219,
+        "rank": 218,
         "quantile": "other",
-        "metric_value": 1.62
+        "metric_value": 1.66
       },
       {
-        "ticker": "NOC",
-        "rank": 220,
+        "ticker": "GD",
+        "rank": 219,
         "quantile": "other",
-        "metric_value": 1.61
+        "metric_value": 1.65
       },
       {
         "ticker": "NRG",
+        "rank": 220,
+        "quantile": "other",
+        "metric_value": 1.65
+      },
+      {
+        "ticker": "TRGP",
         "rank": 221,
         "quantile": "other",
-        "metric_value": 1.58
+        "metric_value": 1.65
       },
       {
         "ticker": "CARR",
         "rank": 222,
         "quantile": "other",
-        "metric_value": 1.57
+        "metric_value": 1.6
+      },
+      {
+        "ticker": "TKO",
+        "rank": 223,
+        "quantile": "other",
+        "metric_value": 1.59
       },
       {
         "ticker": "WM",
-        "rank": 223,
-        "quantile": "other",
-        "metric_value": 1.57
-      },
-      {
-        "ticker": "FDS",
         "rank": 224,
         "quantile": "other",
-        "metric_value": 1.56
+        "metric_value": 1.57
       },
       {
         "ticker": "NSC",
@@ -2917,79 +2924,79 @@
         "metric_value": 1.56
       },
       {
-        "ticker": "TKO",
+        "ticker": "FDS",
         "rank": 226,
         "quantile": "other",
-        "metric_value": 1.54
+        "metric_value": 1.55
       },
       {
         "ticker": "CSCO",
         "rank": 227,
         "quantile": "other",
-        "metric_value": 1.52
-      },
-      {
-        "ticker": "FDX",
-        "rank": 228,
-        "quantile": "other",
-        "metric_value": 1.49
+        "metric_value": 1.53
       },
       {
         "ticker": "XYL",
+        "rank": 228,
+        "quantile": "other",
+        "metric_value": 1.52
+      },
+      {
+        "ticker": "COF",
         "rank": 229,
         "quantile": "other",
-        "metric_value": 1.48
+        "metric_value": 1.51
+      },
+      {
+        "ticker": "FDX",
+        "rank": 230,
+        "quantile": "other",
+        "metric_value": 1.5
       },
       {
         "ticker": "FERG",
-        "rank": 230,
-        "quantile": "other",
-        "metric_value": 1.46
-      },
-      {
-        "ticker": "JKHY",
         "rank": 231,
         "quantile": "other",
-        "metric_value": 1.46
+        "metric_value": 1.49
       },
       {
         "ticker": "TEL",
         "rank": 232,
         "quantile": "other",
-        "metric_value": 1.46
-      },
-      {
-        "ticker": "COF",
-        "rank": 233,
-        "quantile": "other",
-        "metric_value": 1.45
+        "metric_value": 1.49
       },
       {
         "ticker": "CMI",
+        "rank": 233,
+        "quantile": "other",
+        "metric_value": 1.48
+      },
+      {
+        "ticker": "BKR",
         "rank": 234,
         "quantile": "other",
-        "metric_value": 1.45
+        "metric_value": 1.47
       },
       {
-        "ticker": "MSCI",
+        "ticker": "EL",
         "rank": 235,
         "quantile": "other",
-        "metric_value": 1.45
+        "metric_value": 1.46
       },
       {
-        "ticker": "WELL",
+        "ticker": "JKHY",
         "rank": 236,
         "quantile": "other",
         "metric_value": 1.44
       },
       {
-        "ticker": "BKR",
+        "ticker": "MSCI",
         "rank": 237,
         "quantile": "other",
-        "metric_value": 1.43
+        "metric_value": 1.44
       },
       {
-        "ticker": "EL",
+        "ticker": "EMR",
         "rank": 238,
         "quantile": "other",
         "metric_value": 1.43
@@ -2998,151 +3005,151 @@
         "ticker": "GRMN",
         "rank": 239,
         "quantile": "other",
-        "metric_value": 1.42
+        "metric_value": 1.43
       },
       {
         "ticker": "DGX",
         "rank": 240,
         "quantile": "other",
-        "metric_value": 1.42
+        "metric_value": 1.43
       },
       {
-        "ticker": "EMR",
+        "ticker": "TPR",
         "rank": 241,
+        "quantile": "other",
+        "metric_value": 1.43
+      },
+      {
+        "ticker": "WELL",
+        "rank": 242,
+        "quantile": "other",
+        "metric_value": 1.43
+      },
+      {
+        "ticker": "BNY",
+        "rank": 243,
         "quantile": "other",
         "metric_value": 1.41
       },
       {
-        "ticker": "TPR",
-        "rank": 242,
-        "quantile": "other",
-        "metric_value": 1.4
-      },
-      {
-        "ticker": "DIS",
-        "rank": 243,
-        "quantile": "other",
-        "metric_value": 1.4
-      },
-      {
-        "ticker": "BNY",
+        "ticker": "ORCL",
         "rank": 244,
         "quantile": "other",
-        "metric_value": 1.39
-      },
-      {
-        "ticker": "ORCL",
-        "rank": 245,
-        "quantile": "other",
-        "metric_value": 1.39
+        "metric_value": 1.41
       },
       {
         "ticker": "VLO",
-        "rank": 246,
+        "rank": 245,
         "quantile": "other",
-        "metric_value": 1.39
+        "metric_value": 1.41
       },
       {
-        "ticker": "TRV",
+        "ticker": "DIS",
+        "rank": 246,
+        "quantile": "other",
+        "metric_value": 1.4
+      },
+      {
+        "ticker": "RTX",
         "rank": 247,
         "quantile": "other",
         "metric_value": 1.38
       },
       {
-        "ticker": "LIN",
+        "ticker": "TRV",
         "rank": 248,
         "quantile": "other",
-        "metric_value": 1.33
-      },
-      {
-        "ticker": "RTX",
-        "rank": 249,
-        "quantile": "other",
-        "metric_value": 1.33
+        "metric_value": 1.37
       },
       {
         "ticker": "TJX",
+        "rank": 249,
+        "quantile": "other",
+        "metric_value": 1.36
+      },
+      {
+        "ticker": "LII",
         "rank": 250,
+        "quantile": "other",
+        "metric_value": 1.34
+      },
+      {
+        "ticker": "INTU",
+        "rank": 251,
         "quantile": "other",
         "metric_value": 1.33
       },
       {
-        "ticker": "ICE",
-        "rank": 251,
-        "quantile": "other",
-        "metric_value": 1.32
-      },
-      {
-        "ticker": "INTU",
+        "ticker": "LIN",
         "rank": 252,
         "quantile": "other",
-        "metric_value": 1.32
+        "metric_value": 1.33
       },
       {
         "ticker": "ALLE",
         "rank": 253,
         "quantile": "other",
-        "metric_value": 1.3
+        "metric_value": 1.31
       },
       {
-        "ticker": "LII",
+        "ticker": "ICE",
         "rank": 254,
         "quantile": "other",
-        "metric_value": 1.3
+        "metric_value": 1.31
+      },
+      {
+        "ticker": "WSM",
+        "rank": 255,
+        "quantile": "other",
+        "metric_value": 1.29
       },
       {
         "ticker": "BALL",
-        "rank": 255,
+        "rank": 256,
+        "quantile": "other",
+        "metric_value": 1.28
+      },
+      {
+        "ticker": "HON",
+        "rank": 257,
         "quantile": "other",
         "metric_value": 1.28
       },
       {
         "ticker": "ROK",
-        "rank": 256,
+        "rank": 258,
         "quantile": "other",
-        "metric_value": 1.27
+        "metric_value": 1.28
+      },
+      {
+        "ticker": "CHD",
+        "rank": 259,
+        "quantile": "other",
+        "metric_value": 1.26
       },
       {
         "ticker": "AIZ",
-        "rank": 257,
-        "quantile": "other",
-        "metric_value": 1.26
-      },
-      {
-        "ticker": "HON",
-        "rank": 258,
-        "quantile": "other",
-        "metric_value": 1.26
-      },
-      {
-        "ticker": "IEX",
-        "rank": 259,
-        "quantile": "other",
-        "metric_value": 1.25
-      },
-      {
-        "ticker": "WSM",
         "rank": 260,
         "quantile": "other",
         "metric_value": 1.25
       },
       {
-        "ticker": "CHD",
+        "ticker": "IEX",
         "rank": 261,
         "quantile": "other",
-        "metric_value": 1.24
+        "metric_value": 1.25
       },
       {
-        "ticker": "CBOE",
+        "ticker": "RJF",
         "rank": 262,
         "quantile": "other",
-        "metric_value": 1.23
+        "metric_value": 1.25
       },
       {
-        "ticker": "EQT",
+        "ticker": "AMP",
         "rank": 263,
         "quantile": "other",
-        "metric_value": 1.23
+        "metric_value": 1.24
       },
       {
         "ticker": "ALB",
@@ -3151,115 +3158,115 @@
         "metric_value": 1.22
       },
       {
-        "ticker": "AMP",
+        "ticker": "DHI",
         "rank": 265,
         "quantile": "other",
-        "metric_value": 1.21
+        "metric_value": 1.22
       },
       {
-        "ticker": "EBAY",
+        "ticker": "EQT",
         "rank": 266,
         "quantile": "other",
-        "metric_value": 1.21
+        "metric_value": 1.22
       },
       {
-        "ticker": "RJF",
+        "ticker": "LDOS",
         "rank": 267,
         "quantile": "other",
-        "metric_value": 1.21
+        "metric_value": 1.22
       },
       {
         "ticker": "RSG",
         "rank": 268,
         "quantile": "other",
+        "metric_value": 1.22
+      },
+      {
+        "ticker": "HUBB",
+        "rank": 269,
+        "quantile": "other",
         "metric_value": 1.21
       },
       {
-        "ticker": "CB",
-        "rank": 269,
-        "quantile": "other",
-        "metric_value": 1.2
-      },
-      {
-        "ticker": "NDAQ",
+        "ticker": "ADI",
         "rank": 270,
         "quantile": "other",
-        "metric_value": 1.2
+        "metric_value": 1.19
       },
       {
-        "ticker": "DHI",
+        "ticker": "CB",
         "rank": 271,
         "quantile": "other",
         "metric_value": 1.19
       },
       {
-        "ticker": "HUBB",
+        "ticker": "EBAY",
         "rank": 272,
         "quantile": "other",
         "metric_value": 1.19
       },
       {
-        "ticker": "VRSN",
+        "ticker": "NDAQ",
         "rank": 273,
         "quantile": "other",
         "metric_value": 1.19
       },
       {
-        "ticker": "ADI",
+        "ticker": "CBOE",
         "rank": 274,
-        "quantile": "other",
-        "metric_value": 1.18
-      },
-      {
-        "ticker": "LDOS",
-        "rank": 275,
-        "quantile": "other",
-        "metric_value": 1.18
-      },
-      {
-        "ticker": "EFX",
-        "rank": 276,
         "quantile": "other",
         "metric_value": 1.17
       },
       {
         "ticker": "SCHW",
+        "rank": 275,
+        "quantile": "other",
+        "metric_value": 1.17
+      },
+      {
+        "ticker": "VRSN",
+        "rank": 276,
+        "quantile": "other",
+        "metric_value": 1.17
+      },
+      {
+        "ticker": "EFX",
         "rank": 277,
         "quantile": "other",
-        "metric_value": 1.15
+        "metric_value": 1.16
       },
       {
         "ticker": "RMD",
         "rank": 278,
         "quantile": "other",
-        "metric_value": 1.14
+        "metric_value": 1.16
+      },
+      {
+        "ticker": "AXP",
+        "rank": 279,
+        "quantile": "other",
+        "metric_value": 1.15
       },
       {
         "ticker": "WTW",
-        "rank": 279,
-        "quantile": "other",
-        "metric_value": 1.14
-      },
-      {
-        "ticker": "PCG",
         "rank": 280,
         "quantile": "other",
         "metric_value": 1.13
       },
       {
-        "ticker": "AXP",
+        "ticker": "JCI",
         "rank": 281,
         "quantile": "other",
         "metric_value": 1.12
       },
       {
-        "ticker": "DE",
+        "ticker": "MPC",
         "rank": 282,
         "quantile": "other",
         "metric_value": 1.12
       },
       {
-        "ticker": "MPC",
+        "ticker": "PCG",
         "rank": 283,
         "quantile": "other",
         "metric_value": 1.11
@@ -3271,73 +3278,73 @@
         "metric_value": 1.1
       },
       {
-        "ticker": "JCI",
-        "rank": 285,
-        "quantile": "other",
-        "metric_value": 1.1
-      },
-      {
         "ticker": "PCAR",
-        "rank": 286,
-        "quantile": "other",
-        "metric_value": 1.1
-      },
-      {
-        "ticker": "AJG",
-        "rank": 287,
-        "quantile": "other",
-        "metric_value": 1.09
-      },
-      {
-        "ticker": "GPN",
-        "rank": 288,
+        "rank": 285,
         "quantile": "other",
         "metric_value": 1.09
       },
       {
         "ticker": "STE",
-        "rank": 289,
+        "rank": 286,
         "quantile": "other",
         "metric_value": 1.09
       },
       {
-        "ticker": "NDSN",
-        "rank": 290,
+        "ticker": "AJG",
+        "rank": 287,
+        "quantile": "other",
+        "metric_value": 1.08
+      },
+      {
+        "ticker": "GPN",
+        "rank": 288,
         "quantile": "other",
         "metric_value": 1.08
       },
       {
         "ticker": "HPE",
+        "rank": 289,
+        "quantile": "other",
+        "metric_value": 1.08
+      },
+      {
+        "ticker": "NTAP",
+        "rank": 290,
+        "quantile": "other",
+        "metric_value": 1.08
+      },
+      {
+        "ticker": "SYK",
         "rank": 291,
         "quantile": "other",
         "metric_value": 1.07
       },
       {
-        "ticker": "NTAP",
+        "ticker": "VRSK",
         "rank": 292,
         "quantile": "other",
         "metric_value": 1.07
       },
       {
-        "ticker": "VRSK",
+        "ticker": "ETN",
         "rank": 293,
         "quantile": "other",
-        "metric_value": 1.07
+        "metric_value": 1.06
       },
       {
         "ticker": "DOV",
         "rank": 294,
         "quantile": "other",
-        "metric_value": 1.04
+        "metric_value": 1.05
       },
       {
-        "ticker": "ETN",
+        "ticker": "DE",
         "rank": 295,
         "quantile": "other",
         "metric_value": 1.04
       },
       {
-        "ticker": "SYK",
+        "ticker": "ECL",
         "rank": 296,
         "quantile": "other",
         "metric_value": 1.04
@@ -3349,16 +3356,16 @@
         "metric_value": 1.02
       },
       {
-        "ticker": "ECL",
+        "ticker": "MSI",
         "rank": 298,
         "quantile": "other",
         "metric_value": 1.02
       },
       {
-        "ticker": "MSI",
+        "ticker": "RL",
         "rank": 299,
         "quantile": "other",
-        "metric_value": 1.01
+        "metric_value": 1.0
       },
       {
         "ticker": "WYNN",
@@ -3367,115 +3374,115 @@
         "metric_value": 1.0
       },
       {
-        "ticker": "RL",
+        "ticker": "NDSN",
         "rank": 301,
         "quantile": "other",
-        "metric_value": 0.99
+        "metric_value": 0.98
       },
       {
         "ticker": "J",
         "rank": 302,
         "quantile": "other",
-        "metric_value": 0.98
+        "metric_value": 0.97
       },
       {
-        "ticker": "FOX",
+        "ticker": "STLD",
         "rank": 303,
         "quantile": "other",
-        "metric_value": 0.96
+        "metric_value": 0.97
       },
       {
         "ticker": "ZBH",
         "rank": 304,
         "quantile": "other",
+        "metric_value": 0.97
+      },
+      {
+        "ticker": "DAL",
+        "rank": 305,
+        "quantile": "other",
+        "metric_value": 0.96
+      },
+      {
+        "ticker": "FOX",
+        "rank": 306,
+        "quantile": "other",
+        "metric_value": 0.96
+      },
+      {
+        "ticker": "WMT",
+        "rank": 307,
+        "quantile": "other",
         "metric_value": 0.95
       },
       {
         "ticker": "AON",
-        "rank": 305,
-        "quantile": "other",
-        "metric_value": 0.94
-      },
-      {
-        "ticker": "HUM",
-        "rank": 306,
-        "quantile": "other",
-        "metric_value": 0.94
-      },
-      {
-        "ticker": "DAL",
-        "rank": 307,
+        "rank": 308,
         "quantile": "other",
         "metric_value": 0.93
       },
       {
-        "ticker": "BRO",
-        "rank": 308,
-        "quantile": "other",
-        "metric_value": 0.92
-      },
-      {
-        "ticker": "CTVA",
+        "ticker": "HUM",
         "rank": 309,
         "quantile": "other",
-        "metric_value": 0.92
+        "metric_value": 0.93
       },
       {
-        "ticker": "STLD",
+        "ticker": "NUE",
         "rank": 310,
         "quantile": "other",
-        "metric_value": 0.92
+        "metric_value": 0.93
       },
       {
         "ticker": "TT",
         "rank": 311,
         "quantile": "other",
+        "metric_value": 0.93
+      },
+      {
+        "ticker": "BRO",
+        "rank": 312,
+        "quantile": "other",
         "metric_value": 0.92
       },
       {
-        "ticker": "PYPL",
-        "rank": 312,
-        "quantile": "other",
-        "metric_value": 0.91
-      },
-      {
-        "ticker": "SPGI",
+        "ticker": "SHW",
         "rank": 313,
         "quantile": "other",
-        "metric_value": 0.91
+        "metric_value": 0.92
       },
       {
-        "ticker": "SHW",
+        "ticker": "CTVA",
         "rank": 314,
         "quantile": "other",
         "metric_value": 0.91
       },
       {
-        "ticker": "NUE",
+        "ticker": "CAH",
         "rank": 315,
         "quantile": "other",
         "metric_value": 0.9
       },
       {
-        "ticker": "ROP",
+        "ticker": "PYPL",
         "rank": 316,
+        "quantile": "other",
+        "metric_value": 0.9
+      },
+      {
+        "ticker": "SPGI",
+        "rank": 317,
+        "quantile": "other",
+        "metric_value": 0.9
+      },
+      {
+        "ticker": "ROP",
+        "rank": 318,
         "quantile": "other",
         "metric_value": 0.89
       },
       {
-        "ticker": "CAH",
-        "rank": 317,
-        "quantile": "other",
-        "metric_value": 0.88
-      },
-      {
         "ticker": "EXPD",
-        "rank": 318,
-        "quantile": "other",
-        "metric_value": 0.87
-      },
-      {
-        "ticker": "FCX",
         "rank": 319,
         "quantile": "other",
         "metric_value": 0.87
@@ -3487,10 +3494,10 @@
         "metric_value": 0.87
       },
       {
-        "ticker": "WMT",
+        "ticker": "CRM",
         "rank": 321,
         "quantile": "other",
-        "metric_value": 0.87
+        "metric_value": 0.86
       },
       {
         "ticker": "FOXA",
@@ -3499,16 +3506,16 @@
         "metric_value": 0.85
       },
       {
-        "ticker": "GM",
+        "ticker": "FCX",
         "rank": 323,
         "quantile": "other",
-        "metric_value": 0.85
+        "metric_value": 0.84
       },
       {
-        "ticker": "CRM",
+        "ticker": "GM",
         "rank": 324,
         "quantile": "other",
-        "metric_value": 0.85
+        "metric_value": 0.84
       },
       {
         "ticker": "MCO",
@@ -3517,40 +3524,40 @@
         "metric_value": 0.83
       },
       {
-        "ticker": "NEM",
+        "ticker": "MAR",
         "rank": 326,
         "quantile": "other",
-        "metric_value": 0.83
+        "metric_value": 0.82
       },
       {
-        "ticker": "MAR",
+        "ticker": "NEM",
         "rank": 327,
         "quantile": "other",
         "metric_value": 0.81
       },
       {
-        "ticker": "CAT",
+        "ticker": "PHM",
         "rank": 328,
         "quantile": "other",
-        "metric_value": 0.8
+        "metric_value": 0.81
       },
       {
-        "ticker": "PHM",
+        "ticker": "BKNG",
         "rank": 329,
         "quantile": "other",
         "metric_value": 0.8
       },
       {
-        "ticker": "BKNG",
+        "ticker": "CAT",
         "rank": 330,
         "quantile": "other",
-        "metric_value": 0.79
+        "metric_value": 0.8
       },
       {
         "ticker": "PH",
         "rank": 331,
         "quantile": "other",
-        "metric_value": 0.78
+        "metric_value": 0.8
       },
       {
         "ticker": "GL",
@@ -3565,67 +3572,67 @@
         "metric_value": 0.77
       },
       {
-        "ticker": "COR",
+        "ticker": "VMC",
         "rank": 334,
         "quantile": "other",
-        "metric_value": 0.76
+        "metric_value": 0.77
       },
       {
-        "ticker": "DHR",
+        "ticker": "GWW",
         "rank": 335,
         "quantile": "other",
-        "metric_value": 0.76
+        "metric_value": 0.77
       },
       {
-        "ticker": "ROST",
+        "ticker": "COR",
         "rank": 336,
         "quantile": "other",
         "metric_value": 0.76
       },
       {
-        "ticker": "GWW",
+        "ticker": "MSFT",
         "rank": 337,
         "quantile": "other",
         "metric_value": 0.76
       },
       {
-        "ticker": "MSFT",
+        "ticker": "ROST",
         "rank": 338,
         "quantile": "other",
-        "metric_value": 0.75
-      },
-      {
-        "ticker": "VMC",
-        "rank": 339,
-        "quantile": "other",
-        "metric_value": 0.75
+        "metric_value": 0.76
       },
       {
         "ticker": "GLW",
-        "rank": 340,
+        "rank": 339,
         "quantile": "other",
-        "metric_value": 0.73
+        "metric_value": 0.74
       },
       {
-        "ticker": "V",
+        "ticker": "DHR",
+        "rank": 340,
+        "quantile": "other",
+        "metric_value": 0.74
+      },
+      {
+        "ticker": "KKR",
         "rank": 341,
         "quantile": "other",
         "metric_value": 0.73
       },
       {
-        "ticker": "AVGO",
+        "ticker": "V",
         "rank": 342,
+        "quantile": "other",
+        "metric_value": 0.73
+      },
+      {
+        "ticker": "URI",
+        "rank": 343,
         "quantile": "other",
         "metric_value": 0.72
       },
       {
-        "ticker": "KKR",
-        "rank": 343,
-        "quantile": "other",
-        "metric_value": 0.71
-      },
-      {
-        "ticker": "URI",
+        "ticker": "AVGO",
         "rank": 344,
         "quantile": "other",
         "metric_value": 0.71
@@ -3634,76 +3641,76 @@
         "ticker": "NWSA",
         "rank": 345,
         "quantile": "other",
-        "metric_value": 0.68
+        "metric_value": 0.67
       },
       {
-        "ticker": "A",
+        "ticker": "JBHT",
         "rank": 346,
         "quantile": "other",
         "metric_value": 0.66
       },
       {
-        "ticker": "JBHT",
+        "ticker": "VST",
         "rank": 347,
         "quantile": "other",
         "metric_value": 0.66
       },
       {
-        "ticker": "APH",
+        "ticker": "A",
         "rank": 348,
         "quantile": "other",
-        "metric_value": 0.64
+        "metric_value": 0.65
+      },
+      {
+        "ticker": "APH",
+        "rank": 349,
+        "quantile": "other",
+        "metric_value": 0.65
       },
       {
         "ticker": "TPL",
-        "rank": 349,
-        "quantile": "other",
-        "metric_value": 0.64
-      },
-      {
-        "ticker": "VST",
         "rank": 350,
         "quantile": "other",
-        "metric_value": 0.64
+        "metric_value": 0.65
       },
       {
         "ticker": "MLM",
         "rank": 351,
         "quantile": "other",
-        "metric_value": 0.63
+        "metric_value": 0.64
       },
       {
         "ticker": "CEG",
         "rank": 352,
         "quantile": "other",
-        "metric_value": 0.62
-      },
-      {
-        "ticker": "MPWR",
-        "rank": 353,
-        "quantile": "other",
-        "metric_value": 0.62
+        "metric_value": 0.63
       },
       {
         "ticker": "COST",
+        "rank": 353,
+        "quantile": "other",
+        "metric_value": 0.63
+      },
+      {
+        "ticker": "MA",
         "rank": 354,
         "quantile": "other",
         "metric_value": 0.61
       },
       {
-        "ticker": "MA",
+        "ticker": "MPWR",
         "rank": 355,
         "quantile": "other",
         "metric_value": 0.61
       },
       {
-        "ticker": "NWS",
+        "ticker": "EXPE",
         "rank": 356,
         "quantile": "other",
-        "metric_value": 0.6
+        "metric_value": 0.59
       },
       {
-        "ticker": "EXPE",
+        "ticker": "NWS",
         "rank": 357,
         "quantile": "other",
         "metric_value": 0.59
@@ -3715,34 +3722,34 @@
         "metric_value": 0.58
       },
       {
-        "ticker": "ODFL",
+        "ticker": "WRB",
         "rank": 359,
         "quantile": "other",
-        "metric_value": 0.57
+        "metric_value": 0.58
       },
       {
-        "ticker": "WRB",
+        "ticker": "AME",
         "rank": 360,
         "quantile": "other",
         "metric_value": 0.57
       },
       {
-        "ticker": "AME",
+        "ticker": "ODFL",
         "rank": 361,
         "quantile": "other",
-        "metric_value": 0.56
+        "metric_value": 0.57
       },
       {
         "ticker": "LLY",
         "rank": 362,
         "quantile": "other",
-        "metric_value": 0.54
+        "metric_value": 0.56
       },
       {
         "ticker": "GE",
         "rank": 363,
         "quantile": "other",
-        "metric_value": 0.53
+        "metric_value": 0.55
       },
       {
         "ticker": "VLTO",
@@ -3769,19 +3776,19 @@
         "metric_value": 0.46
       },
       {
-        "ticker": "REGN",
+        "ticker": "MCK",
         "rank": 368,
         "quantile": "other",
         "metric_value": 0.45
       },
       {
-        "ticker": "TECH",
+        "ticker": "REGN",
         "rank": 369,
         "quantile": "other",
-        "metric_value": 0.44
+        "metric_value": 0.45
       },
       {
-        "ticker": "MCK",
+        "ticker": "TECH",
         "rank": 370,
         "quantile": "other",
         "metric_value": 0.44
@@ -3802,7 +3809,7 @@
         "ticker": "FTV",
         "rank": 373,
         "quantile": "other",
-        "metric_value": 0.41
+        "metric_value": 0.4
       },
       {
         "ticker": "IBKR",
@@ -3817,22 +3824,22 @@
         "metric_value": 0.38
       },
       {
-        "ticker": "STX",
+        "ticker": "AAPL",
         "rank": 376,
         "quantile": "other",
-        "metric_value": 0.36
+        "metric_value": 0.35
       },
       {
-        "ticker": "AAPL",
+        "ticker": "STX",
         "rank": 377,
         "quantile": "other",
-        "metric_value": 0.34
+        "metric_value": 0.35
       },
       {
         "ticker": "LRCX",
         "rank": 378,
         "quantile": "other",
-        "metric_value": 0.34
+        "metric_value": 0.33
       },
       {
         "ticker": "CASY",
@@ -3844,7 +3851,7 @@
         "ticker": "TMO",
         "rank": 380,
         "quantile": "other",
-        "metric_value": 0.31
+        "metric_value": 0.3
       },
       {
         "ticker": "GOOGL",
@@ -3859,43 +3866,43 @@
         "metric_value": 0.26
       },
       {
-        "ticker": "Q",
+        "ticker": "WST",
         "rank": 383,
         "quantile": "other",
         "metric_value": 0.25
       },
       {
-        "ticker": "WST",
+        "ticker": "Q",
         "rank": 384,
         "quantile": "other",
-        "metric_value": 0.25
+        "metric_value": 0.24
       },
       {
-        "ticker": "RVTY",
+        "ticker": "L",
         "rank": 385,
         "quantile": "other",
         "metric_value": 0.23
       },
       {
-        "ticker": "L",
+        "ticker": "RVTY",
         "rank": 386,
         "quantile": "other",
-        "metric_value": 0.22
+        "metric_value": 0.23
       },
       {
         "ticker": "FIX",
         "rank": 387,
         "quantile": "other",
+        "metric_value": 0.22
+      },
+      {
+        "ticker": "GEV",
+        "rank": 388,
+        "quantile": "other",
         "metric_value": 0.21
       },
       {
         "ticker": "EME",
-        "rank": 388,
-        "quantile": "other",
-        "metric_value": 0.2
-      },
-      {
-        "ticker": "GEV",
         "rank": 389,
         "quantile": "other",
         "metric_value": 0.2
@@ -3961,28 +3968,28 @@
         "metric_value": 0.1
       },
       {
-        "ticker": "VRT",
+        "ticker": "TXT",
         "rank": 400,
         "quantile": "other",
-        "metric_value": 0.1
+        "metric_value": 0.09
       },
       {
-        "ticker": "TXT",
+        "ticker": "VRT",
         "rank": 401,
         "quantile": "other",
         "metric_value": 0.09
       },
       {
-        "ticker": "MU",
+        "ticker": "PWR",
         "rank": 402,
         "quantile": "other",
-        "metric_value": 0.06
+        "metric_value": 0.07
       },
       {
-        "ticker": "PWR",
+        "ticker": "MU",
         "rank": 403,
         "quantile": "other",
-        "metric_value": 0.06
+        "metric_value": 0.05
       }
     ]
   },
