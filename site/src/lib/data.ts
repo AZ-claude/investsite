@@ -69,7 +69,7 @@ export type FactorSlug = (typeof FACTOR_SLUGS)[number];
 // ---------------------------------------------------------------------------
 
 /** docs/07-data-schema.md 2.3節。日本株のみ・週次更新の信用倍率情報。 */
-export interface StockMargin {
+interface StockMargin {
   as_of_week: string;
   outstanding_sales_shares: number;
   outstanding_purchases_shares: number;
@@ -102,7 +102,7 @@ export interface DailyStock {
   margin?: StockMargin;
 }
 
-export interface DailySnapshot {
+interface DailySnapshot {
   date: string;
   market: Market;
   universe: string;
@@ -123,7 +123,7 @@ export interface DailySnapshotResult {
  * data/daily/ 配下に実在する日付ディレクトリ一覧を新しい順(降順)で返す。
  * ディレクトリが無ければ空配列(呼び出し側でビルドを落とさない前提)。
  */
-export function listAvailableDailyDates(): string[] {
+function listAvailableDailyDates(): string[] {
   const dailyDir = path.join(DATA_ROOT, "daily");
   if (!fs.existsSync(dailyDir)) return [];
   return fs
@@ -170,7 +170,7 @@ export function loadDailySnapshot(
 // Layer 2: data/factors/{factor}.json
 // ---------------------------------------------------------------------------
 
-export interface FactorEvidence {
+interface FactorEvidence {
   claim: string;
   source: string;
   confirmed: boolean;
@@ -185,7 +185,7 @@ export interface FactorHistoryEntry {
   screen_count?: number;
 }
 
-export interface FactorScreenItem {
+interface FactorScreenItem {
   ticker: string;
   rank: number;
   quantile: string;
@@ -254,7 +254,7 @@ export function accumulatedDays(factor: FactorFile): number {
 // market-thermometer.json (Layer 2 の特殊ファイル。docs/07-data-schema.md 3.3節)
 // ---------------------------------------------------------------------------
 
-export interface MarketThermometerSide {
+interface MarketThermometerSide {
   index: string;
   index_level: number;
   index_level_as_of: string;
@@ -272,7 +272,7 @@ export interface MarketThermometerSide {
   };
 }
 
-export interface MarketThermometerHistoryEntry {
+interface MarketThermometerHistoryEntry {
   date: string;
   jp: MarketThermometerSide;
   us: MarketThermometerSide;

@@ -12,7 +12,7 @@
  */
 import type { FactorSlug } from "./data";
 
-export interface EvidenceItem {
+interface EvidenceItem {
   /** 効果の内容(数値があれば数値、無ければ方向性のみと明記) */
   claim: string;
   sourceLabel: string;

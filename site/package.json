@@ -9,9 +9,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deadcode": "knip"
   },
   "dependencies": {
     "astro": "^7.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "knip": "^6.29.0",
+    "typescript": "^7.0.2"
   }
 }

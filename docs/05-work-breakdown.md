@@ -6,12 +6,12 @@
 
 ## 実作業員への共通指示(全タスク冒頭に付けること)
 
-- 作業ディレクトリ: `C:\Users\Eita Ideguchi\.claude\investsite`
+- 作業ディレクトリ: `C:\Users\Eita Ideguchi\projects\investsite`
 - 完了条件を満たしたら**その場で納品**(ファイル出力・コミット)。まとめて後回しにしない
 - 完了報告には「実行した検証コマンドと実際の出力」を必ず添える。動くはず、は禁止
 - 詰まったら2回まで自力リトライ、それでも駄目なら状況を報告して停止(勝手にスコープを変えない)
 - 表現規制: サイトに出る文言で「買い推奨/売り推奨」等の助言表現は禁止。数値・事実・出典のみ
-- 参照ナレッジ: `~/.claude/knowledge/` の kb-data-collection.md, kb-markdown-datastore.md, kb-skill-pipeline.md
+- 参照ナレッジ: `~/projects/knowledge/` の kb-data-collection.md, kb-markdown-datastore.md, kb-skill-pipeline.md
 
 ## 依存関係マップ
 
