@@ -265,6 +265,13 @@
       "factor_return_3m": null,
       "factor_return_1y": null,
       "screen_count": 136
+    },
+    {
+      "date": "2026-08-23",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 136
     }
   ],
   "today_screen": {
@@ -1952,76 +1959,76 @@
         "metric_value": 0.4267
       },
       {
-        "ticker": "DECK",
+        "ticker": "ROST",
         "rank": 74,
+        "quantile": "top_quintile",
+        "metric_value": 0.42628
+      },
+      {
+        "ticker": "DECK",
+        "rank": 75,
         "quantile": "top_quintile",
         "metric_value": 0.42558
       },
       {
         "ticker": "MPC",
-        "rank": 75,
+        "rank": 76,
         "quantile": "top_quintile",
         "metric_value": 0.42099
       },
       {
         "ticker": "KO",
-        "rank": 76,
+        "rank": 77,
         "quantile": "top_quintile",
         "metric_value": 0.42054
       },
       {
         "ticker": "GEN",
-        "rank": 77,
+        "rank": 78,
         "quantile": "top_quintile",
         "metric_value": 0.41944
       },
       {
         "ticker": "AMAT",
-        "rank": 78,
+        "rank": 79,
         "quantile": "top_quintile",
         "metric_value": 0.41068
       },
       {
         "ticker": "BR",
-        "rank": 79,
+        "rank": 80,
         "quantile": "top_quintile",
         "metric_value": 0.40916002
       },
       {
         "ticker": "CTAS",
-        "rank": 80,
+        "rank": 81,
         "quantile": "top_quintile",
         "metric_value": 0.40714002
       },
       {
         "ticker": "EME",
-        "rank": 81,
+        "rank": 82,
         "quantile": "top_quintile",
         "metric_value": 0.40348998
       },
       {
         "ticker": "UNP",
-        "rank": 82,
+        "rank": 83,
         "quantile": "top_quintile",
         "metric_value": 0.39696
       },
       {
         "ticker": "TSCO",
-        "rank": 83,
+        "rank": 84,
         "quantile": "top_quintile",
         "metric_value": 0.39513
       },
       {
         "ticker": "BBY",
-        "rank": 84,
-        "quantile": "top_quintile",
-        "metric_value": 0.39104
-      },
-      {
-        "ticker": "ROST",
         "rank": 85,
         "quantile": "top_quintile",
-        "metric_value": 0.38981998
+        "metric_value": 0.39104
       },
       {
         "ticker": "DXCM",
