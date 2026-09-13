@@ -412,6 +412,13 @@
       "factor_return_3m": null,
       "factor_return_1y": null,
       "screen_count": 139
+    },
+    {
+      "date": "2026-09-13",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 139
     }
   ],
   "today_screen": {
@@ -1913,46 +1920,46 @@
         "metric_value": 1.2271162
       },
       {
-        "ticker": "EIX",
+        "ticker": "COO",
         "rank": 25,
+        "quantile": "top_quintile",
+        "metric_value": 1.2305409
+      },
+      {
+        "ticker": "EIX",
+        "rank": 26,
         "quantile": "top_quintile",
         "metric_value": 1.2351397
       },
       {
         "ticker": "CFG",
-        "rank": 26,
+        "rank": 27,
         "quantile": "top_quintile",
         "metric_value": 1.2375551
       },
       {
         "ticker": "COF",
-        "rank": 27,
+        "rank": 28,
         "quantile": "top_quintile",
         "metric_value": 1.2409225
       },
       {
         "ticker": "DD",
-        "rank": 28,
+        "rank": 29,
         "quantile": "top_quintile",
         "metric_value": 1.2454518
       },
       {
         "ticker": "SW",
-        "rank": 29,
+        "rank": 30,
         "quantile": "top_quintile",
         "metric_value": 1.2552278
       },
       {
         "ticker": "IP",
-        "rank": 30,
-        "quantile": "top_quintile",
-        "metric_value": 1.2586542
-      },
-      {
-        "ticker": "COO",
         "rank": 31,
         "quantile": "top_quintile",
-        "metric_value": 1.2818319
+        "metric_value": 1.2586542
       },
       {
         "ticker": "PRU",
