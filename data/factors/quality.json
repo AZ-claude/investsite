@@ -503,6 +503,13 @@
       "factor_return_3m": null,
       "factor_return_1y": null,
       "screen_count": 137
+    },
+    {
+      "date": "2026-09-26",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 137
     }
   ],
   "today_screen": {
@@ -2058,28 +2065,28 @@
         "metric_value": 0.56972003
       },
       {
-        "ticker": "FIX",
+        "ticker": "DRI",
         "rank": 51,
+        "quantile": "top_quintile",
+        "metric_value": 0.55431
+      },
+      {
+        "ticker": "FIX",
+        "rank": 52,
         "quantile": "top_quintile",
         "metric_value": 0.55292
       },
       {
         "ticker": "WSM",
-        "rank": 52,
+        "rank": 53,
         "quantile": "top_quintile",
         "metric_value": 0.54960996
       },
       {
         "ticker": "ADSK",
-        "rank": 53,
-        "quantile": "top_quintile",
-        "metric_value": 0.53854
-      },
-      {
-        "ticker": "DRI",
         "rank": 54,
         "quantile": "top_quintile",
-        "metric_value": 0.53718
+        "metric_value": 0.53854
       },
       {
         "ticker": "PEP",
@@ -2538,16 +2545,16 @@
         "metric_value": 0.29215
       },
       {
-        "ticker": "COST",
+        "ticker": "URI",
         "rank": 131,
         "quantile": "other",
-        "metric_value": 0.29152
+        "metric_value": 0.28895
       },
       {
-        "ticker": "URI",
+        "ticker": "COST",
         "rank": 132,
         "quantile": "other",
-        "metric_value": 0.28895
+        "metric_value": 0.28402
       },
       {
         "ticker": "NXPI",
