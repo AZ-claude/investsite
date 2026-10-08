@@ -587,6 +587,13 @@
       "factor_return_3m": null,
       "factor_return_1y": null,
       "screen_count": 136
+    },
+    {
+      "date": "2026-10-08",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 136
     }
   ],
   "today_screen": {
@@ -2796,22 +2803,22 @@
         "metric_value": 0.24018998
       },
       {
-        "ticker": "CCL",
+        "ticker": "STZ",
         "rank": 160,
+        "quantile": "other",
+        "metric_value": 0.24014999
+      },
+      {
+        "ticker": "CCL",
+        "rank": 161,
         "quantile": "other",
         "metric_value": 0.23998
       },
       {
         "ticker": "NRG",
-        "rank": 161,
-        "quantile": "other",
-        "metric_value": 0.23772
-      },
-      {
-        "ticker": "STZ",
         "rank": 162,
         "quantile": "other",
-        "metric_value": 0.2369
+        "metric_value": 0.23772
       },
       {
         "ticker": "HOOD",
