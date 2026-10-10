@@ -1,0 +1,5922 @@
+{
+  "date": "2026-10-10",
+  "market": "jp",
+  "universe": "NIKKEI225",
+  "generated_at": "2026-10-10T10:50:54.892270+09:00",
+  "source": {
+    "provider": "yfinance",
+    "library_version": "1.7.0",
+    "note": "前営業日終値ベース(当日ザラ場価格は含まない)。PERは実績ベース(trailingPE)。会社予想ベースのPER(Yahoo!ファイナンス等の主要表示)とは定義が異なる点に注意。時価総額はsharesOutstanding×priceで算出しており、Yahoo!ファイナンス等の表示と発行済株式数の算出方法が異なる場合がある(T-03で最大19%の乖離を確認、原因は自己株式控除差が最有力仮説だが未確定)。"
+  },
+  "stocks": [
+    {
+      "ticker": "1332.T",
+      "name": "NISSUI CORP.",
+      "currency": "JPY",
+      "price": 1085.0,
+      "market_cap": 329049931776,
+      "shares_outstanding": 303271829,
+      "per_trailing": 11.751327,
+      "pbr": 1.0767083,
+      "dividend_yield_pct": 3.14,
+      "roe": 0.102589995,
+      "trailing_eps": 92.33,
+      "book_value_per_share": 1007.701,
+      "momentum_12_1": 0.16208857661460052,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.20853080568720378,
+        "pbr": 0.30357142857142855,
+        "dividend_yield_pct": 0.7433035714285714,
+        "roe": 0.5072463768115942,
+        "momentum_12_1": 0.38839285714285715,
+        "market_cap": 0.044642857142857144
+      }
+    },
+    {
+      "ticker": "1605.T",
+      "name": "INPEX CORP.",
+      "currency": "JPY",
+      "price": 3640.0,
+      "market_cap": 4209015521280,
+      "shares_outstanding": 1156323005,
+      "per_trailing": 9.792581,
+      "pbr": 0.8290882,
+      "dividend_yield_pct": 3.09,
+      "roe": 0.092709996,
+      "trailing_eps": 371.71,
+      "book_value_per_share": 4390.365,
+      "momentum_12_1": 0.42869121236444463,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.10426540284360189,
+        "pbr": 0.12053571428571429,
+        "dividend_yield_pct": 0.7299107142857143,
+        "roe": 0.4057971014492754,
+        "momentum_12_1": 0.65625,
+        "market_cap": 0.71875
+      }
+    },
+    {
+      "ticker": "1721.T",
+      "name": "COMSYS HOLDINGS CORP.",
+      "currency": "JPY",
+      "price": 5571.0,
+      "market_cap": 637618487296,
+      "shares_outstanding": 114453151,
+      "per_trailing": 16.69814,
+      "pbr": 1.6161711,
+      "dividend_yield_pct": 2.44,
+      "roe": 0.10163,
+      "trailing_eps": 333.63,
+      "book_value_per_share": 3447.036,
+      "momentum_12_1": 0.49427773966987165,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.46445497630331756,
+        "pbr": 0.5669642857142857,
+        "dividend_yield_pct": 0.515625,
+        "roe": 0.4975845410628019,
+        "momentum_12_1": 0.7366071428571429,
+        "market_cap": 0.17410714285714285
+      }
+    },
+    {
+      "ticker": "1801.T",
+      "name": "TAISEI CORP.",
+      "currency": "JPY",
+      "price": 11750.0,
+      "market_cap": 1915357102080,
+      "shares_outstanding": 163009119,
+      "per_trailing": 11.782639,
+      "pbr": 2.052442,
+      "dividend_yield_pct": 3.23,
+      "roe": null,
+      "trailing_eps": 997.23,
+      "book_value_per_share": 5724.887,
+      "momentum_12_1": 0.29141024524580095,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.22274881516587677,
+        "pbr": 0.6741071428571429,
+        "dividend_yield_pct": 0.7678571428571429,
+        "roe": null,
+        "momentum_12_1": 0.5267857142857143,
+        "market_cap": 0.48214285714285715
+      }
+    },
+    {
+      "ticker": "1802.T",
+      "name": "OBAYASHI CORP.",
+      "currency": "JPY",
+      "price": 2850.5,
+      "market_cap": 1959494942720,
+      "shares_outstanding": 687421514,
+      "per_trailing": 11.573755,
+      "pbr": 1.5746062,
+      "dividend_yield_pct": 3.3,
+      "roe": 0.16165,
+      "trailing_eps": 246.29,
+      "book_value_per_share": 1810.294,
+      "momentum_12_1": 0.2761786762062304,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.1895734597156398,
+        "pbr": 0.5491071428571429,
+        "dividend_yield_pct": 0.7767857142857143,
+        "roe": 0.8164251207729468,
+        "momentum_12_1": 0.5089285714285714,
+        "market_cap": 0.49107142857142855
+      }
+    },
+    {
+      "ticker": "1803.T",
+      "name": "SHIMIZU CORP.",
+      "currency": "JPY",
+      "price": 2031.5,
+      "market_cap": 1368381063168,
+      "shares_outstanding": 673581657,
+      "per_trailing": 10.971,
+      "pbr": 1.3593867,
+      "dividend_yield_pct": 3.78,
+      "roe": 0.17629999,
+      "trailing_eps": 185.17,
+      "book_value_per_share": 1494.424,
+      "momentum_12_1": 0.18486746472513116,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.15165876777251186,
+        "pbr": 0.4642857142857143,
+        "dividend_yield_pct": 0.8928571428571429,
+        "roe": 0.8502415458937198,
+        "momentum_12_1": 0.42410714285714285,
+        "market_cap": 0.39732142857142855
+      }
+    },
+    {
+      "ticker": "1808.T",
+      "name": "HASEKO CORP.",
+      "currency": "JPY",
+      "price": 2556.5,
+      "market_cap": 677105696768,
+      "shares_outstanding": 264856526,
+      "per_trailing": 10.841355,
+      "pbr": 1.1881552,
+      "dividend_yield_pct": 3.92,
+      "roe": 0.115880005,
+      "trailing_eps": 235.81,
+      "book_value_per_share": 2151.655,
+      "momentum_12_1": 0.17294647887670922,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.14691943127962084,
+        "pbr": 0.38839285714285715,
+        "dividend_yield_pct": 0.9107142857142857,
+        "roe": 0.5990338164251208,
+        "momentum_12_1": 0.4017857142857143,
+        "market_cap": 0.19196428571428573
+      }
+    },
+    {
+      "ticker": "1812.T",
+      "name": "KAJIMA CORP.",
+      "currency": "JPY",
+      "price": 4735.0,
+      "market_cap": 2186984554496,
+      "shares_outstanding": 461876336,
+      "per_trailing": 12.524798,
+      "pbr": 1.595523,
+      "dividend_yield_pct": 3.07,
+      "roe": null,
+      "trailing_eps": 378.05,
+      "book_value_per_share": 2967.679,
+      "momentum_12_1": 0.17777710531017288,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.26066350710900477,
+        "pbr": 0.5580357142857143,
+        "dividend_yield_pct": 0.7209821428571429,
+        "roe": null,
+        "momentum_12_1": 0.40625,
+        "market_cap": 0.5446428571428571
+      }
+    },
+    {
+      "ticker": "1925.T",
+      "name": "DAIWA HOUSE IND. CO.",
+      "currency": "JPY",
+      "price": 2158.0,
+      "market_cap": 2847826509824,
+      "shares_outstanding": 1239080524,
+      "per_trailing": 7.5006084,
+      "pbr": 0.91872317,
+      "dividend_yield_pct": 4.25,
+      "roe": 0.12880999,
+      "trailing_eps": 287.71,
+      "book_value_per_share": 2348.912,
+      "momentum_12_1": -0.11371852440373809,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.037914691943127965,
+        "pbr": 0.17857142857142858,
+        "dividend_yield_pct": 0.9553571428571429,
+        "roe": 0.6859903381642513,
+        "momentum_12_1": 0.10714285714285714,
+        "market_cap": 0.6116071428571429
+      }
+    },
+    {
+      "ticker": "1928.T",
+      "name": "SEKISUI HOUSE",
+      "currency": "JPY",
+      "price": 3349.0,
+      "market_cap": 2171502985216,
+      "shares_outstanding": 648403407,
+      "per_trailing": 8.45942,
+      "pbr": 0.9653097,
+      "dividend_yield_pct": 4.38,
+      "roe": 0.12262,
+      "trailing_eps": 395.89,
+      "book_value_per_share": 3469.353,
+      "momentum_12_1": 0.030331914032162954,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.06635071090047394,
+        "pbr": 0.22321428571428573,
+        "dividend_yield_pct": 0.9642857142857143,
+        "roe": 0.6376811594202898,
+        "momentum_12_1": 0.21875,
+        "market_cap": 0.5357142857142857
+      }
+    },
+    {
+      "ticker": "1963.T",
+      "name": "JGC HOLDINGS CORP.",
+      "currency": "JPY",
+      "price": 2159.5,
+      "market_cap": 522763042816,
+      "shares_outstanding": 242075962,
+      "per_trailing": 10.821849,
+      "pbr": 1.2281651,
+      "dividend_yield_pct": 2.43,
+      "roe": 0.11851,
+      "trailing_eps": 199.55,
+      "book_value_per_share": 1758.314,
+      "momentum_12_1": 0.6036201838806408,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.14218009478672985,
+        "pbr": 0.4017857142857143,
+        "dividend_yield_pct": 0.5089285714285714,
+        "roe": 0.6231884057971014,
+        "momentum_12_1": 0.8035714285714286,
+        "market_cap": 0.10267857142857142
+      }
+    },
+    {
+      "ticker": "2002.T",
+      "name": "NISSHIN SEIFUN GROUP INC.",
+      "currency": "JPY",
+      "price": 1984.0,
+      "market_cap": 554754834432,
+      "shares_outstanding": 279614342,
+      "per_trailing": 18.741734,
+      "pbr": 1.0754979,
+      "dividend_yield_pct": 3.13,
+      "roe": 0.060960002,
+      "trailing_eps": 105.86,
+      "book_value_per_share": 1844.727,
+      "momentum_12_1": 0.12491909587143568,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5924170616113744,
+        "pbr": 0.29464285714285715,
+        "dividend_yield_pct": 0.7366071428571429,
+        "roe": 0.21256038647342995,
+        "momentum_12_1": 0.35714285714285715,
+        "market_cap": 0.12946428571428573
+      }
+    },
+    {
+      "ticker": "2269.T",
+      "name": "MEIJI HOLDINGS CO.",
+      "currency": "JPY",
+      "price": 4206.0,
+      "market_cap": 1140527464448,
+      "shares_outstanding": 271166783,
+      "per_trailing": 28.124372,
+      "pbr": 1.4763598,
+      "dividend_yield_pct": 2.57,
+      "roe": 0.05525,
+      "trailing_eps": 149.55,
+      "book_value_per_share": 2848.899,
+      "momentum_12_1": 0.4402315635756755,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8009478672985783,
+        "pbr": 0.5178571428571429,
+        "dividend_yield_pct": 0.5580357142857143,
+        "roe": 0.15942028985507245,
+        "momentum_12_1": 0.6785714285714286,
+        "market_cap": 0.30357142857142855
+      }
+    },
+    {
+      "ticker": "2282.T",
+      "name": "NH FOODS LTD.",
+      "currency": "JPY",
+      "price": 2034.5,
+      "market_cap": 558772715520,
+      "shares_outstanding": 274648677,
+      "per_trailing": 17.033657,
+      "pbr": 1.0738431,
+      "dividend_yield_pct": 8.97,
+      "roe": 0.067379996,
+      "trailing_eps": 119.44,
+      "book_value_per_share": 1894.597,
+      "momentum_12_1": 0.07000163806713244,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5071090047393365,
+        "pbr": 0.29017857142857145,
+        "dividend_yield_pct": 0.9955357142857143,
+        "roe": 0.25120772946859904,
+        "momentum_12_1": 0.25892857142857145,
+        "market_cap": 0.13392857142857142
+      }
+    },
+    {
+      "ticker": "2413.T",
+      "name": "M3",
+      "currency": "JPY",
+      "price": 1856.0,
+      "market_cap": 1235088310272,
+      "shares_outstanding": 665457061,
+      "per_trailing": 26.964985,
+      "pbr": 3.0501883,
+      "dividend_yield_pct": 1.19,
+      "roe": 0.119820006,
+      "trailing_eps": 68.83,
+      "book_value_per_share": 608.487,
+      "momentum_12_1": -0.27166621347193964,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7819905213270142,
+        "pbr": 0.8303571428571429,
+        "dividend_yield_pct": 0.1875,
+        "roe": 0.6280193236714976,
+        "momentum_12_1": 0.026785714285714284,
+        "market_cap": 0.34375
+      }
+    },
+    {
+      "ticker": "2432.T",
+      "name": "DENA CO.",
+      "currency": "JPY",
+      "price": 2507.0,
+      "market_cap": 231929692160,
+      "shares_outstanding": 92512841,
+      "per_trailing": 14.515661,
+      "pbr": 1.0755295,
+      "dividend_yield_pct": 2.66,
+      "roe": 0.16242,
+      "trailing_eps": 172.71,
+      "book_value_per_share": 2330.945,
+      "momentum_12_1": 0.11277967232827035,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3459715639810427,
+        "pbr": 0.29910714285714285,
+        "dividend_yield_pct": 0.5803571428571429,
+        "roe": 0.8260869565217391,
+        "momentum_12_1": 0.3392857142857143,
+        "market_cap": 0.008928571428571428
+      }
+    },
+    {
+      "ticker": "2501.T",
+      "name": "SAPPORO BREWERIES LTD.",
+      "currency": "JPY",
+      "price": 1857.5,
+      "market_cap": 724374847488,
+      "shares_outstanding": 389972990,
+      "per_trailing": 85.089325,
+      "pbr": 1.4121963,
+      "dividend_yield_pct": 1.1,
+      "roe": 0.023810001,
+      "trailing_eps": 21.83,
+      "book_value_per_share": 1315.327,
+      "momentum_12_1": 0.2764495299448597,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.990521327014218,
+        "pbr": 0.49107142857142855,
+        "dividend_yield_pct": 0.16517857142857142,
+        "roe": 0.06763285024154589,
+        "momentum_12_1": 0.5133928571428571,
+        "market_cap": 0.21875
+      }
+    },
+    {
+      "ticker": "2502.T",
+      "name": "ASAHI GROUP HOLDINGS",
+      "currency": "JPY",
+      "price": 1580.0,
+      "market_cap": 2311006453760,
+      "shares_outstanding": 1462662258,
+      "per_trailing": 14.185671,
+      "pbr": 0.7247151,
+      "dividend_yield_pct": 3.98,
+      "roe": 0.05574,
+      "trailing_eps": 111.38,
+      "book_value_per_share": 2180.167,
+      "momentum_12_1": -0.06568786705598395,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.33175355450236965,
+        "pbr": 0.06696428571428571,
+        "dividend_yield_pct": 0.9151785714285714,
+        "roe": 0.16908212560386474,
+        "momentum_12_1": 0.14285714285714285,
+        "market_cap": 0.5625
+      }
+    },
+    {
+      "ticker": "2503.T",
+      "name": "KIRIN HOLDINGS CO.",
+      "currency": "JPY",
+      "price": 2800.0,
+      "market_cap": 2217551855616,
+      "shares_outstanding": 791982855,
+      "per_trailing": 11.511738,
+      "pbr": 1.6382786,
+      "dividend_yield_pct": 2.76,
+      "roe": 0.15143,
+      "trailing_eps": 243.23,
+      "book_value_per_share": 1709.111,
+      "momentum_12_1": 0.3503787643945395,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.1848341232227488,
+        "pbr": 0.5714285714285714,
+        "dividend_yield_pct": 0.625,
+        "roe": 0.7874396135265701,
+        "momentum_12_1": 0.5669642857142857,
+        "market_cap": 0.5535714285714286
+      }
+    },
+    {
+      "ticker": "2768.T",
+      "name": "SOJITZ CORP.",
+      "currency": "JPY",
+      "price": 5340.0,
+      "market_cap": 1111041638400,
+      "shares_outstanding": 208060241,
+      "per_trailing": 9.906133,
+      "pbr": 0.970607,
+      "dividend_yield_pct": 3.37,
+      "roe": 0.10727999,
+      "trailing_eps": 539.06,
+      "book_value_per_share": 5501.712,
+      "momentum_12_1": 0.534613702484074,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.11374407582938388,
+        "pbr": 0.23214285714285715,
+        "dividend_yield_pct": 0.7901785714285714,
+        "roe": 0.5507246376811594,
+        "momentum_12_1": 0.7589285714285714,
+        "market_cap": 0.29910714285714285
+      }
+    },
+    {
+      "ticker": "2801.T",
+      "name": "KIKKOMAN CORP.",
+      "currency": "JPY",
+      "price": 1755.0,
+      "market_cap": 1626594869248,
+      "shares_outstanding": 926834697,
+      "per_trailing": 24.90775,
+      "pbr": 2.8317504,
+      "dividend_yield_pct": 1.44,
+      "roe": 0.12088,
+      "trailing_eps": 70.46,
+      "book_value_per_share": 619.758,
+      "momentum_12_1": 0.3608446707677577,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7582938388625592,
+        "pbr": 0.7946428571428571,
+        "dividend_yield_pct": 0.23660714285714285,
+        "roe": 0.6328502415458938,
+        "momentum_12_1": 0.5848214285714286,
+        "market_cap": 0.4419642857142857
+      }
+    },
+    {
+      "ticker": "2802.T",
+      "name": "AJINOMOTO CO.",
+      "currency": "JPY",
+      "price": 5399.0,
+      "market_cap": 5138095800320,
+      "shares_outstanding": 951675477,
+      "per_trailing": 36.79798,
+      "pbr": 6.653751,
+      "dividend_yield_pct": 0.94,
+      "roe": 0.18486,
+      "trailing_eps": 146.72,
+      "book_value_per_share": 811.422,
+      "momentum_12_1": 0.2562736707467783,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8815165876777251,
+        "pbr": 0.9375,
+        "dividend_yield_pct": 0.13616071428571427,
+        "roe": 0.8695652173913043,
+        "momentum_12_1": 0.5,
+        "market_cap": 0.7678571428571429
+      }
+    },
+    {
+      "ticker": "285A.T",
+      "name": "KIOXIA HOLDINGS CORP.",
+      "currency": "JPY",
+      "price": 17505.0,
+      "market_cap": 27964500606976,
+      "shares_outstanding": 1597515021,
+      "per_trailing": 21.0018,
+      "pbr": 11.969697,
+      "dividend_yield_pct": 0.0,
+      "roe": 0.87108004,
+      "trailing_eps": 833.5,
+      "book_value_per_share": 1462.443,
+      "momentum_12_1": 11.17382453029141,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6729857819905213,
+        "pbr": 0.9821428571428571,
+        "dividend_yield_pct": 0.015625,
+        "roe": 1.0,
+        "momentum_12_1": 1.0,
+        "market_cap": 0.9776785714285714
+      }
+    },
+    {
+      "ticker": "2871.T",
+      "name": "NICHIREI CORP.",
+      "currency": "JPY",
+      "price": 2099.5,
+      "market_cap": 526278164480,
+      "shares_outstanding": 250668336,
+      "per_trailing": 18.395689,
+      "pbr": 1.8267673,
+      "dividend_yield_pct": 2.37,
+      "roe": 0.1027,
+      "trailing_eps": 114.13,
+      "book_value_per_share": 1149.298,
+      "momentum_12_1": 0.23058779719311273,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5639810426540285,
+        "pbr": 0.6205357142857143,
+        "dividend_yield_pct": 0.49107142857142855,
+        "roe": 0.5120772946859904,
+        "momentum_12_1": 0.46875,
+        "market_cap": 0.11160714285714286
+      }
+    },
+    {
+      "ticker": "2914.T",
+      "name": "JAPAN TOBACCO INC.",
+      "currency": "JPY",
+      "price": 7230.0,
+      "market_cap": 12835834822656,
+      "shares_outstanding": 1775357592,
+      "per_trailing": 20.224907,
+      "pbr": 2.9213822,
+      "dividend_yield_pct": 3.91,
+      "roe": 0.14298001,
+      "trailing_eps": 357.48,
+      "book_value_per_share": 2474.856,
+      "momentum_12_1": 0.46042238285721915,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6540284360189573,
+        "pbr": 0.8169642857142857,
+        "dividend_yield_pct": 0.90625,
+        "roe": 0.748792270531401,
+        "momentum_12_1": 0.7008928571428571,
+        "market_cap": 0.9151785714285714
+      }
+    },
+    {
+      "ticker": "3086.T",
+      "name": "J.FRONT RETAILING CO.",
+      "currency": "JPY",
+      "price": 2756.0,
+      "market_cap": 672664518656,
+      "shares_outstanding": 244072771,
+      "per_trailing": 24.77526,
+      "pbr": 1.6434412,
+      "dividend_yield_pct": 2.04,
+      "roe": 0.06483,
+      "trailing_eps": 111.24,
+      "book_value_per_share": 1676.969,
+      "momentum_12_1": 0.09486073611280332,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7488151658767772,
+        "pbr": 0.5758928571428571,
+        "dividend_yield_pct": 0.40625,
+        "roe": 0.2318840579710145,
+        "momentum_12_1": 0.3169642857142857,
+        "market_cap": 0.1875
+      }
+    },
+    {
+      "ticker": "3092.T",
+      "name": "ZOZO",
+      "currency": "JPY",
+      "price": 1150.0,
+      "market_cap": 996846731264,
+      "shares_outstanding": 866823226,
+      "per_trailing": 20.989231,
+      "pbr": 10.283926,
+      "dividend_yield_pct": 3.54,
+      "roe": 0.51832,
+      "trailing_eps": 54.79,
+      "book_value_per_share": 111.825,
+      "momentum_12_1": -0.1740895038368122,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6682464454976303,
+        "pbr": 0.9642857142857143,
+        "dividend_yield_pct": 0.8482142857142857,
+        "roe": 0.9903381642512077,
+        "momentum_12_1": 0.05357142857142857,
+        "market_cap": 0.28125
+      }
+    },
+    {
+      "ticker": "3099.T",
+      "name": "ISETAN MITSUKOSHI HOLDINGS LTD.",
+      "currency": "JPY",
+      "price": 1716.5,
+      "market_cap": 1191192690688,
+      "shares_outstanding": 693966036,
+      "per_trailing": 15.3286295,
+      "pbr": 2.0026064,
+      "dividend_yield_pct": 2.31,
+      "roe": null,
+      "trailing_eps": 111.98,
+      "book_value_per_share": 857.133,
+      "momentum_12_1": 0.13794103635877564,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4028436018957346,
+        "pbr": 0.6651785714285714,
+        "dividend_yield_pct": 0.46205357142857145,
+        "roe": null,
+        "momentum_12_1": 0.36160714285714285,
+        "market_cap": 0.32589285714285715
+      }
+    },
+    {
+      "ticker": "3289.T",
+      "name": "TOKYU FUDOSAN HOLDINGS CORP.",
+      "currency": "JPY",
+      "price": 1185.0,
+      "market_cap": 845179060224,
+      "shares_outstanding": 713231306,
+      "per_trailing": 9.241928,
+      "pbr": 0.92803466,
+      "dividend_yield_pct": 4.23,
+      "roe": 0.10542,
+      "trailing_eps": 128.22,
+      "book_value_per_share": 1276.892,
+      "momentum_12_1": 0.08006665342674557,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.09004739336492891,
+        "pbr": 0.1875,
+        "dividend_yield_pct": 0.9508928571428571,
+        "roe": 0.5265700483091788,
+        "momentum_12_1": 0.27232142857142855,
+        "market_cap": 0.25
+      }
+    },
+    {
+      "ticker": "3382.T",
+      "name": "SEVEN & I HOLDINGS CO.",
+      "currency": "JPY",
+      "price": 1991.5,
+      "market_cap": 4514897199104,
+      "shares_outstanding": 2267083741,
+      "per_trailing": 15.768012,
+      "pbr": 1.2479758,
+      "dividend_yield_pct": 3.02,
+      "roe": 0.08076999,
+      "trailing_eps": 126.3,
+      "book_value_per_share": 1595.784,
+      "momentum_12_1": 0.04023567142104234,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.41706161137440756,
+        "pbr": 0.4107142857142857,
+        "dividend_yield_pct": 0.6986607142857143,
+        "roe": 0.33816425120772947,
+        "momentum_12_1": 0.22767857142857142,
+        "market_cap": 0.7321428571428571
+      }
+    },
+    {
+      "ticker": "3401.T",
+      "name": "TEIJIN LTD.",
+      "currency": "JPY",
+      "price": 1640.5,
+      "market_cap": 316734406656,
+      "shares_outstanding": 193071865,
+      "per_trailing": null,
+      "pbr": 0.7623358,
+      "dividend_yield_pct": 3.05,
+      "roe": -0.09887,
+      "trailing_eps": -456.33,
+      "book_value_per_share": 2151.939,
+      "momentum_12_1": 0.3569603479458623,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.08482142857142858,
+        "dividend_yield_pct": 0.7098214285714286,
+        "roe": 0.00966183574879227,
+        "momentum_12_1": 0.5803571428571429,
+        "market_cap": 0.03571428571428571
+      }
+    },
+    {
+      "ticker": "3402.T",
+      "name": "TORAY INDUSTRIES",
+      "currency": "JPY",
+      "price": 1234.0,
+      "market_cap": 1797521145856,
+      "shares_outstanding": 1456662173,
+      "per_trailing": 19.423895,
+      "pbr": 0.9892037,
+      "dividend_yield_pct": 1.63,
+      "roe": 0.05609,
+      "trailing_eps": 63.53,
+      "book_value_per_share": 1247.468,
+      "momentum_12_1": 0.33052365755909796,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6066350710900474,
+        "pbr": 0.24553571428571427,
+        "dividend_yield_pct": 0.2924107142857143,
+        "roe": 0.17391304347826086,
+        "momentum_12_1": 0.5491071428571429,
+        "market_cap": 0.4642857142857143
+      }
+    },
+    {
+      "ticker": "3405.T",
+      "name": "KURARAY CO.",
+      "currency": "JPY",
+      "price": 1835.0,
+      "market_cap": 552879718400,
+      "shares_outstanding": 301296860,
+      "per_trailing": 66.70302,
+      "pbr": 0.7315933,
+      "dividend_yield_pct": 2.99,
+      "roe": 0.00816,
+      "trailing_eps": 27.51,
+      "book_value_per_share": 2508.224,
+      "momentum_12_1": 0.09449961101983617,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.976303317535545,
+        "pbr": 0.07142857142857142,
+        "dividend_yield_pct": 0.6919642857142857,
+        "roe": 0.04830917874396135,
+        "momentum_12_1": 0.3125,
+        "market_cap": 0.125
+      }
+    },
+    {
+      "ticker": "3407.T",
+      "name": "ASAHI KASEI CORP.",
+      "currency": "JPY",
+      "price": 1585.5,
+      "market_cap": 2114388099072,
+      "shares_outstanding": 1333578111,
+      "per_trailing": 11.612832,
+      "pbr": 1.008301,
+      "dividend_yield_pct": 2.67,
+      "roe": 0.09751,
+      "trailing_eps": 136.53,
+      "book_value_per_share": 1572.447,
+      "momentum_12_1": 0.3828392272306609,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.1990521327014218,
+        "pbr": 0.25,
+        "dividend_yield_pct": 0.5848214285714286,
+        "roe": 0.463768115942029,
+        "momentum_12_1": 0.6116071428571429,
+        "market_cap": 0.5267857142857143
+      }
+    },
+    {
+      "ticker": "3436.T",
+      "name": "SUMCO CORP.",
+      "currency": "JPY",
+      "price": 3426.0,
+      "market_cap": 1198182891520,
+      "shares_outstanding": 349732314,
+      "per_trailing": null,
+      "pbr": 2.1088982,
+      "dividend_yield_pct": 0.58,
+      "roe": -0.04061,
+      "trailing_eps": -78.21,
+      "book_value_per_share": 1624.545,
+      "momentum_12_1": 1.1684673560241698,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.6964285714285714,
+        "dividend_yield_pct": 0.06696428571428571,
+        "roe": 0.01932367149758454,
+        "momentum_12_1": 0.9508928571428571,
+        "market_cap": 0.33035714285714285
+      }
+    },
+    {
+      "ticker": "3659.T",
+      "name": "NEXON CO.",
+      "currency": "JPY",
+      "price": 2639.0,
+      "market_cap": 2055457734656,
+      "shares_outstanding": 778877498,
+      "per_trailing": 15.193736,
+      "pbr": 1.9222308,
+      "dividend_yield_pct": 2.31,
+      "roe": 0.12519,
+      "trailing_eps": 173.69,
+      "book_value_per_share": 1372.884,
+      "momentum_12_1": -0.039187358587327914,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3933649289099526,
+        "pbr": 0.6428571428571429,
+        "dividend_yield_pct": 0.46205357142857145,
+        "roe": 0.6714975845410628,
+        "momentum_12_1": 0.15625,
+        "market_cap": 0.5178571428571429
+      }
+    },
+    {
+      "ticker": "3697.T",
+      "name": "SHIFT INC.",
+      "currency": "JPY",
+      "price": 937.0,
+      "market_cap": 239501983744,
+      "shares_outstanding": 255605108,
+      "per_trailing": 34.703705,
+      "pbr": 6.2261615,
+      "dividend_yield_pct": 0.93,
+      "roe": 0.17231001,
+      "trailing_eps": 27.0,
+      "book_value_per_share": 150.494,
+      "momentum_12_1": -0.34640790609020244,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8578199052132701,
+        "pbr": 0.9241071428571429,
+        "dividend_yield_pct": 0.12946428571428573,
+        "roe": 0.8454106280193237,
+        "momentum_12_1": 0.0,
+        "market_cap": 0.013392857142857142
+      }
+    },
+    {
+      "ticker": "3861.T",
+      "name": "OJI HOLDINGS CORP.",
+      "currency": "JPY",
+      "price": 832.3,
+      "market_cap": 706817687552,
+      "shares_outstanding": 849234293,
+      "per_trailing": 11.777275,
+      "pbr": 0.651838,
+      "dividend_yield_pct": 4.35,
+      "roe": 0.060100004,
+      "trailing_eps": 70.67,
+      "book_value_per_share": 1276.851,
+      "momentum_12_1": 0.09678280721409771,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.21800947867298578,
+        "pbr": 0.05357142857142857,
+        "dividend_yield_pct": 0.9598214285714286,
+        "roe": 0.19806763285024154,
+        "momentum_12_1": 0.32142857142857145,
+        "market_cap": 0.20982142857142858
+      }
+    },
+    {
+      "ticker": "4004.T",
+      "name": "RESONAC HOLDINGS CORP.",
+      "currency": "JPY",
+      "price": 17575.0,
+      "market_cap": 3334100484096,
+      "shares_outstanding": 189706990,
+      "per_trailing": 59.701744,
+      "pbr": 4.22754,
+      "dividend_yield_pct": 0.37,
+      "roe": 0.08137,
+      "trailing_eps": 294.38,
+      "book_value_per_share": 4157.264,
+      "momentum_12_1": 2.1749117582432995,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.9620853080568721,
+        "pbr": 0.8839285714285714,
+        "dividend_yield_pct": 0.05803571428571429,
+        "roe": 0.34299516908212563,
+        "momentum_12_1": 0.9866071428571429,
+        "market_cap": 0.65625
+      }
+    },
+    {
+      "ticker": "4005.T",
+      "name": "SUMITOMO CHEMICAL CO.",
+      "currency": "JPY",
+      "price": 572.7,
+      "market_cap": 946027364352,
+      "shares_outstanding": 1651872408,
+      "per_trailing": 8.863953,
+      "pbr": 0.8575523,
+      "dividend_yield_pct": 2.79,
+      "roe": 0.13168,
+      "trailing_eps": 64.61,
+      "book_value_per_share": 667.831,
+      "momentum_12_1": 0.28880389094366143,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.07109004739336493,
+        "pbr": 0.14732142857142858,
+        "dividend_yield_pct": 0.6428571428571429,
+        "roe": 0.6956521739130435,
+        "momentum_12_1": 0.5223214285714286,
+        "market_cap": 0.26339285714285715
+      }
+    },
+    {
+      "ticker": "4021.T",
+      "name": "NISSAN CHEMICAL CORP.",
+      "currency": "JPY",
+      "price": 9090.0,
+      "market_cap": 1212589932544,
+      "shares_outstanding": 133398233,
+      "per_trailing": 24.8578,
+      "pbr": 4.8301167,
+      "dividend_yield_pct": 2.24,
+      "roe": 0.2178,
+      "trailing_eps": 365.68,
+      "book_value_per_share": 1881.942,
+      "momentum_12_1": 0.5073881855854878,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7535545023696683,
+        "pbr": 0.8973214285714286,
+        "dividend_yield_pct": 0.4419642857142857,
+        "roe": 0.8985507246376812,
+        "momentum_12_1": 0.7455357142857143,
+        "market_cap": 0.33482142857142855
+      }
+    },
+    {
+      "ticker": "4042.T",
+      "name": "TOSOH CORP.",
+      "currency": "JPY",
+      "price": 2601.5,
+      "market_cap": 800977321984,
+      "shares_outstanding": 307890546,
+      "per_trailing": 14.762796,
+      "pbr": 0.9521589,
+      "dividend_yield_pct": 3.87,
+      "roe": null,
+      "trailing_eps": 176.22,
+      "book_value_per_share": 2732.212,
+      "momentum_12_1": 0.2126525619756856,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3696682464454976,
+        "pbr": 0.20089285714285715,
+        "dividend_yield_pct": 0.9017857142857143,
+        "roe": null,
+        "momentum_12_1": 0.45982142857142855,
+        "market_cap": 0.24107142857142858
+      }
+    },
+    {
+      "ticker": "4043.T",
+      "name": "TOKUYAMA CORP.",
+      "currency": "JPY",
+      "price": 4084.0,
+      "market_cap": 293824036864,
+      "shares_outstanding": 71945163,
+      "per_trailing": 13.060441,
+      "pbr": 1.0238327,
+      "dividend_yield_pct": 3.54,
+      "roe": null,
+      "trailing_eps": 312.7,
+      "book_value_per_share": 3988.933,
+      "momentum_12_1": 0.11754786095905612,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.2843601895734597,
+        "pbr": 0.25892857142857145,
+        "dividend_yield_pct": 0.8482142857142857,
+        "roe": null,
+        "momentum_12_1": 0.34375,
+        "market_cap": 0.026785714285714284
+      }
+    },
+    {
+      "ticker": "4061.T",
+      "name": "DENKA CO.",
+      "currency": "JPY",
+      "price": 3248.0,
+      "market_cap": 279976673280,
+      "shares_outstanding": 86199714,
+      "per_trailing": 17.782644,
+      "pbr": 0.90381545,
+      "dividend_yield_pct": 3.09,
+      "roe": 0.02616,
+      "trailing_eps": 182.65,
+      "book_value_per_share": 3593.654,
+      "momentum_12_1": 0.42950401836051677,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5497630331753555,
+        "pbr": 0.16517857142857142,
+        "dividend_yield_pct": 0.7299107142857143,
+        "roe": 0.07729468599033816,
+        "momentum_12_1": 0.6607142857142857,
+        "market_cap": 0.022321428571428572
+      }
+    },
+    {
+      "ticker": "4062.T",
+      "name": "IBIDEN CO.",
+      "currency": "JPY",
+      "price": 11515.0,
+      "market_cap": 6532031840256,
+      "shares_outstanding": 562311670,
+      "per_trailing": 98.92612,
+      "pbr": 11.293446,
+      "dividend_yield_pct": 0.17,
+      "roe": 0.12655,
+      "trailing_eps": 116.4,
+      "book_value_per_share": 1019.618,
+      "momentum_12_1": 3.87228925074778,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.995260663507109,
+        "pbr": 0.96875,
+        "dividend_yield_pct": 0.044642857142857144,
+        "roe": 0.6811594202898551,
+        "momentum_12_1": 0.9955357142857143,
+        "market_cap": 0.8169642857142857
+      }
+    },
+    {
+      "ticker": "4063.T",
+      "name": "SHIN-ETSU CHEMICAL CO.",
+      "currency": "JPY",
+      "price": 6085.0,
+      "market_cap": 11044668833792,
+      "shares_outstanding": 1815064711,
+      "per_trailing": 24.242064,
+      "pbr": 2.482396,
+      "dividend_yield_pct": 1.9,
+      "roe": 0.112320006,
+      "trailing_eps": 251.01,
+      "book_value_per_share": 2451.261,
+      "momentum_12_1": 0.24667089703203904,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7298578199052133,
+        "pbr": 0.7455357142857143,
+        "dividend_yield_pct": 0.37723214285714285,
+        "roe": 0.5845410628019324,
+        "momentum_12_1": 0.48214285714285715,
+        "market_cap": 0.9017857142857143
+      }
+    },
+    {
+      "ticker": "4151.T",
+      "name": "KYOWA KIRIN CO.",
+      "currency": "JPY",
+      "price": 2222.5,
+      "market_cap": 1163670978560,
+      "shares_outstanding": 523586484,
+      "per_trailing": 14.217629,
+      "pbr": 1.2701523,
+      "dividend_yield_pct": 3.17,
+      "roe": 0.092530005,
+      "trailing_eps": 156.32,
+      "book_value_per_share": 1749.79,
+      "momentum_12_1": 0.062035881942154925,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.33649289099526064,
+        "pbr": 0.42857142857142855,
+        "dividend_yield_pct": 0.7566964285714286,
+        "roe": 0.40096618357487923,
+        "momentum_12_1": 0.24107142857142858,
+        "market_cap": 0.32142857142857145
+      }
+    },
+    {
+      "ticker": "4183.T",
+      "name": "MITSUI CHEMICALS",
+      "currency": "JPY",
+      "price": 2056.0,
+      "market_cap": 743320518656,
+      "shares_outstanding": 361537201,
+      "per_trailing": 11.871355,
+      "pbr": 0.85111135,
+      "dividend_yield_pct": 3.54,
+      "roe": 0.08045,
+      "trailing_eps": 173.19,
+      "book_value_per_share": 2415.665,
+      "momentum_12_1": 0.21085870417373087,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.23696682464454977,
+        "pbr": 0.13839285714285715,
+        "dividend_yield_pct": 0.8482142857142857,
+        "roe": 0.3333333333333333,
+        "momentum_12_1": 0.45535714285714285,
+        "market_cap": 0.22321428571428573
+      }
+    },
+    {
+      "ticker": "4188.T",
+      "name": "MITSUBISHI CHEMICAL GROUP CORP.",
+      "currency": "JPY",
+      "price": 1143.0,
+      "market_cap": 1552980246528,
+      "shares_outstanding": 1358687815,
+      "per_trailing": null,
+      "pbr": 0.85261154,
+      "dividend_yield_pct": 2.77,
+      "roe": 0.01418,
+      "trailing_eps": -29.6,
+      "book_value_per_share": 1340.587,
+      "momentum_12_1": 0.4284064828188816,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.14285714285714285,
+        "dividend_yield_pct": 0.6294642857142857,
+        "roe": 0.05314009661835749,
+        "momentum_12_1": 0.6517857142857143,
+        "market_cap": 0.4330357142857143
+      }
+    },
+    {
+      "ticker": "4208.T",
+      "name": "UBE CORP.",
+      "currency": "JPY",
+      "price": 3358.0,
+      "market_cap": 326211698688,
+      "shares_outstanding": 97144637,
+      "per_trailing": 13.685455,
+      "pbr": 0.7428269,
+      "dividend_yield_pct": 4.79,
+      "roe": 0.05565,
+      "trailing_eps": 245.37,
+      "book_value_per_share": 4520.569,
+      "momentum_12_1": 0.5149910459599976,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.32701421800947866,
+        "pbr": 0.08035714285714286,
+        "dividend_yield_pct": 0.9821428571428571,
+        "roe": 0.1642512077294686,
+        "momentum_12_1": 0.75,
+        "market_cap": 0.04017857142857143
+      }
+    },
+    {
+      "ticker": "4307.T",
+      "name": "NOMURA RESEARCH INSTITUTE",
+      "currency": "JPY",
+      "price": 5613.0,
+      "market_cap": 3143847641088,
+      "shares_outstanding": 560101089,
+      "per_trailing": 163.78757,
+      "pbr": 8.412909,
+      "dividend_yield_pct": 1.57,
+      "roe": 0.046040002,
+      "trailing_eps": 34.27,
+      "book_value_per_share": 667.189,
+      "momentum_12_1": -0.1326831582231388,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 1.0,
+        "pbr": 0.9598214285714286,
+        "dividend_yield_pct": 0.28125,
+        "roe": 0.10628019323671498,
+        "momentum_12_1": 0.08035714285714286,
+        "market_cap": 0.6428571428571429
+      }
+    },
+    {
+      "ticker": "4324.T",
+      "name": "DENTSU GROUP INC.",
+      "currency": "JPY",
+      "price": 3596.0,
+      "market_cap": 933471977472,
+      "shares_outstanding": 259586186,
+      "per_trailing": null,
+      "pbr": 2.1984162,
+      "dividend_yield_pct": 0.0,
+      "roe": -0.34882998,
+      "trailing_eps": -806.35,
+      "book_value_per_share": 1635.723,
+      "momentum_12_1": 0.08390564347566443,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.7142857142857143,
+        "dividend_yield_pct": 0.015625,
+        "roe": 0.0,
+        "momentum_12_1": 0.2767857142857143,
+        "market_cap": 0.25892857142857145
+      }
+    },
+    {
+      "ticker": "4385.T",
+      "name": "MERCARI",
+      "currency": "JPY",
+      "price": 3737.0,
+      "market_cap": 609805991936,
+      "shares_outstanding": 163180617,
+      "per_trailing": 17.439798,
+      "pbr": 4.504504,
+      "dividend_yield_pct": 0.0,
+      "roe": 0.29884002,
+      "trailing_eps": 214.28,
+      "book_value_per_share": 829.614,
+      "momentum_12_1": 0.920353982300885,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5308056872037915,
+        "pbr": 0.8928571428571429,
+        "dividend_yield_pct": 0.015625,
+        "roe": 0.9323671497584541,
+        "momentum_12_1": 0.9196428571428571,
+        "market_cap": 0.14732142857142858
+      }
+    },
+    {
+      "ticker": "4452.T",
+      "name": "KAO CORP.",
+      "currency": "JPY",
+      "price": 3557.0,
+      "market_cap": 3218224185344,
+      "shares_outstanding": 904757994,
+      "per_trailing": 31.411163,
+      "pbr": 2.8748288,
+      "dividend_yield_pct": 2.21,
+      "roe": 0.12319,
+      "trailing_eps": 113.24,
+      "book_value_per_share": 1237.291,
+      "momentum_12_1": 0.08644787615442495,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8104265402843602,
+        "pbr": 0.8080357142857143,
+        "dividend_yield_pct": 0.4330357142857143,
+        "roe": 0.642512077294686,
+        "momentum_12_1": 0.2857142857142857,
+        "market_cap": 0.6473214285714286
+      }
+    },
+    {
+      "ticker": "4502.T",
+      "name": "TAKEDA PHARMACEUTICAL CO.",
+      "currency": "JPY",
+      "price": 5843.0,
+      "market_cap": 9332942962688,
+      "shares_outstanding": 1596751439,
+      "per_trailing": null,
+      "pbr": 1.221727,
+      "dividend_yield_pct": 3.51,
+      "roe": -0.02262,
+      "trailing_eps": -104.99,
+      "book_value_per_share": 4782.574,
+      "momentum_12_1": 0.35400514689614226,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.39732142857142855,
+        "dividend_yield_pct": 0.8348214285714286,
+        "roe": 0.028985507246376812,
+        "momentum_12_1": 0.5758928571428571,
+        "market_cap": 0.875
+      }
+    },
+    {
+      "ticker": "4503.T",
+      "name": "ASTELLAS PHARMA INC.",
+      "currency": "JPY",
+      "price": 2247.5,
+      "market_cap": 4029798416384,
+      "shares_outstanding": 1793013747,
+      "per_trailing": 11.069793,
+      "pbr": 2.0743442,
+      "dividend_yield_pct": 3.56,
+      "roe": 0.21301001,
+      "trailing_eps": 203.03,
+      "book_value_per_share": 1083.475,
+      "momentum_12_1": 0.44131891091862885,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.16113744075829384,
+        "pbr": 0.6830357142857143,
+        "dividend_yield_pct": 0.8571428571428571,
+        "roe": 0.893719806763285,
+        "momentum_12_1": 0.6830357142857143,
+        "market_cap": 0.7053571428571429
+      }
+    },
+    {
+      "ticker": "4506.T",
+      "name": "SUMITOMO PHARMA CO.",
+      "currency": "JPY",
+      "price": 1591.5,
+      "market_cap": 713936404480,
+      "shares_outstanding": 448593393,
+      "per_trailing": 6.507339,
+      "pbr": 1.7474666,
+      "dividend_yield_pct": 0.0,
+      "roe": 0.38529,
+      "trailing_eps": 244.57,
+      "book_value_per_share": 910.747,
+      "momentum_12_1": -0.019090909090909047,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.023696682464454975,
+        "pbr": 0.6026785714285714,
+        "dividend_yield_pct": 0.015625,
+        "roe": 0.9710144927536232,
+        "momentum_12_1": 0.16964285714285715,
+        "market_cap": 0.21428571428571427
+      }
+    },
+    {
+      "ticker": "4507.T",
+      "name": "SHIONOGI & CO.",
+      "currency": "JPY",
+      "price": 2744.5,
+      "market_cap": 2336054575104,
+      "shares_outstanding": 851176737,
+      "per_trailing": 8.944693,
+      "pbr": 1.3178232,
+      "dividend_yield_pct": 2.74,
+      "roe": 0.16773,
+      "trailing_eps": 306.83,
+      "book_value_per_share": 2082.601,
+      "momentum_12_1": 0.15323698943475272,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.07582938388625593,
+        "pbr": 0.4419642857142857,
+        "dividend_yield_pct": 0.6138392857142857,
+        "roe": 0.8405797101449275,
+        "momentum_12_1": 0.375,
+        "market_cap": 0.5714285714285714
+      }
+    },
+    {
+      "ticker": "4519.T",
+      "name": "CHUGAI PHARMACEUTICAL CO.",
+      "currency": "JPY",
+      "price": 6019.0,
+      "market_cap": 9904729358336,
+      "shares_outstanding": 1645577167,
+      "per_trailing": 21.322044,
+      "pbr": 4.883986,
+      "dividend_yield_pct": 2.16,
+      "roe": 0.23493,
+      "trailing_eps": 282.29,
+      "book_value_per_share": 1232.395,
+      "momentum_12_1": 0.021305846832597508,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6919431279620853,
+        "pbr": 0.9017857142857143,
+        "dividend_yield_pct": 0.41964285714285715,
+        "roe": 0.9178743961352657,
+        "momentum_12_1": 0.21428571428571427,
+        "market_cap": 0.8839285714285714
+      }
+    },
+    {
+      "ticker": "4523.T",
+      "name": "EISAI CO.",
+      "currency": "JPY",
+      "price": 4603.0,
+      "market_cap": 1299132317696,
+      "shares_outstanding": 282236007,
+      "per_trailing": 33.858036,
+      "pbr": 1.4312726,
+      "dividend_yield_pct": 3.45,
+      "roe": 0.049629997,
+      "trailing_eps": 135.95,
+      "book_value_per_share": 3216.019,
+      "momentum_12_1": -0.071795966675822,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8530805687203792,
+        "pbr": 0.5,
+        "dividend_yield_pct": 0.8125,
+        "roe": 0.11594202898550725,
+        "momentum_12_1": 0.13839285714285715,
+        "market_cap": 0.375
+      }
+    },
+    {
+      "ticker": "4543.T",
+      "name": "TERUMO CORP.",
+      "currency": "JPY",
+      "price": 2284.0,
+      "market_cap": 3369131573248,
+      "shares_outstanding": 1475101493,
+      "per_trailing": 20.705286,
+      "pbr": 2.0271266,
+      "dividend_yield_pct": 1.56,
+      "roe": 0.10854,
+      "trailing_eps": 110.31,
+      "book_value_per_share": 1126.718,
+      "momentum_12_1": 0.0021088557291464305,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6635071090047393,
+        "pbr": 0.6696428571428571,
+        "dividend_yield_pct": 0.2767857142857143,
+        "roe": 0.5603864734299517,
+        "momentum_12_1": 0.19196428571428573,
+        "market_cap": 0.6651785714285714
+      }
+    },
+    {
+      "ticker": "4568.T",
+      "name": "DAIICHI SANKYO CO.",
+      "currency": "JPY",
+      "price": 2623.0,
+      "market_cap": 4772950704128,
+      "shares_outstanding": 1819653230,
+      "per_trailing": 19.862185,
+      "pbr": 2.804268,
+      "dividend_yield_pct": 3.77,
+      "roe": 0.14812,
+      "trailing_eps": 132.06,
+      "book_value_per_share": 935.36,
+      "momentum_12_1": -0.17859801206433212,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6303317535545023,
+        "pbr": 0.7901785714285714,
+        "dividend_yield_pct": 0.8883928571428571,
+        "roe": 0.782608695652174,
+        "momentum_12_1": 0.049107142857142856,
+        "market_cap": 0.7544642857142857
+      }
+    },
+    {
+      "ticker": "4578.T",
+      "name": "OTSUKA HOLDINGS CO.",
+      "currency": "JPY",
+      "price": 11665.0,
+      "market_cap": 6119570800640,
+      "shares_outstanding": 524609613,
+      "per_trailing": 15.323884,
+      "pbr": 1.891748,
+      "dividend_yield_pct": 1.71,
+      "roe": 0.13420999,
+      "trailing_eps": 761.23,
+      "book_value_per_share": 6166.255,
+      "momentum_12_1": 0.4911799364472744,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3981042654028436,
+        "pbr": 0.6383928571428571,
+        "dividend_yield_pct": 0.3169642857142857,
+        "roe": 0.7053140096618358,
+        "momentum_12_1": 0.7321428571428571,
+        "market_cap": 0.7901785714285714
+      }
+    },
+    {
+      "ticker": "4661.T",
+      "name": "ORIENTAL LAND CO.",
+      "currency": "JPY",
+      "price": 2968.5,
+      "market_cap": 4867498704896,
+      "shares_outstanding": 1639716594,
+      "per_trailing": 35.87311,
+      "pbr": 4.3149123,
+      "dividend_yield_pct": 0.55,
+      "roe": null,
+      "trailing_eps": 82.75,
+      "book_value_per_share": 687.963,
+      "momentum_12_1": -0.14752110303782096,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8720379146919431,
+        "pbr": 0.8883928571428571,
+        "dividend_yield_pct": 0.0625,
+        "roe": null,
+        "momentum_12_1": 0.07142857142857142,
+        "market_cap": 0.7633928571428571
+      }
+    },
+    {
+      "ticker": "4689.T",
+      "name": "LY CORP.",
+      "currency": "JPY",
+      "price": 511.3,
+      "market_cap": 3521374060544,
+      "shares_outstanding": 6887099761,
+      "per_trailing": 16.720078,
+      "pbr": 1.1671944,
+      "dividend_yield_pct": 2.23,
+      "roe": 0.08316,
+      "trailing_eps": 30.58,
+      "book_value_per_share": 438.059,
+      "momentum_12_1": 0.09354851941819176,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.46919431279620855,
+        "pbr": 0.375,
+        "dividend_yield_pct": 0.4375,
+        "roe": 0.357487922705314,
+        "momentum_12_1": 0.3080357142857143,
+        "market_cap": 0.6741071428571429
+      }
+    },
+    {
+      "ticker": "4704.T",
+      "name": "TREND MICRO INC.",
+      "currency": "JPY",
+      "price": 7587.0,
+      "market_cap": 984734433280,
+      "shares_outstanding": 129792336,
+      "per_trailing": 26.92526,
+      "pbr": 8.275777,
+      "dividend_yield_pct": 2.56,
+      "roe": 0.29984,
+      "trailing_eps": 281.78,
+      "book_value_per_share": 916.772,
+      "momentum_12_1": -0.28571759180231737,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7725118483412322,
+        "pbr": 0.9553571428571429,
+        "dividend_yield_pct": 0.5491071428571429,
+        "roe": 0.9371980676328503,
+        "momentum_12_1": 0.013392857142857142,
+        "market_cap": 0.27232142857142855
+      }
+    },
+    {
+      "ticker": "4751.T",
+      "name": "CYBERAGENT",
+      "currency": "JPY",
+      "price": 1253.5,
+      "market_cap": 635648671744,
+      "shares_outstanding": 507099063,
+      "per_trailing": 15.040797,
+      "pbr": 3.041383,
+      "dividend_yield_pct": 1.64,
+      "roe": 0.2028,
+      "trailing_eps": 83.34,
+      "book_value_per_share": 412.148,
+      "momentum_12_1": -0.2770878421842613,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3886255924170616,
+        "pbr": 0.8258928571428571,
+        "dividend_yield_pct": 0.3013392857142857,
+        "roe": 0.8840579710144928,
+        "momentum_12_1": 0.017857142857142856,
+        "market_cap": 0.16964285714285715
+      }
+    },
+    {
+      "ticker": "4755.T",
+      "name": "RAKUTEN GROUP",
+      "currency": "JPY",
+      "price": 659.6,
+      "market_cap": 1439237668864,
+      "shares_outstanding": 2181985574,
+      "per_trailing": null,
+      "pbr": 1.5718684,
+      "dividend_yield_pct": 0.0,
+      "roe": 0.0034,
+      "trailing_eps": -29.66,
+      "book_value_per_share": 419.628,
+      "momentum_12_1": -0.2391593929194964,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.5446428571428571,
+        "dividend_yield_pct": 0.015625,
+        "roe": 0.043478260869565216,
+        "momentum_12_1": 0.03571428571428571,
+        "market_cap": 0.4107142857142857
+      }
+    },
+    {
+      "ticker": "4901.T",
+      "name": "FUJIFILM HOLDINGS CORP.",
+      "currency": "JPY",
+      "price": 3427.0,
+      "market_cap": 4098661285888,
+      "shares_outstanding": 1195990979,
+      "per_trailing": 15.807925,
+      "pbr": 1.0510107,
+      "dividend_yield_pct": 2.2,
+      "roe": 0.07145,
+      "trailing_eps": 216.79,
+      "book_value_per_share": 3260.671,
+      "momentum_12_1": -0.08081494949919599,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4218009478672986,
+        "pbr": 0.27232142857142855,
+        "dividend_yield_pct": 0.42857142857142855,
+        "roe": 0.2753623188405797,
+        "momentum_12_1": 0.125,
+        "market_cap": 0.7098214285714286
+      }
+    },
+    {
+      "ticker": "4902.T",
+      "name": "KONICA MINOLTA",
+      "currency": "JPY",
+      "price": 639.2,
+      "market_cap": 315882209280,
+      "shares_outstanding": 494183693,
+      "per_trailing": 9.746874,
+      "pbr": 0.5741861,
+      "dividend_yield_pct": 2.8,
+      "roe": 0.065349996,
+      "trailing_eps": 65.58,
+      "book_value_per_share": 1113.228,
+      "momentum_12_1": 0.17273923208321462,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.0995260663507109,
+        "pbr": 0.026785714285714284,
+        "dividend_yield_pct": 0.6517857142857143,
+        "roe": 0.23671497584541062,
+        "momentum_12_1": 0.39732142857142855,
+        "market_cap": 0.03125
+      }
+    },
+    {
+      "ticker": "4911.T",
+      "name": "SHISEIDO CO.",
+      "currency": "JPY",
+      "price": 3286.0,
+      "market_cap": 1313165672448,
+      "shares_outstanding": 399624362,
+      "per_trailing": null,
+      "pbr": 2.0627215,
+      "dividend_yield_pct": 1.85,
+      "roe": -0.03079,
+      "trailing_eps": -51.39,
+      "book_value_per_share": 1593.041,
+      "momentum_12_1": 0.35102657479796284,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.6785714285714286,
+        "dividend_yield_pct": 0.35714285714285715,
+        "roe": 0.024154589371980676,
+        "momentum_12_1": 0.5714285714285714,
+        "market_cap": 0.38392857142857145
+      }
+    },
+    {
+      "ticker": "5019.T",
+      "name": "IDEMITSU KOSAN CO.",
+      "currency": "JPY",
+      "price": 1504.5,
+      "market_cap": 1803312300032,
+      "shares_outstanding": 1198612375,
+      "per_trailing": 4.7657514,
+      "pbr": 1.0951742,
+      "dividend_yield_pct": 2.41,
+      "roe": 0.22516,
+      "trailing_eps": 315.69,
+      "book_value_per_share": 1373.754,
+      "momentum_12_1": 0.4603007483636026,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.004739336492890996,
+        "pbr": 0.32142857142857145,
+        "dividend_yield_pct": 0.5,
+        "roe": 0.9082125603864735,
+        "momentum_12_1": 0.6964285714285714,
+        "market_cap": 0.46875
+      }
+    },
+    {
+      "ticker": "5020.T",
+      "name": "ENEOS HOLDINGS",
+      "currency": "JPY",
+      "price": 1364.5,
+      "market_cap": 3616251314176,
+      "shares_outstanding": 2650239110,
+      "per_trailing": 5.3352885,
+      "pbr": 0.9704374,
+      "dividend_yield_pct": 2.51,
+      "roe": 0.19527,
+      "trailing_eps": 255.75,
+      "book_value_per_share": 1406.067,
+      "momentum_12_1": 0.4504627124202534,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.009478672985781991,
+        "pbr": 0.22767857142857142,
+        "dividend_yield_pct": 0.5290178571428571,
+        "roe": 0.8792270531400966,
+        "momentum_12_1": 0.6919642857142857,
+        "market_cap": 0.6785714285714286
+      }
+    },
+    {
+      "ticker": "5101.T",
+      "name": "THE YOKOHAMA RUBBER CO.",
+      "currency": "JPY",
+      "price": 7345.0,
+      "market_cap": 1158654459904,
+      "shares_outstanding": 157747381,
+      "per_trailing": 8.05311,
+      "pbr": 1.0306327,
+      "dividend_yield_pct": 2.38,
+      "roe": 0.14314,
+      "trailing_eps": 912.07,
+      "book_value_per_share": 7126.69,
+      "momentum_12_1": 0.28320892470904746,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.052132701421800945,
+        "pbr": 0.26339285714285715,
+        "dividend_yield_pct": 0.4955357142857143,
+        "roe": 0.7536231884057971,
+        "momentum_12_1": 0.5178571428571429,
+        "market_cap": 0.3169642857142857
+      }
+    },
+    {
+      "ticker": "5108.T",
+      "name": "BRIDGESTONE CORP.",
+      "currency": "JPY",
+      "price": 3913.0,
+      "market_cap": 4830470864896,
+      "shares_outstanding": 1234467309,
+      "per_trailing": 19.674192,
+      "pbr": 1.2879125,
+      "dividend_yield_pct": 3.35,
+      "roe": 0.112670004,
+      "trailing_eps": 198.89,
+      "book_value_per_share": 3038.25,
+      "momentum_12_1": 0.16440766219507075,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6161137440758294,
+        "pbr": 0.4375,
+        "dividend_yield_pct": 0.7857142857142857,
+        "roe": 0.5893719806763285,
+        "momentum_12_1": 0.39285714285714285,
+        "market_cap": 0.7589285714285714
+      }
+    },
+    {
+      "ticker": "5201.T",
+      "name": "AGC INC.",
+      "currency": "JPY",
+      "price": 5728.0,
+      "market_cap": 1216591691776,
+      "shares_outstanding": 212393793,
+      "per_trailing": 13.581828,
+      "pbr": 0.796142,
+      "dividend_yield_pct": 3.62,
+      "roe": 0.06104,
+      "trailing_eps": 421.74,
+      "book_value_per_share": 7194.697,
+      "momentum_12_1": 0.20734867202313678,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3175355450236967,
+        "pbr": 0.10267857142857142,
+        "dividend_yield_pct": 0.8616071428571429,
+        "roe": 0.21739130434782608,
+        "momentum_12_1": 0.44642857142857145,
+        "market_cap": 0.3392857142857143
+      }
+    },
+    {
+      "ticker": "5214.T",
+      "name": "NIPPON ELECTRIC GLASS CO.",
+      "currency": "JPY",
+      "price": 5217.0,
+      "market_cap": 377991888896,
+      "shares_outstanding": 72453883,
+      "per_trailing": 15.821076,
+      "pbr": 0.7744441,
+      "dividend_yield_pct": 3.07,
+      "roe": 0.05456,
+      "trailing_eps": 329.75,
+      "book_value_per_share": 6736.445,
+      "momentum_12_1": 0.012873710318050069,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4265402843601896,
+        "pbr": 0.09375,
+        "dividend_yield_pct": 0.7209821428571429,
+        "roe": 0.1497584541062802,
+        "momentum_12_1": 0.20982142857142858,
+        "market_cap": 0.05357142857142857
+      }
+    },
+    {
+      "ticker": "5233.T",
+      "name": "TAIHEIYO CEMENT CORP.",
+      "currency": "JPY",
+      "price": 4142.0,
+      "market_cap": 451325493248,
+      "shares_outstanding": 108963188,
+      "per_trailing": 16.97889,
+      "pbr": 0.6695718,
+      "dividend_yield_pct": 2.92,
+      "roe": 0.0419,
+      "trailing_eps": 243.95,
+      "book_value_per_share": 6186.043,
+      "momentum_12_1": 0.1025894295096863,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5023696682464455,
+        "pbr": 0.0625,
+        "dividend_yield_pct": 0.6785714285714286,
+        "roe": 0.10144927536231885,
+        "momentum_12_1": 0.32589285714285715,
+        "market_cap": 0.07142857142857142
+      }
+    },
+    {
+      "ticker": "5301.T",
+      "name": "TOKAI CARBON CO.",
+      "currency": "JPY",
+      "price": 2277.5,
+      "market_cap": 460819726336,
+      "shares_outstanding": 202335774,
+      "per_trailing": 26.007765,
+      "pbr": 1.4334627,
+      "dividend_yield_pct": 1.74,
+      "roe": 0.06807,
+      "trailing_eps": 87.57,
+      "book_value_per_share": 1588.81,
+      "momentum_12_1": 0.8402100633852827,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7677725118483413,
+        "pbr": 0.5089285714285714,
+        "dividend_yield_pct": 0.33482142857142855,
+        "roe": 0.2560386473429952,
+        "momentum_12_1": 0.9017857142857143,
+        "market_cap": 0.08035714285714286
+      }
+    },
+    {
+      "ticker": "5332.T",
+      "name": "TOTO LTD.",
+      "currency": "JPY",
+      "price": 6068.0,
+      "market_cap": 997897732096,
+      "shares_outstanding": 164452497,
+      "per_trailing": 24.44704,
+      "pbr": 1.8623769,
+      "dividend_yield_pct": 1.98,
+      "roe": 0.07418,
+      "trailing_eps": 248.21,
+      "book_value_per_share": 3258.202,
+      "momentum_12_1": 0.5424896497792633,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7345971563981043,
+        "pbr": 0.6339285714285714,
+        "dividend_yield_pct": 0.3861607142857143,
+        "roe": 0.28502415458937197,
+        "momentum_12_1": 0.7678571428571429,
+        "market_cap": 0.2857142857142857
+      }
+    },
+    {
+      "ticker": "5333.T",
+      "name": "NGK CORP.",
+      "currency": "JPY",
+      "price": 5630.0,
+      "market_cap": 1584750788608,
+      "shares_outstanding": 281483262,
+      "per_trailing": 27.22964,
+      "pbr": 1.9568015,
+      "dividend_yield_pct": 1.89,
+      "roe": 0.09237,
+      "trailing_eps": 206.76,
+      "book_value_per_share": 2877.144,
+      "momentum_12_1": 1.1681714483735948,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7867298578199052,
+        "pbr": 0.65625,
+        "dividend_yield_pct": 0.3705357142857143,
+        "roe": 0.3961352657004831,
+        "momentum_12_1": 0.9464285714285714,
+        "market_cap": 0.4375
+      }
+    },
+    {
+      "ticker": "5401.T",
+      "name": "NIPPON STEEL CORP.",
+      "currency": "JPY",
+      "price": 629.4,
+      "market_cap": 3289429311488,
+      "shares_outstanding": 5226293989,
+      "per_trailing": 11.804201,
+      "pbr": 0.58363056,
+      "dividend_yield_pct": 3.8,
+      "roe": 0.05505,
+      "trailing_eps": 53.32,
+      "book_value_per_share": 1078.422,
+      "momentum_12_1": 0.24536845484416792,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.22748815165876776,
+        "pbr": 0.03125,
+        "dividend_yield_pct": 0.8973214285714286,
+        "roe": 0.15458937198067632,
+        "momentum_12_1": 0.47767857142857145,
+        "market_cap": 0.6517857142857143
+      }
+    },
+    {
+      "ticker": "5406.T",
+      "name": "KOBE STEEL",
+      "currency": "JPY",
+      "price": 1987.5,
+      "market_cap": 785962893312,
+      "shares_outstanding": 395453033,
+      "per_trailing": 11.581492,
+      "pbr": 0.62429714,
+      "dividend_yield_pct": 4.05,
+      "roe": 0.056750003,
+      "trailing_eps": 171.61,
+      "book_value_per_share": 3183.58,
+      "momentum_12_1": 0.18852510232392827,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.1943127962085308,
+        "pbr": 0.03571428571428571,
+        "dividend_yield_pct": 0.9352678571428571,
+        "roe": 0.18357487922705315,
+        "momentum_12_1": 0.4330357142857143,
+        "market_cap": 0.23660714285714285
+      }
+    },
+    {
+      "ticker": "5411.T",
+      "name": "JFE HOLDINGS",
+      "currency": "JPY",
+      "price": 1683.5,
+      "market_cap": 1070935506944,
+      "shares_outstanding": 636136318,
+      "per_trailing": 15.9618845,
+      "pbr": 0.40628275,
+      "dividend_yield_pct": 4.77,
+      "roe": 0.0377,
+      "trailing_eps": 105.47,
+      "book_value_per_share": 4143.666,
+      "momentum_12_1": 0.034050225665006595,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.43601895734597157,
+        "pbr": 0.013392857142857142,
+        "dividend_yield_pct": 0.9776785714285714,
+        "roe": 0.0966183574879227,
+        "momentum_12_1": 0.22321428571428573,
+        "market_cap": 0.29017857142857145
+      }
+    },
+    {
+      "ticker": "543A.T",
+      "name": "ARCHION CORP.",
+      "currency": "JPY",
+      "price": 284.0,
+      "market_cap": 782869463040,
+      "shares_outstanding": 2581069854,
+      "per_trailing": 1.3327702,
+      "pbr": 0.8298707,
+      "dividend_yield_pct": 2.71,
+      "roe": 0.50815,
+      "trailing_eps": 213.09,
+      "book_value_per_share": 342.222,
+      "momentum_12_1": -0.27559051024991454,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.0,
+        "pbr": 0.125,
+        "dividend_yield_pct": 0.5915178571428571,
+        "roe": 0.9855072463768116,
+        "momentum_12_1": 0.022321428571428572,
+        "market_cap": 0.22767857142857142
+      }
+    },
+    {
+      "ticker": "5631.T",
+      "name": "THE JAPAN STEEL WORKS",
+      "currency": "JPY",
+      "price": 6791.0,
+      "market_cap": 499890782208,
+      "shares_outstanding": 73610779,
+      "per_trailing": 24.502092,
+      "pbr": 2.338295,
+      "dividend_yield_pct": 1.33,
+      "roe": 0.10228,
+      "trailing_eps": 277.16,
+      "book_value_per_share": 2904.253,
+      "momentum_12_1": -0.13113628268214295,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7393364928909952,
+        "pbr": 0.7366071428571429,
+        "dividend_yield_pct": 0.20982142857142858,
+        "roe": 0.5024154589371981,
+        "momentum_12_1": 0.08482142857142858,
+        "market_cap": 0.09375
+      }
+    },
+    {
+      "ticker": "5706.T",
+      "name": "MITSUI KINZOKU CO.",
+      "currency": "JPY",
+      "price": 2659.0,
+      "market_cap": 1521318625280,
+      "shares_outstanding": 572139360,
+      "per_trailing": 13.616345,
+      "pbr": 3.6040995,
+      "dividend_yield_pct": 1.03,
+      "roe": 0.30622,
+      "trailing_eps": 195.28,
+      "book_value_per_share": 737.771,
+      "momentum_12_1": 1.2149229380340305,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3222748815165877,
+        "pbr": 0.84375,
+        "dividend_yield_pct": 0.15401785714285715,
+        "roe": 0.9420289855072463,
+        "momentum_12_1": 0.9598214285714286,
+        "market_cap": 0.42857142857142855
+      }
+    },
+    {
+      "ticker": "5711.T",
+      "name": "MITSUBISHI MATERIALS CORP.",
+      "currency": "JPY",
+      "price": 4839.0,
+      "market_cap": 632348147712,
+      "shares_outstanding": 130677441,
+      "per_trailing": 15.581531,
+      "pbr": 0.8160955,
+      "dividend_yield_pct": 2.42,
+      "roe": 0.14458999,
+      "trailing_eps": 310.56,
+      "book_value_per_share": 5929.453,
+      "momentum_12_1": 0.8853259072724093,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4075829383886256,
+        "pbr": 0.10714285714285714,
+        "dividend_yield_pct": 0.5044642857142857,
+        "roe": 0.7681159420289855,
+        "momentum_12_1": 0.9107142857142857,
+        "market_cap": 0.16071428571428573
+      }
+    },
+    {
+      "ticker": "5713.T",
+      "name": "SUMITOMO METAL MINING CO.",
+      "currency": "JPY",
+      "price": 9406.0,
+      "market_cap": 2525395419136,
+      "shares_outstanding": 268487710,
+      "per_trailing": 10.575668,
+      "pbr": 1.1856791,
+      "dividend_yield_pct": 2.25,
+      "roe": 0.11684,
+      "trailing_eps": 889.4,
+      "book_value_per_share": 7933.007,
+      "momentum_12_1": 1.1285950679537091,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.13270142180094788,
+        "pbr": 0.38392857142857145,
+        "dividend_yield_pct": 0.44642857142857145,
+        "roe": 0.6183574879227053,
+        "momentum_12_1": 0.9419642857142857,
+        "market_cap": 0.59375
+      }
+    },
+    {
+      "ticker": "5714.T",
+      "name": "DOWA HOLDINGS CO.",
+      "currency": "JPY",
+      "price": 8482.0,
+      "market_cap": 501695676416,
+      "shares_outstanding": 59148277,
+      "per_trailing": 6.34045,
+      "pbr": 1.0894539,
+      "dividend_yield_pct": 4.02,
+      "roe": 0.18461001,
+      "trailing_eps": 1337.76,
+      "book_value_per_share": 7785.552,
+      "momentum_12_1": 0.762423163954606,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.014218009478672985,
+        "pbr": 0.3169642857142857,
+        "dividend_yield_pct": 0.9263392857142857,
+        "roe": 0.8647342995169082,
+        "momentum_12_1": 0.8660714285714286,
+        "market_cap": 0.09821428571428571
+      }
+    },
+    {
+      "ticker": "5801.T",
+      "name": "FURUKAWA ELECTRIC CO.",
+      "currency": "JPY",
+      "price": 4096.0,
+      "market_cap": 2881521451008,
+      "shares_outstanding": 703496452,
+      "per_trailing": 32.20126,
+      "pbr": 6.5942526,
+      "dividend_yield_pct": 0.26,
+      "roe": 0.22573,
+      "trailing_eps": 127.2,
+      "book_value_per_share": 621.147,
+      "momentum_12_1": 3.200200181970218,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8293838862559242,
+        "pbr": 0.9330357142857143,
+        "dividend_yield_pct": 0.05357142857142857,
+        "roe": 0.9130434782608695,
+        "momentum_12_1": 0.9910714285714286,
+        "market_cap": 0.6160714285714286
+      }
+    },
+    {
+      "ticker": "5802.T",
+      "name": "SUMITOMO ELECTRIC IND.",
+      "currency": "JPY",
+      "price": 2360.5,
+      "market_cap": 7363999825920,
+      "shares_outstanding": 3119677832,
+      "per_trailing": 21.31377,
+      "pbr": 2.5975728,
+      "dividend_yield_pct": 1.88,
+      "roe": 0.15776,
+      "trailing_eps": 110.75,
+      "book_value_per_share": 908.733,
+      "momentum_12_1": 1.0947622431976507,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6872037914691943,
+        "pbr": 0.7633928571428571,
+        "dividend_yield_pct": 0.36607142857142855,
+        "roe": 0.8019323671497585,
+        "momentum_12_1": 0.9375,
+        "market_cap": 0.8526785714285714
+      }
+    },
+    {
+      "ticker": "5803.T",
+      "name": "FUJIKURA LTD.",
+      "currency": "JPY",
+      "price": 5413.0,
+      "market_cap": 8962306998272,
+      "shares_outstanding": 1655700561,
+      "per_trailing": 57.02096,
+      "pbr": 14.730213,
+      "dividend_yield_pct": 0.69,
+      "roe": 0.38956,
+      "trailing_eps": 94.93,
+      "book_value_per_share": 367.476,
+      "momentum_12_1": 1.1861835527539863,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.95260663507109,
+        "pbr": 0.9910714285714286,
+        "dividend_yield_pct": 0.07366071428571429,
+        "roe": 0.9806763285024155,
+        "momentum_12_1": 0.9553571428571429,
+        "market_cap": 0.8705357142857143
+      }
+    },
+    {
+      "ticker": "5831.T",
+      "name": "SHIZUOKA FINANCIAL GROUP",
+      "currency": "JPY",
+      "price": 3387.0,
+      "market_cap": 1784367546368,
+      "shares_outstanding": 526828323,
+      "per_trailing": 18.275509,
+      "pbr": 1.4059986,
+      "dividend_yield_pct": 3.15,
+      "roe": 0.081999995,
+      "trailing_eps": 185.33,
+      "book_value_per_share": 2408.964,
+      "momentum_12_1": 0.8797345407457677,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5592417061611374,
+        "pbr": 0.48660714285714285,
+        "dividend_yield_pct": 0.75,
+        "roe": 0.34782608695652173,
+        "momentum_12_1": 0.90625,
+        "market_cap": 0.45535714285714285
+      }
+    },
+    {
+      "ticker": "6098.T",
+      "name": "RECRUIT HOLDINGS CO.",
+      "currency": "JPY",
+      "price": 17755.0,
+      "market_cap": 24659380666368,
+      "shares_outstanding": 1388869636,
+      "per_trailing": 43.42031,
+      "pbr": 13.928133,
+      "dividend_yield_pct": 0.15,
+      "roe": 0.36222,
+      "trailing_eps": 408.91,
+      "book_value_per_share": 1274.758,
+      "momentum_12_1": 1.0188941843401818,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.9004739336492891,
+        "pbr": 0.9866071428571429,
+        "dividend_yield_pct": 0.03794642857142857,
+        "roe": 0.966183574879227,
+        "momentum_12_1": 0.9285714285714286,
+        "market_cap": 0.96875
+      }
+    },
+    {
+      "ticker": "6103.T",
+      "name": "OKUMA CORP.",
+      "currency": "JPY",
+      "price": 4785.0,
+      "market_cap": 278586294272,
+      "shares_outstanding": 58220747,
+      "per_trailing": 17.491592,
+      "pbr": 1.1157722,
+      "dividend_yield_pct": 2.55,
+      "roe": 0.06465,
+      "trailing_eps": 273.56,
+      "book_value_per_share": 4288.51,
+      "momentum_12_1": 0.36218643810619744,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5402843601895735,
+        "pbr": 0.3392857142857143,
+        "dividend_yield_pct": 0.5446428571428571,
+        "roe": 0.22705314009661837,
+        "momentum_12_1": 0.5892857142857143,
+        "market_cap": 0.017857142857142856
+      }
+    },
+    {
+      "ticker": "6113.T",
+      "name": "AMADA CO.",
+      "currency": "JPY",
+      "price": 2579.0,
+      "market_cap": 782929625088,
+      "shares_outstanding": 303578736,
+      "per_trailing": 24.731493,
+      "pbr": 1.4964752,
+      "dividend_yield_pct": 2.48,
+      "roe": null,
+      "trailing_eps": 104.28,
+      "book_value_per_share": 1723.383,
+      "momentum_12_1": 0.4273913812522454,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7440758293838863,
+        "pbr": 0.5223214285714286,
+        "dividend_yield_pct": 0.5223214285714286,
+        "roe": null,
+        "momentum_12_1": 0.6473214285714286,
+        "market_cap": 0.23214285714285715
+      }
+    },
+    {
+      "ticker": "6146.T",
+      "name": "DISCO CORP.",
+      "currency": "JPY",
+      "price": 61460.0,
+      "market_cap": 6666426777600,
+      "shares_outstanding": 108467725,
+      "per_trailing": 45.562374,
+      "pbr": 11.451016,
+      "dividend_yield_pct": 0.89,
+      "roe": 0.27376,
+      "trailing_eps": 1348.92,
+      "book_value_per_share": 5367.209,
+      "momentum_12_1": 0.14694585905939417,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.9289099526066351,
+        "pbr": 0.9732142857142857,
+        "dividend_yield_pct": 0.11830357142857142,
+        "roe": 0.927536231884058,
+        "momentum_12_1": 0.3705357142857143,
+        "market_cap": 0.8258928571428571
+      }
+    },
+    {
+      "ticker": "6178.T",
+      "name": "JAPAN POST HOLDINGS CO.",
+      "currency": "JPY",
+      "price": 2355.5,
+      "market_cap": 6440861827072,
+      "shares_outstanding": 2734392490,
+      "per_trailing": 16.336084,
+      "pbr": 0.64821845,
+      "dividend_yield_pct": 2.53,
+      "roe": 0.0512,
+      "trailing_eps": 144.19,
+      "book_value_per_share": 3633.806,
+      "momentum_12_1": 0.7345558653904971,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.44549763033175355,
+        "pbr": 0.049107142857142856,
+        "dividend_yield_pct": 0.5357142857142857,
+        "roe": 0.12560386473429952,
+        "momentum_12_1": 0.8616071428571429,
+        "market_cap": 0.8080357142857143
+      }
+    },
+    {
+      "ticker": "6273.T",
+      "name": "SMC CORP.",
+      "currency": "JPY",
+      "price": 73120.0,
+      "market_cap": 4568375623680,
+      "shares_outstanding": 62477789,
+      "per_trailing": 27.332127,
+      "pbr": 2.1335833,
+      "dividend_yield_pct": 1.39,
+      "roe": 0.09846,
+      "trailing_eps": 2675.24,
+      "book_value_per_share": 34270.984,
+      "momentum_12_1": 0.5804264981060776,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7914691943127962,
+        "pbr": 0.7008928571428571,
+        "dividend_yield_pct": 0.21875,
+        "roe": 0.47342995169082125,
+        "momentum_12_1": 0.7901785714285714,
+        "market_cap": 0.7366071428571429
+      }
+    },
+    {
+      "ticker": "6301.T",
+      "name": "KOMATSU LTD.",
+      "currency": "JPY",
+      "price": 7298.0,
+      "market_cap": 6477187121152,
+      "shares_outstanding": 887529061,
+      "per_trailing": 17.871487,
+      "pbr": 1.8507656,
+      "dividend_yield_pct": 2.57,
+      "roe": 0.11619,
+      "trailing_eps": 408.36,
+      "book_value_per_share": 3943.233,
+      "momentum_12_1": 0.46091186416818664,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5545023696682464,
+        "pbr": 0.6294642857142857,
+        "dividend_yield_pct": 0.5580357142857143,
+        "roe": 0.6086956521739131,
+        "momentum_12_1": 0.7053571428571429,
+        "market_cap": 0.8125
+      }
+    },
+    {
+      "ticker": "6302.T",
+      "name": "SUMITOMO HEAVY IND.",
+      "currency": "JPY",
+      "price": 5837.0,
+      "market_cap": 692225310720,
+      "shares_outstanding": 118592652,
+      "per_trailing": 17.402582,
+      "pbr": 0.9877335,
+      "dividend_yield_pct": 2.29,
+      "roe": 0.06068,
+      "trailing_eps": 335.41,
+      "book_value_per_share": 5909.489,
+      "momentum_12_1": 0.7641355237277336,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5213270142180095,
+        "pbr": 0.24107142857142858,
+        "dividend_yield_pct": 0.45535714285714285,
+        "roe": 0.20772946859903382,
+        "momentum_12_1": 0.875,
+        "market_cap": 0.20535714285714285
+      }
+    },
+    {
+      "ticker": "6305.T",
+      "name": "HITACHI CONST. MACH. CO.",
+      "currency": "JPY",
+      "price": 5502.0,
+      "market_cap": 1146348896256,
+      "shares_outstanding": 208351315,
+      "per_trailing": 13.012938,
+      "pbr": 1.2715055,
+      "dividend_yield_pct": 3.42,
+      "roe": 0.10929,
+      "trailing_eps": 422.81,
+      "book_value_per_share": 4327.154,
+      "momentum_12_1": 0.30475925802188586,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.2796208530805687,
+        "pbr": 0.4330357142857143,
+        "dividend_yield_pct": 0.7991071428571429,
+        "roe": 0.5652173913043478,
+        "momentum_12_1": 0.5357142857142857,
+        "market_cap": 0.3080357142857143
+      }
+    },
+    {
+      "ticker": "6326.T",
+      "name": "KUBOTA CORP.",
+      "currency": "JPY",
+      "price": 2626.5,
+      "market_cap": 2958469890048,
+      "shares_outstanding": 1126392455,
+      "per_trailing": 11.180402,
+      "pbr": 1.0585753,
+      "dividend_yield_pct": 1.98,
+      "roe": 0.10014,
+      "trailing_eps": 234.92,
+      "book_value_per_share": 2481.165,
+      "momentum_12_1": 0.5700445552168856,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.17061611374407584,
+        "pbr": 0.28125,
+        "dividend_yield_pct": 0.3861607142857143,
+        "roe": 0.4782608695652174,
+        "momentum_12_1": 0.78125,
+        "market_cap": 0.625
+      }
+    },
+    {
+      "ticker": "6361.T",
+      "name": "EBARA CORP.",
+      "currency": "JPY",
+      "price": 4785.0,
+      "market_cap": 2179065315328,
+      "shares_outstanding": 455395051,
+      "per_trailing": 27.454245,
+      "pbr": 4.103302,
+      "dividend_yield_pct": 1.4,
+      "roe": 0.15739,
+      "trailing_eps": 174.29,
+      "book_value_per_share": 1166.134,
+      "momentum_12_1": 0.48654763913754473,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7962085308056872,
+        "pbr": 0.875,
+        "dividend_yield_pct": 0.22767857142857142,
+        "roe": 0.7971014492753623,
+        "momentum_12_1": 0.71875,
+        "market_cap": 0.5401785714285714
+      }
+    },
+    {
+      "ticker": "6367.T",
+      "name": "DAIKIN INDUSTRIES",
+      "currency": "JPY",
+      "price": 21170.0,
+      "market_cap": 5892375838720,
+      "shares_outstanding": 278336120,
+      "per_trailing": 22.299938,
+      "pbr": 1.9689775,
+      "dividend_yield_pct": 1.72,
+      "roe": 0.09603,
+      "trailing_eps": 949.33,
+      "book_value_per_share": 10751.773,
+      "momentum_12_1": 0.21973674523089315,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7061611374407583,
+        "pbr": 0.6607142857142857,
+        "dividend_yield_pct": 0.3236607142857143,
+        "roe": 0.4492753623188406,
+        "momentum_12_1": 0.4642857142857143,
+        "market_cap": 0.7857142857142857
+      }
+    },
+    {
+      "ticker": "6471.T",
+      "name": "NSK LTD.",
+      "currency": "JPY",
+      "price": 1068.5,
+      "market_cap": 522839490560,
+      "shares_outstanding": 489320981,
+      "per_trailing": 16.766045,
+      "pbr": 0.76242954,
+      "dividend_yield_pct": 3.17,
+      "roe": 0.04887,
+      "trailing_eps": 63.73,
+      "book_value_per_share": 1401.441,
+      "momentum_12_1": 0.47394436102827187,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.47393364928909953,
+        "pbr": 0.08928571428571429,
+        "dividend_yield_pct": 0.7566964285714286,
+        "roe": 0.1111111111111111,
+        "momentum_12_1": 0.7142857142857143,
+        "market_cap": 0.10714285714285714
+      }
+    },
+    {
+      "ticker": "6472.T",
+      "name": "NTN CORP.",
+      "currency": "JPY",
+      "price": 373.7,
+      "market_cap": 222167007232,
+      "shares_outstanding": 594506284,
+      "per_trailing": 17.405684,
+      "pbr": 0.74078184,
+      "dividend_yield_pct": 3.47,
+      "roe": 0.05257,
+      "trailing_eps": 21.47,
+      "book_value_per_share": 504.467,
+      "momentum_12_1": 0.18925657896503734,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5260663507109005,
+        "pbr": 0.07589285714285714,
+        "dividend_yield_pct": 0.8258928571428571,
+        "roe": 0.14009661835748793,
+        "momentum_12_1": 0.4375,
+        "market_cap": 0.004464285714285714
+      }
+    },
+    {
+      "ticker": "6473.T",
+      "name": "JTEKT CORP.",
+      "currency": "JPY",
+      "price": 2134.0,
+      "market_cap": 679320158208,
+      "shares_outstanding": 318331829,
+      "per_trailing": 35.156506,
+      "pbr": 0.8393436,
+      "dividend_yield_pct": 3.29,
+      "roe": 0.02722,
+      "trailing_eps": 60.7,
+      "book_value_per_share": 2542.463,
+      "momentum_12_1": 0.4971933785003846,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8625592417061612,
+        "pbr": 0.12946428571428573,
+        "dividend_yield_pct": 0.7723214285714286,
+        "roe": 0.0821256038647343,
+        "momentum_12_1": 0.7410714285714286,
+        "market_cap": 0.19642857142857142
+      }
+    },
+    {
+      "ticker": "6479.T",
+      "name": "MINEBEA MITSUMI INC.",
+      "currency": "JPY",
+      "price": 3650.0,
+      "market_cap": 1465823657984,
+      "shares_outstanding": 401595519,
+      "per_trailing": 13.504014,
+      "pbr": 1.5817252,
+      "dividend_yield_pct": 1.63,
+      "roe": null,
+      "trailing_eps": 270.29,
+      "book_value_per_share": 2307.607,
+      "momentum_12_1": 0.24790321866168163,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3080568720379147,
+        "pbr": 0.5535714285714286,
+        "dividend_yield_pct": 0.2924107142857143,
+        "roe": null,
+        "momentum_12_1": 0.48660714285714285,
+        "market_cap": 0.41964285714285715
+      }
+    },
+    {
+      "ticker": "6501.T",
+      "name": "HITACHI",
+      "currency": "JPY",
+      "price": 5669.0,
+      "market_cap": 25315279634432,
+      "shares_outstanding": 4465563424,
+      "per_trailing": 31.647406,
+      "pbr": 3.867795,
+      "dividend_yield_pct": 1.0,
+      "roe": null,
+      "trailing_eps": 179.13,
+      "book_value_per_share": 1465.693,
+      "momentum_12_1": 0.3450379632009788,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8151658767772512,
+        "pbr": 0.8526785714285714,
+        "dividend_yield_pct": 0.14732142857142858,
+        "roe": null,
+        "momentum_12_1": 0.5580357142857143,
+        "market_cap": 0.9732142857142857
+      }
+    },
+    {
+      "ticker": "6503.T",
+      "name": "MITSUBISHI ELECTRIC CORP.",
+      "currency": "JPY",
+      "price": 5143.0,
+      "market_cap": 10524819456000,
+      "shares_outstanding": 2046435776,
+      "per_trailing": 25.470484,
+      "pbr": 2.3027432,
+      "dividend_yield_pct": 1.19,
+      "roe": 0.10283,
+      "trailing_eps": 201.92,
+      "book_value_per_share": 2233.423,
+      "momentum_12_1": 0.42663544075696813,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7630331753554502,
+        "pbr": 0.7276785714285714,
+        "dividend_yield_pct": 0.1875,
+        "roe": 0.5169082125603864,
+        "momentum_12_1": 0.6428571428571429,
+        "market_cap": 0.8928571428571429
+      }
+    },
+    {
+      "ticker": "6504.T",
+      "name": "FUJI ELECTRIC CO.",
+      "currency": "JPY",
+      "price": 15015.0,
+      "market_cap": 2192057171968,
+      "shares_outstanding": 145991156,
+      "per_trailing": 20.024538,
+      "pbr": 2.7719188,
+      "dividend_yield_pct": 1.46,
+      "roe": 0.14274,
+      "trailing_eps": 749.83,
+      "book_value_per_share": 5416.825,
+      "momentum_12_1": 0.39454345304230576,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6398104265402843,
+        "pbr": 0.7857142857142857,
+        "dividend_yield_pct": 0.25,
+        "roe": 0.7439613526570048,
+        "momentum_12_1": 0.6205357142857143,
+        "market_cap": 0.5491071428571429
+      }
+    },
+    {
+      "ticker": "6506.T",
+      "name": "YASKAWA ELECTRIC CORP.",
+      "currency": "JPY",
+      "price": 4783.0,
+      "market_cap": 1240556896256,
+      "shares_outstanding": 259367959,
+      "per_trailing": 36.86604,
+      "pbr": 2.5575476,
+      "dividend_yield_pct": 1.5,
+      "roe": 0.07511,
+      "trailing_eps": 129.74,
+      "book_value_per_share": 1870.151,
+      "momentum_12_1": 0.48736363205040534,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8862559241706162,
+        "pbr": 0.75,
+        "dividend_yield_pct": 0.25892857142857145,
+        "roe": 0.2946859903381642,
+        "momentum_12_1": 0.7232142857142857,
+        "market_cap": 0.3482142857142857
+      }
+    },
+    {
+      "ticker": "6526.T",
+      "name": "SOCIONEXT INC.",
+      "currency": "JPY",
+      "price": 2109.5,
+      "market_cap": 369772429312,
+      "shares_outstanding": 175289136,
+      "per_trailing": 49.161034,
+      "pbr": 2.8790302,
+      "dividend_yield_pct": 2.34,
+      "roe": 0.059959996,
+      "trailing_eps": 42.91,
+      "book_value_per_share": 732.712,
+      "momentum_12_1": -0.2943208103211159,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.9383886255924171,
+        "pbr": 0.8125,
+        "dividend_yield_pct": 0.46875,
+        "roe": 0.1932367149758454,
+        "momentum_12_1": 0.008928571428571428,
+        "market_cap": 0.049107142857142856
+      }
+    },
+    {
+      "ticker": "6532.T",
+      "name": "BAYCURRENT",
+      "currency": "JPY",
+      "price": 8748.0,
+      "market_cap": 1285816320000,
+      "shares_outstanding": 146984035,
+      "per_trailing": 32.054523,
+      "pbr": 11.926836,
+      "dividend_yield_pct": 1.38,
+      "roe": 0.38583001,
+      "trailing_eps": 272.91,
+      "book_value_per_share": 733.472,
+      "momentum_12_1": -0.12957933588657056,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8246445497630331,
+        "pbr": 0.9776785714285714,
+        "dividend_yield_pct": 0.21428571428571427,
+        "roe": 0.9758454106280193,
+        "momentum_12_1": 0.08928571428571429,
+        "market_cap": 0.36607142857142855
+      }
+    },
+    {
+      "ticker": "6645.T",
+      "name": "OMRON CORP.",
+      "currency": "JPY",
+      "price": 6395.0,
+      "market_cap": 1257444999168,
+      "shares_outstanding": 196629396,
+      "per_trailing": 30.125307,
+      "pbr": 1.5112412,
+      "dividend_yield_pct": 1.64,
+      "roe": 0.05131,
+      "trailing_eps": 212.28,
+      "book_value_per_share": 4231.621,
+      "momentum_12_1": 0.5637755374555822,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8056872037914692,
+        "pbr": 0.53125,
+        "dividend_yield_pct": 0.3013392857142857,
+        "roe": 0.13043478260869565,
+        "momentum_12_1": 0.7767857142857143,
+        "market_cap": 0.36160714285714285
+      }
+    },
+    {
+      "ticker": "6701.T",
+      "name": "NEC CORP.",
+      "currency": "JPY",
+      "price": 5233.0,
+      "market_cap": 6940758376448,
+      "shares_outstanding": 1326344017,
+      "per_trailing": 23.162043,
+      "pbr": 3.1067736,
+      "dividend_yield_pct": 0.79,
+      "roe": 0.1416,
+      "trailing_eps": 225.93,
+      "book_value_per_share": 1684.384,
+      "momentum_12_1": -0.019317497649931847,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7156398104265402,
+        "pbr": 0.8348214285714286,
+        "dividend_yield_pct": 0.08928571428571429,
+        "roe": 0.7342995169082126,
+        "momentum_12_1": 0.16517857142857142,
+        "market_cap": 0.8392857142857143
+      }
+    },
+    {
+      "ticker": "6702.T",
+      "name": "FUJITSU LTD.",
+      "currency": "JPY",
+      "price": 4250.0,
+      "market_cap": 7338126737408,
+      "shares_outstanding": 1726618110,
+      "per_trailing": 22.89994,
+      "pbr": 3.6224163,
+      "dividend_yield_pct": 1.45,
+      "roe": 0.16202,
+      "trailing_eps": 185.59,
+      "book_value_per_share": 1173.25,
+      "momentum_12_1": 0.06804016606268526,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7109004739336493,
+        "pbr": 0.8482142857142857,
+        "dividend_yield_pct": 0.24330357142857142,
+        "roe": 0.821256038647343,
+        "momentum_12_1": 0.2544642857142857,
+        "market_cap": 0.8482142857142857
+      }
+    },
+    {
+      "ticker": "6723.T",
+      "name": "RENESAS ELECTRONICS CORP.",
+      "currency": "JPY",
+      "price": 3600.0,
+      "market_cap": 6578961383424,
+      "shares_outstanding": 1827489239,
+      "per_trailing": 20.254303,
+      "pbr": 2.3086941,
+      "dividend_yield_pct": 0.75,
+      "roe": 0.13953,
+      "trailing_eps": 177.74,
+      "book_value_per_share": 1559.323,
+      "momentum_12_1": 0.8377611746957074,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6587677725118484,
+        "pbr": 0.7321428571428571,
+        "dividend_yield_pct": 0.08482142857142858,
+        "roe": 0.7198067632850241,
+        "momentum_12_1": 0.8928571428571429,
+        "market_cap": 0.8214285714285714
+      }
+    },
+    {
+      "ticker": "6724.T",
+      "name": "SEIKO EPSON CORP.",
+      "currency": "JPY",
+      "price": 3372.0,
+      "market_cap": 1072419307520,
+      "shares_outstanding": 318036570,
+      "per_trailing": 59.618103,
+      "pbr": 1.248702,
+      "dividend_yield_pct": 2.36,
+      "roe": 0.0297,
+      "trailing_eps": 56.56,
+      "book_value_per_share": 2700.404,
+      "momentum_12_1": 0.6628958634091502,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.957345971563981,
+        "pbr": 0.41517857142857145,
+        "dividend_yield_pct": 0.484375,
+        "roe": 0.08695652173913043,
+        "momentum_12_1": 0.8303571428571429,
+        "market_cap": 0.29464285714285715
+      }
+    },
+    {
+      "ticker": "6752.T",
+      "name": "PANASONIC HOLDINGS CORP.",
+      "currency": "JPY",
+      "price": 4451.0,
+      "market_cap": 10392751308800,
+      "shares_outstanding": 2334925020,
+      "per_trailing": 41.427773,
+      "pbr": 1.9224075,
+      "dividend_yield_pct": 1.2,
+      "roe": 0.0525,
+      "trailing_eps": 107.44,
+      "book_value_per_share": 2315.326,
+      "momentum_12_1": 1.6908614301472706,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8909952606635071,
+        "pbr": 0.6473214285714286,
+        "dividend_yield_pct": 0.19866071428571427,
+        "roe": 0.13526570048309178,
+        "momentum_12_1": 0.9732142857142857,
+        "market_cap": 0.8883928571428571
+      }
+    },
+    {
+      "ticker": "6753.T",
+      "name": "SHARP CORP.",
+      "currency": "JPY",
+      "price": 613.7,
+      "market_cap": 398479392768,
+      "shares_outstanding": 649306488,
+      "per_trailing": 17.336157,
+      "pbr": 1.3518723,
+      "dividend_yield_pct": 0.0,
+      "roe": 0.09599,
+      "trailing_eps": 35.4,
+      "book_value_per_share": 453.963,
+      "momentum_12_1": -0.26354705440316295,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5165876777251185,
+        "pbr": 0.45535714285714285,
+        "dividend_yield_pct": 0.015625,
+        "roe": 0.4444444444444444,
+        "momentum_12_1": 0.03125,
+        "market_cap": 0.05803571428571429
+      }
+    },
+    {
+      "ticker": "6758.T",
+      "name": "SONY GROUP CORP.",
+      "currency": "JPY",
+      "price": 3814.0,
+      "market_cap": 22267813691392,
+      "shares_outstanding": 5838440709,
+      "per_trailing": 19.894632,
+      "pbr": 2.6761718,
+      "dividend_yield_pct": 0.94,
+      "roe": 0.13159999,
+      "trailing_eps": 191.71,
+      "book_value_per_share": 1425.17,
+      "momentum_12_1": -0.1115780661557656,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6350710900473934,
+        "pbr": 0.7723214285714286,
+        "dividend_yield_pct": 0.13616071428571427,
+        "roe": 0.6908212560386473,
+        "momentum_12_1": 0.11160714285714286,
+        "market_cap": 0.9598214285714286
+      }
+    },
+    {
+      "ticker": "6762.T",
+      "name": "TDK CORP.",
+      "currency": "JPY",
+      "price": 3268.0,
+      "market_cap": 6203167473664,
+      "shares_outstanding": 1898154125,
+      "per_trailing": 18.405046,
+      "pbr": 2.6982687,
+      "dividend_yield_pct": 1.19,
+      "roe": 0.1163,
+      "trailing_eps": 177.56,
+      "book_value_per_share": 1211.147,
+      "momentum_12_1": 0.4147404143192184,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5687203791469194,
+        "pbr": 0.7767857142857143,
+        "dividend_yield_pct": 0.1875,
+        "roe": 0.6135265700483091,
+        "momentum_12_1": 0.6339285714285714,
+        "market_cap": 0.7946428571428571
+      }
+    },
+    {
+      "ticker": "6770.T",
+      "name": "ALPS ALPINE CO.",
+      "currency": "JPY",
+      "price": 2218.0,
+      "market_cap": 424885321728,
+      "shares_outstanding": 191562365,
+      "per_trailing": 16.964968,
+      "pbr": 0.97313017,
+      "dividend_yield_pct": 2.9,
+      "roe": 0.06243,
+      "trailing_eps": 130.74,
+      "book_value_per_share": 2279.243,
+      "momentum_12_1": 0.20263917997351277,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4976303317535545,
+        "pbr": 0.23660714285714285,
+        "dividend_yield_pct": 0.6696428571428571,
+        "roe": 0.2222222222222222,
+        "momentum_12_1": 0.4419642857142857,
+        "market_cap": 0.0625
+      }
+    },
+    {
+      "ticker": "6841.T",
+      "name": "YOKOGAWA ELECTRIC CORP.",
+      "currency": "JPY",
+      "price": 4621.0,
+      "market_cap": 1149304045568,
+      "shares_outstanding": 248713267,
+      "per_trailing": 20.148245,
+      "pbr": 2.2884927,
+      "dividend_yield_pct": 2.02,
+      "roe": null,
+      "trailing_eps": 229.35,
+      "book_value_per_share": 2019.233,
+      "momentum_12_1": 0.11790089049705155,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6492890995260664,
+        "pbr": 0.7232142857142857,
+        "dividend_yield_pct": 0.39285714285714285,
+        "roe": null,
+        "momentum_12_1": 0.3482142857142857,
+        "market_cap": 0.3125
+      }
+    },
+    {
+      "ticker": "6857.T",
+      "name": "ADVANTEST CORP.",
+      "currency": "JPY",
+      "price": 41610.0,
+      "market_cap": 30040462983168,
+      "shares_outstanding": 721952949,
+      "per_trailing": 64.92635,
+      "pbr": 28.892221,
+      "dividend_yield_pct": 0.15,
+      "roe": 0.56895,
+      "trailing_eps": 640.88,
+      "book_value_per_share": 1440.18,
+      "momentum_12_1": 1.3018141277425115,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.9715639810426541,
+        "pbr": 1.0,
+        "dividend_yield_pct": 0.03794642857142857,
+        "roe": 0.9951690821256038,
+        "momentum_12_1": 0.9642857142857143,
+        "market_cap": 0.9866071428571429
+      }
+    },
+    {
+      "ticker": "6861.T",
+      "name": "KEYENCE CORP.",
+      "currency": "JPY",
+      "price": 80540.0,
+      "market_cap": 19532974391296,
+      "shares_outstanding": 242525136,
+      "per_trailing": 43.58249,
+      "pbr": 5.5041986,
+      "dividend_yield_pct": 0.69,
+      "roe": null,
+      "trailing_eps": 1847.99,
+      "book_value_per_share": 14632.466,
+      "momentum_12_1": 0.4311348362904779,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.9052132701421801,
+        "pbr": 0.9151785714285714,
+        "dividend_yield_pct": 0.07366071428571429,
+        "roe": null,
+        "momentum_12_1": 0.6651785714285714,
+        "market_cap": 0.9464285714285714
+      }
+    },
+    {
+      "ticker": "6902.T",
+      "name": "DENSO CORP.",
+      "currency": "JPY",
+      "price": 1826.0,
+      "market_cap": 4578038775808,
+      "shares_outstanding": 2507140573,
+      "per_trailing": 11.664005,
+      "pbr": 0.8953557,
+      "dividend_yield_pct": 4.05,
+      "roe": 0.09198,
+      "trailing_eps": 156.55,
+      "book_value_per_share": 2039.413,
+      "momentum_12_1": -0.10069215882499594,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.2037914691943128,
+        "pbr": 0.15625,
+        "dividend_yield_pct": 0.9352678571428571,
+        "roe": 0.38164251207729466,
+        "momentum_12_1": 0.11607142857142858,
+        "market_cap": 0.7410714285714286
+      }
+    },
+    {
+      "ticker": "6920.T",
+      "name": "LASERTEC CORP.",
+      "currency": "JPY",
+      "price": 48560.0,
+      "market_cap": 4356153278464,
+      "shares_outstanding": 89706615,
+      "per_trailing": 54.057064,
+      "pbr": 17.632092,
+      "dividend_yield_pct": 0.91,
+      "roe": 0.33929002,
+      "trailing_eps": 898.31,
+      "book_value_per_share": 2754.069,
+      "momentum_12_1": 0.6669154862373505,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.9478672985781991,
+        "pbr": 0.9955357142857143,
+        "dividend_yield_pct": 0.125,
+        "roe": 0.961352657004831,
+        "momentum_12_1": 0.8348214285714286,
+        "market_cap": 0.7276785714285714
+      }
+    },
+    {
+      "ticker": "6954.T",
+      "name": "FANUC CORP.",
+      "currency": "JPY",
+      "price": 6103.0,
+      "market_cap": 5644747276288,
+      "shares_outstanding": 924913533,
+      "per_trailing": 33.725685,
+      "pbr": 3.0092797,
+      "dividend_yield_pct": 1.78,
+      "roe": 0.10049,
+      "trailing_eps": 180.96,
+      "book_value_per_share": 2028.06,
+      "momentum_12_1": 0.4316801528796703,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8483412322274881,
+        "pbr": 0.8214285714285714,
+        "dividend_yield_pct": 0.3392857142857143,
+        "roe": 0.4830917874396135,
+        "momentum_12_1": 0.6696428571428571,
+        "market_cap": 0.7767857142857143
+      }
+    },
+    {
+      "ticker": "6963.T",
+      "name": "ROHM CO.",
+      "currency": "JPY",
+      "price": 4934.0,
+      "market_cap": 1904697016320,
+      "shares_outstanding": 386035069,
+      "per_trailing": null,
+      "pbr": 2.4604774,
+      "dividend_yield_pct": 0.98,
+      "roe": null,
+      "trailing_eps": -384.49,
+      "book_value_per_share": 2005.302,
+      "momentum_12_1": 1.363868879324218,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing",
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.7410714285714286,
+        "dividend_yield_pct": 0.14285714285714285,
+        "roe": null,
+        "momentum_12_1": 0.96875,
+        "market_cap": 0.47767857142857145
+      }
+    },
+    {
+      "ticker": "6971.T",
+      "name": "KYOCERA CORP.",
+      "currency": "JPY",
+      "price": 3746.0,
+      "market_cap": 4750824177664,
+      "shares_outstanding": 1268239209,
+      "per_trailing": 36.532085,
+      "pbr": 1.4633213,
+      "dividend_yield_pct": 1.49,
+      "roe": 0.05059,
+      "trailing_eps": 102.54,
+      "book_value_per_share": 2559.93,
+      "momentum_12_1": 0.7798683500377528,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8767772511848341,
+        "pbr": 0.5133928571428571,
+        "dividend_yield_pct": 0.2544642857142857,
+        "roe": 0.12077294685990338,
+        "momentum_12_1": 0.8839285714285714,
+        "market_cap": 0.75
+      }
+    },
+    {
+      "ticker": "6976.T",
+      "name": "TAIYO YUDEN CO.",
+      "currency": "JPY",
+      "price": 11135.0,
+      "market_cap": 1474233630720,
+      "shares_outstanding": 132396378,
+      "per_trailing": 81.52135,
+      "pbr": 3.9384854,
+      "dividend_yield_pct": 0.82,
+      "roe": 0.05335,
+      "trailing_eps": 136.59,
+      "book_value_per_share": 2827.229,
+      "momentum_12_1": 2.008128489561433,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.985781990521327,
+        "pbr": 0.8616071428571429,
+        "dividend_yield_pct": 0.09598214285714286,
+        "roe": 0.14492753623188406,
+        "momentum_12_1": 0.9821428571428571,
+        "market_cap": 0.42410714285714285
+      }
+    },
+    {
+      "ticker": "6981.T",
+      "name": "MURATA MANUFACTURING CO.",
+      "currency": "JPY",
+      "price": 7970.0,
+      "market_cap": 14424977965056,
+      "shares_outstanding": 1809909354,
+      "per_trailing": 64.76516,
+      "pbr": 5.2586017,
+      "dividend_yield_pct": 0.85,
+      "roe": 0.10063,
+      "trailing_eps": 123.06,
+      "book_value_per_share": 1515.612,
+      "momentum_12_1": 1.776784838263986,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.966824644549763,
+        "pbr": 0.90625,
+        "dividend_yield_pct": 0.10267857142857142,
+        "roe": 0.48792270531400966,
+        "momentum_12_1": 0.9776785714285714,
+        "market_cap": 0.9285714285714286
+      }
+    },
+    {
+      "ticker": "6988.T",
+      "name": "NITTO DENKO CORP.",
+      "currency": "JPY",
+      "price": 3615.0,
+      "market_cap": 2391408640000,
+      "shares_outstanding": 661523850,
+      "per_trailing": 17.440178,
+      "pbr": 2.09316,
+      "dividend_yield_pct": 1.82,
+      "roe": 0.12546,
+      "trailing_eps": 207.28,
+      "book_value_per_share": 1727.054,
+      "momentum_12_1": -0.00409090169634907,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5355450236966824,
+        "pbr": 0.6919642857142857,
+        "dividend_yield_pct": 0.35267857142857145,
+        "roe": 0.6763285024154589,
+        "momentum_12_1": 0.17857142857142858,
+        "market_cap": 0.5803571428571429
+      }
+    },
+    {
+      "ticker": "7004.T",
+      "name": "KANADEVIA CORP.",
+      "currency": "JPY",
+      "price": 1115.0,
+      "market_cap": 187599355904,
+      "shares_outstanding": 168250550,
+      "per_trailing": 12.58465,
+      "pbr": 0.9552048,
+      "dividend_yield_pct": 3.42,
+      "roe": 0.07754,
+      "trailing_eps": 88.6,
+      "book_value_per_share": 1167.289,
+      "momentum_12_1": 0.18233044912330443,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.26540284360189575,
+        "pbr": 0.20982142857142858,
+        "dividend_yield_pct": 0.7991071428571429,
+        "roe": 0.3140096618357488,
+        "momentum_12_1": 0.41517857142857145,
+        "market_cap": 0.0
+      }
+    },
+    {
+      "ticker": "7011.T",
+      "name": "MITSUBISHI HEAVY IND.",
+      "currency": "JPY",
+      "price": 3669.0,
+      "market_cap": 12328608202752,
+      "shares_outstanding": 3360209340,
+      "per_trailing": 41.94581,
+      "pbr": 3.8881602,
+      "dividend_yield_pct": 0.82,
+      "roe": 0.14746,
+      "trailing_eps": 87.47,
+      "book_value_per_share": 943.634,
+      "momentum_12_1": 0.0010094596729219862,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8957345971563981,
+        "pbr": 0.8571428571428571,
+        "dividend_yield_pct": 0.09598214285714286,
+        "roe": 0.7777777777777778,
+        "momentum_12_1": 0.1875,
+        "market_cap": 0.9107142857142857
+      }
+    },
+    {
+      "ticker": "7012.T",
+      "name": "KAWASAKI HEAVY IND.",
+      "currency": "JPY",
+      "price": 2278.0,
+      "market_cap": 1989143560192,
+      "shares_outstanding": 873197387,
+      "per_trailing": 15.922275,
+      "pbr": 2.1511326,
+      "dividend_yield_pct": 1.73,
+      "roe": 0.14437,
+      "trailing_eps": 143.07,
+      "book_value_per_share": 1058.977,
+      "momentum_12_1": 0.29399098258457634,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4312796208530806,
+        "pbr": 0.7098214285714286,
+        "dividend_yield_pct": 0.33035714285714285,
+        "roe": 0.7632850241545893,
+        "momentum_12_1": 0.53125,
+        "market_cap": 0.4955357142857143
+      }
+    },
+    {
+      "ticker": "7013.T",
+      "name": "IHI CORP.",
+      "currency": "JPY",
+      "price": 2625.5,
+      "market_cap": 2783455215616,
+      "shares_outstanding": 1060161928,
+      "per_trailing": 17.055346,
+      "pbr": 3.995745,
+      "dividend_yield_pct": 0.89,
+      "roe": 0.3344,
+      "trailing_eps": 153.94,
+      "book_value_per_share": 657.074,
+      "momentum_12_1": 0.09069241344623835,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5118483412322274,
+        "pbr": 0.8705357142857143,
+        "dividend_yield_pct": 0.11830357142857142,
+        "roe": 0.9565217391304348,
+        "momentum_12_1": 0.29910714285714285,
+        "market_cap": 0.6026785714285714
+      }
+    },
+    {
+      "ticker": "7186.T",
+      "name": "YOKOHAMA FINANCIAL GROUP",
+      "currency": "JPY",
+      "price": 1811.5,
+      "market_cap": 2010727186432,
+      "shares_outstanding": 1109979177,
+      "per_trailing": 18.598562,
+      "pbr": 1.3833863,
+      "dividend_yield_pct": 2.61,
+      "roe": null,
+      "trailing_eps": 97.4,
+      "book_value_per_share": 1309.468,
+      "momentum_12_1": 0.7086945134519984,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5829383886255924,
+        "pbr": 0.4732142857142857,
+        "dividend_yield_pct": 0.5714285714285714,
+        "roe": null,
+        "momentum_12_1": 0.84375,
+        "market_cap": 0.5044642857142857
+      }
+    },
+    {
+      "ticker": "7201.T",
+      "name": "NISSAN MOTOR CO.",
+      "currency": "JPY",
+      "price": 284.0,
+      "market_cap": 992972636160,
+      "shares_outstanding": 3496382520,
+      "per_trailing": null,
+      "pbr": 0.20360962,
+      "dividend_yield_pct": 0.0,
+      "roe": -0.076519996,
+      "trailing_eps": -118.82,
+      "book_value_per_share": 1394.826,
+      "momentum_12_1": -0.17098714018484273,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.0,
+        "dividend_yield_pct": 0.015625,
+        "roe": 0.014492753623188406,
+        "momentum_12_1": 0.0625,
+        "market_cap": 0.2767857142857143
+      }
+    },
+    {
+      "ticker": "7202.T",
+      "name": "ISUZU MOTORS LTD.",
+      "currency": "JPY",
+      "price": 2116.0,
+      "market_cap": 1454193770496,
+      "shares_outstanding": 687237114,
+      "per_trailing": 10.10989,
+      "pbr": 0.9646178,
+      "dividend_yield_pct": 4.45,
+      "roe": 0.116009995,
+      "trailing_eps": 209.3,
+      "book_value_per_share": 2193.615,
+      "momentum_12_1": 0.182068921440399,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.11848341232227488,
+        "pbr": 0.21875,
+        "dividend_yield_pct": 0.96875,
+        "roe": 0.6038647342995169,
+        "momentum_12_1": 0.4107142857142857,
+        "market_cap": 0.41517857142857145
+      }
+    },
+    {
+      "ticker": "7203.T",
+      "name": "TOYOTA MOTOR CORP.",
+      "currency": "JPY",
+      "price": 2910.5,
+      "market_cap": 34465657126912,
+      "shares_outstanding": 11841833660,
+      "per_trailing": 8.258846,
+      "pbr": 0.9237935,
+      "dividend_yield_pct": 3.45,
+      "roe": 0.12404,
+      "trailing_eps": 352.41,
+      "book_value_per_share": 3150.596,
+      "momentum_12_1": 0.07730770769345474,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.061611374407582936,
+        "pbr": 0.18303571428571427,
+        "dividend_yield_pct": 0.8125,
+        "roe": 0.6473429951690821,
+        "momentum_12_1": 0.26785714285714285,
+        "market_cap": 0.9955357142857143
+      }
+    },
+    {
+      "ticker": "7211.T",
+      "name": "MITSUBISHI MOTORS CORP.",
+      "currency": "JPY",
+      "price": 354.0,
+      "market_cap": 473776848896,
+      "shares_outstanding": 1338352676,
+      "per_trailing": 44.3609,
+      "pbr": 0.5171636,
+      "dividend_yield_pct": 2.91,
+      "roe": 0.022669999,
+      "trailing_eps": 7.98,
+      "book_value_per_share": 684.503,
+      "momentum_12_1": -0.12645638393539038,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.9146919431279621,
+        "pbr": 0.017857142857142856,
+        "dividend_yield_pct": 0.6741071428571429,
+        "roe": 0.057971014492753624,
+        "momentum_12_1": 0.09375,
+        "market_cap": 0.08482142857142858
+      }
+    },
+    {
+      "ticker": "7261.T",
+      "name": "MAZDA MOTOR CORP.",
+      "currency": "JPY",
+      "price": 1085.0,
+      "market_cap": 684602687488,
+      "shares_outstanding": 630970230,
+      "per_trailing": 19.514389,
+      "pbr": 0.35680565,
+      "dividend_yield_pct": 5.08,
+      "roe": 0.05876,
+      "trailing_eps": 55.6,
+      "book_value_per_share": 3040.871,
+      "momentum_12_1": 0.08598837742153576,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6113744075829384,
+        "pbr": 0.008928571428571428,
+        "dividend_yield_pct": 0.9910714285714286,
+        "roe": 0.18840579710144928,
+        "momentum_12_1": 0.28125,
+        "market_cap": 0.20089285714285715
+      }
+    },
+    {
+      "ticker": "7267.T",
+      "name": "HONDA MOTOR CO.",
+      "currency": "JPY",
+      "price": 1726.5,
+      "market_cap": 6721292992512,
+      "shares_outstanding": 3893016583,
+      "per_trailing": null,
+      "pbr": 0.5437292,
+      "dividend_yield_pct": 4.09,
+      "roe": -0.0076200003,
+      "trailing_eps": -37.02,
+      "book_value_per_share": 3175.294,
+      "momentum_12_1": 0.07119204789532652,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.022321428571428572,
+        "dividend_yield_pct": 0.9419642857142857,
+        "roe": 0.033816425120772944,
+        "momentum_12_1": 0.26339285714285715,
+        "market_cap": 0.8348214285714286
+      }
+    },
+    {
+      "ticker": "7269.T",
+      "name": "SUZUKI MOTOR CORP.",
+      "currency": "JPY",
+      "price": 2039.0,
+      "market_cap": 3933789487104,
+      "shares_outstanding": 1929273897,
+      "per_trailing": 7.5923443,
+      "pbr": 1.1114703,
+      "dividend_yield_pct": 2.54,
+      "roe": 0.1532,
+      "trailing_eps": 268.56,
+      "book_value_per_share": 1834.507,
+      "momentum_12_1": -0.04472446655605755,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.04265402843601896,
+        "pbr": 0.33482142857142855,
+        "dividend_yield_pct": 0.5401785714285714,
+        "roe": 0.7922705314009661,
+        "momentum_12_1": 0.15178571428571427,
+        "market_cap": 0.7008928571428571
+      }
+    },
+    {
+      "ticker": "7270.T",
+      "name": "SUBARU CORP.",
+      "currency": "JPY",
+      "price": 2539.5,
+      "market_cap": 1750714548224,
+      "shares_outstanding": 689393377,
+      "per_trailing": 21.295597,
+      "pbr": 0.64531213,
+      "dividend_yield_pct": 4.58,
+      "roe": 0.03118,
+      "trailing_eps": 119.25,
+      "book_value_per_share": 3935.305,
+      "momentum_12_1": -0.11867182638495644,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6824644549763034,
+        "pbr": 0.044642857142857144,
+        "dividend_yield_pct": 0.9732142857142857,
+        "roe": 0.09178743961352658,
+        "momentum_12_1": 0.10267857142857142,
+        "market_cap": 0.44642857142857145
+      }
+    },
+    {
+      "ticker": "7272.T",
+      "name": "YAMAHA MOTOR CO.",
+      "currency": "JPY",
+      "price": 1811.0,
+      "market_cap": 1757992189952,
+      "shares_outstanding": 970730086,
+      "per_trailing": 8.191605,
+      "pbr": 1.4047657,
+      "dividend_yield_pct": 2.73,
+      "roe": 0.07716,
+      "trailing_eps": 221.08,
+      "book_value_per_share": 1289.183,
+      "momentum_12_1": 0.6950993065533773,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.05687203791469194,
+        "pbr": 0.47767857142857145,
+        "dividend_yield_pct": 0.6026785714285714,
+        "roe": 0.30917874396135264,
+        "momentum_12_1": 0.8392857142857143,
+        "market_cap": 0.45089285714285715
+      }
+    },
+    {
+      "ticker": "7453.T",
+      "name": "RYOHIN KEIKAKU CO.",
+      "currency": "JPY",
+      "price": 4422.0,
+      "market_cap": 2347322572800,
+      "shares_outstanding": 530828292,
+      "per_trailing": 35.3562,
+      "pbr": 5.9121046,
+      "dividend_yield_pct": 0.73,
+      "roe": 0.18361999,
+      "trailing_eps": 125.07,
+      "book_value_per_share": 747.957,
+      "momentum_12_1": 0.4107777714885903,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8672985781990521,
+        "pbr": 0.9196428571428571,
+        "dividend_yield_pct": 0.08035714285714286,
+        "roe": 0.8599033816425121,
+        "momentum_12_1": 0.6294642857142857,
+        "market_cap": 0.5758928571428571
+      }
+    },
+    {
+      "ticker": "7532.T",
+      "name": "PAN PACIFIC INTERNATIONAL HOLDINGS CORP.",
+      "currency": "JPY",
+      "price": 678.1,
+      "market_cap": 2028090425344,
+      "shares_outstanding": 2990842875,
+      "per_trailing": 18.527323,
+      "pbr": 2.8684068,
+      "dividend_yield_pct": 1.4,
+      "roe": 0.16478,
+      "trailing_eps": 36.6,
+      "book_value_per_share": 236.403,
+      "momentum_12_1": -0.21000024002340822,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5734597156398105,
+        "pbr": 0.8035714285714286,
+        "dividend_yield_pct": 0.22767857142857142,
+        "roe": 0.8309178743961353,
+        "momentum_12_1": 0.044642857142857144,
+        "market_cap": 0.5133928571428571
+      }
+    },
+    {
+      "ticker": "7731.T",
+      "name": "NIKON CORP.",
+      "currency": "JPY",
+      "price": 1874.0,
+      "market_cap": 617327034368,
+      "shares_outstanding": 329416763,
+      "per_trailing": null,
+      "pbr": 1.0404423,
+      "dividend_yield_pct": 1.06,
+      "roe": -0.15223,
+      "trailing_eps": -259.01,
+      "book_value_per_share": 1801.157,
+      "momentum_12_1": 0.06769248019235174,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.26785714285714285,
+        "dividend_yield_pct": 0.16071428571428573,
+        "roe": 0.004830917874396135,
+        "momentum_12_1": 0.25,
+        "market_cap": 0.15178571428571427
+      }
+    },
+    {
+      "ticker": "7733.T",
+      "name": "OLYMPUS CORP.",
+      "currency": "JPY",
+      "price": 2000.0,
+      "market_cap": 2125705117696,
+      "shares_outstanding": 1062852545,
+      "per_trailing": 32.515038,
+      "pbr": 2.8421364,
+      "dividend_yield_pct": 1.51,
+      "roe": 0.105749995,
+      "trailing_eps": 61.51,
+      "book_value_per_share": 703.696,
+      "momentum_12_1": 0.08998143439607964,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8341232227488151,
+        "pbr": 0.7991071428571429,
+        "dividend_yield_pct": 0.26339285714285715,
+        "roe": 0.5314009661835749,
+        "momentum_12_1": 0.29464285714285715,
+        "market_cap": 0.53125
+      }
+    },
+    {
+      "ticker": "7735.T",
+      "name": "SCREEN HOLDINGS CO.",
+      "currency": "JPY",
+      "price": 16545.0,
+      "market_cap": 3128457953280,
+      "shares_outstanding": 189087830,
+      "per_trailing": 32.694397,
+      "pbr": 6.2932606,
+      "dividend_yield_pct": 1.55,
+      "roe": 0.1887,
+      "trailing_eps": 506.05,
+      "book_value_per_share": 2629.003,
+      "momentum_12_1": 0.9610610685898517,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8388625592417062,
+        "pbr": 0.9285714285714286,
+        "dividend_yield_pct": 0.27232142857142855,
+        "roe": 0.8743961352657005,
+        "momentum_12_1": 0.9241071428571429,
+        "market_cap": 0.6339285714285714
+      }
+    },
+    {
+      "ticker": "7741.T",
+      "name": "HOYA CORP.",
+      "currency": "JPY",
+      "price": 25055.0,
+      "market_cap": 8357391368192,
+      "shares_outstanding": 333561839,
+      "per_trailing": 31.709972,
+      "pbr": 8.255408,
+      "dividend_yield_pct": 1.18,
+      "roe": 0.2653,
+      "trailing_eps": 790.13,
+      "book_value_per_share": 3034.98,
+      "momentum_12_1": 0.18383537787239934,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8199052132701422,
+        "pbr": 0.9508928571428571,
+        "dividend_yield_pct": 0.17857142857142858,
+        "roe": 0.9227053140096618,
+        "momentum_12_1": 0.41964285714285715,
+        "market_cap": 0.8660714285714286
+      }
+    },
+    {
+      "ticker": "7751.T",
+      "name": "CANON INC.",
+      "currency": "JPY",
+      "price": 4708.0,
+      "market_cap": 3929813286912,
+      "shares_outstanding": 834709720,
+      "per_trailing": 11.902715,
+      "pbr": 1.1477796,
+      "dividend_yield_pct": 3.45,
+      "roe": 0.10371,
+      "trailing_eps": 395.54,
+      "book_value_per_share": 4101.833,
+      "momentum_12_1": 0.05815596781127641,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.24170616113744076,
+        "pbr": 0.35714285714285715,
+        "dividend_yield_pct": 0.8125,
+        "roe": 0.5217391304347826,
+        "momentum_12_1": 0.23660714285714285,
+        "market_cap": 0.6964285714285714
+      }
+    },
+    {
+      "ticker": "7752.T",
+      "name": "RICOH CO.",
+      "currency": "JPY",
+      "price": 1725.0,
+      "market_cap": 962307031040,
+      "shares_outstanding": 557859113,
+      "per_trailing": 17.503805,
+      "pbr": 0.82629627,
+      "dividend_yield_pct": 2.57,
+      "roe": 0.07453,
+      "trailing_eps": 98.55,
+      "book_value_per_share": 2087.629,
+      "momentum_12_1": 0.2513518972234281,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5450236966824644,
+        "pbr": 0.11160714285714286,
+        "dividend_yield_pct": 0.5580357142857143,
+        "roe": 0.2898550724637681,
+        "momentum_12_1": 0.49107142857142855,
+        "market_cap": 0.26785714285714285
+      }
+    },
+    {
+      "ticker": "7832.T",
+      "name": "BANDAI NAMCO HOLDINGS INC.",
+      "currency": "JPY",
+      "price": 5833.0,
+      "market_cap": 3741087694848,
+      "shares_outstanding": 641365963,
+      "per_trailing": 24.058569,
+      "pbr": 4.2234235,
+      "dividend_yield_pct": 0.87,
+      "roe": 0.1831,
+      "trailing_eps": 242.45,
+      "book_value_per_share": 1381.107,
+      "momentum_12_1": 0.11933895732670963,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7251184834123223,
+        "pbr": 0.8794642857142857,
+        "dividend_yield_pct": 0.10714285714285714,
+        "roe": 0.855072463768116,
+        "momentum_12_1": 0.35267857142857145,
+        "market_cap": 0.6830357142857143
+      }
+    },
+    {
+      "ticker": "7911.T",
+      "name": "TOPPAN HOLDINGS INC.",
+      "currency": "JPY",
+      "price": 2367.0,
+      "market_cap": 1395139280896,
+      "shares_outstanding": 562699814,
+      "per_trailing": 21.062468,
+      "pbr": 0.9626499,
+      "dividend_yield_pct": 1.23,
+      "roe": 0.05614,
+      "trailing_eps": 112.38,
+      "book_value_per_share": 2458.838,
+      "momentum_12_1": 0.36803597133567223,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6777251184834123,
+        "pbr": 0.21428571428571427,
+        "dividend_yield_pct": 0.20535714285714285,
+        "roe": 0.178743961352657,
+        "momentum_12_1": 0.5982142857142857,
+        "market_cap": 0.4017857142857143
+      }
+    },
+    {
+      "ticker": "7912.T",
+      "name": "DAI NIPPON PRINTING CO.",
+      "currency": "JPY",
+      "price": 2930.0,
+      "market_cap": 1249438597120,
+      "shares_outstanding": 426429531,
+      "per_trailing": 12.44637,
+      "pbr": 1.0221492,
+      "dividend_yield_pct": 1.4,
+      "roe": 0.069180004,
+      "trailing_eps": 235.41,
+      "book_value_per_share": 2866.509,
+      "momentum_12_1": 0.2357281277275982,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.2559241706161137,
+        "pbr": 0.2544642857142857,
+        "dividend_yield_pct": 0.22767857142857142,
+        "roe": 0.26570048309178745,
+        "momentum_12_1": 0.4732142857142857,
+        "market_cap": 0.35267857142857145
+      }
+    },
+    {
+      "ticker": "7951.T",
+      "name": "YAMAHA CORP.",
+      "currency": "JPY",
+      "price": 1203.5,
+      "market_cap": 529415995392,
+      "shares_outstanding": 439896956,
+      "per_trailing": 16.65283,
+      "pbr": 1.0735844,
+      "dividend_yield_pct": 2.19,
+      "roe": 0.06838,
+      "trailing_eps": 72.27,
+      "book_value_per_share": 1121.011,
+      "momentum_12_1": 0.34020565677769943,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4549763033175355,
+        "pbr": 0.2857142857142857,
+        "dividend_yield_pct": 0.42410714285714285,
+        "roe": 0.2608695652173913,
+        "momentum_12_1": 0.5535714285714286,
+        "market_cap": 0.11607142857142858
+      }
+    },
+    {
+      "ticker": "7974.T",
+      "name": "NINTENDO CO.",
+      "currency": "JPY",
+      "price": 8146.0,
+      "market_cap": 9391305654272,
+      "shares_outstanding": 1152873205,
+      "per_trailing": 19.167059,
+      "pbr": 3.218566,
+      "dividend_yield_pct": 2.79,
+      "roe": null,
+      "trailing_eps": 425.0,
+      "book_value_per_share": 2530.941,
+      "momentum_12_1": -0.30266642924118903,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6018957345971564,
+        "pbr": 0.8392857142857143,
+        "dividend_yield_pct": 0.6428571428571429,
+        "roe": null,
+        "momentum_12_1": 0.004464285714285714,
+        "market_cap": 0.8794642857142857
+      }
+    },
+    {
+      "ticker": "8001.T",
+      "name": "ITOCHU CORP.",
+      "currency": "JPY",
+      "price": 2155.0,
+      "market_cap": 15063261904896,
+      "shares_outstanding": 6989912686,
+      "per_trailing": 16.77565,
+      "pbr": 2.2257316,
+      "dividend_yield_pct": 2.06,
+      "roe": 0.14093,
+      "trailing_eps": 128.46,
+      "book_value_per_share": 968.221,
+      "momentum_12_1": 0.34561069453071913,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4786729857819905,
+        "pbr": 0.71875,
+        "dividend_yield_pct": 0.41294642857142855,
+        "roe": 0.7294685990338164,
+        "momentum_12_1": 0.5625,
+        "market_cap": 0.9375
+      }
+    },
+    {
+      "ticker": "8002.T",
+      "name": "MARUBENI CORP.",
+      "currency": "JPY",
+      "price": 4702.0,
+      "market_cap": 7625528311808,
+      "shares_outstanding": 1621762712,
+      "per_trailing": 13.42508,
+      "pbr": 1.7143828,
+      "dividend_yield_pct": 2.44,
+      "roe": 0.14209,
+      "trailing_eps": 350.24,
+      "book_value_per_share": 2742.678,
+      "momentum_12_1": 0.42282741426594694,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.2938388625592417,
+        "pbr": 0.5848214285714286,
+        "dividend_yield_pct": 0.515625,
+        "roe": 0.7391304347826086,
+        "momentum_12_1": 0.6383928571428571,
+        "market_cap": 0.8571428571428571
+      }
+    },
+    {
+      "ticker": "8015.T",
+      "name": "TOYOTA TSUSHO CORP.",
+      "currency": "JPY",
+      "price": 7121.0,
+      "market_cap": 6677222916096,
+      "shares_outstanding": 937680488,
+      "per_trailing": 18.563608,
+      "pbr": 2.5805802,
+      "dividend_yield_pct": 1.72,
+      "roe": 0.16057,
+      "trailing_eps": 383.6,
+      "book_value_per_share": 2759.457,
+      "momentum_12_1": 0.886923120616318,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5781990521327014,
+        "pbr": 0.7589285714285714,
+        "dividend_yield_pct": 0.3236607142857143,
+        "roe": 0.8067632850241546,
+        "momentum_12_1": 0.9151785714285714,
+        "market_cap": 0.8303571428571429
+      }
+    },
+    {
+      "ticker": "8031.T",
+      "name": "MITSUI & CO.",
+      "currency": "JPY",
+      "price": 4775.0,
+      "market_cap": 13571224240128,
+      "shares_outstanding": 2842141126,
+      "per_trailing": 14.529575,
+      "pbr": 1.5072583,
+      "dividend_yield_pct": 2.73,
+      "roe": 0.11378,
+      "trailing_eps": 328.64,
+      "book_value_per_share": 3168.004,
+      "momentum_12_1": 0.38353727204062693,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.35071090047393366,
+        "pbr": 0.5267857142857143,
+        "dividend_yield_pct": 0.6026785714285714,
+        "roe": 0.5942028985507246,
+        "momentum_12_1": 0.6160714285714286,
+        "market_cap": 0.9196428571428571
+      }
+    },
+    {
+      "ticker": "8035.T",
+      "name": "TOKYO ELECTRON LTD.",
+      "currency": "JPY",
+      "price": 12445.0,
+      "market_cap": 29123336470528,
+      "shares_outstanding": 2271484280,
+      "per_trailing": 44.996025,
+      "pbr": 2.6404095,
+      "dividend_yield_pct": 3.75,
+      "roe": 0.30929002,
+      "trailing_eps": 276.58,
+      "book_value_per_share": 4713.284,
+      "momentum_12_1": 1.0536919090391477,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.919431279620853,
+        "pbr": 0.7678571428571429,
+        "dividend_yield_pct": 0.8816964285714286,
+        "roe": 0.9468599033816425,
+        "momentum_12_1": 0.9330357142857143,
+        "market_cap": 0.9821428571428571
+      }
+    },
+    {
+      "ticker": "8053.T",
+      "name": "SUMITOMO CORP.",
+      "currency": "JPY",
+      "price": 1708.0,
+      "market_cap": 8073589555200,
+      "shares_outstanding": 4726925815,
+      "per_trailing": 13.142505,
+      "pbr": 1.7092803,
+      "dividend_yield_pct": 2.35,
+      "roe": 0.13605,
+      "trailing_eps": 129.96,
+      "book_value_per_share": 999.251,
+      "momentum_12_1": 0.7680286349096832,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.2890995260663507,
+        "pbr": 0.5803571428571429,
+        "dividend_yield_pct": 0.47544642857142855,
+        "roe": 0.714975845410628,
+        "momentum_12_1": 0.8794642857142857,
+        "market_cap": 0.8616071428571429
+      }
+    },
+    {
+      "ticker": "8058.T",
+      "name": "MITSUBISHI CORP.",
+      "currency": "JPY",
+      "price": 4596.0,
+      "market_cap": 16833742635008,
+      "shares_outstanding": 3662694127,
+      "per_trailing": 19.163574,
+      "pbr": 1.7471054,
+      "dividend_yield_pct": 2.75,
+      "roe": 0.10077,
+      "trailing_eps": 239.83,
+      "book_value_per_share": 2630.637,
+      "momentum_12_1": 0.4358600533294468,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5971563981042654,
+        "pbr": 0.5982142857142857,
+        "dividend_yield_pct": 0.6205357142857143,
+        "roe": 0.4927536231884058,
+        "momentum_12_1": 0.6741071428571429,
+        "market_cap": 0.9419642857142857
+      }
+    },
+    {
+      "ticker": "8233.T",
+      "name": "TAKASHIMAYA CO.",
+      "currency": "JPY",
+      "price": 2141.0,
+      "market_cap": 627343818752,
+      "shares_outstanding": 293014400,
+      "per_trailing": null,
+      "pbr": 1.3803562,
+      "dividend_yield_pct": 1.87,
+      "roe": -0.0054,
+      "trailing_eps": -12.68,
+      "book_value_per_share": 1551.049,
+      "momentum_12_1": 0.30703350630229775,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.46875,
+        "dividend_yield_pct": 0.36160714285714285,
+        "roe": 0.03864734299516908,
+        "momentum_12_1": 0.5401785714285714,
+        "market_cap": 0.15625
+      }
+    },
+    {
+      "ticker": "8252.T",
+      "name": "MARUI GROUP CO.",
+      "currency": "JPY",
+      "price": 2751.0,
+      "market_cap": 478786027520,
+      "shares_outstanding": 174040715,
+      "per_trailing": 16.673737,
+      "pbr": 2.0845504,
+      "dividend_yield_pct": 4.88,
+      "roe": 0.12443,
+      "trailing_eps": 164.99,
+      "book_value_per_share": 1319.709,
+      "momentum_12_1": -0.08081311168817029,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4597156398104265,
+        "pbr": 0.6875,
+        "dividend_yield_pct": 0.9866071428571429,
+        "roe": 0.6521739130434783,
+        "momentum_12_1": 0.12946428571428573,
+        "market_cap": 0.08928571428571429
+      }
+    },
+    {
+      "ticker": "8253.T",
+      "name": "CREDIT SAISON CO.",
+      "currency": "JPY",
+      "price": 4237.0,
+      "market_cap": 608745291776,
+      "shares_outstanding": 143673658,
+      "per_trailing": 9.130088,
+      "pbr": 0.78979814,
+      "dividend_yield_pct": 3.75,
+      "roe": 0.09307,
+      "trailing_eps": 464.07,
+      "book_value_per_share": 5364.662,
+      "momentum_12_1": 0.20837021519398813,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.08056872037914692,
+        "pbr": 0.09821428571428571,
+        "dividend_yield_pct": 0.8816964285714286,
+        "roe": 0.4106280193236715,
+        "momentum_12_1": 0.45089285714285715,
+        "market_cap": 0.14285714285714285
+      }
+    },
+    {
+      "ticker": "8267.T",
+      "name": "AEON CO.",
+      "currency": "JPY",
+      "price": 1211.0,
+      "market_cap": 3350382510080,
+      "shares_outstanding": 2766624836,
+      "per_trailing": 33.453037,
+      "pbr": 2.7698867,
+      "dividend_yield_pct": 1.17,
+      "roe": 0.07205,
+      "trailing_eps": 36.2,
+      "book_value_per_share": 437.202,
+      "momentum_12_1": -0.23041387135364844,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.8436018957345972,
+        "pbr": 0.78125,
+        "dividend_yield_pct": 0.17410714285714285,
+        "roe": 0.28019323671497587,
+        "momentum_12_1": 0.04017857142857143,
+        "market_cap": 0.6607142857142857
+      }
+    },
+    {
+      "ticker": "8304.T",
+      "name": "AOZORA BANK",
+      "currency": "JPY",
+      "price": 3267.0,
+      "market_cap": 452335435776,
+      "shares_outstanding": 138455906,
+      "per_trailing": 14.857429,
+      "pbr": 0.90552396,
+      "dividend_yield_pct": 2.84,
+      "roe": 0.06564,
+      "trailing_eps": 219.89,
+      "book_value_per_share": 3607.856,
+      "momentum_12_1": 0.4891963428323536,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3744075829383886,
+        "pbr": 0.16964285714285715,
+        "dividend_yield_pct": 0.65625,
+        "roe": 0.24154589371980675,
+        "momentum_12_1": 0.7276785714285714,
+        "market_cap": 0.07589285714285714
+      }
+    },
+    {
+      "ticker": "8306.T",
+      "name": "MITSUBISHI UFJ FINANCIAL GROUP",
+      "currency": "JPY",
+      "price": 3462.0,
+      "market_cap": 38967458136064,
+      "shares_outstanding": 11255764758,
+      "per_trailing": 14.640335,
+      "pbr": 1.716642,
+      "dividend_yield_pct": 2.74,
+      "roe": 0.09458999,
+      "trailing_eps": 236.47,
+      "book_value_per_share": 2016.728,
+      "momentum_12_1": 0.6174231207513361,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.36492890995260663,
+        "pbr": 0.5892857142857143,
+        "dividend_yield_pct": 0.6138392857142857,
+        "roe": 0.4396135265700483,
+        "momentum_12_1": 0.8125,
+        "market_cap": 1.0
+      }
+    },
+    {
+      "ticker": "8308.T",
+      "name": "RESONA HOLDINGS",
+      "currency": "JPY",
+      "price": 2396.5,
+      "market_cap": 5344035602432,
+      "shares_outstanding": 2229933517,
+      "per_trailing": 21.435598,
+      "pbr": 1.7865131,
+      "dividend_yield_pct": 1.52,
+      "roe": 0.0923,
+      "trailing_eps": 111.8,
+      "book_value_per_share": 1341.44,
+      "momentum_12_1": 0.6539852365583794,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7014218009478673,
+        "pbr": 0.6116071428571429,
+        "dividend_yield_pct": 0.26785714285714285,
+        "roe": 0.391304347826087,
+        "momentum_12_1": 0.8258928571428571,
+        "market_cap": 0.7723214285714286
+      }
+    },
+    {
+      "ticker": "8309.T",
+      "name": "SUMITOMO MITSUI TRUST GROUP",
+      "currency": "JPY",
+      "price": 1687.5,
+      "market_cap": 4647275200512,
+      "shares_outstanding": 2753940937,
+      "per_trailing": 12.905323,
+      "pbr": 1.2677808,
+      "dividend_yield_pct": 2.79,
+      "roe": 0.10779,
+      "trailing_eps": 130.76,
+      "book_value_per_share": 1331.066,
+      "momentum_12_1": 0.7163549402145708,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.27014218009478674,
+        "pbr": 0.42410714285714285,
+        "dividend_yield_pct": 0.6428571428571429,
+        "roe": 0.5555555555555556,
+        "momentum_12_1": 0.8526785714285714,
+        "market_cap": 0.7455357142857143
+      }
+    },
+    {
+      "ticker": "8316.T",
+      "name": "SUMITOMO MITSUI FINANCIAL GROUP",
+      "currency": "JPY",
+      "price": 3256.0,
+      "market_cap": 24506854801408,
+      "shares_outstanding": 7526675588,
+      "per_trailing": 14.599587,
+      "pbr": 1.536331,
+      "dividend_yield_pct": 2.73,
+      "roe": 0.08569,
+      "trailing_eps": 223.02,
+      "book_value_per_share": 2119.335,
+      "momentum_12_1": 0.7089765936598924,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.35545023696682465,
+        "pbr": 0.5401785714285714,
+        "dividend_yield_pct": 0.6026785714285714,
+        "roe": 0.36231884057971014,
+        "momentum_12_1": 0.8482142857142857,
+        "market_cap": 0.9642857142857143
+      }
+    },
+    {
+      "ticker": "8331.T",
+      "name": "THE CHIBA BANK",
+      "currency": "JPY",
+      "price": 2668.0,
+      "market_cap": 1832515534848,
+      "shares_outstanding": 686849922,
+      "per_trailing": 18.623482,
+      "pbr": 1.4326625,
+      "dividend_yield_pct": 2.36,
+      "roe": 0.08298001,
+      "trailing_eps": 143.26,
+      "book_value_per_share": 1862.267,
+      "momentum_12_1": 0.839496904737111,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.5876777251184834,
+        "pbr": 0.5044642857142857,
+        "dividend_yield_pct": 0.484375,
+        "roe": 0.3526570048309179,
+        "momentum_12_1": 0.8973214285714286,
+        "market_cap": 0.4732142857142857
+      }
+    },
+    {
+      "ticker": "8354.T",
+      "name": "FUKUOKA FINANCIAL GROUP",
+      "currency": "JPY",
+      "price": 7453.0,
+      "market_cap": 1408476512256,
+      "shares_outstanding": 188981148,
+      "per_trailing": 15.62441,
+      "pbr": 1.2515974,
+      "dividend_yield_pct": 2.78,
+      "roe": 0.087139994,
+      "trailing_eps": 477.01,
+      "book_value_per_share": 5954.79,
+      "momentum_12_1": 0.8099025839113749,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.41232227488151657,
+        "pbr": 0.41964285714285715,
+        "dividend_yield_pct": 0.6339285714285714,
+        "roe": 0.3719806763285024,
+        "momentum_12_1": 0.8883928571428571,
+        "market_cap": 0.40625
+      }
+    },
+    {
+      "ticker": "8411.T",
+      "name": "MIZUHO FINANCIAL GROUP",
+      "currency": "JPY",
+      "price": 8214.0,
+      "market_cap": 19882871619584,
+      "shares_outstanding": 2420607718,
+      "per_trailing": 14.896087,
+      "pbr": 1.736332,
+      "dividend_yield_pct": 1.8,
+      "roe": 0.124919996,
+      "trailing_eps": 551.42,
+      "book_value_per_share": 4730.662,
+      "momentum_12_1": 0.7628320641053257,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.38388625592417064,
+        "pbr": 0.59375,
+        "dividend_yield_pct": 0.3482142857142857,
+        "roe": 0.6570048309178744,
+        "momentum_12_1": 0.8705357142857143,
+        "market_cap": 0.9508928571428571
+      }
+    },
+    {
+      "ticker": "8591.T",
+      "name": "ORIX CORP.",
+      "currency": "JPY",
+      "price": 5770.0,
+      "market_cap": 6211445456896,
+      "shares_outstanding": 1076507050,
+      "per_trailing": 10.334205,
+      "pbr": 1.3416401,
+      "dividend_yield_pct": 2.95,
+      "roe": 0.14035,
+      "trailing_eps": 558.34,
+      "book_value_per_share": 4300.706,
+      "momentum_12_1": 0.623433612981795,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.12796208530805686,
+        "pbr": 0.45089285714285715,
+        "dividend_yield_pct": 0.6852678571428571,
+        "roe": 0.7246376811594203,
+        "momentum_12_1": 0.8169642857142857,
+        "market_cap": 0.7991071428571429
+      }
+    },
+    {
+      "ticker": "8601.T",
+      "name": "DAIWA SECURITIES GROUP INC.",
+      "currency": "JPY",
+      "price": 1736.0,
+      "market_cap": 2410555375616,
+      "shares_outstanding": 1388568756,
+      "per_trailing": 12.240868,
+      "pbr": 1.336569,
+      "dividend_yield_pct": 4.02,
+      "roe": 0.10955,
+      "trailing_eps": 141.82,
+      "book_value_per_share": 1298.848,
+      "momentum_12_1": 0.6090662862528431,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.24644549763033174,
+        "pbr": 0.44642857142857145,
+        "dividend_yield_pct": 0.9263392857142857,
+        "roe": 0.5700483091787439,
+        "momentum_12_1": 0.8080357142857143,
+        "market_cap": 0.5848214285714286
+      }
+    },
+    {
+      "ticker": "8604.T",
+      "name": "NOMURA HOLDINGS",
+      "currency": "JPY",
+      "price": 1486.5,
+      "market_cap": 4344432558080,
+      "shares_outstanding": 2922591697,
+      "per_trailing": 11.148193,
+      "pbr": 1.1330522,
+      "dividend_yield_pct": 3.42,
+      "roe": 0.11158,
+      "trailing_eps": 133.34,
+      "book_value_per_share": 1311.943,
+      "momentum_12_1": 0.5599214448101957,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.16587677725118483,
+        "pbr": 0.3482142857142857,
+        "dividend_yield_pct": 0.7991071428571429,
+        "roe": 0.5748792270531401,
+        "momentum_12_1": 0.7723214285714286,
+        "market_cap": 0.7232142857142857
+      }
+    },
+    {
+      "ticker": "8630.T",
+      "name": "SOMPO HOLDINGS",
+      "currency": "JPY",
+      "price": 6567.0,
+      "market_cap": 5813899886592,
+      "shares_outstanding": 885320538,
+      "per_trailing": 20.037836,
+      "pbr": 1.1016532,
+      "dividend_yield_pct": 3.06,
+      "roe": 0.1443,
+      "trailing_eps": 327.73,
+      "book_value_per_share": 5961.041,
+      "momentum_12_1": 0.5254352674902394,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6445497630331753,
+        "pbr": 0.32589285714285715,
+        "dividend_yield_pct": 0.7142857142857143,
+        "roe": 0.7584541062801933,
+        "momentum_12_1": 0.7544642857142857,
+        "market_cap": 0.78125
+      }
+    },
+    {
+      "ticker": "8697.T",
+      "name": "JAPAN EXCHANGE GROUP",
+      "currency": "JPY",
+      "price": 2270.0,
+      "market_cap": 2311844528128,
+      "shares_outstanding": 1018433633,
+      "per_trailing": 51.779198,
+      "pbr": 7.211592,
+      "dividend_yield_pct": 3.64,
+      "roe": null,
+      "trailing_eps": 43.84,
+      "book_value_per_share": 314.771,
+      "momentum_12_1": 0.3673561214709309,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.943127962085308,
+        "pbr": 0.9419642857142857,
+        "dividend_yield_pct": 0.8660714285714286,
+        "roe": null,
+        "momentum_12_1": 0.59375,
+        "market_cap": 0.5669642857142857
+      }
+    },
+    {
+      "ticker": "8725.T",
+      "name": "MS&AD INSURANCE GROUP HOLDINGS",
+      "currency": "JPY",
+      "price": 4895.0,
+      "market_cap": 6949976932352,
+      "shares_outstanding": 1419811516,
+      "per_trailing": 7.9834948,
+      "pbr": 1.0575808,
+      "dividend_yield_pct": 2.88,
+      "roe": 0.16088,
+      "trailing_eps": 613.14,
+      "book_value_per_share": 4628.488,
+      "momentum_12_1": 0.597027169440375,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.04739336492890995,
+        "pbr": 0.2767857142857143,
+        "dividend_yield_pct": 0.6607142857142857,
+        "roe": 0.8115942028985508,
+        "momentum_12_1": 0.7946428571428571,
+        "market_cap": 0.84375
+      }
+    },
+    {
+      "ticker": "8750.T",
+      "name": "DAIICHI LIFE GROUP",
+      "currency": "JPY",
+      "price": 1785.0,
+      "market_cap": 6429912072192,
+      "shares_outstanding": 3602191615,
+      "per_trailing": 11.759668,
+      "pbr": 1.4057521,
+      "dividend_yield_pct": 4.01,
+      "roe": 0.13575,
+      "trailing_eps": 151.79,
+      "book_value_per_share": 1269.783,
+      "momentum_12_1": 0.644679245299548,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.2132701421800948,
+        "pbr": 0.48214285714285715,
+        "dividend_yield_pct": 0.9196428571428571,
+        "roe": 0.7101449275362319,
+        "momentum_12_1": 0.8214285714285714,
+        "market_cap": 0.8035714285714286
+      }
+    },
+    {
+      "ticker": "8766.T",
+      "name": "TOKIO MARINE HOLDINGS",
+      "currency": "JPY",
+      "price": 525.7,
+      "market_cap": 14900926611456,
+      "shares_outstanding": 28344924225,
+      "per_trailing": 45.358067,
+      "pbr": 1.8277208,
+      "dividend_yield_pct": 25.09,
+      "roe": null,
+      "trailing_eps": 11.59,
+      "book_value_per_share": 287.626,
+      "momentum_12_1": 0.32614679713546346,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.9241706161137441,
+        "pbr": 0.625,
+        "dividend_yield_pct": 1.0,
+        "roe": null,
+        "momentum_12_1": 0.5446428571428571,
+        "market_cap": 0.9330357142857143
+      }
+    },
+    {
+      "ticker": "8795.T",
+      "name": "T&D HOLDINGS",
+      "currency": "JPY",
+      "price": 4735.0,
+      "market_cap": 2243506470912,
+      "shares_outstanding": 473813421,
+      "per_trailing": 16.086292,
+      "pbr": 1.3574547,
+      "dividend_yield_pct": 3.46,
+      "roe": 0.09340999,
+      "trailing_eps": 294.35,
+      "book_value_per_share": 3488.146,
+      "momentum_12_1": 0.4047547601477388,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.44075829383886256,
+        "pbr": 0.45982142857142855,
+        "dividend_yield_pct": 0.8214285714285714,
+        "roe": 0.42028985507246375,
+        "momentum_12_1": 0.625,
+        "market_cap": 0.5580357142857143
+      }
+    },
+    {
+      "ticker": "8801.T",
+      "name": "MITSUI FUDOSAN CO.",
+      "currency": "JPY",
+      "price": 1442.5,
+      "market_cap": 3883475140608,
+      "shares_outstanding": 2692183909,
+      "per_trailing": 16.918837,
+      "pbr": 1.196441,
+      "dividend_yield_pct": 2.6,
+      "roe": 0.06705,
+      "trailing_eps": 85.26,
+      "book_value_per_share": 1205.659,
+      "momentum_12_1": -0.051766857241188124,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4928909952606635,
+        "pbr": 0.39285714285714285,
+        "dividend_yield_pct": 0.5669642857142857,
+        "roe": 0.2463768115942029,
+        "momentum_12_1": 0.14732142857142858,
+        "market_cap": 0.6919642857142857
+      }
+    },
+    {
+      "ticker": "8802.T",
+      "name": "MITSUBISHI ESTATE CO.",
+      "currency": "JPY",
+      "price": 3465.0,
+      "market_cap": 4151811244032,
+      "shares_outstanding": 1198213927,
+      "per_trailing": 14.633838,
+      "pbr": 1.5324916,
+      "dividend_yield_pct": 1.45,
+      "roe": 0.107,
+      "trailing_eps": 236.78,
+      "book_value_per_share": 2261.024,
+      "momentum_12_1": 0.10755600585287461,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.36018957345971564,
+        "pbr": 0.5357142857142857,
+        "dividend_yield_pct": 0.24330357142857142,
+        "roe": 0.5410628019323671,
+        "momentum_12_1": 0.33482142857142855,
+        "market_cap": 0.7142857142857143
+      }
+    },
+    {
+      "ticker": "8804.T",
+      "name": "TOKYO TATEMONO CO.",
+      "currency": "JPY",
+      "price": 3175.0,
+      "market_cap": 657666473984,
+      "shares_outstanding": 207139048,
+      "per_trailing": 10.653647,
+      "pbr": 1.0837183,
+      "dividend_yield_pct": 4.12,
+      "roe": 0.106359996,
+      "trailing_eps": 298.02,
+      "book_value_per_share": 2929.728,
+      "momentum_12_1": 0.1849087848591784,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.13744075829383887,
+        "pbr": 0.3125,
+        "dividend_yield_pct": 0.9464285714285714,
+        "roe": 0.5362318840579711,
+        "momentum_12_1": 0.42857142857142855,
+        "market_cap": 0.18303571428571427
+      }
+    },
+    {
+      "ticker": "8830.T",
+      "name": "SUMITOMO REALTY & DEVELOPMENT CO.",
+      "currency": "JPY",
+      "price": 3077.0,
+      "market_cap": 2841967329280,
+      "shares_outstanding": 923616325,
+      "per_trailing": 13.519332,
+      "pbr": 1.1100777,
+      "dividend_yield_pct": 1.69,
+      "roe": 0.09356,
+      "trailing_eps": 227.6,
+      "book_value_per_share": 2771.878,
+      "momentum_12_1": 0.005162912254532914,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3127962085308057,
+        "pbr": 0.33035714285714285,
+        "dividend_yield_pct": 0.31026785714285715,
+        "roe": 0.4251207729468599,
+        "momentum_12_1": 0.20089285714285715,
+        "market_cap": 0.6071428571428571
+      }
+    },
+    {
+      "ticker": "9001.T",
+      "name": "TOBU RAILWAY CO.",
+      "currency": "JPY",
+      "price": 2778.0,
+      "market_cap": 543186059264,
+      "shares_outstanding": 195531351,
+      "per_trailing": 9.803437,
+      "pbr": 0.8660581,
+      "dividend_yield_pct": 2.71,
+      "roe": 0.09385,
+      "trailing_eps": 283.37,
+      "book_value_per_share": 3207.637,
+      "momentum_12_1": 0.08934583338114654,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.10900473933649289,
+        "pbr": 0.15178571428571427,
+        "dividend_yield_pct": 0.5915178571428571,
+        "roe": 0.42995169082125606,
+        "momentum_12_1": 0.29017857142857145,
+        "market_cap": 0.12053571428571429
+      }
+    },
+    {
+      "ticker": "9005.T",
+      "name": "TOKYU CORP.",
+      "currency": "JPY",
+      "price": 1577.5,
+      "market_cap": 881330028544,
+      "shares_outstanding": 558687839,
+      "per_trailing": 9.202007,
+      "pbr": 0.95214933,
+      "dividend_yield_pct": 2.03,
+      "roe": null,
+      "trailing_eps": 171.43,
+      "book_value_per_share": 1656.778,
+      "momentum_12_1": -0.12295502531326363,
+      "data_quality": {
+        "missing_fields": [
+          "roe"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.08530805687203792,
+        "pbr": 0.19642857142857142,
+        "dividend_yield_pct": 0.39955357142857145,
+        "roe": null,
+        "momentum_12_1": 0.09821428571428571,
+        "market_cap": 0.2544642857142857
+      }
+    },
+    {
+      "ticker": "9007.T",
+      "name": "ODAKYU ELECTRIC RAILWAY CO.",
+      "currency": "JPY",
+      "price": 1722.5,
+      "market_cap": 590083325952,
+      "shares_outstanding": 342573752,
+      "per_trailing": 16.898851,
+      "pbr": 1.1598101,
+      "dividend_yield_pct": 3.5,
+      "roe": 0.07117,
+      "trailing_eps": 101.93,
+      "book_value_per_share": 1485.157,
+      "momentum_12_1": 0.06537531356449766,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4881516587677725,
+        "pbr": 0.3705357142857143,
+        "dividend_yield_pct": 0.8303571428571429,
+        "roe": 0.27053140096618356,
+        "momentum_12_1": 0.24553571428571427,
+        "market_cap": 0.13839285714285715
+      }
+    },
+    {
+      "ticker": "9008.T",
+      "name": "KEIO CORP.",
+      "currency": "JPY",
+      "price": 747.7,
+      "market_cap": 432830939136,
+      "shares_outstanding": 578883130,
+      "per_trailing": 10.303156,
+      "pbr": 0.9518814,
+      "dividend_yield_pct": 2.95,
+      "roe": 0.097559996,
+      "trailing_eps": 72.57,
+      "book_value_per_share": 785.497,
+      "momentum_12_1": 0.009413592554671668,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.12322274881516587,
+        "pbr": 0.19196428571428573,
+        "dividend_yield_pct": 0.6852678571428571,
+        "roe": 0.46859903381642515,
+        "momentum_12_1": 0.20535714285714285,
+        "market_cap": 0.06696428571428571
+      }
+    },
+    {
+      "ticker": "9009.T",
+      "name": "KEISEI ELECTRIC RAILWAY CO.",
+      "currency": "JPY",
+      "price": 1312.0,
+      "market_cap": 632697847808,
+      "shares_outstanding": 482239218,
+      "per_trailing": 12.356376,
+      "pbr": 1.1244824,
+      "dividend_yield_pct": 1.69,
+      "roe": 0.094160005,
+      "trailing_eps": 106.18,
+      "book_value_per_share": 1166.759,
+      "momentum_12_1": -0.015321039842862372,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.25118483412322273,
+        "pbr": 0.34375,
+        "dividend_yield_pct": 0.31026785714285715,
+        "roe": 0.43478260869565216,
+        "momentum_12_1": 0.17410714285714285,
+        "market_cap": 0.16517857142857142
+      }
+    },
+    {
+      "ticker": "9020.T",
+      "name": "EAST JAPAN RAILWAY CO.",
+      "currency": "JPY",
+      "price": 3376.0,
+      "market_cap": 3811735502848,
+      "shares_outstanding": 1129068483,
+      "per_trailing": 16.791008,
+      "pbr": 1.2450962,
+      "dividend_yield_pct": 2.51,
+      "roe": 0.07948,
+      "trailing_eps": 201.06,
+      "book_value_per_share": 2711.437,
+      "momentum_12_1": -0.03882126556463705,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.4834123222748815,
+        "pbr": 0.40625,
+        "dividend_yield_pct": 0.5290178571428571,
+        "roe": 0.3285024154589372,
+        "momentum_12_1": 0.16071428571428573,
+        "market_cap": 0.6875
+      }
+    },
+    {
+      "ticker": "9021.T",
+      "name": "WEST JAPAN RAILWAY CO.",
+      "currency": "JPY",
+      "price": 2903.5,
+      "market_cap": 1321335783424,
+      "shares_outstanding": 455083814,
+      "per_trailing": 11.4243555,
+      "pbr": 1.0794134,
+      "dividend_yield_pct": 3.52,
+      "roe": 0.0934,
+      "trailing_eps": 254.15,
+      "book_value_per_share": 2689.887,
+      "momentum_12_1": -0.07427042762320113,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.18009478672985782,
+        "pbr": 0.3080357142857143,
+        "dividend_yield_pct": 0.8392857142857143,
+        "roe": 0.41545893719806765,
+        "momentum_12_1": 0.13392857142857142,
+        "market_cap": 0.38839285714285715
+      }
+    },
+    {
+      "ticker": "9022.T",
+      "name": "CENTRAL JAPAN RAILWAY CO.",
+      "currency": "JPY",
+      "price": 3633.0,
+      "market_cap": 3449097814016,
+      "shares_outstanding": 949380107,
+      "per_trailing": 6.4312263,
+      "pbr": 0.66582507,
+      "dividend_yield_pct": 0.88,
+      "roe": 0.111590005,
+      "trailing_eps": 564.9,
+      "book_value_per_share": 5456.388,
+      "momentum_12_1": -0.09453520994272102,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.018957345971563982,
+        "pbr": 0.05803571428571429,
+        "dividend_yield_pct": 0.11160714285714286,
+        "roe": 0.5797101449275363,
+        "momentum_12_1": 0.12053571428571429,
+        "market_cap": 0.6696428571428571
+      }
+    },
+    {
+      "ticker": "9064.T",
+      "name": "YAMATO HOLDINGS CO.",
+      "currency": "JPY",
+      "price": 2052.0,
+      "market_cap": 649820307456,
+      "shares_outstanding": 316676561,
+      "per_trailing": 49.043976,
+      "pbr": 1.1577392,
+      "dividend_yield_pct": 2.27,
+      "roe": 0.02331,
+      "trailing_eps": 41.84,
+      "book_value_per_share": 1772.42,
+      "momentum_12_1": -0.1739821783117852,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.933649289099526,
+        "pbr": 0.36607142857142855,
+        "dividend_yield_pct": 0.45089285714285715,
+        "roe": 0.06280193236714976,
+        "momentum_12_1": 0.05803571428571429,
+        "market_cap": 0.17857142857142858
+      }
+    },
+    {
+      "ticker": "9101.T",
+      "name": "NIPPON YUSEN K.K.",
+      "currency": "JPY",
+      "price": 7358.0,
+      "market_cap": 2969365905408,
+      "shares_outstanding": 403556142,
+      "per_trailing": 13.46189,
+      "pbr": 0.9533458,
+      "dividend_yield_pct": 3.32,
+      "roe": 0.07705,
+      "trailing_eps": 546.58,
+      "book_value_per_share": 7718.081,
+      "momentum_12_1": 0.4464909259355858,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.2985781990521327,
+        "pbr": 0.20535714285714285,
+        "dividend_yield_pct": 0.78125,
+        "roe": 0.30434782608695654,
+        "momentum_12_1": 0.6875,
+        "market_cap": 0.6294642857142857
+      }
+    },
+    {
+      "ticker": "9104.T",
+      "name": "MITSUI O.S.K.LINES",
+      "currency": "JPY",
+      "price": 7301.0,
+      "market_cap": 2508770770944,
+      "shares_outstanding": 343620164,
+      "per_trailing": 11.0596075,
+      "pbr": 0.8422062,
+      "dividend_yield_pct": 3.02,
+      "roe": 0.07892,
+      "trailing_eps": 660.15,
+      "book_value_per_share": 8668.898,
+      "momentum_12_1": 0.5768765519183205,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.15639810426540285,
+        "pbr": 0.13392857142857142,
+        "dividend_yield_pct": 0.6986607142857143,
+        "roe": 0.3188405797101449,
+        "momentum_12_1": 0.7857142857142857,
+        "market_cap": 0.5892857142857143
+      }
+    },
+    {
+      "ticker": "9107.T",
+      "name": "KAWASAKI KISEN KAISHA",
+      "currency": "JPY",
+      "price": 3369.0,
+      "market_cap": 1998130249728,
+      "shares_outstanding": 593092993,
+      "per_trailing": 16.359133,
+      "pbr": 1.173747,
+      "dividend_yield_pct": 3.66,
+      "roe": 0.07565,
+      "trailing_eps": 205.94,
+      "book_value_per_share": 2870.295,
+      "momentum_12_1": 0.6015791107966721,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.45023696682464454,
+        "pbr": 0.3794642857142857,
+        "dividend_yield_pct": 0.875,
+        "roe": 0.2995169082125604,
+        "momentum_12_1": 0.7991071428571429,
+        "market_cap": 0.5
+      }
+    },
+    {
+      "ticker": "9147.T",
+      "name": "NIPPON EXPRESS HOLDINGS",
+      "currency": "JPY",
+      "price": 5618.0,
+      "market_cap": 1334970941440,
+      "shares_outstanding": 237623893,
+      "per_trailing": 72.05335,
+      "pbr": 1.609543,
+      "dividend_yield_pct": 1.79,
+      "roe": 0.024400001,
+      "trailing_eps": 77.97,
+      "book_value_per_share": 3490.432,
+      "momentum_12_1": 0.7290861167435596,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.981042654028436,
+        "pbr": 0.5625,
+        "dividend_yield_pct": 0.34375,
+        "roe": 0.07246376811594203,
+        "momentum_12_1": 0.8571428571428571,
+        "market_cap": 0.39285714285714285
+      }
+    },
+    {
+      "ticker": "9201.T",
+      "name": "JAPAN AIRLINES CO.",
+      "currency": "JPY",
+      "price": 3027.0,
+      "market_cap": 1301088436224,
+      "shares_outstanding": 429827709,
+      "per_trailing": 11.8168335,
+      "pbr": 0.8989526,
+      "dividend_yield_pct": 3.2,
+      "roe": 0.090670004,
+      "trailing_eps": 256.16,
+      "book_value_per_share": 3367.252,
+      "momentum_12_1": 0.002864789885527852,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.23222748815165878,
+        "pbr": 0.16071428571428573,
+        "dividend_yield_pct": 0.7633928571428571,
+        "roe": 0.37681159420289856,
+        "momentum_12_1": 0.19642857142857142,
+        "market_cap": 0.3794642857142857
+      }
+    },
+    {
+      "ticker": "9202.T",
+      "name": "ANA HOLDINGS INC.",
+      "currency": "JPY",
+      "price": 2915.5,
+      "market_cap": 1251891609600,
+      "shares_outstanding": 429391744,
+      "per_trailing": 9.29243,
+      "pbr": 0.90965873,
+      "dividend_yield_pct": 2.06,
+      "roe": 0.13206,
+      "trailing_eps": 313.75,
+      "book_value_per_share": 3205.048,
+      "momentum_12_1": 0.04917759565234481,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.0947867298578199,
+        "pbr": 0.17410714285714285,
+        "dividend_yield_pct": 0.41294642857142855,
+        "roe": 0.7004830917874396,
+        "momentum_12_1": 0.23214285714285715,
+        "market_cap": 0.35714285714285715
+      }
+    },
+    {
+      "ticker": "9432.T",
+      "name": "NTT",
+      "currency": "JPY",
+      "price": 172.9,
+      "market_cap": 13993316974592,
+      "shares_outstanding": 80933011314,
+      "per_trailing": 13.476227,
+      "pbr": 1.4280994,
+      "dividend_yield_pct": 3.14,
+      "roe": 0.107130006,
+      "trailing_eps": 12.83,
+      "book_value_per_share": 121.07,
+      "momentum_12_1": 0.10277114699071177,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3033175355450237,
+        "pbr": 0.4955357142857143,
+        "dividend_yield_pct": 0.7433035714285714,
+        "roe": 0.5458937198067633,
+        "momentum_12_1": 0.33035714285714285,
+        "market_cap": 0.9241071428571429
+      }
+    },
+    {
+      "ticker": "9433.T",
+      "name": "KDDI CORP.",
+      "currency": "JPY",
+      "price": 2893.0,
+      "market_cap": 10692419649536,
+      "shares_outstanding": 3695962728,
+      "per_trailing": 14.86181,
+      "pbr": 2.1483164,
+      "dividend_yield_pct": 2.89,
+      "roe": 0.14586,
+      "trailing_eps": 194.66,
+      "book_value_per_share": 1346.636,
+      "momentum_12_1": 0.2526313319395661,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3791469194312796,
+        "pbr": 0.7053571428571429,
+        "dividend_yield_pct": 0.6651785714285714,
+        "roe": 0.7729468599033816,
+        "momentum_12_1": 0.4955357142857143,
+        "market_cap": 0.8973214285714286
+      }
+    },
+    {
+      "ticker": "9434.T",
+      "name": "SOFTBANK CORP.",
+      "currency": "JPY",
+      "price": 242.0,
+      "market_cap": 11575759994880,
+      "shares_outstanding": 47833719783,
+      "per_trailing": 21.41593,
+      "pbr": 3.9759471,
+      "dividend_yield_pct": 3.65,
+      "roe": 0.16712,
+      "trailing_eps": 11.3,
+      "book_value_per_share": 60.866,
+      "momentum_12_1": 0.0931561425655083,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6966824644549763,
+        "pbr": 0.8660714285714286,
+        "dividend_yield_pct": 0.8705357142857143,
+        "roe": 0.8357487922705314,
+        "momentum_12_1": 0.30357142857142855,
+        "market_cap": 0.90625
+      }
+    },
+    {
+      "ticker": "9501.T",
+      "name": "TOKYO ELECTRIC POWER COMPANY HOLDINGS",
+      "currency": "JPY",
+      "price": 520.8,
+      "market_cap": 834687205376,
+      "shares_outstanding": 1602702047,
+      "per_trailing": null,
+      "pbr": 0.24580204,
+      "dividend_yield_pct": 0.0,
+      "roe": 0.12517999,
+      "trailing_eps": -286.93,
+      "book_value_per_share": 2118.778,
+      "momentum_12_1": -0.14635993706736938,
+      "data_quality": {
+        "missing_fields": [
+          "per_trailing"
+        ]
+      },
+      "percentile_in_universe": {
+        "per_trailing": null,
+        "pbr": 0.004464285714285714,
+        "dividend_yield_pct": 0.015625,
+        "roe": 0.6666666666666666,
+        "momentum_12_1": 0.07589285714285714,
+        "market_cap": 0.24553571428571427
+      }
+    },
+    {
+      "ticker": "9502.T",
+      "name": "CHUBU ELECTRIC POWER CO.",
+      "currency": "JPY",
+      "price": 2668.5,
+      "market_cap": 2015753666560,
+      "shares_outstanding": 755388311,
+      "per_trailing": 11.227753,
+      "pbr": 0.6361419,
+      "dividend_yield_pct": 2.65,
+      "roe": 0.06044,
+      "trailing_eps": 237.67,
+      "book_value_per_share": 4194.819,
+      "momentum_12_1": 0.46389606258579197,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.17535545023696683,
+        "pbr": 0.04017857142857143,
+        "dividend_yield_pct": 0.5758928571428571,
+        "roe": 0.2028985507246377,
+        "momentum_12_1": 0.7098214285714286,
+        "market_cap": 0.5089285714285714
+      }
+    },
+    {
+      "ticker": "9503.T",
+      "name": "THE KANSAI ELECTRIC POWER CO.",
+      "currency": "JPY",
+      "price": 2650.0,
+      "market_cap": 2952250261504,
+      "shares_outstanding": 1114056720,
+      "per_trailing": 7.0493717,
+      "pbr": 0.82758397,
+      "dividend_yield_pct": 3.03,
+      "roe": 0.12508,
+      "trailing_eps": 375.92,
+      "book_value_per_share": 3202.092,
+      "momentum_12_1": 0.379253823856069,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.03317535545023697,
+        "pbr": 0.11607142857142858,
+        "dividend_yield_pct": 0.7053571428571429,
+        "roe": 0.6618357487922706,
+        "momentum_12_1": 0.6071428571428571,
+        "market_cap": 0.6205357142857143
+      }
+    },
+    {
+      "ticker": "9531.T",
+      "name": "TOKYO GAS CO.",
+      "currency": "JPY",
+      "price": 5954.0,
+      "market_cap": 1944968495104,
+      "shares_outstanding": 326665859,
+      "per_trailing": 12.980444,
+      "pbr": 1.1398394,
+      "dividend_yield_pct": 2.03,
+      "roe": 0.096260004,
+      "trailing_eps": 458.69,
+      "book_value_per_share": 5223.543,
+      "momentum_12_1": 0.15476108973948555,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.27488151658767773,
+        "pbr": 0.35267857142857145,
+        "dividend_yield_pct": 0.39955357142857145,
+        "roe": 0.45410628019323673,
+        "momentum_12_1": 0.3794642857142857,
+        "market_cap": 0.48660714285714285
+      }
+    },
+    {
+      "ticker": "9532.T",
+      "name": "OSAKA GAS CO.",
+      "currency": "JPY",
+      "price": 5554.0,
+      "market_cap": 2096507781120,
+      "shares_outstanding": 377477090,
+      "per_trailing": 14.305585,
+      "pbr": 1.1554568,
+      "dividend_yield_pct": 2.35,
+      "roe": 0.07901,
+      "trailing_eps": 388.24,
+      "book_value_per_share": 4806.757,
+      "momentum_12_1": 0.3689677960063207,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.3412322274881517,
+        "pbr": 0.36160714285714285,
+        "dividend_yield_pct": 0.47544642857142855,
+        "roe": 0.32367149758454106,
+        "momentum_12_1": 0.6026785714285714,
+        "market_cap": 0.5223214285714286
+      }
+    },
+    {
+      "ticker": "9602.T",
+      "name": "TOHO CO.",
+      "currency": "JPY",
+      "price": 1554.5,
+      "market_cap": 1293112836096,
+      "shares_outstanding": 831851262,
+      "per_trailing": 26.945745,
+      "pbr": 2.5799503,
+      "dividend_yield_pct": 1.59,
+      "roe": 0.0971,
+      "trailing_eps": 57.69,
+      "book_value_per_share": 602.531,
+      "momentum_12_1": -0.16085401813428712,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7772511848341233,
+        "pbr": 0.7544642857142857,
+        "dividend_yield_pct": 0.2857142857142857,
+        "roe": 0.45893719806763283,
+        "momentum_12_1": 0.06696428571428571,
+        "market_cap": 0.3705357142857143
+      }
+    },
+    {
+      "ticker": "9735.T",
+      "name": "SECOM CO.",
+      "currency": "JPY",
+      "price": 6368.0,
+      "market_cap": 2540381405184,
+      "shares_outstanding": 398929240,
+      "per_trailing": 23.27145,
+      "pbr": 1.9539737,
+      "dividend_yield_pct": 1.9,
+      "roe": 0.087110005,
+      "trailing_eps": 273.64,
+      "book_value_per_share": 3259.0,
+      "momentum_12_1": 0.15562788903081315,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.7203791469194313,
+        "pbr": 0.6517857142857143,
+        "dividend_yield_pct": 0.37723214285714285,
+        "roe": 0.3671497584541063,
+        "momentum_12_1": 0.38392857142857145,
+        "market_cap": 0.5982142857142857
+      }
+    },
+    {
+      "ticker": "9766.T",
+      "name": "KONAMI GROUP CORP.",
+      "currency": "JPY",
+      "price": 23120.0,
+      "market_cap": 3134065737728,
+      "shares_outstanding": 135556483,
+      "per_trailing": 19.68179,
+      "pbr": 5.4056215,
+      "dividend_yield_pct": 1.12,
+      "roe": 0.21156,
+      "trailing_eps": 1174.69,
+      "book_value_per_share": 4277.029,
+      "momentum_12_1": -0.0026267842635007144,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6208530805687204,
+        "pbr": 0.9107142857142857,
+        "dividend_yield_pct": 0.16964285714285715,
+        "roe": 0.8888888888888888,
+        "momentum_12_1": 0.18303571428571427,
+        "market_cap": 0.6383928571428571
+      }
+    },
+    {
+      "ticker": "9843.T",
+      "name": "NITORI HOLDINGS CO.",
+      "currency": "JPY",
+      "price": 3176.0,
+      "market_cap": 1794622881792,
+      "shares_outstanding": 565057598,
+      "per_trailing": 19.81285,
+      "pbr": 1.7796844,
+      "dividend_yield_pct": 1.03,
+      "roe": 0.092180006,
+      "trailing_eps": 160.3,
+      "book_value_per_share": 1784.586,
+      "momentum_12_1": 0.14528199396449648,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.6255924170616114,
+        "pbr": 0.6071428571428571,
+        "dividend_yield_pct": 0.15401785714285715,
+        "roe": 0.3864734299516908,
+        "momentum_12_1": 0.36607142857142855,
+        "market_cap": 0.45982142857142855
+      }
+    },
+    {
+      "ticker": "9983.T",
+      "name": "FAST RETAILING CO.",
+      "currency": "JPY",
+      "price": 71780.0,
+      "market_cap": 22026379067392,
+      "shares_outstanding": 306859565,
+      "per_trailing": 44.198963,
+      "pbr": 8.072656,
+      "dividend_yield_pct": 1.2,
+      "roe": 0.22297001,
+      "trailing_eps": 1624.02,
+      "book_value_per_share": 8891.745,
+      "momentum_12_1": 0.5423473525663307,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.909952606635071,
+        "pbr": 0.9464285714285714,
+        "dividend_yield_pct": 0.19866071428571427,
+        "roe": 0.9033816425120773,
+        "momentum_12_1": 0.7633928571428571,
+        "market_cap": 0.9553571428571429
+      }
+    },
+    {
+      "ticker": "9984.T",
+      "name": "SOFTBANK GROUP CORP.",
+      "currency": "JPY",
+      "price": 5803.0,
+      "market_cap": 33071583723520,
+      "shares_outstanding": 5699049389,
+      "per_trailing": 7.03019,
+      "pbr": 1.8143039,
+      "dividend_yield_pct": 0.18,
+      "roe": 0.31964,
+      "trailing_eps": 825.44,
+      "book_value_per_share": 3198.472,
+      "momentum_12_1": 0.27333065545414015,
+      "data_quality": {
+        "missing_fields": []
+      },
+      "percentile_in_universe": {
+        "per_trailing": 0.02843601895734597,
+        "pbr": 0.6160714285714286,
+        "dividend_yield_pct": 0.049107142857142856,
+        "roe": 0.9516908212560387,
+        "momentum_12_1": 0.5044642857142857,
+        "market_cap": 0.9910714285714286
+      }
+    }
+  ]
+}
