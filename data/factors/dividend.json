@@ -664,6 +664,13 @@
       "factor_return_3m": null,
       "factor_return_1y": null,
       "screen_count": 146
+    },
+    {
+      "date": "2026-10-19",
+      "factor_return_1m": null,
+      "factor_return_3m": null,
+      "factor_return_1y": null,
+      "screen_count": 146
     }
   ],
   "today_screen": {
@@ -2243,25 +2250,25 @@
         "metric_value": 4.5
       },
       {
-        "ticker": "TFC",
-        "rank": 38,
-        "quantile": "top_quintile",
-        "metric_value": 4.47
-      },
-      {
         "ticker": "KVUE",
-        "rank": 39,
+        "rank": 38,
         "quantile": "top_quintile",
         "metric_value": 4.44
       },
       {
         "ticker": "INVH",
-        "rank": 40,
+        "rank": 39,
         "quantile": "top_quintile",
         "metric_value": 4.43
       },
       {
         "ticker": "NKE",
+        "rank": 40,
+        "quantile": "top_quintile",
+        "metric_value": 4.42
+      },
+      {
+        "ticker": "TFC",
         "rank": 41,
         "quantile": "top_quintile",
         "metric_value": 4.42
@@ -2276,7 +2283,7 @@
         "ticker": "RF",
         "rank": 43,
         "quantile": "top_quintile",
-        "metric_value": 4.39
+        "metric_value": 4.37
       },
       {
         "ticker": "FRT",
@@ -4007,22 +4014,22 @@
         "metric_value": 0.79
       },
       {
-        "ticker": "GL",
+        "ticker": "JBHT",
         "rank": 332,
+        "quantile": "other",
+        "metric_value": 0.79
+      },
+      {
+        "ticker": "GL",
+        "rank": 333,
         "quantile": "other",
         "metric_value": 0.78
       },
       {
         "ticker": "URI",
-        "rank": 333,
-        "quantile": "other",
-        "metric_value": 0.77
-      },
-      {
-        "ticker": "JBHT",
         "rank": 334,
         "quantile": "other",
-        "metric_value": 0.76
+        "metric_value": 0.77
       },
       {
         "ticker": "MAR",
